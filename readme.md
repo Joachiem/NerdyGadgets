@@ -1,2 +1,1 @@
-<h1>Nerdy Gadgets</h1>
-<h2>Webshop</h2>
+<h1>Nerdy Gadgets Webshop</h1>
