@@ -15,4 +15,17 @@
     <meta name="msapplication-config" content="public/img/favicon/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
 
+    <style>
+    ion-icon {
+        font-size: 28px;
+    }
+
+    a, img {
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -o-user-select: none;
+        user-select: none;
+    }
+    </style>
 </head>
