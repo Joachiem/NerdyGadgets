@@ -1,17 +1,24 @@
 <nav class="nav" id="nav">
-    <object class="logo" id="logo" type="image/svg+xml" data="public/img/logo.svg"></object>
+    <div>
+        <object class="logo" id="logo" type="image/svg+xml" data="public/img/logo.svg"></object>
 
-    <div class="zoek-container">
-        <input class="zoek" type="text" placeholder="Zoeken!" id="zoek" type="text" name="zoek" value="">
+        <div class="zoek-container">
+            <input class="zoek" type="text" placeholder="Zoeken!" id="zoek" type="text" name="zoek" value="">
+        </div>
+        <div class="english">
+            <a>English</a>
+        </div>
+        <div class="inloggen">
+            <a>Inloggen</a>
+        </div>
+        <div class="winkelwagentje">
+            <a>WW_PH</a>
+        </div>
     </div>
-    <div class="english">
-        <a>English</a>
-    </div>
-    <div class="inloggen">
-        <a>Inloggen</a>
-    </div>
-    <div class="winkelwagentje">
-        <a>WW_PH</a>
+    <div>
+    <div class="categorie">
+            <a>T-SHIRT</a>
+        </div>
     </div>
 </nav>
 
