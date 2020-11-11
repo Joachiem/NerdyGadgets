@@ -1,7 +1,4 @@
 <?php
-
-include __DIR__ . "/src/includes/header.php";
-
 $Query = "
             SELECT StockGroupID, StockGroupName, ImagePath
             FROM stockgroups 

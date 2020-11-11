@@ -1,7 +1,6 @@
 <?php
 $Connection = mysqli_connect("localhost", "root", "", "nerdygadgets");
 mysqli_set_charset($Connection, 'latin1');
-include __DIR__ . "/src/includes/header.php";
 
 $Query = " 
            SELECT SI.StockItemID, 
