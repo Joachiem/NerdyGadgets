@@ -10,6 +10,9 @@
     <div class="inloggen">
         <a>Inloggen</a>
     </div>
+    <div class="winkelwagentje">
+        <a>WW_PH</a>
+    </div>
 </nav>
 
 <style>
@@ -45,5 +48,13 @@
 
     .english {
 
+    }
+
+    .inloggen {
+
+    }
+
+    .winkelwagentje {
+        
     }
 </style>
