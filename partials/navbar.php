@@ -16,7 +16,7 @@
         </div>
 
         <div class="text-gray-200">
-            <a><ion-icon name="cart-outline"></ion-icon></a>
+            <a><ion-icon name="cart-outline" size="large"></ion-icon></a>
         </div>
     </div>
 
