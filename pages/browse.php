@@ -161,9 +161,9 @@ if (isset($amount)) {
     $AmountOfPages = ceil($amount["count(*)"] / $ProductsOnPage);
 }
 ?>
-<div id="FilterFrame"><h2 class="FilterText"><i class="fas fa-filter"></i> Filteren </h2>
+<div>
     <form>
-        <div id="FilterOptions">
+        <div>
             <h4 class="FilterTopMargin"><i class="fas fa-search"></i> Zoeken</h4>
             <input type="text" name="search_string" id="search_string"
                    value="<?php print (isset($_GET['search_string'])) ? $_GET['search_string'] : ""; ?>"
@@ -217,8 +217,7 @@ if (isset($amount)) {
                 <div id="ProductFrame">
                     <?php
                     if (isset($row['ImagePath'])) { ?>
-                        <div class="ImgFrame"
-                             style="background-image: url('<?php print "public/StockItemIMG/" . $row['ImagePath']; ?>'); background-size: 230px; background-repeat: no-repeat; background-position: center;"></div>
+                        <img src="<?php print "public/StockItemIMG/" . $row['ImagePath']; ?>"></img>
                     <?php } else if (isset($row['BackupImagePath'])) { ?>
                         <div class="ImgFrame"
                              style="background-image: url('<?php print "public/StockGroupIMG/" . $row['BackupImagePath'] ?>'); background-size: cover;"></div>
@@ -277,4 +276,3 @@ if (isset($amount)) {
     }
     ?>
 </div>
-
