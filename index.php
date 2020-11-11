@@ -3,7 +3,7 @@ session_start();
 include "connect.php";
 ?>
 <!DOCTYPE html>
-<html lang="en" style="background-color: rgb(35, 35, 47);">
+<html lang="en">
 
 <?php
 include __DIR__ . "/src/includes/header.php";
