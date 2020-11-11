@@ -15,4 +15,3 @@ include __DIR__ . "/pages/index.php";
 
 include __DIR__ . "/src/includes/footer.php";
 ?>
-

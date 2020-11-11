@@ -1,4 +1,3 @@
-
 <head>
     <script src="public/JS/fontawesome.js" crossorigin="anonymous"></script>
     <script src="public/JS/jquery.min.js"></script>
@@ -35,6 +34,3 @@
     <meta name="msapplication-TileImage" content="public/Favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 </head>
-
-
-

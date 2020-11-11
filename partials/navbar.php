@@ -1,5 +1,5 @@
 <nav class="nav" id="nav">
-    <div>
+    <div class="row">
         <object class="logo" id="logo" type="image/svg+xml" data="public/img/logo.svg"></object>
 
         <div class="zoek-container">
@@ -15,26 +15,41 @@
             <a>WW_PH</a>
         </div>
     </div>
-    <div>
-    <div class="categorie">
+    <div class="row categorys">
+        <div class="category">
+            <a>T-SHIRT</a>
+        </div>
+        <div class="category">
             <a>T-SHIRT</a>
         </div>
     </div>
 </nav>
 
 <style>
+    .row {
+        justify-content: space-between;
+        width: 100%;
+        margin: 0px;
+
+    }
+
+    .categorys {
+        background-color: gray;
+
+    }
+
     .nav {
-        background-color: #1e0253;
         padding: 15px;
+        margin: 0;
+        background-color: #1e0253;
         display: flex;
         align-items: center;
-        justify-content: space-between;
     }
 
     .nav .zoek-container {
         display: flex;
         margin-left: 50px;
-        width: 800px;
+        width: 600px;
 
     }
 
