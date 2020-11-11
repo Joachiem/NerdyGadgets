@@ -1,7 +1,7 @@
 <?php
-include __DIR__ . "/header.php";
 $SearchString = "";
 $ReturnableResult = null;
+
 if (isset($_GET['search_string'])) {
     $SearchString = $_GET['search_string'];
 }
@@ -10,6 +10,7 @@ if (isset($_GET['category_id'])) {
 } else {
     $CategoryID = "";
 }
+
 if (isset($_GET['sort'])) {
     $SortOnPage = $_GET['sort'];
     $_SESSION["sort"] = $_GET['sort'];
@@ -29,6 +30,7 @@ if (isset($_GET['products_on_page'])) {
     $ProductsOnPage = 25;
     $_SESSION['products_on_page'] = 25;
 }
+
 if (isset($_GET['page_number'])) {
     $PageNumber = $_GET['page_number'];
 } else {
@@ -211,15 +213,15 @@ if (isset($amount)) {
     if (isset($ReturnableResult) && count($ReturnableResult) > 0) {
         foreach ($ReturnableResult as $row) {
             ?>
-            <a class="ListItem" href='view.php?id=<?php print $row['StockItemID']; ?>'>
+            <a class="ListItem" href='view?id=<?php print $row['StockItemID']; ?>'>
                 <div id="ProductFrame">
                     <?php
                     if (isset($row['ImagePath'])) { ?>
                         <div class="ImgFrame"
-                             style="background-image: url('<?php print "Public/StockItemIMG/" . $row['ImagePath']; ?>'); background-size: 230px; background-repeat: no-repeat; background-position: center;"></div>
+                             style="background-image: url('<?php print "public/StockItemIMG/" . $row['ImagePath']; ?>'); background-size: 230px; background-repeat: no-repeat; background-position: center;"></div>
                     <?php } else if (isset($row['BackupImagePath'])) { ?>
                         <div class="ImgFrame"
-                             style="background-image: url('<?php print "Public/StockGroupIMG/" . $row['BackupImagePath'] ?>'); background-size: cover;"></div>
+                             style="background-image: url('<?php print "public/StockGroupIMG/" . $row['BackupImagePath'] ?>'); background-size: cover;"></div>
                     <?php }
                     ?>
 
@@ -276,6 +278,3 @@ if (isset($amount)) {
     ?>
 </div>
 
-<?php
-include __DIR__ . "/footer.php";
-?>

@@ -1,24 +1,32 @@
 <?php
-include __DIR__ . "/header.php";
+session_start();
+include __DIR__ . "/src/functions/connect.php";
 ?>
-<div class="IndexStyle">
-    <div class="col-11">
-        <div class="TextPrice">
-            <a href="view.php?id=93">
-                <div class="TextMain">
-                    "The Gu" red shirt XML tag t-shirt (Black) M
-                </div>
-                <ul id="ul-class-price">
 
-                    <li class="HomePagePrice">€30.95</li>
-                </ul>
-
-        </div>
-        </a>
-        <div class="HomePageStockItemPicture"></div>
-    </div>
-</div>
+<!DOCTYPE html>
+<html lang="en">
 <?php
-include __DIR__ . "/footer.php";
-?>
 
+include __DIR__ . "/partials/header.php";
+
+?>
+<body>
+<?php
+$query = $_GET['q'];
+
+
+include __DIR__ . "/partials/navbar.php";
+
+if ($query === '') {
+    include __DIR__ . "/pages/index.php";
+} elseif (file_exists(__DIR__ . "/pages/$query.php")) {
+    include __DIR__ . "/pages/$query.php";
+} else{
+    include __DIR__ . "/src/error/404.php";
+}
+
+include __DIR__ . "/partials/footer.php";
+
+?>
+</body>
+</html>
