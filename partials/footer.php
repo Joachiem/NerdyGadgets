@@ -1,3 +1,4 @@
+<br>
 <div class="footer text-white w-full py-2">
 
     <div class="flex justify-center text-center py-2 gap-3">
@@ -5,13 +6,13 @@
             <ion-icon name="logo-facebook"></ion-icon>
         </a>
         <a href="https://twitter.com" target="_blank">
-        <ion-icon name="logo-twitter"></ion-icon>
+            <ion-icon name="logo-twitter"></ion-icon>
         </a>
         <a href="https://youtube.com" target="_blank">
-        <ion-icon name="logo-youtube"></ion-icon>
+            <ion-icon name="logo-youtube"></ion-icon>
         </a>
         <a href="https://instagram.com" target="_blank">
-        <ion-icon name="logo-instagram"></ion-icon>
+            <ion-icon name="logo-instagram"></ion-icon>
         </a>
     </div>
 
