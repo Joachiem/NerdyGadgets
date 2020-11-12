@@ -20,6 +20,7 @@ include __DIR__ . "/partials/header.php";
     include __DIR__ . "/partials/navbar.php";
 
     ?>
+    
     <div class="pt-32 container mx-auto">
         <?php
 
