@@ -1,5 +1,4 @@
-<br>
-<div class="footer text-white w-full py-2">
+<div class="footer text-white w-full py-2 mt-2 absolute bottom-0">
 
     <div class="flex justify-center text-center py-2 gap-3">
         <a href="https://facebook.com" target="_blank">
