@@ -1,17 +1,17 @@
-<div class="nav w-full py-2">
+<div class="nav w-full my-2">
 
-    <div class="justify-center text-center py-1">
+    <div class="flex justify-center text-center py-2 gap-2">
         <ion-icon name="logo-facebook"></ion-icon>
         <ion-icon name="logo-twitter"></ion-icon>
         <ion-icon name="logo-youtube"></ion-icon>
         <ion-icon name="logo-instagram"></ion-icon>
     </div>
 
-    <div class="justify-center text-center py-1 h-16 w-16">
-            <img src="https://www.ideal.nl/img/logo/ideal-logo.svg"/>
+    <div class="flex justify-center py-2 h-16">
+        <img src="https://www.ideal.nl/img/logo/ideal-logo.svg" />
     </div>
 
-    <div class="justify-center text-center py-1">
+    <div class="text-center py-1">
         <p>
             <a href="contact">Contact</a> |
             <a href="tos">Algemene voorwaarden</a> |
@@ -20,7 +20,7 @@
         </p>
     </div>
 
-    <div class="justify-center text-center py-1">
+    <div class="text-center py-1">
         <p>© 2020 - 2021 NerdyGadgets.nl</p>
     </div>
 
@@ -30,4 +30,5 @@
     .nav {
         background-color: #1E0253;
         color: #ffffff;
+    }
 </style>
