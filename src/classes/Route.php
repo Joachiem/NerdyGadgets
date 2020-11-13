@@ -14,7 +14,6 @@ class Route
      */
     public static function get($route, $function)
     {
-        self::$validRoutes[] = $route;
         self::call($route, $function, 'GET');
     }
 
@@ -26,7 +25,6 @@ class Route
      */
     public static function post($route, $function)
     {
-        self::$validRoutes[] = $route;
         self::call($route, $function, 'POST');
     }
 
@@ -38,7 +36,6 @@ class Route
      */
     public static function put($route, $function)
     {
-        self::$validRoutes[] = $route;
         self::call($route, $function, 'PUT');
     }
 
@@ -50,7 +47,6 @@ class Route
      */
     public static function patch($route, $function)
     {
-        self::$validRoutes[] = $route;
         self::call($route, $function, 'PATCH');
     }
 
@@ -62,7 +58,6 @@ class Route
      */
     public static function delete($route, $function)
     {
-        self::$validRoutes[] = $route;
         self::call($route, $function, 'DELETE');
     }
 
@@ -127,6 +122,7 @@ class Route
      */
     private static function call($route, $function, $type)
     {
+        self::$validRoutes[] = $route;
         $url = self::check_url($_GET['url']);
         if ($_SERVER['REQUEST_METHOD'] === $type && $url === $route) return $function();
     }

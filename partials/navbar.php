@@ -6,7 +6,7 @@
         </a>
 
         <div class="flex align-center bg-gray-100 rounded flex-grow lg:flex-grow-0 max-w-full mx-8 lg:mx-0">
-            <input class="text-gray-800 border-transparent rounded p-2 min-w-full" type="text" placeholder="Zoeken!" id="zoek" type="text" name="zoek" value="">
+            <input class="text-gray-800 border-transparent rounded p-2 px-3 min-w-full" type="text" placeholder="Zoeken!" id="zoek" type="text" name="zoek" value="">
         </div>
 
         <div class="items-center flex flex-row justify-end">
