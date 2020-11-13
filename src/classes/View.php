@@ -4,6 +4,11 @@ class View
 {
     public static function show($file)
     {
+        if (func_get_arg(1)) {
+            $parameter = func_get_arg(1);
+        }
+
+
         include "src/functions/connect.php";
 
         print '<!DOCTYPE html>';
