@@ -1,9 +1,8 @@
 <section class="container pb-8">
-
     <div class="grid-container bg-gray-500">
         <div class="Grid-2">
             <a href="">
-                <img src="public/ProductIMGHighRes/mug.png"/>
+                <img src="public/ProductIMGHighRes/mug.png" />
             </a>
         </div>
         <div class="Grid-3 bg-gray-600">
@@ -11,7 +10,7 @@
         </div>
         <div class="Grid-1 bg-gray-400">
             <a href="">
-                <img src="public/ProductIMGHighRes/hoodie.png"/>
+                <img src="public/ProductIMGHighRes/hoodie.png" />
             </a>
         </div>
     </div>
@@ -115,9 +114,9 @@
             grid-template-rows: 1fr 1fr 1fr;
             gap: 0px 0px;
             grid-template-areas:
-    "Grid-1 Grid-1 Grid-1 Grid-2 Grid-2"
-    "Grid-1 Grid-1 Grid-1 Grid-2 Grid-2"
-    "Grid-1 Grid-1 Grid-1 Grid-3 Grid-3";
+                "Grid-1 Grid-1 Grid-1 Grid-2 Grid-2"
+                "Grid-1 Grid-1 Grid-1 Grid-2 Grid-2"
+                "Grid-1 Grid-1 Grid-1 Grid-3 Grid-3";
         }
 
         .Grid-1 {
@@ -131,10 +130,7 @@
         .Grid-3 {
             grid-area: Grid-3;
         }
-
     </style>
-
-    <h1>index</h1>
 
     <?php
 

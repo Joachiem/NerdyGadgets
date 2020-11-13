@@ -13,6 +13,8 @@ class View
 
         print '<body>';
 
+        print '<div class="min-h-screen relative pb-56">';
+
         include "partials/navbar.php";
 
         print '<div class="pt-32 container mx-auto">';
@@ -25,9 +27,12 @@ class View
             include "src/error/404.php";
         }
 
-        include "partials/footer.php";
 
         print '</div>';
+
+        include "partials/footer.php";
+        print '</div>';
+
         print '</body>';
         print '</html>';
     }
