@@ -1,7 +1,7 @@
 <?php
 /*
 * dit zijn de routes van NerdyGadgets
-* de get routes zijn voor paginas
+* de get routes zijn voor pagina's
 */
 
 Route::redirect('checkout', 'checkout/account');

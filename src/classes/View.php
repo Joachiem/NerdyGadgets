@@ -12,27 +12,21 @@ class View
         include "partials/header.php";
 
         print '<body>';
-
         print '<div class="min-h-screen relative pb-56">';
 
         include "partials/navbar.php";
 
-        print '<div class="pt-32 container mx-auto">';
+        print '<div class="pt-24 container mx-auto">';
 
-        if ($file === '') {
-            include "pages/index.php";
-        } elseif (file_exists("pages/$file.php")) {
+        if (file_exists("pages/$file.php")) {
             include "pages/$file.php";
-        } else {
-            include "src/error/404.php";
         }
-
 
         print '</div>';
 
         include "partials/footer.php";
-        print '</div>';
 
+        print '</div>';
         print '</body>';
         print '</html>';
     }
