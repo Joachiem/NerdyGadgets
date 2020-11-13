@@ -4,34 +4,31 @@ class View
 {
     public static function show($file)
     {
-        include "pages/$file.php";
+        include "src/functions/connect.php";
 
+        print '<!DOCTYPE html>';
+        print '<html lang="en">';
 
-        // include "src/functions/connect.php";
+        include "partials/header.php";
 
-        // print '<!DOCTYPE html>';
-        // print '<html lang="en">';
+        print '<body>';
 
-        // include "partials/header.php";
+        include "partials/navbar.php";
 
-        // print '<body>';
+        print '<div class="pt-32 container mx-auto">';
 
-        // include "partials/navbar.php";
+        if ($file === '') {
+            include "pages/index.php";
+        } elseif (file_exists("pages/$file.php")) {
+            include "pages/$file.php";
+        } else {
+            include "src/error/404.php";
+        }
 
-        // print '<div class="pt-32 container mx-auto">';
+        include "partials/footer.php";
 
-        // if ($file === '') {
-        //     include "pages/index.php";
-        // } elseif (file_exists("pages/$file.php")) {
-        //     include "pages/$file.php";
-        // } else {
-        //     include "src/error/404.php";
-        // }
-
-        // include "partials/footer.php";
-
-        // print '</div>';
-        // print '</body>';
-        // print '</html>';
+        print '</div>';
+        print '</body>';
+        print '</html>';
     }
 }
