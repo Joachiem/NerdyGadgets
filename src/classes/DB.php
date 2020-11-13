@@ -1,10 +1,10 @@
 <?php
 class DB
 {
-    private $servername = 'school.blltjallinks.nl';
-    private $username = 'kbs';
-    private $password = 'b$ZR^13v^s5I';
-    private $dbname = 'wideworldimporters';
+    private $servername = '';
+    private $username = '';
+    private $password = '';
+    private $dbname = '';
     private $connection;
 
     /**
