@@ -13,12 +13,10 @@ Route::get('/', function () {
 });
 
 Route::get('/dutch', function () {
-    Lang::set_lang('nl');
     Route::back();
 });
 
 Route::get('/english', function () {
-    Lang::set_lang('eng');
     Route::back();
 });
 
