@@ -3,31 +3,31 @@
     <div class="flex justify-between bg-gray-200">
         <div class="text-gray-700 bg-gray-400 flex justify-center items-center px-4 py-2">
             <a class="h-32 w-32" href="">
-                <img src="public/ProductIMGHighRes/580b57fbd9996e24bc43bf55.png"/>
+                <img src="public/ProductIMGHighRes/580b57fbd9996e24bc43bf55.png" />
             </a>
             <p>Product 1</p>
         </div>
         <div class="text-gray-700 bg-gray-400 flex justify-center items-center px-4 py-2">
             <a class="h-32 w-32" href="">
-                <img src="public/ProductIMGHighRes/580b57fbd9996e24bc43bf55.png"/>
+                <img src="public/ProductIMGHighRes/580b57fbd9996e24bc43bf55.png" />
             </a>
             <p>Product 2</p>
         </div>
         <div class="text-gray-700 bg-gray-400 flex justify-center items-center px-4 py-2">
             <a class="h-32 w-32" href="">
-                <img src="public/ProductIMGHighRes/580b57fbd9996e24bc43bf55.png"/>
+                <img src="public/ProductIMGHighRes/580b57fbd9996e24bc43bf55.png" />
             </a>
             <p>Product 3</p>
         </div>
         <div class="text-gray-700 bg-gray-400 flex justify-center items-center px-4 py-2">
             <a class="h-32 w-32" href="">
-                <img src="public/ProductIMGHighRes/580b57fbd9996e24bc43bf55.png"/>
+                <img src="public/ProductIMGHighRes/580b57fbd9996e24bc43bf55.png" />
             </a>
             <p>Product 4</p>
         </div>
         <div class="text-gray-700 bg-gray-400 flex justify-center items-center px-4 py-2">
             <a class="h-32 w-32" href="">
-                <img src="public/ProductIMGHighRes/580b57fbd9996e24bc43bf55.png"/>
+                <img src="public/ProductIMGHighRes/580b57fbd9996e24bc43bf55.png" />
             </a>
             <p>Product 5</p>
         </div>
@@ -38,19 +38,19 @@
     <div class="flex justify-between bg-gray-200">
         <div class="text-gray-700 bg-gray-400 flex justify-center items-center px-4 py-2">
             <a class="h-64 w-64" href="">
-                <img src="public/ProductIMGHighRes/hoodie.png"/>
+                <img src="public/ProductIMGHighRes/hoodie.png" />
             </a>
             <p>Product 1</p>
         </div>
         <div class="text-gray-700 bg-gray-400 flex justify-center items-center px-4 py-2">
             <a class="h-64 w-64" href="">
-                <img src="public/ProductIMGHighRes/hoodie.png"/>
+                <img src="public/ProductIMGHighRes/hoodie.png" />
             </a>
             <p>Product 2</p>
         </div>
         <div class="text-gray-700 bg-gray-400 flex justify-center items-center px-4 py-2">
             <a class="h-64 w-64" href="">
-                <img src="public/ProductIMGHighRes/hoodie.png"/>
+                <img src="public/ProductIMGHighRes/hoodie.png" />
             </a>
             <p>Product 3</p>
         </div>
@@ -61,35 +61,54 @@
     <div class="flex justify-between bg-gray-200">
         <div class="text-gray-700 bg-gray-400 flex justify-center items-center px-4 py-2">
             <a class="h-32 w-32" href="">
-                <img src="public/ProductIMGHighRes/mug.png"/>
+                <img src="public/ProductIMGHighRes/mug.png" />
             </a>
             <p>Product 1</p>
         </div>
         <div class="text-gray-700 bg-gray-400 flex justify-center items-center px-4 py-2">
             <a class="h-32 w-32" href="">
-                <img src="public/ProductIMGHighRes/mug.png"/>
+                <img src="public/ProductIMGHighRes/mug.png" />
             </a>
             <p>Product 2</p>
         </div>
         <div class="text-gray-700 bg-gray-400 flex justify-center items-center px-4 py-2">
             <a class="h-32 w-32" href="">
-                <img src="public/ProductIMGHighRes/mug.png"/>
+                <img src="public/ProductIMGHighRes/mug.png" />
             </a>
             <p>Product 3</p>
         </div>
         <div class="text-gray-700 bg-gray-400 flex justify-center items-center px-4 py-2">
             <a class="h-32 w-32" href="">
-                <img src="public/ProductIMGHighRes/mug.png"/>
+                <img src="public/ProductIMGHighRes/mug.png" />
             </a>
             <p>Product 4</p>
         </div>
         <div class="text-gray-700 bg-gray-400 flex justify-center items-center px-4 py-2">
             <a class="h-32 w-32" href="">
-                <img src="public/ProductIMGHighRes/mug.png"/>
+                <img src="public/ProductIMGHighRes/mug.png" />
             </a>
             <p>Product 5</p>
         </div>
     </div>
 
 
+    <h1>index</h1>
+
+    <?php
+
+    // $handle = $Connection->prepare('SELECT * FROM stockitems');
+
+    // $handle->bindValue(1, 100);
+    // $handle->bindValue(2, 'Bilbo Baggins');
+    // $handle->bindValue(3, 5);
+
+    // $handle->execute();
+
+    // $result = $handle->fetchAll(PDO::FETCH_OBJ);
+
+    // foreach ($result as $row) {
+    //     print_r($row->StockItemName);
+    // }
+
+    ?>
 </section>
