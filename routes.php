@@ -38,7 +38,7 @@ Route::get('cart', function () {
     cart();
 });
 
-Route::get('cookie', function () {
+Route::put('cookie', function () {
     return cookie_clicked();
 });
 

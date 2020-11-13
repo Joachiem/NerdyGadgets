@@ -19,7 +19,7 @@
             </a>
 
             <a href="/cart">
-                <div class="flex p-2 text-gray-200 rounded bg-gray-900 card">
+                <div class="flex p-2 text-gray-200 rounded bg-gray-900 card" style="height: 44px; width: 44px;">
                     <ion-icon name="cart-outline" size="20px"></ion-icon>
                 </div>
             </a>
