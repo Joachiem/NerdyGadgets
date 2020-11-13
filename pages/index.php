@@ -1,4 +1,4 @@
-<section class="container">
+<section class="container pb-8">
 
     <div class="grid-container bg-gray-500">
         <div class="Grid-2">
@@ -14,7 +14,8 @@
                 <img src="public/ProductIMGHighRes/hoodie.png"/>
             </a>
         </div>
-    </div><br>
+    </div>
+    <br>
 
     <p>Aangeraden producten</p>
     <div class="flex justify-between bg-gray-200">
@@ -107,24 +108,30 @@
             <p>Product 5</p>
         </div>
     </div>
-<style>
-    .grid-container {
-        display: grid;
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr;
-        gap: 0px 0px;
-        grid-template-areas:
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            gap: 0px 0px;
+            grid-template-areas:
     "Grid-1 Grid-1 Grid-1 Grid-2 Grid-2"
     "Grid-1 Grid-1 Grid-1 Grid-2 Grid-2"
     "Grid-1 Grid-1 Grid-1 Grid-3 Grid-3";
-    }
+        }
 
-    .Grid-1 { grid-area: Grid-1; }
+        .Grid-1 {
+            grid-area: Grid-1;
+        }
 
-    .Grid-2 { grid-area: Grid-2; }
+        .Grid-2 {
+            grid-area: Grid-2;
+        }
 
-    .Grid-3 { grid-area: Grid-3; }
+        .Grid-3 {
+            grid-area: Grid-3;
+        }
 
-</style>
+    </style>
 
 </section>
