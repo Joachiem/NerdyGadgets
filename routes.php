@@ -45,16 +45,3 @@ Route::put('cookie', function () {
 Route::error('404', function () {
     View::show('error/404');
 });
-
-
-// Route::post('test', function () {
-//     View::show('index');
-// });
-
-// Route::patch('test', function () {
-//     View::show('index');
-// });
-
-// Route::delete('test', function () {
-//     View::show('index');
-// });

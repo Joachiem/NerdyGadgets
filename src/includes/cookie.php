@@ -13,16 +13,16 @@
 </div>
 
 <script>
-    let cookieAlert = document.querySelector('#cookie-alert')
-    let cookieAlertBtn = document.querySelector('#cookie-alert-btn')
+    (() => {
+        const cookieAlert = document.querySelector('#cookie-alert')
+        const cookieAlertBtn = document.querySelector('#cookie-alert-btn')
 
-    cookieAlertBtn.addEventListener("click", removeCookieAlert);
+        cookieAlertBtn.addEventListener("click", () => {
+            cookieAlert.classList.add('opacity-0')
 
-    function removeCookieAlert() {
-        cookieAlert.classList.add('opacity-0');
-
-        let x = new XMLHttpRequest();
-        x.open("put", "/cookie");
-        x.send(null);
-    }
+            let request = new XMLHttpRequest()
+            request.open('PUT', '/cookie')
+            request.send()
+        })
+    })()
 </script>
