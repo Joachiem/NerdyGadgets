@@ -1,4 +1,22 @@
-<section class="container">
+<section class="container pb-8">
+
+    <div class="grid-container bg-gray-500">
+        <div class="Grid-2">
+            <a href="">
+                <img src="public/ProductIMGHighRes/mug.png"/>
+            </a>
+        </div>
+        <div class="Grid-3 bg-gray-600">
+            <p>Prijs: €3,99</p>
+        </div>
+        <div class="Grid-1 bg-gray-400">
+            <a href="">
+                <img src="public/ProductIMGHighRes/hoodie.png"/>
+            </a>
+        </div>
+    </div>
+    <br>
+
     <p>Aangeraden producten</p>
     <div class="flex justify-between bg-gray-200">
         <div class="text-gray-700 bg-gray-400 flex justify-center items-center px-4 py-2">
@@ -90,7 +108,31 @@
             <p>Product 5</p>
         </div>
     </div>
+    <style>
+        .grid-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            gap: 0px 0px;
+            grid-template-areas:
+    "Grid-1 Grid-1 Grid-1 Grid-2 Grid-2"
+    "Grid-1 Grid-1 Grid-1 Grid-2 Grid-2"
+    "Grid-1 Grid-1 Grid-1 Grid-3 Grid-3";
+        }
 
+        .Grid-1 {
+            grid-area: Grid-1;
+        }
+
+        .Grid-2 {
+            grid-area: Grid-2;
+        }
+
+        .Grid-3 {
+            grid-area: Grid-3;
+        }
+
+    </style>
 
     <h1>index</h1>
 
