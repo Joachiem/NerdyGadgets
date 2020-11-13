@@ -10,67 +10,71 @@ class Route
      * GET - READ
      * get route for reading records or showing page
      * @param string $route
-     * @param mixed $function
+     * @param mixed $callback
      */
-    public static function get($route, $function)
+    public static function get($route, $callback)
     {
-        self::call($route, $function, 'GET');
+        // $routeArray = explode('/', $route);
+        // print_r($routeArray);
+        // return $callback($_GET['url']);
+
+        self::call($route, $callback, 'GET');
     }
 
     /**
      * POST - CREATE
      * post route for creating records
      * @param string $route
-     * @param mixed $function
+     * @param mixed $callback
      */
-    public static function post($route, $function)
+    public static function post($route, $callback)
     {
-        self::call($route, $function, 'POST');
+        self::call($route, $callback, 'POST');
     }
 
     /**
      * PUT - UPDATE
      * put route for updating records
      * @param string $route
-     * @param mixed $function
+     * @param mixed $callback
      */
-    public static function put($route, $function)
+    public static function put($route, $callback)
     {
-        self::call($route, $function, 'PUT');
+        self::call($route, $callback, 'PUT');
     }
 
     /**
      * PATCH - UPDATE
      * patch route for updating records
      * @param string $route
-     * @param mixed $function
+     * @param mixed $callback
      */
-    public static function patch($route, $function)
+    public static function patch($route, $callback)
     {
-        self::call($route, $function, 'PATCH');
+        self::call($route, $callback, 'PATCH');
     }
 
     /**
      * DELETE - DELETE
      * delete route for deleting records
      * @param string $route
-     * @param mixed $function
+     * @param mixed $callback
      */
-    public static function delete($route, $function)
+    public static function delete($route, $callback)
     {
-        self::call($route, $function, 'DELETE');
+        self::call($route, $callback, 'DELETE');
     }
 
     /**
      * show error page on a 404
      * @param string $error
-     * @param mixed $function
-     * @return mixed $function()
+     * @param mixed $callback
+     * @return mixed $callback()
      */
-    public static function error($error, $function)
+    public static function error($error, $callback)
     {
         if (!in_array($_GET['url'], self::$validRoutes)) {
-            return $function();
+            return $callback();
         }
     }
 
@@ -109,21 +113,21 @@ class Route
             self::change_url($url);
         }
 
-        return $url;
+        return '/' . $url;
     }
 
     /**
      * check the route and the current page
-     * if true return the given function
+     * if true return the given callback
      * @param string $route
-     * @param mixed $function
+     * @param mixed $callback
      * @param string $type
-     * @return mixed $function()
+     * @return mixed $callback()
      */
-    private static function call($route, $function, $type)
+    private static function call($route, $callback, $type)
     {
         self::$validRoutes[] = $route;
         $url = self::check_url($_GET['url']);
-        if ($_SERVER['REQUEST_METHOD'] === $type && $url === $route) return $function();
+        if ($_SERVER['REQUEST_METHOD'] === $type && $url === $route) return $callback();
     }
 }

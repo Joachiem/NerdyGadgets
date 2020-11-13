@@ -2,7 +2,7 @@
 
     <div class="my-4">
         <h4 class="text-2xl my-2">Gegevens invullen</h4>
-        <div class="flex flex-col bg-gray-300 rounded shadow-lg p-4">
+        <div class="flex flex-col bg-white shadow-md rounded  p-4">
             <label for="name">Naam</label>
             <div class="grid grid-cols-12 gap-4">
                 <input id="name" type="text" placeholder="Voornaam" class="px-4 py-2 rounded border col-span-3">

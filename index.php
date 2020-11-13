@@ -2,8 +2,7 @@
 
 require_once "routes.php";
 
-function __autoload($class_name)
+function __autoload($class)
 {
-    require_once 'src/classes/' . $class_name . '.php';
+    require_once 'src/classes/' . $class . '.php';
 }
-?>
