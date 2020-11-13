@@ -17,7 +17,7 @@
     </div>
 
     <div class="flex justify-center py-2 h-16">
-        <img src="https://www.ideal.nl/img/logo/ideal-logo.svg"/>
+        <img src="https://www.ideal.nl/img/logo/ideal-logo.svg" />
     </div>
 
     <div class="text-center py-1">
