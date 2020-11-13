@@ -153,17 +153,23 @@ if ($R) {
                                 ?>
                             </td>
                         </tr>
+
                     <?php } ?>
-                </table><?php
-                    } else { ?>
+
+                </table>
+
+            <?php } else { ?>
 
                 <p><?php print $Result['CustomFields']; ?>.</p>
-            <?php
-                    }
-            ?>
+
+            <?php } ?>
+
         </div>
-    <?php
-    } else {
-    ?><h2 id="ProductNotFound">Het opgevraagde product is niet gevonden.</h2><?php
-                                                                            } ?>
+
+    <?php } else { ?>
+
+        <h2 id="ProductNotFound">Het opgevraagde product is niet gevonden.</h2>
+
+    <?php } ?>
+
 </div>

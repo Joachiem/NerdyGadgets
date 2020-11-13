@@ -1,6 +1,5 @@
 <?php
-$Query = "
-            SELECT StockGroupID, StockGroupName, ImagePath
+$Query = "SELECT StockGroupID, StockGroupName, ImagePath
             FROM stockgroups 
             WHERE StockGroupID IN (
                                     SELECT StockGroupID 
@@ -17,17 +16,15 @@ $StockGroups = mysqli_fetch_all($Result, MYSQLI_ASSOC);
     <?php if (isset($StockGroups)) {
         $i = 0;
         foreach ($StockGroups as $StockGroup) {
-            if ($i < 6) {
-                ?>
+            if ($i < 6) { ?>
+
                 <a href="<?php print "browse.php?category_id=";
-                print $StockGroup["StockGroupID"]; ?>">
-                    <div id="StockGroup<?php print $i + 1; ?>"
-                         style="background-image: url('public/StockGroupIMG/<?php print $StockGroup["ImagePath"]; ?>')"
-                         class="StockGroups">
+                            print $StockGroup["StockGroupID"]; ?>">
+                    <div id="StockGroup<?php print $i + 1; ?>" style="background-image: url('public/StockGroupIMG/<?php print $StockGroup["ImagePath"]; ?>')" class="StockGroups">
                         <h1><?php print $StockGroup["StockGroupName"]; ?></h1>
                     </div>
                 </a>
-                <?php
+    <?php
             }
             $i++;
         }

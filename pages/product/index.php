@@ -123,8 +123,7 @@ if ($CategoryID === "") {
     $ReturnableResult = mysqli_stmt_get_result($Statement);
     $ReturnableResult = mysqli_fetch_all($ReturnableResult, MYSQLI_ASSOC);
 
-    $Query = "
-                SELECT count(*)
+    $Query = "SELECT count(*)
                 FROM stockitems SI 
                 WHERE " . $queryBuildResult . " ? IN (SELECT SS.StockGroupID from stockitemstockgroups SS WHERE SS.StockItemID = SI.StockItemID)";
     $Statement = mysqli_prepare($Connection, $Query);
@@ -140,21 +139,7 @@ if (isset($amount)) {
 ?>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- start html -->
+<!-- start html moet gesplitst worden -->
 
 <div>
     <form>
@@ -230,19 +215,14 @@ if (isset($amount)) {
 
                     <div id="StockItemFrameRight">
                         <div class="CenterPriceLeftChild">
-                            <h1 class="StockItemPriceText"><?php print sprintf("€ %0.2f", $row["SellPrice"]); ?>
-                            </h1>
+                            <h1 class="StockItemPriceText"><?php print sprintf("€ %0.2f", $row["SellPrice"]); ?></h1>
                             <h6>Inclusief BTW </h6>
                         </div>
                     </div>
-                    <h1 class="StockItemID">Artikelnummer: <?php print $row["StockItemID"]; ?>
-                    </h1>
-                    <p class="StockItemName"><?php print $row["StockItemName"]; ?>
-                    </p>
-                    <p class="StockItemComments"><?php print $row["MarketingComments"]; ?>
-                    </p>
-                    <h4 class="ItemQuantity"><?php print $row["QuantityOnHand"]; ?>
-                    </h4>
+                    <h1 class="StockItemID">Artikelnummer: <?php print $row["StockItemID"]; ?></h1>
+                    <p class="StockItemName"><?php print $row["StockItemName"]; ?></p>
+                    <p class="StockItemComments"><?php print $row["MarketingComments"]; ?></p>
+                    <h4 class="ItemQuantity"><?php print $row["QuantityOnHand"]; ?></h4>
                 </div>
             </a>
 
