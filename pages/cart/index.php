@@ -1,5 +1,5 @@
 <?php
 
-foreach ($parameter as $key => $value) {
+foreach ($args as $key => $value) {
     print $value . "<br>";
 }

@@ -4,8 +4,9 @@ class View
 {
     public static function show($file)
     {
-        if (func_get_arg(1)) {
-            $parameter = func_get_arg(1);
+        $args = func_get_args();
+        if (isset($args[1])) {
+            $args = $args[1];
         }
 
 
