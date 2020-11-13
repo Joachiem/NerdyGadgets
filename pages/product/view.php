@@ -1,11 +1,13 @@
-<html lang="en"><head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Product</title>
+<html lang="en">
 
-    </head>
-    <?php
-        $Query = " 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product</title>
+
+</head>
+<?php
+$Query = " 
         SELECT SI.StockItemID, 
         (RecommendedRetailPrice*(1+(TaxRate/100))) AS SellPrice, 
         StockItemName,
@@ -20,53 +22,28 @@
         WHERE SI.stockitemid = ?
         GROUP BY StockItemID";
 
-    $ShowStockLevel = 1000;
-    $Statement = mysqli_prepare($Connection, $Query);
-    mysqli_stmt_bind_param($Statement, "i", $_GET['id']);
-    mysqli_stmt_execute($Statement);
-    $ReturnableResult = mysqli_stmt_get_result($Statement);
-    if ($ReturnableResult && mysqli_num_rows($ReturnableResult) == 1) {
+$ShowStockLevel = 1000;
+$Statement = mysqli_prepare($Connection, $Query);
+mysqli_stmt_bind_param($Statement, "i", $_GET['id']);
+mysqli_stmt_execute($Statement);
+$ReturnableResult = mysqli_stmt_get_result($Statement);
+if ($ReturnableResult && mysqli_num_rows($ReturnableResult) == 1) {
     $Result = mysqli_fetch_all($ReturnableResult, MYSQLI_ASSOC)[0];
-    } else {
+} else {
     $Result = null;
-    }
-    //Get Images
-    $Query = "
+}
+//Get Images
+$Query = "
             SELECT ImagePath
             FROM stockitemimages 
             WHERE StockItemID = ?";
 
-    $Statement = mysqli_prepare($Connection, $Query);
-    mysqli_stmt_bind_param($Statement, "i", $_GET['id']);
-    mysqli_stmt_execute($Statement);
-    $R = mysqli_stmt_get_result($Statement);
-    $R = mysqli_fetch_all($R, MYSQLI_ASSOC);
+$Statement = mysqli_prepare($Connection, $Query);
+mysqli_stmt_bind_param($Statement, "i", $_GET['id']);
+mysqli_stmt_execute($Statement);
+$R = mysqli_stmt_get_result($Statement);
+$R = mysqli_fetch_all($R, MYSQLI_ASSOC);
 
-<<<<<<< HEAD:pages/view.php
-    if ($R) {
-        $Images = $R;
-    }
-    ?>
-
-
-    <body>
-        <div class="container">
-            <div class="prodname">
-                <h1><?php print $Result['StockItemName']; ?></h1>
-            </div>
-            <div class="prodprev">
-                <div class="slideshow-container">
-                <?php for ($i = 0; $i < count($Images); $i++) {
-                ?>
-                    <div class="mySlides fade" style="display: block;">
-                    <img src="Public/StockItemIMG/<?php print $Images[$i]['ImagePath'] ?>">
-                    </div>
-                <?php } ?>
-                
-                <?php if (count($Images) >= 2) { ?>
-                <a class="prev" onclick="plusSlides(-1)">❮</a>
-                <a class="next" onclick="plusSlides(1)">❯</a>
-=======
 if ($R) {
     $Images = $R;
 }
@@ -91,7 +68,7 @@ if ($R) {
                 // print Single
                 if (count($Images) == 1) {
             ?>
-                    <div id="ImageFrame" style="background-image: url('public/StockItemIMG/<?php print $Images[0]['ImagePath']; ?>'); background-size: 300px; background-repeat: no-repeat; background-position: center;"></div>
+                    <div id="ImageFrame" style="background-image: url('/public/StockItemIMG/<?php print $Images[0]['ImagePath']; ?>'); background-size: 300px; background-repeat: no-repeat; background-position: center;"></div>
                 <?php
                 } else if (count($Images) >= 2) { ?>
                     <div id="ImageFrame">
@@ -110,7 +87,7 @@ if ($R) {
                                 <?php for ($i = 0; $i < count($Images); $i++) {
                                 ?>
                                     <div class="carousel-item <?php print ($i == 0) ? 'active' : ''; ?>">
-                                        <img src="public/StockItemIMG/<?php print $Images[$i]['ImagePath'] ?>">
+                                        <img src="/public/StockItemIMG/<?php print $Images[$i]['ImagePath'] ?>">
                                     </div>
                                 <?php } ?>
                             </div>
@@ -128,107 +105,147 @@ if ($R) {
                 }
             } else {
                 ?>
-                <div id="ImageFrame" style="background-image: url('public/StockGroupIMG/<?php print $Result['BackupImagePath']; ?>'); background-size: cover;"></div>
+                <div id="ImageFrame" style="background-image: url('/public/StockGroupIMG/<?php print $Result['BackupImagePath']; ?>'); background-size: cover;"></div>
             <?php
             }
+
+
+            if ($R) {
+                $Images = $R;
+            }
             ?>
->>>>>>> 7ea68b12644cb3e3df7c35cc48aa4670c7fe38cd:pages/product/view.php
 
-                </div>
-                <br>
 
-                <div style="text-align:center">
-                <?php for ($i = 0; $i < count($Images); $i++) {
-                ?>
-                <span class="miniprev" onclick="currentSlide(<?php print($i + 1) ?>)"><img src="Public/StockItemIMG/<?php print $Images[$i]['ImagePath'] ?>"></span> 
-                <?php }} ?>
-                </div>
-            </div>
-            <div class="title">
-                <h2><?php print sprintf("€ %.2f", $Result['SellPrice']); ?></h2>
-                <ul>
-                    <li>verzending binnen 2 werkdagen</li>
-                    <li>verzending boven 20 euro gratis</li>
-                    <li>2 jaar garantie</li>
-                </ul>
-                <a href="winkelmandje.php"><div class="buybutton">In winkelmandje</div></a>
-            </div>
-            <div class="infobox">
-                <h2>Beschrijving</h2>
-                <p><?php print $Result['SearchDetails']; ?></p>
-            </div>
-            <div class="infobox">
-                <h2>Specificaties</h2>
-                <?php
-            $CustomFields = json_decode($Result['CustomFields'], true);
-            if (is_array($CustomFields)) { ?>
-                <table>
-                    <thead>
-                        <th>Naam</th>
-                        <th>Data</th>
-                    </thead>
-                    <?php
-                    foreach ($CustomFields as $SpecName => $SpecText) { ?>
-                        <tr>
-                            <td>
-                                <?php print $SpecName; ?>
-                            </td>
-                            <td>
+            <body>
+                <div class="container">
+                    <div class="prodname">
+                        <h1><?php print $Result['StockItemName']; ?></h1>
+                    </div>
+                    <div class="prodprev">
+                        <div class="slideshow-container">
+                            <?php for ($i = 0; $i < count($Images); $i++) {
+                            ?>
+                                <div class="mySlides fade" style="display: block;">
+                                    <img src="/public/StockItemIMG/<?php print $Images[$i]['ImagePath'] ?>">
+                                </div>
+                            <?php } ?>
+
+                            <?php if (count($Images) >= 2) { ?>
+                                <a class="prev" onclick="plusSlides(-1)">❮</a>
+                                <a class="next" onclick="plusSlides(1)">❯</a>
+
+                        </div>
+                        <br>
+
+                        <div style="text-align:center">
+                            <?php for ($i = 0; $i < count($Images); $i++) {
+                            ?>
+                                <span class="miniprev" onclick="currentSlide(<?php print($i + 1) ?>)"><img src="/public/StockItemIMG/<?php print $Images[$i]['ImagePath'] ?>"></span>
+                        <?php }
+                            } ?>
+                        </div>
+                    </div>
+                    <div class="title">
+                        <h2><?php print sprintf("€ %.2f", $Result['SellPrice']); ?></h2>
+                        <ul>
+                            <li>verzending binnen 2 werkdagen</li>
+                            <li>verzending boven 20 euro gratis</li>
+                            <li>2 jaar garantie</li>
+                        </ul>
+                        <a href="winkelmandje.php">
+                            <div class="buybutton">In winkelmandje</div>
+                        </a>
+                    </div>
+                    <div class="infobox">
+                        <h2>Beschrijving</h2>
+                        <p><?php print $Result['SearchDetails']; ?></p>
+                    </div>
+                    <div class="infobox">
+                        <h2>Specificaties</h2>
+                        <?php
+                        $CustomFields = json_decode($Result['CustomFields'], true);
+                        if (is_array($CustomFields)) { ?>
+                            <table>
+                                <thead>
+                                    <th>Naam</th>
+                                    <th>Data</th>
+                                </thead>
                                 <?php
-                                if (is_array($SpecText)) {
-                                    foreach ($SpecText as $SubText) {
-                                        print $SubText . " ";
-                                    }
-                                } else {
-                                    print $SpecText;
-                                }
-                                ?>
-                            </td>
-                        </tr>
+                                foreach ($CustomFields as $SpecName => $SpecText) { ?>
+                                    <tr>
+                                        <td>
+                                            <?php print $SpecName; ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                            if (is_array($SpecText)) {
+                                                foreach ($SpecText as $SubText) {
+                                                    print $SubText . " ";
+                                                }
+                                            } else {
+                                                print $SpecText;
+                                            }
+                                            ?>
+                                        </td>
+                                    </tr>
 
-                    <?php } ?>
+                                <?php } ?>
 
-                </table>
+                            </table>
 
-            <?php } else { ?>
+                        <?php } else { ?>
 
-                <p><?php print $Result['CustomFields']; ?>.</p>
-                <?php
-            }
-            ?>
-            </div>
+                            <p><?php print $Result['CustomFields']; ?>.</p>
+
+                        <?php } ?>
+
+                    </div>
+
+                <?php } else { ?>
+
+                    <h2 id="ProductNotFound">Het opgevraagde product is niet gevonden.</h2>
+
+                <?php } ?>
+
+                </div>
+
         </div>
+</div>
 
 
-        <script>
-            var slideIndex = 1;
-            showSlides(slideIndex);
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
 
-            function plusSlides(n) {
-            showSlides(slideIndex += n);
-            }
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
 
-            function currentSlide(n) {
-            showSlides(slideIndex = n);
-            }
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
 
-            function showSlides(n) {
-            var i;
-            var slides = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("dot");
-            if (n > slides.length) {slideIndex = 1}    
-            if (n < 1) {slideIndex = slides.length}
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";  
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex-1].style.display = "block";  
-            dots[slideIndex-1].className += " active";
-            }
-        </script>
-    
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("dot");
+        if (n > slides.length) {
+            slideIndex = 1
+        }
+        if (n < 1) {
+            slideIndex = slides.length
+        }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+    }
+</script>
+
 </body>
+
 </html>
-        <?php } ?>
