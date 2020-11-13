@@ -73,7 +73,8 @@ class Route
      */
     public static function error($error, $callback)
     {
-        if (!in_array($_GET['url'], self::$validRoutes)) {
+        // print $_GET['url'];
+        if (!in_array(self::add_slash_url($_GET['url']), self::$validRoutes)) {
             return $callback();
         }
     }
@@ -85,18 +86,8 @@ class Route
      */
     public static function redirect($from, $to)
     {
-        if ($_GET['url'] === $from) {
+        if (self::add_slash_url($_GET['url']) === $from) {
             self::change_url($to);
-        }
-    }
-
-    /**
-     * goes one page back
-     */
-    public static function back()
-    {
-        if (isset($_SERVER["HTTP_REFERER"])) {
-            header("Location: " . $_SERVER["HTTP_REFERER"]);
         }
     }
 
@@ -106,7 +97,7 @@ class Route
      */
     private static function change_url($url)
     {
-        header("Location: http://" . $_SERVER['HTTP_HOST'] . "/" . $url);
+        header('Location: http://' . $_SERVER['HTTP_HOST'] . '' . $url);
         die();
     }
 
@@ -120,9 +111,18 @@ class Route
     {
         if (substr($url, -1) === '/') {
             $url = substr($url, 0, -1);
-            self::change_url($url);
+            self::change_url(self::add_slash_url($url));
         }
 
+        return self::add_slash_url($url);
+    }
+
+    /**
+     * get the url of the page
+     * @return string $url
+     */
+    private static function add_slash_url($url)
+    {
         return '/' . $url;
     }
 
