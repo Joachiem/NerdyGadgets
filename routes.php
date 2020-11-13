@@ -12,6 +12,16 @@ Route::get('', function () {
     View::show('index');
 });
 
+Route::get('dutch', function () {
+    Lang::set_lang('nl');
+    Route::back();
+});
+
+Route::get('english', function () {
+    Lang::set_lang('eng');
+    Route::back();
+});
+
 Route::get('products', function () {
     View::show('product/index');
 });

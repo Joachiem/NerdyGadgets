@@ -87,6 +87,16 @@ class Route
     }
 
     /**
+     * goes one page back
+     */
+    public static function back()
+    {
+        if (isset($_SERVER["HTTP_REFERER"])) {
+            header("Location: " . $_SERVER["HTTP_REFERER"]);
+        }
+    }
+
+    /**
      * change the url of the page
      * @param string $url
      */
