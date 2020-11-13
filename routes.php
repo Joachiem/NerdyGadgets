@@ -3,10 +3,10 @@
 * dit zijn de routes van NerdyGadgets
 * de get routes zijn voor pagina's
 */
+include 'src/functions/cart.php';
+include 'src/functions/core.php';
 
 Route::redirect('/checkout', '/checkout/account');
-
-// Route::get('/', View::show('index'));
 
 Route::get('/', function () {
     View::show('index');
@@ -39,7 +39,7 @@ Route::get('/checkout/pay', function () {
 });
 
 Route::get('/cart', function () {
-    cart();
+    View::show('cart/index');
 });
 
 Route::put('/cookie', function () {

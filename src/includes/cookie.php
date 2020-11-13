@@ -5,9 +5,10 @@
                 <p class="font-bold">We use functional cookies</p>
                 <p class="text-sm">Learn more about privacy on our privacy page</p>
             </div>
-            <button id="cookie-alert-btn" class="w-11 h-11 ml-4 flex justify-between items-center bg-transparent focus:outline-none hover:bg-teal-500 text-teal-700 hover:text-white p-2 border border-teal-500 hover:border-transparent rounded rounded-full">
+            <button id="cookie-alert-btn" class="self-center w-10 h-10 ml-4 mr-1 flex justify-between items-center bg-transparent focus:outline-none hover:bg-teal-500 text-teal-700 hover:text-white p-2 border border-teal-500 hover:border-transparent rounded rounded-full">
                 <ion-icon size="" name="close-outline"></ion-icon>
             </button>
+
         </div>
     </div>
 </div>
