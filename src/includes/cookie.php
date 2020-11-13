@@ -1,4 +1,4 @@
-<div class="select-none right-0 bottom-0 fixed m-8">
+<div id="cookie-alert" class="<?php isset($_COOKIE['cookie']) ? print 'opacity-0' : print 'opacity-1' ?> transition ease-in-out duration-500 select-none right-0 bottom-0 fixed m-8">
     <div class="bg-white border-t-4 border-teal-500 rounded text-teal-darkest px-4 py-3 shadow-lg" role="alert">
         <div class="flex justify-between">
             <div class="mr-4">
@@ -11,3 +11,17 @@
         </div>
     </div>
 </div>
+
+<script>
+    let cookieAlert = document.querySelector('#cookie-alert')
+
+    cookieAlert.addEventListener("click", removeCookieAlert);
+
+    function removeCookieAlert() {
+        cookieAlert.classList.add('opacity-0');
+
+        let x = new XMLHttpRequest();
+        x.open("get", "/cookie");
+        x.send(null);
+    }
+</script>

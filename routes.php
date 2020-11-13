@@ -4,6 +4,7 @@
 * de get routes zijn voor pagina's
 */
 include 'src/functions/cart.php';
+include 'src/functions/core.php';
 
 Route::redirect('checkout', 'checkout/account');
 
@@ -35,6 +36,10 @@ Route::get('checkout/pay', function () {
 
 Route::get('cart', function () {
     cart();
+});
+
+Route::get('cookie', function () {
+    return cookie_clicked();
 });
 
 Route::error('404', function () {
