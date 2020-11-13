@@ -12,7 +12,7 @@ class View
         include "partials/header.php";
 
         print '<body>';
-        print '<div class="min-h-screen relative pb-56">';
+        print '<div class="min-h-screen relative pb-56 bg-gray-200">';
 
         include "partials/navbar.php";
 
