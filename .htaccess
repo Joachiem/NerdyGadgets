@@ -7,4 +7,4 @@ deny from all
 
 RewriteRule ^(public)($|/) - [L]
 
-RewriteRule ^(.*) index.php?q=$1 [QSA]
+RewriteRule ^(.*) index.php?url=$1 [QSA]

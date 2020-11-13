@@ -14,13 +14,13 @@ include __DIR__ . "/partials/header.php";
 
 <body>
     <?php
-    $query = $_GET['q'];
+    $query = $_GET['url'];
 
 
     include __DIR__ . "/partials/navbar.php";
 
     ?>
-    
+
     <div class="pt-32 container mx-auto">
         <?php
 

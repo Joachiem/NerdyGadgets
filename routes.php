@@ -1,7 +1,7 @@
 <?php
 
 Route::get('test', function () {
-    View::show('browse');
+    View::show('view');
 });
 
 Route::post('test', function () {

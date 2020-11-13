@@ -35,6 +35,6 @@ class Route
 
     private static function call($route, $function, $type)
     {
-        if ($_SERVER['REQUEST_METHOD'] === $type && $_GET['q'] === $route) return $function();
+        if ($_SERVER['REQUEST_METHOD'] === $type && $_GET['url'] === $route) return $function();
     }
 }
