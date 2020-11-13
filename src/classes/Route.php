@@ -127,6 +127,16 @@ class Route
     }
 
     /**
+     * go one page back
+     */
+    public static function back()
+    {
+        if (isset($_SERVER["HTTP_REFERER"])) {
+            header("Location: " . $_SERVER["HTTP_REFERER"]);
+        }
+    }
+
+    /**
      * check the route and the current page
      * if true return the given callback
      * @param string $route

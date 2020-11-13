@@ -3,13 +3,22 @@
 * dit zijn de routes van NerdyGadgets
 * de get routes zijn voor pagina's
 */
+
 include 'src/functions/cart.php';
 include 'src/functions/core.php';
 
-Route::redirect('/checkout', '/checkout/account');
+Route::redirect('checkout', 'checkout/account');
 
 Route::get('/', function () {
     View::show('index');
+});
+
+Route::get('/dutch', function () {
+    Route::back();
+});
+
+Route::get('/english', function () {
+    Route::back();
 });
 
 Route::get('/products', function () {
