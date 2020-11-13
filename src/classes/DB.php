@@ -11,7 +11,6 @@ class DB
      * Construcs mysql connection
      * @return mixed
      */
-
     public function __construct()
     {
         $this->connection = new mysqli($this->servername, $this->username, $this->password, $this->dbname);
