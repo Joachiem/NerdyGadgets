@@ -28,9 +28,9 @@
         </p>
     </div>
 
-    <div class="text-center py-1">
-        <p>© 2020 - 2021 NerdyGadgets.nl</p>
-    </div>
+    <p class="py-1 text-center text-gray-500 text-xs">
+        &copy;2020 - 2021 NerdyGadgets.nl
+    </p>
 
 </div>
 

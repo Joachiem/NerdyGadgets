@@ -1,11 +1,12 @@
 <?php
 class DB
 {
-    private $servername = '';
-    private $username = '';
-    private $password = '';
-    private $dbname = '';
-    private $connection;
+    private $host = 'localhost';
+    private $db = 'nerdygadgets';
+    private $user = 'root';
+    private $pass = '';
+    private $charset = 'utf8mb4';
+    private $conn;
 
     /**
      * Construcs mysql connection
@@ -13,10 +14,17 @@ class DB
      */
     public function __construct()
     {
-        $this->connection = new mysqli($this->servername, $this->username, $this->password, $this->dbname);
+        $dsn = "mysql:host=$this->host;dbname=$this->db;charset=$this->charset";
+        $options = [
+            PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+            PDO::ATTR_EMULATE_PREPARES   => false,
+        ];
 
-        if (mysqli_connect_error($this->connection)) {
-            die("Connection failed: " . mysqli_connect_error($this->connection));
+        try {
+            $this->conn = new PDO($dsn, $this->user, $this->pass, $options);
+        } catch (\PDOException $e) {
+            throw new \PDOException($e->getMessage(), (int)$e->getCode());
         }
     }
 
