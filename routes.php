@@ -4,7 +4,7 @@
 * de get routes zijn voor pagina's
 */
 
-Route::redirect('checkout', 'checkout/account');
+Route::redirect('/checkout', '/checkout/account');
 
 // Route::get('/', View::show('index'));
 
