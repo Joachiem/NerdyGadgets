@@ -1,9 +1,19 @@
 <nav class="flex flex-col fixed w-full">
     <div class="nav flex flex-row p-2 justify-between lg:grid grid-cols-3">
 
-        <a href="/" draggable="false">
+        <!-- <a href="/" draggable="false">
             <img class="logo" id="logo" draggable="false" src="/public/img/logo.svg" />
-        </a>
+        </a> -->
+
+        <div class="items-center flex flex-row justify-between">
+            <a href="/" draggable="false">
+                <img class="logo" id="logo" draggable="false" src="/public/img/logo.svg" />
+            </a>
+
+            <a href="/categories">
+                <div class="p-2 pr-4 text-gray-200">Categories</div>
+            </a>
+        </div>
 
         <div class="flex align-center bg-gray-100 rounded flex-grow lg:flex-grow-0 max-w-full mx-8 lg:mx-0">
             <input class="text-gray-800 border-transparent rounded p-2 px-3 min-w-full" type="text" placeholder="Zoeken!" id="zoek" type="text" name="zoek" value="">
