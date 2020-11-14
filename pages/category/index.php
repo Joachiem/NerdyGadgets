@@ -12,15 +12,11 @@ $Result = mysqli_stmt_get_result($Statement);
 $StockGroups = mysqli_fetch_all($Result, MYSQLI_ASSOC);
 ?>
 
-
-<!-- start html -->
 <div class="container my-12 mx-auto px-4 md:px-12">
     <div class="flex flex-wrap -mx-1 lg:-mx-4 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
 
-
         <?php if (isset($StockGroups)) { ?>
             <?php foreach ($StockGroups as $StockGroup) { ?>
-
 
                 <article class="overflow-hidden rounded-lg shadow-lg">
                     <a href="/products?category_id=<?php print $StockGroup["StockGroupID"]; ?>">
@@ -35,16 +31,12 @@ $StockGroups = mysqli_fetch_all($Result, MYSQLI_ASSOC);
                                 <?php print $StockGroup["StockGroupName"]; ?>
                             </a>
                         </h1>
-                        <!-- <p class="text-grey-darker text-sm">
-                                14/4/19
-                            </p> -->
+                        <!-- <p class="text-grey-darker text-sm"></p> -->
                     </header>
                 </article>
 
-
             <?php } ?>
         <?php } ?>
-
 
     </div>
 </div>
