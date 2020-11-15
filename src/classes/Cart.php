@@ -7,7 +7,7 @@ class Cart
      */
     public static function index()
     {
-        View::show('/cart')
+        View::show('/cart');
     }
 
     /**
@@ -15,10 +15,10 @@ class Cart
      * @param string $id
      */
     public static function add($id)
-    {   
+    {
         $_SESSION['cart'][$id] = 1;
     }
-     /**
+    /**
      * index page
      * @param mixed $callback
      */
@@ -27,7 +27,7 @@ class Cart
         $_SESSION['cart'][$id] += 1;
     }
 
-     /**
+    /**
      * index page
      * @param mixed $callback
      */
