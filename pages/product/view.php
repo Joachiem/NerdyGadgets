@@ -126,10 +126,10 @@ if ($arg != null) {
             slides[slideIndex - 1].style.display = "block";
             dots[slideIndex - 1].className += " active";
         }
-
-
+    </script>
+    <script>
         (() => {
-            const addToCartBtn = document.querySelector('#add-to-card-btn')
+            const addToCartBtn = document.querySelector('#add-to-cart-btn')
 
             addToCartBtn.addEventListener("click", () => {
                 let request = new XMLHttpRequest()
