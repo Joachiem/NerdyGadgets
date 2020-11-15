@@ -1,20 +1,17 @@
 <?php if ($arg) { ?>
 
 
-    <div class="grid auto-cols-min grid-flow-col grid-cols-2 gap-8">
+    <div class="grid auto-cols-min grid-flow-col grid-cols-2 gap-8 mb-8">
 
-        <!-- <div> -->
-        <div class="overflow-hidden rounded-lg shadow-lg object-cover">
+        <div class="overflow-hidden rounded-lg shadow-lg object-cover bg-white">
             <?php for ($i = 0; $i < count($arg['images']); $i++) { ?>
                 <img alt="Placeholder" class="h-full object-cover w-auto" src="/public/StockItemIMG/<?php print $arg['images'][$i]['ImagePath'] ?>">
             <?php } ?>
         </div>
 
 
-        <!-- </div> -->
 
-
-        <div class="overflow-hidden rounded-lg shadow-lg p-2 md:p-4">
+        <div class="overflow-hidden rounded-lg shadow-lg p-2 md:p-4 bg-white">
             <div class="flex items-center justify-between mb-6">
                 <h1 class="text-2xl"> <?php print $arg["StockItemName"]; ?> </h1>
             </div>
@@ -51,7 +48,7 @@
                             <th class="px-4 py-2">Data</th>
                         </tr>
                     </thead>
-                    <tbody class=" bg-white">
+                    <tbody>
                         <tr>
                             <td class="border px-4 py-2">Intro to CSS</td>
                             <td class="border px-4 py-2">Adam</td>
