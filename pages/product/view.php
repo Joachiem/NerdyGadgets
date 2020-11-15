@@ -38,7 +38,7 @@ if ($arg != null) {
                 <li>verzending boven 20 euro gratis</li>
                 <li>2 jaar garantie</li>
             </ul>
-            <button class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">In winkelmandje</button>
+            <button id="add-to-cart-btn" class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">In winkelmandje</button>
         </div>
         <div class="infobox">
             <h2>Beschrijving</h2>
