@@ -9,7 +9,3 @@ function __autoload($class)
 {
     require_once 'src/classes/' . $class . '.php';
 }
-
-
-
-// print_r(DB::execute($q['categories']));
