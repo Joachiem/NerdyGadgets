@@ -10,7 +10,6 @@ class View
             $arg = $args[1];
         }
 
-
         include "src/functions/connect.php";
 
         print '<!DOCTYPE html>';

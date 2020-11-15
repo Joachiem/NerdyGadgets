@@ -4,7 +4,6 @@
 * de get routes zijn voor pagina's
 */
 
-include 'src/functions/cart.php';
 include 'src/functions/core.php';
 
 
@@ -31,7 +30,7 @@ Route::get('/products/view', function () {
 });
 
 Route::get('/categories', function () {
-    View::show('category/index');
+    Category::index();
 });
 
 Route::get('/login', function () {
