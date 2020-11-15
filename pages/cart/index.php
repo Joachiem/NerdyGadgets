@@ -15,104 +15,52 @@
                     </tr>
                 </thead>
                 <tbody>
-                <?php foreach ($arg as $product_id => $qty) { 
+                    <?php foreach ($arg as $id => $product_obj) { ?>
 
-                try {
-                    $Connection = mysqli_connect("localhost", "root", "", "nerdygadgets");
-                    mysqli_set_charset($Connection, 'latin1');
-                    $DatabaseAvailable = true;
-                } catch (mysqli_sql_exception $e) {
-                    $DatabaseAvailable = false;
-                }
-                if (!$DatabaseAvailable) {
-                    print '<h2>Website wordt op dit moment onderhouden.</h2>';
-                    die();
-                }
-        
-                $Query = "SELECT SI.StockItemID,
-                (RecommendedRetailPrice*(1+(TaxRate/100))) AS SellPrice, 
-                StockItemName,
-                CONCAT('Voorraad: ',QuantityOnHand)AS QuantityOnHand,
-                SearchDetails, 
-                (CASE WHEN (RecommendedRetailPrice*(1+(TaxRate/100))) > 50 THEN 0 ELSE 6.95 END) AS SendCosts, MarketingComments, CustomFields, SI.Video,
-                (SELECT ImagePath FROM stockgroups JOIN stockitemstockgroups USING(StockGroupID) WHERE StockItemID = SI.StockItemID LIMIT 1) as BackupImagePath   
-                FROM stockitems SI 
-                JOIN stockitemholdings SIH USING(stockitemid)
-                JOIN stockitemstockgroups ON SI.StockItemID = stockitemstockgroups.StockItemID
-                JOIN stockgroups USING(StockGroupID)
-                WHERE SI.stockitemid = ?
-                GROUP BY StockItemID";
-        
-                $ShowStockLevel = 1000;
-                $Statement = mysqli_prepare($Connection, $Query);
-                mysqli_stmt_bind_param($Statement, "i", $product_id);
-                mysqli_stmt_execute($Statement);
-                $ReturnableResult = mysqli_stmt_get_result($Statement);
-                if ($ReturnableResult && mysqli_num_rows($ReturnableResult) == 1) {
-                    $Result = mysqli_fetch_all($ReturnableResult, MYSQLI_ASSOC)[0];
-                } else {
-                    $Result = null;
-                }
-        
-                //Get Images
-                $Query = "
-                    SELECT ImagePath
-                    FROM stockitemimages 
-                    WHERE StockItemID = ?";
-        
-                $Statement = mysqli_prepare($Connection, $Query);
-                mysqli_stmt_bind_param($Statement, "i", $product_id);
-                mysqli_stmt_execute($Statement);
-                $R = mysqli_stmt_get_result($Statement);
-                $R = mysqli_fetch_all($R, MYSQLI_ASSOC);
-       
-                if ($R) {
-                    $Images = $R;
-                }
-            
-                ?>
-                    
-                    <tr>
-                        <td class="hidden pb-4 md:table-cell">
-                            <a href="#">
-                                <img src="/public/StockItemIMG/<?php print $Images[0]['ImagePath']; ?>" class="w-20 rounded" alt="Thumbnail">
-                            </a>
-                        </td>
-                        <td>
-                            <a href="#">
-                                <p class="mb-2 md:ml-4"><?php print $Result['StockItemName']; ?></p>
-                                <form action="" method="POST">
-                                    <button type="submit" value="<?php print($product_id)?>" class="text-gray-700 md:ml-4">
-                                        <small>(Verwijder product)</small>
-                                    </button>
-                                </form>
-                            </a>
-                        </td>
-                        <td class="justify-center md:justify-end md:flex mt-6">
-                            <div class="w-32">
-                                <div class="flex justify-center flex-row h-10 w-full rounded-lg relative bg-transparent mt-1">
-                                    <button data-action="decrement" value="<?php print($product_id) ?>" id="decrement-btn" class="focus:outline-none bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none">
-                                        <span class="flex justify-center pb-1 m-auto text-2xl font-thin">−</span>
-                                    </button>
-                                    <input min="0" type="number" class="focus:outline-none z-10 select-none w-12 outline-none focus:outline-none text-center  bg-gray-300 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-gray-700  outline-none" name="custom-input-number" value="<?php print($qty) ?>"></input>
-                                    <button data-action="increment" value="<?php print($product_id) ?>" id="increment-btn" class="focus:outline-none bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer">
-                                        <span class="flex justify-center pb-1 m-auto text-2xl font-thin">+</span>
-                                    </button>
+                        <?php $Images = $product_obj['images'] ?>
+                        <?php $Result = $product_obj['product'] ?>
+
+                        <tr>
+                            <td class="hidden pb-4 md:table-cell">
+                                <a href="#">
+                                    <img src="/public/StockItemIMG/<?php print $Images[0]['ImagePath']; ?>" class="w-20 rounded" alt="Thumbnail">
+                                </a>
+                            </td>
+                            <td>
+                                <a href="#">
+                                    <p class="mb-2 md:ml-4"><?php print $Result['StockItemName']; ?></p>
+                                    <form action="" method="POST">
+                                        <button type="submit" value="<?php print($id) ?>" class="text-gray-700 md:ml-4">
+                                            <small>(Verwijder product)</small>
+                                        </button>
+                                    </form>
+                                </a>
+                            </td>
+                            <td class="justify-center md:justify-end md:flex mt-6">
+                                <div class="w-32">
+                                    <div class="flex justify-center flex-row h-10 w-full rounded-lg relative bg-transparent mt-1">
+                                        <button data-action="decrement" value="<?php print($id) ?>" id="decrement-btn" class="focus:outline-none bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none">
+                                            <span class="flex justify-center pb-1 m-auto text-2xl font-thin">−</span>
+                                        </button>
+                                        <input min="0" type="number" class="focus:outline-none z-10 select-none w-12 outline-none focus:outline-none text-center  bg-gray-300 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-gray-700  outline-none" name="custom-input-number" value="<?php print($product_obj['qty']) ?>"></input>
+                                        <button data-action="increment" value="<?php print($id) ?>" id="increment-btn" class="focus:outline-none bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer">
+                                            <span class="flex justify-center pb-1 m-auto text-2xl font-thin">+</span>
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
-                        </td>
-                        <td class="hidden text-right md:table-cell">
-                            <span class="text-sm lg:text-base font-medium">
-                                <?php print sprintf("€ %.2f", $Result['SellPrice']); ?>
-                            </span>
-                        </td>
-                        <td class="text-right">
-                            <span class="text-sm lg:text-base font-medium">
-                                €20.00
-                            </span>
-                        </td>
-                    </tr>
-                <?php } ?>
+                            </td>
+                            <td class="hidden text-right md:table-cell">
+                                <span class="text-sm lg:text-base font-medium">
+                                    <?php print sprintf("€ %.2f", $Result['SellPrice']); ?>
+                                </span>
+                            </td>
+                            <td class="text-right">
+                                <span class="text-sm lg:text-base font-medium">
+                                    €20.00
+                                </span>
+                            </td>
+                        </tr>
+                    <?php } ?>
                 </tbody>
             </table>
             <hr class="pb-6 mt-6">
@@ -138,7 +86,7 @@
                     </div>
                     <div class="p-4">
                         <p class="mb-6 italic">De prijs is inclusief verzendkosten</p>
-                            
+
                         <div class="flex justify-between pt-4 border-b">
                             <div class="flex lg:px-4 lg:py-2 m-2 text-md lg:text-s font-bold text-gray-800">
                                 <form action="" method="POST">
@@ -208,7 +156,7 @@
         const btn = e.target.parentNode.parentElement.querySelector('button[data-action="decrement"]');
         const target = btn.nextElementSibling;
         let value = Number(target.value);
-        if (value > 0 || val === 1) { 
+        if (value > 0 || val === 1) {
             value += val
             call(btn.value, val)
         }
@@ -231,5 +179,4 @@
         request.open('PUT', `/cart/${val === 1 ? 'increment' : 'decrement'}?id=${id}`)
         request.send()
     }
-
 </script>
