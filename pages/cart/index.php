@@ -1,9 +1,3 @@
-<?php
-foreach ($arg as $product_id => $qty) {
-    print("$product_id $qty <br>");
-}
-?>
-
 <div class="flex justify-center my-6">
     <div class="flex flex-col w-full p-8 text-gray-800 bg-white shadow-lg pin-r pin-y md:w-4/5 lg:w-4/5 rounded">
         <div class="flex-1">
@@ -13,7 +7,7 @@ foreach ($arg as $product_id => $qty) {
                         <th class="hidden md:table-cell"></th>
                         <th class="text-left">Product</th>
                         <th class="lg:text-right text-left pl-5 lg:pl-0">
-                            <span class="lg:hidden" title="Quantity">Qtd</span>
+                            <span class="lg:hidden" title="Quantity">Ant.</span>
                             <span class="hidden lg:inline">Aantal</span>
                         </th>
                         <th class="hidden text-right md:table-cell">Prijs per stuk</th>
@@ -21,6 +15,7 @@ foreach ($arg as $product_id => $qty) {
                     </tr>
                 </thead>
                 <tbody>
+                <?php foreach ($arg as $product_id => $qty) { ?>
                     <tr>
                         <td class="hidden pb-4 md:table-cell">
                             <a href="#">
@@ -61,83 +56,7 @@ foreach ($arg as $product_id => $qty) {
                             </span>
                         </td>
                     </tr>
-                    <tr>
-                        <td class="hidden pb-4 md:table-cell">
-                            <a href="#">
-                                <img src="https://limg.app/i/Cute-Constrictor-Super-Sexy-Military-Enforcer-W7mvBp.png" class="w-20 rounded" alt="Thumbnail">
-                            </a>
-                        </td>
-                        <td>
-                            <p class="mb-2 md:ml-4">Tesla Model 3</p>
-                            <form action="" method="POST">
-                                <button type="submit" class="text-gray-700 md:ml-4">
-                                    <small>(Verwijder product)</small>
-                                </button>
-                            </form>
-                        </td>
-                        <td class="justify-center md:justify-end md:flex md:mt-4">
-                            <div class="w-32">
-                                <div class="flex justify-center flex-row h-10 w-full rounded-lg relative bg-transparent mt-1">
-                                    <button data-action="decrement" class="focus:outline-none bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none">
-                                        <span class="flex justify-center pb-1 m-auto text-2xl font-thin">−</span>
-                                    </button>
-                                    <input min="0" type="number" class="focus:outline-none z-10 select-none w-12 outline-none focus:outline-none text-center  bg-gray-300 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-gray-700  outline-none" name="custom-input-number" value="0"></input>
-                                    <button data-action="increment" class="focus:outline-none bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer">
-                                        <span class="flex justify-center pb-1 m-auto text-2xl font-thin">+</span>
-                                    </button>
-                                </div>
-                            </div>
-                        </td>
-                        <td class="hidden text-right md:table-cell">
-                            <span class="text-sm lg:text-base font-medium">
-                                €49,600.01
-                            </span>
-                        </td>
-                        <td class="text-right">
-                            <span class="text-sm lg:text-base font-medium">
-                                €148,800.03
-                            </span>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td class="hidden pb-4 md:table-cell">
-                            <a href="#">
-                                <img src="https://limg.app/i/Successful-Spider-Biblical-Mutant---Total-War-lKoE7D.jpeg" class="w-20 rounded" alt="Thumbnail">
-                            </a>
-                        </td>
-                        <td>
-                            <p class="mb-2 md:ml-4">Bic 4 colour pen</p>
-                            <form action="" method="POST">
-                                <button type="submit" class="text-gray-700 md:ml-4">
-                                    <small>(Verwijder product)</small>
-                                </button>
-                            </form>
-                        </td>
-                        <td class="justify-center md:justify-end md:flex md:mt-8">
-                            <div class="w-32">
-                                <div class="flex justify-center flex-row h-10 w-full rounded-lg relative bg-transparent mt-1">
-                                    <button data-action="decrement" class="focus:outline-none bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none">
-                                        <span class="flex justify-center pb-1 m-auto text-2xl font-thin">−</span>
-                                    </button>
-                                    <input min="0" type="number" class="focus:outline-none z-10 select-none w-12 outline-none focus:outline-none text-center  bg-gray-300 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-gray-700  outline-none" name="custom-input-number" value="0"></input>
-                                    <button data-action="increment" class="focus:outline-none bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer">
-                                        <span class="flex justify-center pb-1 m-auto text-2xl font-thin">+</span>
-                                    </button>
-                                </div>
-                            </div>
-
-                        </td>
-                        <td class="hidden text-right md:table-cell">
-                            <span class="text-sm lg:text-base font-medium">
-                                €1.50
-                            </span>
-                        </td>
-                        <td class="text-right">
-                            <span class="text-sm lg:text-base font-medium">
-                                €7.50
-                            </span>
-                        </td>
-                    </tr>
+                <?php } ?>
                 </tbody>
             </table>
             <hr class="pb-6 mt-6">
