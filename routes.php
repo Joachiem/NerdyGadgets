@@ -7,7 +7,8 @@
 include 'src/functions/cart.php';
 include 'src/functions/core.php';
 
-Route::redirect('checkout', 'checkout/account');
+
+Route::redirect('/checkout', '/checkout/account');
 
 Route::get('/', function () {
     View::show('index');
