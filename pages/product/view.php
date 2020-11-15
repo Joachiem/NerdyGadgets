@@ -173,3 +173,18 @@ if ($R) {
     <?php } ?>
 
 </div>
+
+<button id="add-to-card-btn" class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">Doorgaan</button>
+
+
+<script>
+    (() => {
+        const addToCartBtn = document.querySelector('#add-to-card-btn')
+
+        addToCartBtn.addEventListener("click", () => {
+            let request = new XMLHttpRequest()
+            request.open('POST', '/products/add?id=1')
+            request.send()
+        })
+    })()
+</script>

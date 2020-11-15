@@ -4,6 +4,8 @@
 * de get routes zijn voor pagina's
 */
 
+include "src/functions/product.php";
+
 Route::redirect('/checkout', '/checkout/account');
 
 // Route::get('/', View::show('index'));
@@ -14,6 +16,10 @@ Route::get('/', function () {
 
 Route::get('/products', function () {
     View::show('product/index');
+});
+
+Route::post('/products/add', function () {
+    add_product_to_cart();
 });
 
 Route::get('/products/view', function () {
