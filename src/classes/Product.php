@@ -59,6 +59,6 @@ class Product
             $Images = $R;
         }
 
-        View::show('product/view');
+        View::show('product/view', $Result);
     }
 }
