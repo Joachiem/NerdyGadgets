@@ -133,7 +133,7 @@ if ($arg != null) {
 
             addToCartBtn.addEventListener("click", () => {
                 let request = new XMLHttpRequest()
-                request.open('POST', '/products/add?id=1')
+                request.open('POST', '/cart/add?id=<?php print($_GET['id']) ?>')
                 request.send()
             })
         })()

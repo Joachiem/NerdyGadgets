@@ -18,10 +18,6 @@ Route::get('/products', function () {
     View::show('product/index');
 });
 
-Route::post('/products/add', function () {
-    add_product_to_cart();
-});
-
 Route::get('/products/view', function () {
     Product::index();
 });
@@ -48,7 +44,19 @@ Route::get('/checkout/complete', function () {
 });
 
 Route::get('/cart', function () {
-    View::show('cart/index');
+    Cart::index();
+});
+
+Route::post('/cart/add', function () {
+    Cart::add($_GET['id']);
+});
+
+Route::get('/cart/increment', function () {
+    Cart::increment($_GET['id']);
+});
+
+Route::get('/cart/decrement', function () {
+    Cart::decrement($_GET['id']);
 });
 
 Route::error('404', function () {
