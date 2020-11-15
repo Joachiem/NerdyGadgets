@@ -4,12 +4,22 @@
 * de get routes zijn voor pagina's
 */
 
-Route::redirect('/checkout', '/checkout/account');
+include 'src/functions/cart.php';
+include 'src/functions/core.php';
 
-// Route::get('/', View::show('index'));
+
+Route::redirect('/checkout', '/checkout/account');
 
 Route::get('/', function () {
     View::show('index');
+});
+
+Route::get('/dutch', function () {
+    Route::back();
+});
+
+Route::get('/english', function () {
+    Route::back();
 });
 
 Route::get('/products', function () {
@@ -41,35 +51,28 @@ Route::get('/checkout/complete', function () {
     View::show('checkout/complete');
 });
 
+
+Route::put('/cookie', function () {
+    return cookie_clicked();
+});
+
 Route::get('/cart', function () {
     Cart::index();
 });
-
 Route::post('/cart/add', function () {
     Cart::add($_GET['id']);
 });
-
-Route::get('/cart/increment', function () {
+Route::delete('/cart/remove', function () {
+    Cart::remove($_GET['id']);
+});
+Route::put('/cart/increment', function () {
     Cart::increment($_GET['id']);
 });
-
-Route::get('/cart/decrement', function () {
+Route::put('/cart/decrement', function () {
     Cart::decrement($_GET['id']);
 });
+
 
 Route::error('404', function () {
     View::show('error/404');
 });
-
-
-// Route::post('test', function () {
-//     View::show('index');
-// });
-
-// Route::patch('test', function () {
-//     View::show('index');
-// });
-
-// Route::delete('test', function () {
-//     View::show('index');
-// });

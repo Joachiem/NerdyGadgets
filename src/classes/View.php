@@ -33,6 +33,8 @@ class View
 
         include "partials/footer.php";
 
+        include "src/includes/cookie.php";
+
         print '</div>';
         print '</body>';
         print '</html>';
