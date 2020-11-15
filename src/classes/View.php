@@ -4,9 +4,10 @@ class View
 {
     public static function show($file)
     {
+        $arg = [];
         $args = func_get_args();
         if (isset($args[1])) {
-            $args = $args[1];
+            $arg = $args[1];
         }
 
 

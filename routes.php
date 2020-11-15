@@ -49,7 +49,7 @@ Route::get('/checkout/pay', function () {
 });
 
 Route::get('/cart', function () {
-    View::show('cart/index');
+    cart();
 });
 
 Route::put('/cookie', function () {
