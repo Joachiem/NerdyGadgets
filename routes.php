@@ -37,6 +37,9 @@ Route::get('/checkout/address', function () {
 Route::get('/checkout/pay', function () {
     View::show('checkout/pay');
 });
+Route::get('/checkout/complete', function () {
+    View::show('checkout/complete');
+});
 
 Route::get('/cart', function () {
     View::show('cart/index');

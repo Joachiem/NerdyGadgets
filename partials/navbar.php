@@ -1,4 +1,4 @@
-<nav class="flex flex-col fixed w-full">
+<nav class="flex flex-col fixed w-full z-50">
     <div class="nav flex flex-row p-2 justify-between lg:grid grid-cols-3">
 
         <div class="items-center flex flex-row justify-between">

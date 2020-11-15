@@ -34,12 +34,12 @@
             <div class="relative mb-2">
                 <div class="absolute flex align-center items-center align-middle content-center" style="width: calc(100% - 2.5rem - 1rem); top: 50%; transform: translate(-50%, -50%)">
                     <div class="w-full bg-white rounded items-center align-middle align-center flex-1">
-                        <div class="w-0 bg-green-300 py-1 rounded" style="width: 0%;"></div>
+                        <div class="w-0 bg-green-300 py-1 rounded" style="width: 100%;"></div>
                     </div>
                 </div>
 
-                <div class="w-10 h-10 mx-auto bg-white border-2 border-gray-200 rounded-full text-lg text-white flex items-center">
-                    <span class="grid text-gray-700 w-full">
+                <div class="w-10 h-10 mx-auto bg-green-500 border-2 border-gray-200 rounded-full text-lg text-white flex items-center">
+                    <span class="grid text-white w-full">
                         <ion-icon class="place-self-center" size="small" name="card"></ion-icon>
                     </span>
                 </div>
@@ -52,12 +52,12 @@
             <div class="relative mb-2">
                 <div class="absolute flex align-center items-center align-middle content-center" style="width: calc(100% - 2.5rem - 1rem); top: 50%; transform: translate(-50%, -50%)">
                     <div class="w-full bg-white rounded items-center align-middle align-center flex-1">
-                        <div class="w-0 bg-green-300 py-1 rounded" style="width: 0%;"></div>
+                        <div class="w-0 bg-green-300 py-1 rounded" style="width: 100%;"></div>
                     </div>
                 </div>
 
-                <div class="w-10 h-10 mx-auto bg-white border-2 border-gray-200 rounded-full text-lg text-white flex items-center">
-                    <span class="grid text-gray-700 w-full">
+                <div class="w-10 h-10 mx-auto bg-green-500 border-2 border-gray-200 rounded-full text-lg text-white flex items-center">
+                    <span class="grid text-white w-full">
                         <ion-icon class="place-self-center" size="small" name="checkmark-done"></ion-icon>
                     </span>
                 </div>
@@ -74,33 +74,13 @@
 
         <div class="leading-tight p-2 md:p-4 bg-white">
             <form class="w-full max-w-lg">
-                <div class="flex flex-wrap -mx-3 mb-6">
-                    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
-                            Postcode
-                        </label>
-                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text">
-                        <p class="text-red-500 text-xs italic">Please fill out this field.</p>
-                    </div>
-                    <div class="w-full md:w-1/2 px-3">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
-                            Huisnummer
-                        </label>
-                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text">
-                    </div>
-                </div>
-                <div class="flex flex-wrap -mx-3 mb-6">
-                    <div class="w-full px-3">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
-                            verzending
-                        </label>
-                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="email" type="email">
-                        <p class="text-gray-600 text-xs italic"></p>
-                    </div>
+
+                <div class="flex w-full flex-wrap mb-6">
+                    <p>complete</p>
                 </div>
                 <div class="flex md:items-center justify-between">
-                    <a href="/checkout/account" class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">Terug</a>
-                    <a href="/checkout/pay" class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">Doorgaan</a>
+                    <a href="/checkout/pay" class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">Terug</a>
+                    <a href="/user" class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">Doorgaan</a>
                 </div>
             </form>
         </div>
