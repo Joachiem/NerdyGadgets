@@ -20,7 +20,7 @@
                         <?php $Images = $product_obj['images'] ?>
                         <?php $Result = $product_obj['product'] ?>
 
-                        <tr>
+                        <tr id="row-<?php print $id; ?>">
                             <td class="hidden pb-4 md:table-cell">
                                 <a href="#">
                                     <img src="/public/StockItemIMG/<?php print $Images[0]['ImagePath']; ?>" class="w-20 rounded" alt="Thumbnail">
@@ -29,11 +29,9 @@
                             <td>
                                 <a href="#">
                                     <p class="mb-2 md:ml-4"><?php print $Result['StockItemName']; ?></p>
-                                    <form action="" method="POST">
-                                        <button type="submit" value="<?php print($id) ?>" class="text-gray-700 md:ml-4">
-                                            <small>(Verwijder product)</small>
-                                        </button>
-                                    </form>
+                                    <button onclick="remove(<?php print($id) ?>)" class="text-gray-700 md:ml-4">
+                                        <small>(Verwijder product)</small>
+                                    </button>
                                 </a>
                             </td>
                             <td class="justify-center md:justify-end md:flex mt-6">
@@ -178,5 +176,13 @@
         let request = new XMLHttpRequest()
         request.open('PUT', `/cart/${val === 1 ? 'increment' : 'decrement'}?id=${id}`)
         request.send()
+    }
+
+    function remove(id) {
+        let request = new XMLHttpRequest()
+        request.open('DELETE', `/cart/remove?id=${id}`)
+        request.send()
+
+        document.querySelector(`#row-${id}`).remove();
     }
 </script>

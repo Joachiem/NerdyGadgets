@@ -62,6 +62,9 @@ Route::get('/cart', function () {
 Route::post('/cart/add', function () {
     Cart::add($_GET['id']);
 });
+Route::delete('/cart/remove', function () {
+    Cart::remove($_GET['id']);
+});
 Route::put('/cart/increment', function () {
     Cart::increment($_GET['id']);
 });

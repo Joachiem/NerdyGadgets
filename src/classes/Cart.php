@@ -85,6 +85,18 @@ class Cart
     {
         $_SESSION['cart'][$id] = 1;
     }
+
+    /**
+     * remove cart item
+     * @param string $id
+     */
+    public static function remove($id)
+    {
+        $cart = $_SESSION['cart'];
+        unset($cart[$id]);
+        $_SESSION['cart'] = $cart;
+    }
+
     /**
      * index page
      * @param mixed $callback
