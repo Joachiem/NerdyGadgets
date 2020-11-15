@@ -34,7 +34,7 @@ class DB
      * @param array $values
      * @return mixed $result
      */
-    public static function execute($query)
+    public static function execute($query, $values = null, $partialQueries = null)
     {
         self::make_conn();
 
@@ -42,8 +42,14 @@ class DB
 
         $args = func_get_args();
 
-        if (isset($args[1])) {
-            foreach ($args[1] as $i => $value) {
+        if ($partialQueries) {
+            foreach ($partialQueries as $i => $value) {
+                $query = str_replace('$' . ($i + 1), $value, $query);
+            }
+        }
+
+        if ($values) {
+            foreach ($values as $i => $value) {
                 $handle->bindValue($i + 1, $value);
             }
         }
@@ -53,24 +59,5 @@ class DB
         $result = $handle->fetchAll(PDO::FETCH_OBJ);
 
         return $result;
-    }
-
-
-    /**
-     * inject variables in a query
-     * @param string $query
-     * @return mixed $result
-     */
-    public static function prepare($query)
-    {
-        $args = func_get_args();
-
-        if (!isset($args[1])) return $query;
-
-        foreach ($args[1] as $i => $value) {
-            $query = str_replace('$' . ($i + 1), $value, $query);
-        }
-
-        return $query;
     }
 }

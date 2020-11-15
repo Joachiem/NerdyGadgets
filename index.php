@@ -12,6 +12,5 @@ function __autoload($class)
 
 // pdo example
 
-// $query = DB::prepare($GLOBALS['q']['test'], ['WHERE ImagePath IS NOT NULL']);
-// $arg = DB::execute($query, [5]);
+// $arg = DB::execute($GLOBALS['q']['test'], [5], ['WHERE ImagePath IS NOT NULL']);
 // View::show('category/index', $arg);
