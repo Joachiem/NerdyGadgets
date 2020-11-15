@@ -62,10 +62,10 @@ Route::get('/cart', function () {
 Route::post('/cart/add', function () {
     Cart::add($_GET['id']);
 });
-Route::get('/cart/increment', function () {
+Route::put('/cart/increment', function () {
     Cart::increment($_GET['id']);
 });
-Route::get('/cart/decrement', function () {
+Route::put('/cart/decrement', function () {
     Cart::decrement($_GET['id']);
 });
 

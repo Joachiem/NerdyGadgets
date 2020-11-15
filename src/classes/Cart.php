@@ -7,7 +7,8 @@ class Cart
      */
     public static function index()
     {
-        View::show('cart/index');
+        $arg = $_SESSION['cart'];
+        View::show('cart/index', $arg);
     }
 
     /**

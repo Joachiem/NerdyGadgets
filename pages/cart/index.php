@@ -35,11 +35,11 @@
                         <td class="justify-center md:justify-end md:flex mt-6">
                             <div class="w-32">
                                 <div class="flex justify-center flex-row h-10 w-full rounded-lg relative bg-transparent mt-1">
-                                    <button data-action="decrement" class="focus:outline-none bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none">
+                                    <button data-action="decrement" value="<?php print($product_id) ?>" id="decrement-btn" class="focus:outline-none bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none">
                                         <span class="flex justify-center pb-1 m-auto text-2xl font-thin">−</span>
                                     </button>
-                                    <input min="0" type="number" class="focus:outline-none z-10 select-none w-12 outline-none focus:outline-none text-center  bg-gray-300 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-gray-700  outline-none" name="custom-input-number" value="0"></input>
-                                    <button data-action="increment" class="focus:outline-none bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer">
+                                    <input min="0" type="number" class="focus:outline-none z-10 select-none w-12 outline-none focus:outline-none text-center  bg-gray-300 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-gray-700  outline-none" name="custom-input-number" value="<?php print($qty) ?>"></input>
+                                    <button data-action="increment" value="<?php print($product_id) ?>" id="increment-btn" class="focus:outline-none bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer">
                                         <span class="flex justify-center pb-1 m-auto text-2xl font-thin">+</span>
                                     </button>
                                 </div>
@@ -152,7 +152,10 @@
         const btn = e.target.parentNode.parentElement.querySelector('button[data-action="decrement"]');
         const target = btn.nextElementSibling;
         let value = Number(target.value);
-        if (value > 0 || val === 1) value += val;
+        if (value > 0 || val === 1) { 
+            value += val
+            call(btn.value, val)
+        }
         target.value = value;
     }
 
@@ -166,4 +169,11 @@
     incrementButtons.forEach(btn => {
         btn.addEventListener("click", increment);
     });
+
+    function call(id, val) {
+        let request = new XMLHttpRequest()
+        request.open('PUT', `/cart/${val === 1 ? 'increment' : 'decrement'}?id=${id}`)
+        request.send()
+    }
+
 </script>
