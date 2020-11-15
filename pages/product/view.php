@@ -51,7 +51,7 @@ if ($R) {
     if ($Result != null) {
     ?>
             <body>
-                <div class="container">
+                <div class="centercontainer">
                     <div class="prodname">
                         <h1><?php print $Result['StockItemName']; ?></h1>
                     </div>

@@ -4,9 +4,9 @@ body {
     /* margin: 0px; */
 }
 
-.container {
-    /* width: 1400px; */
-    /* display: inline-block; */
+.centercontainer {
+    width: 1400px;
+    display: inline-block; 
 }
 
 .prodprev,
