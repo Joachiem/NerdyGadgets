@@ -23,7 +23,7 @@ Route::post('/products/add', function () {
 });
 
 Route::get('/products/view', function () {
-    View::show('product/view');
+    Product::index();
 });
 
 Route::get('/categories', function () {
