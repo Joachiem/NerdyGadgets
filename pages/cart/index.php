@@ -143,70 +143,53 @@ foreach ($arg as $key => $value) {
             <hr class="pb-6 mt-6">
             <div class="my-4 mt-6 -mx-2 lg:flex">
                 <div class="lg:px-2 lg:w-1/2">
-                    <div class="p-2 bg-gray-100 rounded-full">
+                    <div class="p-2">
                         <h1 class="ml-2 font-bold uppercase">Kortings code</h1>
                     </div>
                     <div class="p-4">
-                        <p class="mb-4 italic">Vul hier je kortingscode in!</p>
-                        <div class="justify-start md:flex">
-                            <form action="" method="POST">
-                                <div class="flex items-center w-full h-13 pl-3 bg-white bg-gray-100 border rounded-full">
-                                    <input type="coupon" name="code" id="coupon" placeholder="Kortings code" value="" class="w-full flex items-center bg-gray-100 outline-none appearance-none focus:outline-none active:outline-none" />
-                                    <button type="submit" class="text-sm flex items-center px-3 py-1 text-white bg-green-400 rounded-full outline-none md:px-4 hover:bg-green-500 focus:outline-none active:outline-none" <span class="font-medium flex items-center">Pas toe</span>
-                                    </button>
-                                </div>
-                            </form>
-                        </div>
+                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="tel" type="text" placeholder="06-12345678">
+                        <a href="/cart" class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">code toevoegen</a>
+
                     </div>
+
 
                     <div class="p-4">
                         <p class="mb-4 italic"></p>
-
                     </div>
                 </div>
                 <div class="lg:px-2 lg:w-1/2">
-                    <div class="p-4 bg-gray-100 rounded-full">
+                    <div class="p-2">
                         <h1 class="ml-2 font-bold uppercase">Bestelgegevens</h1>
                     </div>
                     <div class="p-4">
                         <p class="mb-6 italic">De prijs is inclusief verzendkosten</p>
-                        <div class="flex justify-between border-b">
-                            <div class="lg:px-4 lg:py-2 m-2 text-lg lg:text-s font-bold text-center text-gray-800">
-                                Totaalprijs excl BTW
-                            </div>
-                            <div class="lg:px-4 lg:py-2 m-2 lg:text-s font-bold text-center text-gray-900">
-                                148,827.53€
-                            </div>
-                        </div>
+                            
                         <div class="flex justify-between pt-4 border-b">
-                            <div class="flex lg:px-4 lg:py-2 m-2 text-lg lg:text-s font-bold text-gray-800">
+                            <div class="flex lg:px-4 lg:py-2 m-2 text-md lg:text-s font-bold text-gray-800">
                                 <form action="" method="POST">
-                                    <button type="submit" class="mr-2 mt-1 lg:mt-2">
-                                        <svg aria-hidden="true" data-prefix="far" data-icon="trash-alt" class="w-4 text-red-600 hover:text-red-800" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-                                            <path fill="currentColor" d="M268 416h24a12 12 0 0012-12V188a12 12 0 00-12-12h-24a12 12 0 00-12 12v216a12 12 0 0012 12zM432 80h-82.41l-34-56.7A48 48 0 00274.41 0H173.59a48 48 0 00-41.16 23.3L98.41 80H16A16 16 0 000 96v16a16 16 0 0016 16h16v336a48 48 0 0048 48h288a48 48 0 0048-48V128h16a16 16 0 0016-16V96a16 16 0 00-16-16zM171.84 50.91A6 6 0 01177 48h94a6 6 0 015.15 2.91L293.61 80H154.39zM368 464H80V128h288zm-212-48h24a12 12 0 0012-12V188a12 12 0 00-12-12h-24a12 12 0 00-12 12v216a12 12 0 0012 12z" /></svg>
-                                    </button>
+                                    <button type="submit" class=""></button>
                                 </form>
                                 Korting
                             </div>
                             <div class="lg:px-4 lg:py-2 m-2 lg:text-s font-bold text-center text-green-700">
-                                -133,944.77€
+                                € 10,-
                             </div>
                         </div>
 
                         <div class="flex justify-between pt-4 border-b">
-                            <div class="lg:px-4 lg:py-2 m-2 text-lg lg:text-s font-bold text-center text-gray-800">
-                                BTW
+                            <div class="lg:px-4 lg:py-2 m-2 text-md lg:text-s font-bold text-center text-gray-800">
+                                Verzendkosten
                             </div>
                             <div class="lg:px-4 lg:py-2 m-2 lg:text-s font-bold text-center text-gray-900">
-                                2,976.55€
+                                € 20,-
                             </div>
                         </div>
                         <div class="flex justify-between pt-4 border-b">
-                            <div class="lg:px-4 lg:py-2 m-2 text-lg lg:text-s font-bold text-center text-gray-800">
-                                Totaalprijs incl BTW
+                            <div class="lg:px-4 lg:py-2 m-2 text-md lg:text-s font-bold text-center text-gray-800">
+                                Totaalprijs
                             </div>
                             <div class="lg:px-4 lg:py-2 m-2 lg:text-s font-bold text-center text-gray-900">
-                                17,859.3€
+                                € 150,-
                             </div>
                         </div>
                         <a href="/checkout/account">
