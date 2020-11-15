@@ -13,7 +13,7 @@ foreach ($arg as $product_id => $qty) {
                         <th class="hidden md:table-cell"></th>
                         <th class="text-left">Product</th>
                         <th class="lg:text-right text-left pl-5 lg:pl-0">
-                            <span class="lg:hidden" title="Quantity">Qtd</span>
+                            <span class="lg:hidden" title="Quantity">Ant.</span>
                             <span class="hidden lg:inline">Aantal</span>
                         </th>
                         <th class="hidden text-right md:table-cell">Prijs per stuk</th>
