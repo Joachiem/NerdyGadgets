@@ -1,36 +1,19 @@
-body {
-    /* text-align: center; */
-    /* padding: 0px; */
-    /* margin: 0px; */
+/* slide show */
+
+* {
+    box-sizing: border-box
 }
 
-.centercontainer {
-    width: 1400px;
-    display: inline-block; 
+.mySlides {
+    display: none
 }
 
-.prodprev,
-.title {
-    width: 49%;
-    display: inline-block;
-    text-align: left;
+img {
+    vertical-align: middle;
 }
 
-.title {
-    padding: 10px;
-    height: 650px;
-    vertical-align: text-bottom;
-    /* position: sticky; */
-}
 
-.buybutton {
-    background-color: greenyellow;
-    width: 100%;
-    justify-self: center;
-    border-radius: 10px;
-    padding: 5px;
-    text-align: center;
-}
+/* Slideshow container */
 
 .miniprev {
     width: 50px;
@@ -48,37 +31,6 @@ body {
     height: 560px;
     margin-left: 30px;
 }
-
-.prodname {
-    text-align: left;
-    width: 100%;
-}
-
-.infobox {
-    width: 49%;
-    text-align: left;
-    margin: 20px 0px 20px 0px;
-}
-
-* {
-    box-sizing: border-box
-}
-
-body {
-    /* font-family: Verdana, sans-serif; */
-    /* margin: 0 */
-}
-
-.mySlides {
-    display: none
-}
-
-img {
-    vertical-align: middle;
-}
-
-
-/* Slideshow container */
 
 .slideshow-container {
     width: 630px;
