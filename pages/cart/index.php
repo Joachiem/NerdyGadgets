@@ -1,6 +1,6 @@
 <?php
-foreach ($arg as $key => $value) {
-    print $value . "<br>";
+foreach ($arg as $product_id => $qty) {
+    print("$product_id $qty <br>");
 }
 ?>
 
