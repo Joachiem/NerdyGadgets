@@ -7,7 +7,7 @@ class Cart
      */
     public static function index()
     {
-        View::show('/cart');
+        View::show('cart/index');
     }
 
     /**
