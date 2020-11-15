@@ -21,10 +21,10 @@
 
     <div class="text-center py-1">
         <p>
-            <a href="contact">Contact</a> |
-            <a href="tos">Algemene voorwaarden</a> |
-            <a href="privacy">Privacy</a> |
-            <a href="dutch">Nederlands</a>
+            <a href="/contact">Contact</a> |
+            <a href="/tos">Algemene voorwaarden</a> |
+            <a href="/privacy">Privacy</a> |
+            <a href="/dutch">Nederlands</a>
         </p>
     </div>
 
