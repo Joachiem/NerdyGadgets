@@ -82,14 +82,10 @@
                         <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text">
                         <p class="text-red-500 text-xs italic">Please fill out this field.</p>
                     </div>
-
-                </div>
-                <div class="flex w-full flex-wrap mb-6">
-                    <a href="/pay" class=" shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">Betalen</a>
                 </div>
                 <div class="flex md:items-center justify-between">
                     <a href="/checkout/address" class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">Terug</a>
-                    <a href="/checkout/complete" class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">Doorgaan</a>
+                    <a href="/pay" class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">Betalen</a>
                 </div>
             </form>
         </div>
