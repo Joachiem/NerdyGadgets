@@ -1,140 +1,55 @@
-<?php
+<?php if ($arg) { ?>
 
 
-if ($arg != null) {
-?>
+    <div class="grid grid-cols-2 gap-8">
 
-    <div class="centercontainer">
-        <div class="prodname">
-            <h1><?php print $arg['StockItemName']; ?></h1>
+        <div class="overflow-hidden rounded-lg shadow-lg">
+
+            <a href="#">
+                <img alt="Placeholder" class="block h-auto w-full" src="https://picsum.photos/600/400/?random">
+            </a>
+
         </div>
-        <div class="prodprev">
-            <div class="slideshow-container">
-                <?php for ($i = 0; $i < count($arg['images']); $i++) {
-                ?>
-                    <div class="mySlides fade" style="display: block;">
-                        <img src="/public/StockItemIMG/<?php print $arg['images'][$i]['ImagePath'] ?>">
-                    </div>
-                <?php } ?>
+        <div class="overflow-hidden rounded-lg shadow-lg p-2 md:p-4">
 
-                <?php if (count($arg['images']) >= 2) { ?>
-                    <a class="prev" onclick="plusSlides(-1)">❮</a>
-                    <a class="next" onclick="plusSlides(1)">❯</a>
+
+
+            <div class="flex items-center justify-between mb-6">
+                <h1 class="text-2xl"> <?php print $arg["StockItemName"]; ?> </h1>
+            </div>
+
+            <div class="flex flex-col mb-4">
+                <p class="text-grey-darker text-xl font-bold"><?php printf("€ %.2f", $arg['SellPrice']) ?></p>
+            </div>
+
+            <div class="flex flex-col mb-6">
+                <button id="add-to-cart-btn" class="text-xl shadow bg-green-500 hover:bg-green-600 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">In mijn winkelmandje</button>
+            </div>
+
+            <div class="flex flex-col mb-2">
+                <h2 class="text-2xl font-bold">Productinformatie</h2>
+            </div>
+
+            <div class="flex flex-col">
+                <p><?php print $arg['SearchDetails']; ?></p>
 
             </div>
 
-            <div style="text-align:center">
-                <?php for ($i = 0; $i < count($arg['images']); $i++) {
-                ?>
-                    <span class="miniprev" onclick="currentSlide(<?php print($i + 1) ?>)"><img src="/public/StockItemIMG/<?php print $arg['images'][$i]['ImagePath'] ?>"></span>
-            <?php }
-                } ?>
-            </div>
         </div>
-        <div class="title">
-            <h2><?php print sprintf("€ %.2f", $arg['SellPrice']); ?></h2>
-            <ul>
-                <li>verzending binnen 2 werkdagen</li>
-                <li>verzending boven 20 euro gratis</li>
-                <li>2 jaar garantie</li>
-            </ul>
-            <button id="add-to-cart-btn" class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">In winkelmandje</button>
-        </div>
-        <div class="infobox">
-            <h2>Beschrijving</h2>
-            <p><?php print $arg['SearchDetails']; ?></p>
-        </div>
-        <div class="infobox">
-            <h2>Specificaties</h2>
-            <?php
-            $CustomFields = json_decode($arg['CustomFields'], true);
-            if (is_array($CustomFields)) { ?>
-                <table>
-                    <thead>
-                        <th>Naam</th>
-                        <th>Data</th>
-                    </thead>
-                    <?php
-                    foreach ($CustomFields as $SpecName => $SpecText) { ?>
-                        <tr>
-                            <td>
-                                <?php print $SpecName; ?>
-                            </td>
-                            <td>
-                                <?php
-                                if (is_array($SpecText)) {
-                                    foreach ($SpecText as $SubText) {
-                                        print $SubText . " ";
-                                    }
-                                } else {
-                                    print $SpecText;
-                                }
-                                ?>
-                            </td>
-                        </tr>
-
-                    <?php } ?>
-
-                </table>
-
-            <?php } else { ?>
-
-                <p><?php print $arg['CustomFields']; ?>.</p>
-
-            <?php } ?>
-
-        </div>
-
-    <?php } else { ?>
-
-        <h2 id="ProductNotFound">Het opgevraagde product is niet gevonden.</h2>
-
-    <?php } ?>
-
     </div>
 
 
 
-    <script>
-        var slideIndex = 1;
-        showSlides(slideIndex);
+<?php } ?>
 
-        function plusSlides(n) {
-            showSlides(slideIndex += n);
-        }
+<script>
+    (() => {
+        const addToCartBtn = document.querySelector('#add-to-cart-btn')
 
-        function currentSlide(n) {
-            showSlides(slideIndex = n);
-        }
-
-        function showSlides(n) {
-            var i;
-            var slides = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("dot");
-            if (n > slides.length) {
-                slideIndex = 1
-            }
-            if (n < 1) {
-                slideIndex = slides.length
-            }
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].className += " active";
-        }
-    </script>
-    <script>
-        (() => {
-            const addToCartBtn = document.querySelector('#add-to-cart-btn')
-
-            addToCartBtn.addEventListener("click", () => {
-                let request = new XMLHttpRequest()
-                request.open('POST', '/cart/add?id=<?php print($_GET['id']) ?>')
-                request.send()
-            })
-        })()
-    </script>
+        addToCartBtn.addEventListener("click", () => {
+            let request = new XMLHttpRequest()
+            request.open('POST', '/cart/add?id=<?php print($_GET['id']) ?>')
+            request.send()
+        })
+    })()
+</script>
