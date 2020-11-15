@@ -4,8 +4,6 @@
 * de get routes zijn voor pagina's
 */
 
-include "src/functions/product.php";
-
 Route::redirect('/checkout', '/checkout/account');
 
 // Route::get('/', View::show('index'));
