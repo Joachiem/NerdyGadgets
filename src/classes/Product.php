@@ -43,6 +43,7 @@ class Product
         } else {
             $Result = null;
         }
+
         //Get Images
         $Query = "
             SELECT ImagePath
@@ -56,7 +57,7 @@ class Product
         $R = mysqli_fetch_all($R, MYSQLI_ASSOC);
 
         if ($R) {
-            $Images = $R;
+            $Result['images'] = $R;
         }
 
         View::show('product/view', $Result);

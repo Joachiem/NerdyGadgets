@@ -10,23 +10,23 @@ if ($arg != null) {
         </div>
         <div class="prodprev">
             <div class="slideshow-container">
-                <?php for ($i = 0; $i < count($Images); $i++) {
+                <?php for ($i = 0; $i < count($arg['images']); $i++) {
                 ?>
                     <div class="mySlides fade" style="display: block;">
-                        <img src="/public/StockItemIMG/<?php print $Images[$i]['ImagePath'] ?>">
+                        <img src="/public/StockItemIMG/<?php print $arg['images'][$i]['ImagePath'] ?>">
                     </div>
                 <?php } ?>
 
-                <?php if (count($Images) >= 2) { ?>
+                <?php if (count($arg['images']) >= 2) { ?>
                     <a class="prev" onclick="plusSlides(-1)">❮</a>
                     <a class="next" onclick="plusSlides(1)">❯</a>
 
             </div>
 
             <div style="text-align:center">
-                <?php for ($i = 0; $i < count($Images); $i++) {
+                <?php for ($i = 0; $i < count($arg['images']); $i++) {
                 ?>
-                    <span class="miniprev" onclick="currentSlide(<?php print($i + 1) ?>)"><img src="/public/StockItemIMG/<?php print $Images[$i]['ImagePath'] ?>"></span>
+                    <span class="miniprev" onclick="currentSlide(<?php print($i + 1) ?>)"><img src="/public/StockItemIMG/<?php print $arg['images'][$i]['ImagePath'] ?>"></span>
             <?php }
                 } ?>
             </div>
