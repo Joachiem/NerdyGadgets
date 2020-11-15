@@ -39,9 +39,7 @@ if ($arg != null) {
                 <li>verzending boven 20 euro gratis</li>
                 <li>2 jaar garantie</li>
             </ul>
-            <a href="winkelmandje.php">
-                <div class="buybutton">In winkelmandje</div>
-            </a>
+            <button id="add-to-cart-btn">In winkelmandje</button>
         </div>
         <div class="infobox">
             <h2>Beschrijving</h2>
