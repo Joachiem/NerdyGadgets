@@ -9,7 +9,7 @@ class DB
     private static $conn;
 
     /**
-     * Construcs pdo connection
+     * Construcs pdo a connection
      * @return mixed
      */
     public static function make_conn()
@@ -29,7 +29,7 @@ class DB
     }
 
     /**
-     * execute the database
+     * make executions to the database
      * @param string $query
      * @param array $values
      * @return mixed $result
@@ -40,15 +40,12 @@ class DB
 
         $handle = self::$conn->prepare($query);
 
-        $values = [];
         $args = func_get_args();
 
-        if (isset($args[1])) $values = $args[1];
-
-        $i = 1;
-        foreach ($values as $value) {
-            $handle->bindValue($i, $value);
-            $i++;
+        if (isset($args[1])) {
+            foreach ($args[1] as $i => $value) {
+                $handle->bindValue($i + 1, $value);
+            }
         }
 
         $handle->execute();
@@ -60,22 +57,18 @@ class DB
 
 
     /**
-     * execute the database
+     * inject variables in a query
      * @param string $query
-     * @param array $values
      * @return mixed $result
      */
     public static function prepare($query)
     {
-        $values = [];
         $args = func_get_args();
 
-        if (isset($args[1])) $values = $args[1];
+        if (!isset($args[1])) return $query;
 
-        $i = 1;
-        foreach ($values as $value) {
-            $query = str_replace('$' . $i, $value, $query);
-            $i++;
+        foreach ($args[1] as $i => $value) {
+            $query = str_replace('$' . ($i + 1), $value, $query);
         }
 
         return $query;
