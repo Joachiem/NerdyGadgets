@@ -42,7 +42,7 @@ class DB
 
         $values = [];
         $args = func_get_args();
-        
+
         if (isset($args[1])) $values = $args[1];
 
         $i = 1;
@@ -56,5 +56,28 @@ class DB
         $result = $handle->fetchAll(PDO::FETCH_OBJ);
 
         return $result;
+    }
+
+
+    /**
+     * execute the database
+     * @param string $query
+     * @param array $values
+     * @return mixed $result
+     */
+    public static function prepare($query)
+    {
+        $values = [];
+        $args = func_get_args();
+
+        if (isset($args[1])) $values = $args[1];
+
+        $i = 1;
+        foreach ($values as $value) {
+            $query = str_replace('$' . $i, $value, $query);
+            $i++;
+        }
+
+        return $query;
     }
 }

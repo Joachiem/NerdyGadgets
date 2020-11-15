@@ -6,7 +6,6 @@
 
 include 'src/functions/core.php';
 
-
 Route::redirect('/checkout', '/checkout/account');
 
 Route::get('/', function () {
