@@ -9,7 +9,7 @@ class DB
     private static $conn;
 
     /**
-     * Construcs pdo a connection
+     * Construcs a pdo connection
      * @return mixed
      */
     public static function make_conn()
