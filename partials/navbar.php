@@ -6,9 +6,17 @@
                 <img class="logo" id="logo" draggable="false" src="/public/img/logo.svg" />
             </a>
 
-            <a href="/categories">
-                <div class="p-2 pr-4 text-gray-200">Categories</div>
-            </a>
+            <div class="flex flex-row">
+                <a href="/products">
+                    <div class="p-2 pr-4 text-gray-200">Products</div>
+                </a>
+
+                <a href="/categories">
+                    <div class="p-2 pr-4 text-gray-200">Categories</div>
+                </a>
+            </div>
+
+
         </div>
 
         <div class="flex align-center bg-gray-100 rounded flex-grow lg:flex-grow-0 max-w-full mx-8 lg:mx-0">
@@ -25,34 +33,10 @@
             </a>
 
             <a href="/cart">
-                <div class="flex p-2 text-gray-200 rounded bg-gray-900 card">
+                <div class="flex p-2 text-gray-200 rounded bg-gray-900 card" style="height: 44px; width: 44px;">
                     <ion-icon name="cart-outline" size="20px"></ion-icon>
                 </div>
             </a>
-        </div>
-    </div>
-
-    <div class="categories">
-        <div class="container mx-auto flex flex-row justify-between">
-            <div class="text-gray-200 p-1 px-2">
-                <a href="/products">Producten</a>
-            </div>
-
-            <div class="text-gray-200 p-1 px-2">
-                <a>Eten</a>
-            </div>
-
-            <div class="text-gray-200 p-1 px-2">
-                <a>Kleren</a>
-            </div>
-
-            <div class="text-gray-200 p-1 px-2">
-                <a>Eten</a>
-            </div>
-
-            <div class="text-gray-200 p-1 px-2">
-                <a>Kleren</a>
-            </div>
         </div>
     </div>
 </nav>

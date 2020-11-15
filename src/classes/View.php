@@ -4,6 +4,13 @@ class View
 {
     public static function show($file)
     {
+        $arg = [];
+        $args = func_get_args();
+        if (isset($args[1])) {
+            $arg = $args[1];
+        }
+
+
         include "src/functions/connect.php";
 
         print '<!DOCTYPE html>';
@@ -25,6 +32,8 @@ class View
         print '</div>';
 
         include "partials/footer.php";
+
+        include "src/includes/cookie.php";
 
         print '</div>';
         print '</body>';

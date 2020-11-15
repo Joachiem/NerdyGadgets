@@ -13,12 +13,12 @@ $StockGroups = mysqli_fetch_all($Result, MYSQLI_ASSOC);
 ?>
 
 <div class="container my-12 mx-auto px-4 md:px-12">
-    <div class="flex flex-wrap -mx-1 lg:-mx-4 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-4">
+    <div class="flex flex-wrap -mx-1 lg:-mx-4 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
 
         <?php if (isset($StockGroups)) { ?>
             <?php foreach ($StockGroups as $StockGroup) { ?>
 
-                <article class="overflow-hidden rounded-lg shadow-lg">
+                <article class="overflow-hidden rounded-lg shadow-lg bg-white">
                     <a href="/products?category_id=<?php print $StockGroup["StockGroupID"]; ?>">
                         <div>
                             <img alt="Placeholder" class="block object-cover h-48 w-full" src="public/StockGroupIMG/<?php print $StockGroup["ImagePath"]; ?>">
