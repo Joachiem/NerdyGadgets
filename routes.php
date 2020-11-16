@@ -28,7 +28,7 @@ Route::get('/products', function () {
 });
 
 Route::get('/products/view', function () {
-    Product::index();
+    Product::index($_GET['id']);
 });
 
 Route::get('/categories', function () {
