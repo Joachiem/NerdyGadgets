@@ -32,14 +32,14 @@ $GLOBALS['t'] = [
     '' => '',
 
     //mainpage
-    'hoofdpagina-recommended-products' => 'Recommended Products',
-    'hoofdpagina-seen-recently' => 'Seen Recently',
+    'mainpage-recommended-products' => 'Recommended Products',
+    'mainpage-seen-recently' => 'Seen Recently',
     '' => '',
 
-     // productpage
-    'productpagina-product-information' => 'Product Information',
-    'productpagina-specifications' => 'Specifications',
-    'productpagina-name' => 'Name',
-    'productpagina-add-to-cart' => 'Add to cart',
-    '' => '',   
+    //productpage
+    'productpage-product-information' => 'Product Information',
+    'productpage-specifications' => 'Specifications',
+    'productpage-name' => 'Name',
+    'productpage-add-to-cart' => 'Add to cart',
+    '' => '',
 ];

@@ -18,11 +18,11 @@
             </div>
 
             <div class="flex flex-col mb-6">
-                <button id="add-to-cart-btn" class="text-xl shadow bg-green-500 hover:bg-green-600 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"><?php print $GLOBALS['t']['productpagina-add-to-cart'] ?></button>
+                <button id="add-to-cart-btn" class="text-xl shadow bg-green-500 hover:bg-green-600 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"><?php print $GLOBALS['t']['productpage-add-to-cart'] ?></button>
             </div>
 
             <div class="flex flex-col mb-2">
-                <h2 class="text-2xl font-bold"><?php print $GLOBALS['t']['productpagina-product-information'] ?></h2>
+                <h2 class="text-2xl font-bold"><?php print $GLOBALS['t']['productpage-product-information'] ?></h2>
             </div>
 
             <div class="flex flex-col mb-6">
@@ -30,7 +30,7 @@
             </div>
 
             <div class="flex flex-col">
-                <h2 class="text-2xl font-bold"><?php print $GLOBALS['t']['productpagina-specifications'] ?></h2>
+                <h2 class="text-2xl font-bold"><?php print $GLOBALS['t']['productpage-specifications'] ?></h2>
             </div>
 
 
@@ -41,7 +41,7 @@
                 <table class="table-auto">
                     <thead>
                         <tr>
-                            <th class="px-4 py-2"><?php print $GLOBALS['t']['productpagina-name'] ?></th>
+                            <th class="px-4 py-2"><?php print $GLOBALS['t']['productpage-name'] ?></th>
                             <th class="px-4 py-2">Data</th>
                         </tr>
                     </thead>
