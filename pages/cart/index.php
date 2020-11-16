@@ -90,7 +90,7 @@
                                 Verzendkosten
                             </div>
                             <div class="lg:px-4 lg:py-2 m-2 lg:text-s font-bold text-center text-gray-900">
-                                € 6,95
+                                € 6.75
                             </div>
                         </div>
                         <div class="flex justify-between pt-4 border-b">
@@ -98,7 +98,6 @@
                                 Totaalprijs
                             </div>
                             <div id="total-price" class="lg:px-4 lg:py-2 m-2 lg:text-s font-bold text-center text-gray-900">
-                                € 150,-
                             </div>
                         </div>
                         <a href="/checkout/account">
@@ -138,6 +137,7 @@
             const totalItemPrice = price * qty;
 
             totalPrice += totalItemPrice;
+            totalPrice += 6.75;
 
             document.querySelector(`#total-price-${id}`).innerHTML = `€ ${totalItemPrice.toFixed(2)}`;
 
