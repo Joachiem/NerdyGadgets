@@ -22,13 +22,14 @@
 
                         <tr class="cart-items" id="row-<?php print $id; ?>">
                             <td class="hidden pb-4 md:table-cell">
-                                <a href="#">
+                                <a href="/products/view?id=<?php print $id; ?>">
                                     <img src="/public/StockItemIMG/<?php print $Images[0]->ImagePath; ?>" class="w-20 rounded" alt="Thumbnail">
                                 </a>
                             </td>
                             <td>
-                                <a href="#">
-                                    <p class="mb-2 md:ml-4"><?php print $Result[0]->StockItemName; ?></p>
+                                <a>
+                                    <a href="/products/view?id=<?php print $id; ?>">
+                                        <p class="mb-2 md:ml-4"><?php print $Result[0]->StockItemName; ?></p></a>
                                     <button onclick="remove(<?php print($id) ?>)" class="text-gray-700 md:ml-4">
                                         <small>(Verwijder product)</small>
                                     </button>
