@@ -47,6 +47,7 @@ Route::get('/checkout/complete', function () {
 Route::post('/checkout/account', function () {
     Checkout::account();
     Checkout::checkaccount();
+    Route::redirect('/checkout/account', '/checkout/address');
 });
 Route::post('/checkout/address', function () {
     Checkout::address();
