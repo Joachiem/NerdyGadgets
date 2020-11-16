@@ -22,13 +22,14 @@
 
                         <tr class="cart-items" id="row-<?php print $id; ?>">
                             <td class="hidden pb-4 md:table-cell">
-                                <a href="#">
+                                <a href="/products/view?id=<?php print $id; ?>">
                                     <img src="/public/StockItemIMG/<?php print $Images[0]->ImagePath; ?>" class="w-20 rounded" alt="Thumbnail">
                                 </a>
                             </td>
                             <td>
-                                <a href="#">
-                                    <p class="mb-2 md:ml-4"><?php print $Result[0]->StockItemName; ?></p>
+                                <a>
+                                    <a href="/products/view?id=<?php print $id; ?>">
+                                        <p class="mb-2 md:ml-4"><?php print $Result[0]->StockItemName; ?></p></a>
                                     <button onclick="remove(<?php print($id) ?>)" class="text-gray-700 md:ml-4">
                                         <small>(Verwijder product)</small>
                                     </button>
@@ -58,7 +59,13 @@
                                 <span id="total-price-<?php print($id) ?>" class="text-sm lg:text-base font-medium"></span>
                             </td>
                         </tr>
-                    <?php } ?>
+                    <?php }
+                    if (empty($arg)) { ?>
+                            <div class="flex p-2 mb-2 justify-center text-center bg-yellow-300">
+                        <ion-icon name="information-circle-outline"></ion-icon>
+                                <h2>Er staan nog geen artikelen in je winkelmandje :(</h2>
+                            </div>
+                <?php } ?>
                 </tbody>
             </table>
             <hr class="pb-6 mt-6">
@@ -68,8 +75,8 @@
                         <h1 class="ml-2 font-bold uppercase">Kortings code</h1>
                     </div>
                     <div class="p-4">
-                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="tel" type="text" placeholder="06-12345678">
-                        <a href="/cart" class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">code toevoegen</a>
+                        <input class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100 focus:border-gray-600" id="tel" type="text">
+                        <a href="/cart" class="shadow bg-teal-400 hover:bg-teal-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">code toevoegen</a>
 
                     </div>
 
@@ -83,8 +90,6 @@
                         <h1 class="ml-2 font-bold uppercase">Bestelgegevens</h1>
                     </div>
                     <div class="p-4">
-                        <p class="mb-6 italic">De prijs is inclusief verzendkosten</p>
-
                         <div class="flex justify-between pt-4 border-b">
                             <div class="lg:px-4 lg:py-2 m-2 text-md lg:text-s font-bold text-center text-gray-800">
                                 Verzendkosten
