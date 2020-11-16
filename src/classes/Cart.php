@@ -17,19 +17,13 @@ class Cart
 
             foreach ($products as $id => $qty) {
 
+                $product = DB::execute($GLOBALS['q']['product'], [$id]);
 
-                $Result = DB::execute($GLOBALS['q']['product'], [$id]);
-
-                $image_result = DB::execute($GLOBALS['q']['product-images'], [$id]);
-
-
-                if ($image_result) {
-                    $images = $image_result;
-                }
+                $images = DB::execute($GLOBALS['q']['product-images'], [$id]);
 
                 $arg[$id] = [
                     'qty' => $qty,
-                    'product' => $Result,
+                    'product' => $product,
                     'images' => $images
                 ];
             }

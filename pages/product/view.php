@@ -1,21 +1,20 @@
 <?php if ($arg) { ?>
 
-
     <div class="grid auto-cols-min grid-flow-col grid-cols-2 gap-8 mb-8">
 
         <div class="overflow-hidden rounded-lg shadow-lg object-cover bg-white">
             <?php for ($i = 0; $i < count($arg['images']); $i++) { ?>
-                <img alt="Placeholder" class="h-full object-cover w-auto" src="/public/StockItemIMG/<?php print $arg['images'][$i]['ImagePath'] ?>">
+                <img alt="Placeholder" class="h-full object-cover w-auto" src="/public/StockItemIMG/<?php print $arg['images'][$i]->ImagePath ?>">
             <?php } ?>
         </div>
 
         <div class="overflow-hidden rounded-lg shadow-lg p-2 md:p-4 bg-white">
             <div class="flex items-center justify-between mb-6">
-                <h1 class="text-2xl"> <?php print $arg["StockItemName"]; ?> </h1>
+                <h1 class="text-2xl"> <?php print $arg[0]->StockItemName; ?> </h1>
             </div>
 
             <div class="flex flex-col mb-4">
-                <p class="text-grey-darker text-xl font-bold"><?php printf("€ %.2f", $arg['SellPrice']) ?></p>
+                <p class="text-grey-darker text-xl font-bold"><?php printf("€ %.2f", $arg[0]->SellPrice) ?></p>
             </div>
 
             <div class="flex flex-col mb-6">
@@ -27,7 +26,7 @@
             </div>
 
             <div class="flex flex-col mb-6">
-                <p><?php print $arg['SearchDetails']; ?></p>
+                <p><?php print $arg[0]->SearchDetails; ?></p>
             </div>
 
             <div class="flex flex-col">
@@ -36,7 +35,7 @@
 
 
             <?php
-            $CustomFields = json_decode($arg['CustomFields'], true);
+            $CustomFields = json_decode($arg[0]->CustomFields, true);
             if (is_array($CustomFields)) { ?>
 
                 <table class="table-auto">
@@ -76,7 +75,7 @@
 
             <?php } else { ?>
 
-                <p><?php print $arg['CustomFields']; ?>.</p>
+                <p><?php print $arg->CustomFields; ?>.</p>
 
             <?php } ?>
 
