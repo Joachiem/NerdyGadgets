@@ -1,17 +1,16 @@
 <?php
 session_start();
 
+spl_autoload_register(function ($class_name) {
+    require_once 'src/classes/' . $class_name . '.php';
+});
+
 require_once "src/includes/querys.php";
 
 require_once "routes.php";
 
-function __autoload($class)
-{
-    require_once 'src/classes/' . $class . '.php';
-}
 
 // pdo example
 
-// $query = DB::prepare($GLOBALS['q']['test'], ['WHERE ImagePath IS NOT NULL']);
-// $arg = DB::execute($query, [5]);
+// $arg = DB::execute($GLOBALS['q']['test'], [5], ['WHERE ImagePath IS NOT NULL']);
 // View::show('category/index', $arg);
