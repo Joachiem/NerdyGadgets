@@ -8,11 +8,11 @@
 
             <div class="flex flex-row">
                 <a href="/products">
-                    <div class="p-2 pr-4 text-gray-200">Products</div>
+                    <div class="p-2 pr-4 text-gray-200"><?php print $GLOBALS['t']['navbar-products'] ?></div>
                 </a>
 
                 <a href="/categories">
-                    <div class="p-2 pr-4 text-gray-200">Categories</div>
+                    <div class="p-2 pr-4 text-gray-200"><?php print $GLOBALS['t']['navbar-categories'] ?></div>
                 </a>
             </div>
 
@@ -23,12 +23,12 @@
         </div>
 
         <div class="items-center flex flex-row justify-end">
-            <a href="/english">
-                <div class="p-2 text-gray-200">English</div>
+            <a href="/<?php print $GLOBALS['t']['navbar-taal'] ?>">
+                <div class="p-2 text-gray-200"><?php print $GLOBALS['t']['navbar-language-title'] ?></div>
             </a>
 
             <a href="/login">
-                <div class="p-2 pr-4 text-gray-200">Inloggen</div>
+                <div class="p-2 pr-4 text-gray-200"><?php print $GLOBALS['t']['navbar-log-in'] ?></div>
             </a>
 
             <a href="/cart">
