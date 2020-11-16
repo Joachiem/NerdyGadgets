@@ -19,7 +19,7 @@
             </div>
 
             <div class="flex flex-col mb-6">
-                <button id="add-to-cart-btn" class="text-xl shadow bg-green-500 hover:bg-green-600 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded">In mijn winkelmandje</button>
+                <button id="add-to-cart-btn" class="text-xl shadow bg-green-500 hover:bg-green-600 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"><?php print $GLOBALS['t']['productpagina-add-to-cart'] ?></button>
             </div>
 
             <div class="flex flex-col mb-2">

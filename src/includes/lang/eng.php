@@ -19,6 +19,7 @@ $GLOBALS['t'] = [
     'productpagina-product-information' => 'Product Information',
     'productpagina-specifications' => 'Specifications',
     'productpagina-name' => 'Name',
+    'productpagina-add-to-cart' => 'Add to cart',
     
     
 

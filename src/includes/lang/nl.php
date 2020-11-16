@@ -25,6 +25,6 @@ $GLOBALS['t'] = [
     'productpagina-product-information' => 'Product Informatie',
     'productpagina-specifications' => 'Specificaties',
     'productpagina-name' => 'Naam',
-    '' => '',
+    'productpagina-add-to-cart' => 'In mijn winkelmandje',
     '' => '',
 ];
