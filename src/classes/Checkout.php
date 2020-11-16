@@ -24,7 +24,7 @@ class Checkout
             }
 
             $_SESSION['form']['error_messages'] = $error_messages;
-            
+
             Route::redirect('/checkout/address', '/checkout/address');
         } else {
             print_r($_SESSION['form']);
@@ -56,10 +56,8 @@ class Checkout
             }
 
             $_SESSION['form']['error_messages'] = $error_messages;
-            
+
             Route::redirect('/checkout/account', '/checkout/account');
-        } else {
-            print_r($_SESSION['form']);
         }
     }
 }
