@@ -1,17 +1,15 @@
 <?php
 
 $GLOBALS['t'] = [
-    'home-page-title' => 'HALLO',
     'lastname' => 'Achternaam',
     'firstname' => 'voornaam',
+
     //Navbar
     'navbar-products' => 'Producten',
     'navbar-categories' => 'Categorieën',
     'navbar-language' => 'english',
     'navbar-language-title' => 'English',
     'navbar-log-in' => 'Inloggen',
-    '' => '',
-
 
     //product-index
     'Product-index-search' => 'Zoeken',
@@ -24,25 +22,19 @@ $GLOBALS['t'] = [
     'Product-index-vat' => 'Inclusief BTW',
     'Product-index-product-num' => 'Artikelnummer:',
     'Product-index-not-found' => 'Yarr, er zijn geen resultaten gevonden',
-    '' => '',
-    '' => '',
-    '' => '',
-    '' => '',
+
     // footer
     'footer-terms-and-conditions' => 'Algemene Voorwaarden',
     'footer-language' => 'english',
     'footer-language-title' => 'English',
-    '' => '',
-    '' => '',
-    '' => '',
+
     // hoofdpagina
     'hoofdpagina-recommended-products' => 'Aangeraden Producten',
     'hoofdpagina-seen-recently' => 'Recent Gezien',
-    '' => '',
+
     // productpagina
     'productpagina-product-information' => 'Product Informatie',
     'productpagina-specifications' => 'Specificaties',
     'productpagina-name' => 'Naam',
     'productpagina-add-to-cart' => 'In mijn winkelmandje',
-    '' => '',
 ];
