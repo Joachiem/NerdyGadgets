@@ -16,7 +16,7 @@
     const cookieAlert = document.querySelector('#cookie-alert')
     const cookieAlertBtn = document.querySelector('#cookie-alert-btn')
 
-    cookieAlertBtn.addEventListener("click", () => {
+    cookieAlertBtn.addEventListener('click', () => {
         cookieAlert.classList.add('opacity-0')
 
         let request = new XMLHttpRequest()
