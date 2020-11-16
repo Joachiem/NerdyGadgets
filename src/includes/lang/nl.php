@@ -11,6 +11,7 @@ $GLOBALS['t'] = [
     'navbar-language-title' => 'English',
     'navbar-log-in' => 'Inloggen',
     '' => '',
+<<<<<<< HEAD
 
 
     //product-index
@@ -24,4 +25,27 @@ $GLOBALS['t'] = [
     'Product-index-vat' => 'Inclusief BTW',
     'Product-index-product-num' => 'Artikelnummer:',
     'Product-index-not-found' => 'Yarr, er zijn geen resultaten gevonden',
+=======
+    '' => '',
+    '' => '',
+    '' => '',
+    '' => '',
+    // footer
+    'footer-terms-and-conditions' => 'Algemene Voorwaarden',
+    'footer-language' => 'english',
+    'footer-language-title' => 'English',
+    '' => '',
+    '' => '',
+    '' => '',
+    // hoofdpagina
+    'hoofdpagina-recommended-products' => 'Aangeraden Producten',
+    'hoofdpagina-seen-recently' => 'Recent Gezien',
+    '' => '',
+    // productpagina
+    'productpagina-product-information' => 'Product Informatie',
+    'productpagina-specifications' => 'Specificaties',
+    'productpagina-name' => 'Naam',
+    'productpagina-add-to-cart' => 'In mijn winkelmandje',
+    '' => '',
+>>>>>>> 7233d9fa90d8c96c05a5300ad00477883260d450
 ];

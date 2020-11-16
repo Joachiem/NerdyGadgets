@@ -1,7 +1,7 @@
 <section class="container pb-8">
 
     <div class="my-4">
-        <h4 class="text-2xl my-2">Aangeraden producten</h4>
+        <h4 class="text-2xl my-2"><?php print $GLOBALS['t']['hoofdpagina-recommended-products'] ?></h4>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             <div class="rounded bg-white shadow-md flex justify-center items-center flex-col px-4 py-2">
                 <a class="h-32 w-32" href="/products/view?id=10">
@@ -49,7 +49,7 @@
     </div>
 
     <div class="my-4">
-        <h4 class="text-2xl my-2">Recent gezien</h4>
+        <h4 class="text-2xl my-2"><?php print $GLOBALS['t']['hoofdpagina-seen-recently'] ?></h4>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
             <div class="rounded bg-white shadow-md flex justify-center items-center flex-col px-4 py-2">
                 <a class="h-32 w-32" href="/products/view?id=10">
