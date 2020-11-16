@@ -49,9 +49,9 @@
                             </td>
                             <td class="hidden text-right md:table-cell">
                                 <span class="text-sm lg:text-base font-medium"> €
-                                <span id="price-<?php print($id) ?>">
-                                    <?php print sprintf("%.2f", $Result[0]->SellPrice); ?>
-                                </span>
+                                    <span id="price-<?php print($id) ?>">
+                                        <?php print sprintf("%.2f", $Result[0]->SellPrice); ?>
+                                    </span>
                                 </span>
                             </td>
                             <td class="text-right">
@@ -142,17 +142,19 @@
     function calculatePrice() {
         const items = document.querySelectorAll(`.cart-items`);
         let totalPrice = 0;
-        items.forEach(item => {
-            let id = item.id.split('-')[1];
-            let qty = document.querySelector(`#qty-${id}`).value;
-            let price = document.querySelector(`#price-${id}`).innerHTML;
-            let total_price = price * qty;
-            totalPrice += total_price;
 
-            document.querySelector(`#total-price-${id}`).innerHTML = '€ ' + total_price;
+        items.forEach(item => {
+            const id = item.id.split('-')[1];
+            const qty = document.querySelector(`#qty-${id}`).value;
+            const price = document.querySelector(`#price-${id}`).innerHTML;
+            const totalItemPrice = price * qty;
+
+            totalPrice += totalItemPrice;
+
+            document.querySelector(`#total-price-${id}`).innerHTML = `€ ${totalItemPrice.toFixed(2)}`;
 
         });
-        document.querySelector(`#total-price`).innerHTML = '€ ' + totalPrice;
+        document.querySelector(`#total-price`).innerHTML = `€ ${totalPrice.toFixed(2)}`;
     }
 
     calculatePrice()
@@ -203,5 +205,7 @@
         request.send()
 
         document.querySelector(`#row-${id}`).remove();
+
+        calculatePrice();
     }
 </script>
