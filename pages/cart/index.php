@@ -86,23 +86,11 @@
                         <p class="mb-6 italic">De prijs is inclusief verzendkosten</p>
 
                         <div class="flex justify-between pt-4 border-b">
-                            <div class="flex lg:px-4 lg:py-2 m-2 text-md lg:text-s font-bold text-gray-800">
-                                <form action="" method="POST">
-                                    <button type="submit" class=""></button>
-                                </form>
-                                Korting
-                            </div>
-                            <div class="lg:px-4 lg:py-2 m-2 lg:text-s font-bold text-center text-green-700">
-                                € 10,-
-                            </div>
-                        </div>
-
-                        <div class="flex justify-between pt-4 border-b">
                             <div class="lg:px-4 lg:py-2 m-2 text-md lg:text-s font-bold text-center text-gray-800">
                                 Verzendkosten
                             </div>
                             <div class="lg:px-4 lg:py-2 m-2 lg:text-s font-bold text-center text-gray-900">
-                                € 20,-
+                                € 6,95
                             </div>
                         </div>
                         <div class="flex justify-between pt-4 border-b">
@@ -144,10 +132,19 @@
         let totalPrice = 0;
 
         items.forEach(item => {
+<<<<<<< HEAD
             const id = item.id.split('-')[1];
             const qty = document.querySelector(`#qty-${id}`).value;
             const price = document.querySelector(`#price-${id}`).innerHTML;
             const totalItemPrice = price * qty;
+=======
+            let id = item.id.split('-')[1];
+            let qty = document.querySelector(`#qty-${id}`).value;
+            let price = document.querySelector(`#price-${id}`).innerHTML;
+            let total_price = price * qty;
+            total_price.to
+            totalPrice += total_price;
+>>>>>>> 4ff4f691c62751188da36d94a0e3fc54bcbbed55
 
             totalPrice += totalItemPrice;
 
@@ -205,7 +202,6 @@
         request.send()
 
         document.querySelector(`#row-${id}`).remove();
-
         calculatePrice();
     }
 </script>
