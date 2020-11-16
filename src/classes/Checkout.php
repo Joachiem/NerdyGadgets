@@ -18,10 +18,10 @@ class Checkout
 
         $error_messages = [];
         $form_fields = [
-            'firstname' => 'firstname invullen',
-            'lastname' => 'lastname invullen',
-            'email' => 'email invullen',
-            'phonenumber' => 'phonenumber invullen'
+            'firstname' => 'Firstname invullen',
+            'lastname' => 'Lastname invullen',
+            'email' => 'Email invullen',
+            'phonenumber' => 'Phonenumber invullen'
         ];
 
         if (empty($_POST["firstname"]) || empty($_POST["lastname"]) || empty($_POST["email"]) || empty($_POST["phonenumber"])) {
