@@ -132,19 +132,10 @@
         let totalPrice = 0;
 
         items.forEach(item => {
-<<<<<<< HEAD
             const id = item.id.split('-')[1];
             const qty = document.querySelector(`#qty-${id}`).value;
             const price = document.querySelector(`#price-${id}`).innerHTML;
             const totalItemPrice = price * qty;
-=======
-            let id = item.id.split('-')[1];
-            let qty = document.querySelector(`#qty-${id}`).value;
-            let price = document.querySelector(`#price-${id}`).innerHTML;
-            let total_price = price * qty;
-            total_price.to
-            totalPrice += total_price;
->>>>>>> 4ff4f691c62751188da36d94a0e3fc54bcbbed55
 
             totalPrice += totalItemPrice;
 
