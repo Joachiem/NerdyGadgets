@@ -37,9 +37,9 @@ class DB
      */
     public static function execute($query, $values = null, $partial_queries = null)
     {
-        $handle = self::$conn->prepare($query);
-
         if ($partial_queries) $query = static::preparePartialQueries($query, $partial_queries);
+
+        $handle = self::$conn->prepare($query);
 
         if ($values) $handle = static::prepareValues($handle, $values);
 
