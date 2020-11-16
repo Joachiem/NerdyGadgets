@@ -1,31 +1,41 @@
 <?php
 class Checkout
 {
-    public static function address(){
-        
+    public static function address()
+    {
         if (isset($_POST["submit"])) {
-            $_SESSION["postcode"] = $_POST["postcode"];
-            $_SESSION["huisnummer"] = $_POST["huisnummer"];
-            $_SESSION["verzending"] = $_POST["verzending"];
-            if (empty($_POST["postcode"])) {
-                Route::redirect('/checkout/address', '/checkout/address');
-            } elseif (empty($_POST["huisnummer"])) {
-                Route::redirect('/checkout/address', '/checkout/address');
-            } elseif (empty($_POST["verzending"])) {
-                Route::redirect('/checkout/address', '/checkout/address');
-            } else {
-                Route::redirect('/checkout/address', '/checkout/pay');
-            }
         }
+    }
 
-        if (isset($_SESSION["postcode"]) == false) {
-            $_SESSION["postcode"] = "";
-        }
-        if (isset($_SESSION["huisnummer"]) == false) {
-            $_SESSION["huisnummer"] = "";
-        }
-        if (isset($_SESSION["verzending"]) == false) {
-            $_SESSION["verzending"] = "";
+    public static function account()
+    {
+
+        if (!isset($_POST["submit"])) return;
+
+        $data = $_POST;
+        unset($data['submit']);
+        $_SESSION['form'] = $data;
+
+        $error_messages = [];
+        $form_fields = [
+            'firstname' => 'Firstname invullen',
+            'lastname' => 'Lastname invullen',
+            'email' => 'Email invullen',
+            'phonenumber' => 'Phonenumber invullen'
+        ];
+
+        if (empty($_POST["firstname"]) || empty($_POST["lastname"]) || empty($_POST["email"]) || empty($_POST["phonenumber"])) {
+            foreach ($form_fields as $form_field => $error) {
+                if (empty($_POST[$form_field])) {
+                    $error_messages[$form_field] = $error;
+                }
+            }
+
+            $_SESSION['form']['error_messages'] = $error_messages;
+            
+            Route::redirect('/checkout/account', '/checkout/account');
+        } else {
+            print_r($_SESSION['form']);
         }
     }
 }
