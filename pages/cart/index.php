@@ -48,8 +48,10 @@
                                 </div>
                             </td>
                             <td class="hidden text-right md:table-cell">
-                                <span id="price-<?php print($id) ?>" class="text-sm lg:text-base font-medium">
-                                    <?php print sprintf("€ %.2f", $Result[0]->SellPrice); ?>
+                                <span class="text-sm lg:text-base font-medium"> €
+                                <span id="price-<?php print($id) ?>">
+                                    <?php print sprintf("%.2f", $Result[0]->SellPrice); ?>
+                                </span>
                                 </span>
                             </td>
                             <td class="text-right">
@@ -107,7 +109,7 @@
                             <div class="lg:px-4 lg:py-2 m-2 text-md lg:text-s font-bold text-center text-gray-800">
                                 Totaalprijs
                             </div>
-                            <div class="lg:px-4 lg:py-2 m-2 lg:text-s font-bold text-center text-gray-900">
+                            <div id="total-price" class="lg:px-4 lg:py-2 m-2 lg:text-s font-bold text-center text-gray-900">
                                 € 150,-
                             </div>
                         </div>
@@ -139,14 +141,18 @@
 <script>
     function calculatePrice() {
         const items = document.querySelectorAll(`.cart-items`);
+        let totalPrice = 0;
         items.forEach(item => {
-            let id = item.id.split('-')[1]
-            console.log(id)
+            let id = item.id.split('-')[1];
+            let qty = document.querySelector(`#qty-${id}`).value;
+            let price = document.querySelector(`#price-${id}`).innerHTML;
+            let total_price = price * qty;
+            totalPrice += total_price;
 
-            document.querySelector(`#total-price-${id}`).innerHTML = '$ ' + id;
+            document.querySelector(`#total-price-${id}`).innerHTML = '€ ' + total_price;
 
         });
-
+        document.querySelector(`#total-price`).innerHTML = '€ ' + totalPrice;
     }
 
     calculatePrice()
@@ -166,7 +172,11 @@
         if (value > 0 || val === 1) {
             value += val
             call(btn.value, val)
+            target.value = value;
+            calculatePrice()
+
         }
+
         target.value = value;
     }
 
