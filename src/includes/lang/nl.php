@@ -1,11 +1,10 @@
 <?php
 
 $GLOBALS['t'] = [
-    'home-page-title' => 'HALLO',
     'lastname' => 'Achternaam',
-    'firstname' => 'voornaam',
+    'firstname' => 'Voornaam',
 
-    //navbar
+    //Navbar
     'navbar-products' => 'Producten',
     'navbar-categories' => 'Categorieën',
     'navbar-language' => 'english',
