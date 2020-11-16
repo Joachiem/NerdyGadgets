@@ -17,9 +17,9 @@ $GLOBALS['q'] = [
         FROM stockitemstockgroups
     ) 
     AND ImagePath IS NOT NULL
-    ORDER BY StockGroupID DESC',
+    ORDER BY StockGroupID ASC',
 
-// get a product
+    // get a product
     'product' => "SELECT SI.StockItemID,
     (RecommendedRetailPrice*(1+(TaxRate/100))) AS SellPrice,
     StockItemName,

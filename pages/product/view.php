@@ -9,8 +9,6 @@
             <?php } ?>
         </div>
 
-
-
         <div class="overflow-hidden rounded-lg shadow-lg p-2 md:p-4 bg-white">
             <div class="flex items-center justify-between mb-6">
                 <h1 class="text-2xl"> <?php print $arg["StockItemName"]; ?> </h1>

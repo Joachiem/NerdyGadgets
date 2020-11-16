@@ -6,6 +6,7 @@
 
 include 'src/functions/core.php';
 
+
 Route::redirect('/checkout', '/checkout/account');
 
 Route::get('/', function () {
@@ -13,10 +14,12 @@ Route::get('/', function () {
 });
 
 Route::get('/dutch', function () {
+    Lang::nl();
     Route::back();
 });
 
 Route::get('/english', function () {
+    Lang::eng();
     Route::back();
 });
 

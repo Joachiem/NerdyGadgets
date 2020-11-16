@@ -124,9 +124,6 @@
 </div>
 
 
-
-
-
 <style>
     input[type=number] {
         -moz-appearance: textfield;
