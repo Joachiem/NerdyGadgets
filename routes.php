@@ -53,7 +53,7 @@ Route::get('/checkout/complete', function () {
 });
 Route::post('/checkout/address', function () {
     Checkout::address();
-    Route::redirect('/checkout/address', '/checkout/pay');
+    // Route::redirect('/checkout/address', '/checkout/pay');
 });
 
 
