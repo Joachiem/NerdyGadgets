@@ -1,14 +1,14 @@
 <?php
 session_start();
 
+spl_autoload_register(function ($class_name) {
+    require_once 'src/classes/' . $class_name . '.php';
+});
+
 require_once "src/includes/querys.php";
 
 require_once "routes.php";
 
-function __autoload($class)
-{
-    require_once 'src/classes/' . $class . '.php';
-}
 
 // pdo example
 
