@@ -83,17 +83,19 @@
                         <input value="<?php isset($_SESSION['form']["postcode"]) ? print($_SESSION['form']["postcode"]) : '' ?>" name="postcode" class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white <?php print isset($error_messages->postcode) ? 'border-red-500' : 'border-gray-200' ?>" id="grid-first-name" type="text">
                         <?php if (isset($error_messages->postcode)) { ?>
 
-                        <p class="text-red-500 text-xs italic"><?php print $error_messages->postcode ?></p>
-                        
+                            <p class="text-red-500 text-xs italic"><?php print $error_messages->postcode ?></p>
+
+                        <?php } ?>
                     </div>
                     <div class="w-full md:w-1/2 px-3">
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
                             Huisnummer
                         </label>
-                        <input value="<?php isset($_SESSION['form']["housenmr"]) ? print($_SESSION['form']["housenmr"]) : '' ?>" name="housenmr"class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white <?php print isset($error_messages->housenmr) ? 'border-red-500' : 'border-gray-200' ?>" id="grid-last-name" type="text">
+                        <input value="<?php isset($_SESSION['form']["housenmr"]) ? print($_SESSION['form']["housenmr"]) : '' ?>" name="housenmr" class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white <?php print isset($error_messages->housenmr) ? 'border-red-500' : 'border-gray-200' ?>" id="grid-last-name" type="text">
                         <?php if (isset($error_messages->housenmr)) { ?>
 
-                        <p class="text-red-500 text-xs italic"><?php print $error_messages->housenmr ?></p>
+                            <p class="text-red-500 text-xs italic"><?php print $error_messages->housenmr ?></p>
+                        <?php } ?>
 
                     </div>
                 </div>
@@ -105,7 +107,8 @@
                         <input value="<?php isset($_SESSION['form']["shipping"]) ? print($_SESSION['form']["shipping"]) : '' ?>" name="shipping" class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white <?php print isset($error_messages->shiping) ? 'border-red-500' : 'border-gray-200' ?>" id="email" type="email">
                         <?php if (isset($error_messages->shipping)) { ?>
 
-                        <p class="text-red-500 text-xs italic"><?php print $error_messages->shipping ?></p>
+                            <p class="text-red-500 text-xs italic"><?php print $error_messages->shipping ?></p>
+                        <?php } ?>
                     </div>
                 </div>
                 <div class="flex md:items-center justify-between">
