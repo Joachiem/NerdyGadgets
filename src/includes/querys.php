@@ -43,5 +43,9 @@ $GLOBALS['q'] = [
     ON SI.StockItemID = stockitemstockgroups.StockItemID
     JOIN stockgroups USING(StockGroupID)
     WHERE SI.stockitemid = ?
-    GROUP BY StockItemID"
+    GROUP BY StockItemID",
+
+    'product-images' => 'SELECT ImagePath
+    FROM stockitemimages
+    WHERE StockItemID = ?'
 ];

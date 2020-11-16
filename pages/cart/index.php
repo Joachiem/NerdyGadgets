@@ -23,12 +23,12 @@
                         <tr class="cart-items" id="row-<?php print $id; ?>">
                             <td class="hidden pb-4 md:table-cell">
                                 <a href="#">
-                                    <img src="/public/StockItemIMG/<?php print $Images[0]['ImagePath']; ?>" class="w-20 rounded" alt="Thumbnail">
+                                    <img src="/public/StockItemIMG/<?php print $Images[0]->ImagePath; ?>" class="w-20 rounded" alt="Thumbnail">
                                 </a>
                             </td>
                             <td>
                                 <a href="#">
-                                    <p class="mb-2 md:ml-4"><?php print $Result['StockItemName']; ?></p>
+                                    <p class="mb-2 md:ml-4"><?php print $Result[0]->StockItemName; ?></p>
                                     <button onclick="remove(<?php print($id) ?>)" class="text-gray-700 md:ml-4">
                                         <small>(Verwijder product)</small>
                                     </button>
@@ -49,7 +49,7 @@
                             </td>
                             <td class="hidden text-right md:table-cell">
                                 <span id="price-<?php print($id) ?>" class="text-sm lg:text-base font-medium">
-                                    <?php print sprintf("€ %.2f", $Result['SellPrice']); ?>
+                                    <?php print sprintf("€ %.2f", $Result[0]->SellPrice); ?>
                                 </span>
                             </td>
                             <td class="text-right">
