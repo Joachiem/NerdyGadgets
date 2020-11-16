@@ -50,7 +50,7 @@ Route::post('/checkout/account', function () {
 });
 Route::post('/checkout/address', function () {
     Checkout::address();
-    // Route::redirect('/checkout/address', '/checkout/pay');
+    Route::redirect('/checkout/address', '/checkout/pay');
 });
 Route::put('/cookie', function () {
     return cookie_clicked();
