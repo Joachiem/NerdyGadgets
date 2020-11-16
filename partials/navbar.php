@@ -23,7 +23,7 @@
         </div>
 
         <div class="items-center flex flex-row justify-end">
-            <a href="/<?php print $GLOBALS['t']['navbar-taal'] ?>">
+            <a href="/<?php print $GLOBALS['t']['navbar-language'] ?>">
                 <div class="p-2 text-gray-200"><?php print $GLOBALS['t']['navbar-language-title'] ?></div>
             </a>
 

@@ -24,7 +24,7 @@
             <a href="/contact">Contact</a> |
             <a href="/tos"><?php print $GLOBALS['t']['footer-terms-and-conditions'] ?></a> |
             <a href="/privacy">Privacy</a> |
-            <a href="/<?php print $GLOBALS['t']['footer-laguage'] ?>"><?php print $GLOBALS['t']['footer-language-title'] ?></a>
+            <a href="/<?php print $GLOBALS['t']['footer-language'] ?>"><?php print $GLOBALS['t']['footer-language-title'] ?></a>
         </p>
     </div>
 
