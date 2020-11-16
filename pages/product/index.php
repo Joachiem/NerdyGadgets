@@ -144,11 +144,11 @@ if (isset($amount)) {
 <div>
     <form>
         <div>
-            <h4><?php print $GLOBALS['t']['Product-index-search'] ?>Zoeken</h4>
+            <h4><?php print $GLOBALS['t']['product-index-search'] ?>Zoeken</h4>
 
             <input type="text" name="search" id="search" value="<?php print (isset($_GET['search'])) ? $_GET['search'] : ""; ?>" class="form-submit">
 
-            <h4><?php print $GLOBALS['t']['Product-index-num-product'] ?></h4>
+            <h4><?php print $GLOBALS['t']['product-index-num-product'] ?></h4>
 
             <input type="hidden" name="category_id" id="category_id" value="<?php print (isset($_GET['category_id'])) ? $_GET['category_id'] : ""; ?>">
 
@@ -160,18 +160,18 @@ if (isset($amount)) {
                 <option value="75" <?php $p === "75" ? print "selected" : "" ?>>75</option>
             </select>
 
-            <h4><?php print $GLOBALS['t']['Product-index-sort'] ?></h4>
+            <h4><?php print $GLOBALS['t']['product-index-sort'] ?></h4>
 
             <?php $s = $_SESSION['sort'] ?>
 
             <select name="sort" id="sort" onchange="this.form.submit()">>
-                <option value="price_low_high" <?php $s === "price_low_high" ? print "selected" : "" ?>><?php print $GLOBALS['t']['Product-index-sort-price-asc'] ?>
+                <option value="price_low_high" <?php $s === "price_low_high" ? print "selected" : "" ?>><?php print $GLOBALS['t']['product-index-sort-price-asc'] ?>
                 </option>
-                <option value="price_high_low" <?php $s === "price_high_low" ? print "selected" : "" ?>><?php print $GLOBALS['t']['Product-index-sort-price-desc'] ?>
+                <option value="price_high_low" <?php $s === "price_high_low" ? print "selected" : "" ?>><?php print $GLOBALS['t']['product-index-sort-price-desc'] ?>
                 </option>
-                <option value="name_low_high" <?php $s === "name_low_high" ? print "selected" : "" ?>><?php print $GLOBALS['t']['Product-index-sort-name-asc'] ?>
+                <option value="name_low_high" <?php $s === "name_low_high" ? print "selected" : "" ?>><?php print $GLOBALS['t']['product-index-sort-name-asc'] ?>
                 </option>
-                <option value="name_high_low" <?php $s === "name_high_low" ? print "selected" : "" ?>><?php print $GLOBALS['t']['Product-index-sort-name-desc'] ?>
+                <option value="name_high_low" <?php $s === "name_high_low" ? print "selected" : "" ?>><?php print $GLOBALS['t']['product-index-sort-name-desc'] ?>
                 </option>
             </select>
         </div>
@@ -216,10 +216,10 @@ if (isset($amount)) {
                     <div id="StockItemFrameRight">
                         <div class="CenterPriceLeftChild">
                             <h1 class="StockItemPriceText"><?php print sprintf("€ %0.2f", $row["SellPrice"]); ?></h1>
-                            <h6><?php print $GLOBALS['t']['Product-index-vat'] ?></h6>
+                            <h6><?php print $GLOBALS['t']['product-index-vat'] ?></h6>
                         </div>
                     </div>
-                    <h1 class="StockItemID"><?php print $GLOBALS['t']['Product-index-product-num'] ?><?php print $row["StockItemID"]; ?></h1>
+                    <h1 class="StockItemID"><?php print $GLOBALS['t']['product-index-product-num'] ?><?php print $row["StockItemID"]; ?></h1>
                     <p class="StockItemName"><?php print $row["StockItemName"]; ?></p>
                     <p class="StockItemComments"><?php print $row["MarketingComments"]; ?></p>
                     <h4 class="ItemQuantity"><?php print $row["QuantityOnHand"]; ?></h4>
@@ -229,7 +229,7 @@ if (isset($amount)) {
         <?php } ?>
     <?php } else { ?>
 
-        <h2><?php print $GLOBALS['t']['Product-index-not-found'] ?></h2>
+        <h2><?php print $GLOBALS['t']['product-index-not-found'] ?></h2>
 
     <?php } ?>
 

@@ -4,48 +4,43 @@ $GLOBALS['t'] = [
     'home-page-title' => 'HALLO',
     'lastname' => 'Achternaam',
     'firstname' => 'voornaam',
-    //Navbar
+
+    //navbar
     'navbar-products' => 'Producten',
     'navbar-categories' => 'Categorieën',
     'navbar-language' => 'english',
     'navbar-language-title' => 'English',
     'navbar-log-in' => 'Inloggen',
     '' => '',
-<<<<<<< HEAD
-
 
     //product-index
-    'Product-index-search' => 'Zoeken',
-    'Product-index-num-product' => 'Aantal producten op pagina',
-    'Product-index-sort' => 'Sorteren',
-    'Product-index-sort-price-asc' => 'Prijs oplopend',
-    'Product-index-sort-price-desc' => 'Prijs aflopend',
-    'Product-index-sort-name-asc' => 'Naam oplopend',
-    'Product-index-sort-name-desc' => 'Naam aflopend',
-    'Product-index-vat' => 'Inclusief BTW',
-    'Product-index-product-num' => 'Artikelnummer:',
-    'Product-index-not-found' => 'Yarr, er zijn geen resultaten gevonden',
-=======
+    'product-index-search' => 'Zoeken',
+    'product-index-num-product' => 'Aantal producten op pagina',
+    'product-index-sort' => 'Sorteren',
+    'product-index-sort-price-asc' => 'Prijs oplopend',
+    'product-index-sort-price-desc' => 'Prijs aflopend',
+    'product-index-sort-name-asc' => 'Naam oplopend',
+    'product-index-sort-name-desc' => 'Naam aflopend',
+    'product-index-vat' => 'Inclusief BTW',
+    'product-index-product-num' => 'Artikelnummer:',
+    'product-index-not-found' => 'Yarr, er zijn geen resultaten gevonden',
     '' => '',
-    '' => '',
-    '' => '',
-    '' => '',
+
     // footer
     'footer-terms-and-conditions' => 'Algemene Voorwaarden',
     'footer-language' => 'english',
     'footer-language-title' => 'English',
     '' => '',
-    '' => '',
-    '' => '',
-    // hoofdpagina
+
+    //mainpage
     'hoofdpagina-recommended-products' => 'Aangeraden Producten',
     'hoofdpagina-seen-recently' => 'Recent Gezien',
     '' => '',
-    // productpagina
+
+    //productpage
     'productpagina-product-information' => 'Product Informatie',
     'productpagina-specifications' => 'Specificaties',
     'productpagina-name' => 'Naam',
     'productpagina-add-to-cart' => 'In mijn winkelmandje',
     '' => '',
->>>>>>> 7233d9fa90d8c96c05a5300ad00477883260d450
 ];
