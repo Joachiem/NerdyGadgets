@@ -3,7 +3,31 @@ class Checkout
 {
     public static function address()
     {
-        if (isset($_POST["submit"])) {
+        if (!isset($_POST["submit"])) return;
+
+        $data = $_POST;
+        unset($data['submit']);
+        $_SESSION['form'] = $data;
+
+        $error_messages = [];
+        $form_fields = [
+            'postcode' => 'Postcode invullen',
+            'housenmr' => 'Huisnummer invullen',
+            'shipping' => 'Verzending invullen',
+        ];
+
+        if (empty($_POST["postcode"]) || empty($_POST["housenmr"]) || empty($_POST["shipping"])) {
+            foreach ($form_fields as $form_field => $error) {
+                if (empty($_POST[$form_field])) {
+                    $error_messages[$form_field] = $error;
+                }
+            }
+
+            $_SESSION['form']['error_messages'] = $error_messages;
+            
+            Route::redirect('/checkout/address', '/checkout/address');
+        } else {
+            print_r($_SESSION['form']);
         }
     }
 
