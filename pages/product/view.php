@@ -23,7 +23,7 @@
             </div>
 
             <div class="flex flex-col mb-2">
-                <h2 class="text-2xl font-bold">Productinformatie</h2>
+                <h2 class="text-2xl font-bold"><?php print $GLOBALS['t']['productpagina-product-information'] ?></h2>
             </div>
 
             <div class="flex flex-col mb-6">
@@ -31,7 +31,7 @@
             </div>
 
             <div class="flex flex-col">
-                <h2 class="text-2xl font-bold">Specificaties</h2>
+                <h2 class="text-2xl font-bold"><?php print $GLOBALS['t']['productpagina-specifications'] ?></h2>
             </div>
 
 
@@ -42,7 +42,7 @@
                 <table class="table-auto">
                     <thead>
                         <tr>
-                            <th class="px-4 py-2">Naam</th>
+                            <th class="px-4 py-2"><?php print $GLOBALS['t']['productpagina-name'] ?></th>
                             <th class="px-4 py-2">Data</th>
                         </tr>
                     </thead>

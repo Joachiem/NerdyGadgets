@@ -22,9 +22,9 @@
     <div class="text-center py-1">
         <p>
             <a href="/contact">Contact</a> |
-            <a href="/tos">Algemene voorwaarden</a> |
+            <a href="/tos"><?php print $GLOBALS['t']['footer-terms-and-conditions'] ?></a> |
             <a href="/privacy">Privacy</a> |
-            <a href="/dutch">Nederlands</a>
+            <a href="/<?php print $GLOBALS['t']['footer-taal'] ?>"><?php print $GLOBALS['t']['footer-taal-title'] ?></a>
         </p>
     </div>
 
