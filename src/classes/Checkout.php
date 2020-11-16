@@ -30,7 +30,10 @@ class Checkout
                     $error_messages[$form_field] = $error;
                 }
             }
-            Route::redirect('/checkout/account', '/checkout/account?error_messages=' . json_encode($error_messages));
+
+            $_SESSION['form']['error_messages'] = $error_messages;
+            
+            Route::redirect('/checkout/account', '/checkout/account');
         } else {
             print_r($_SESSION['form']);
         }

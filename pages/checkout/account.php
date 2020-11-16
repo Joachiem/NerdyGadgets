@@ -1,4 +1,4 @@
-<?php $error_messages = isset($_GET['error_messages']) ? json_decode($_GET['error_messages']) : [] ?>
+<?php $error_messages = isset($_SESSION['form']['error_messages']) ? (object)$_SESSION['form']['error_messages'] : [] ?>
 
 <div class="w-full py-6">
     <div class="flex">
