@@ -8,7 +8,7 @@
 
             <div class="flex flex-row">
                 <a href="/products">
-                    <div class="p-2 pr-4 text-gray-200">Products</div>
+                    <div class="p-2 pr-4 text-gray-200"><?php print $GLOBALS['t']['navbar-products'] ?></div>
                 </a>
 
                 <a href="/categories">
