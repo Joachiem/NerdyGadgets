@@ -125,8 +125,14 @@
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
                             Telefoonnummer
                         </label>
-                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="phonenumber" id="tel" type="text" placeholder="06-12345678" value="<?php isset($_SESSION['form']["email"]) ? print($_SESSION['form']["phonenumber"]) : '' ?>">
-                        <p class="text-gray-600 text-xs italic"></p>
+                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white <?php print isset($error_messages->phonenumber) ? 'border-red-500' : 'border-gray-200' ?>" name="phonenumber" placeholder="06-12345678" id="grid-phonenumber" type="text" value="<?php isset($_SESSION['form']["phonenumber"]) ? print($_SESSION['form']["phonenumber"]) : '' ?>">
+
+                        <?php if (isset($error_messages->phonenumber)) { ?>
+
+                            <p class="text-red-500 text-xs italic"><?php print $error_messages->phonenumber ?></p>
+
+                        <?php } ?>
+
                     </div>
                 </div>
                 <div class="flex md:items-center justify-between">
