@@ -12,7 +12,6 @@ $GLOBALS['t'] = [
     'navbar-log-in' => 'Log in',
     '' => '',
     '' => '',
-<<<<<<< HEAD
 
     //product-index
     'Product-index-search' => 'Search',
@@ -25,7 +24,6 @@ $GLOBALS['t'] = [
     'Product-index-vat' => 'including VAT',
     'Product-index-product-num' => 'Article Number:',
     'Product-index-not-found' => 'Yarr, er zijn geen resultaten gevonden',
-=======
     '' => '',
     // footer
     'footer-terms-and-conditions' => 'Terms and Conditions',
@@ -43,5 +41,4 @@ $GLOBALS['t'] = [
     
     
 
->>>>>>> 7233d9fa90d8c96c05a5300ad00477883260d450
 ];
