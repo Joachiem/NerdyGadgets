@@ -3,6 +3,7 @@ class Checkout
 {
     public static function address()
     {
+
         if (!isset($_POST["submit"])) return;
 
         $data = $_POST;
@@ -27,6 +28,13 @@ class Checkout
             
             Route::redirect('/checkout/address', '/checkout/address');
         } else {
+            print_r($_SESSION['form']);
+        }
+    }
+
+    public static function checkaccount()
+    {
+        if (isset($_SESSION['form'])) {
             print_r($_SESSION['form']);
         }
     }
