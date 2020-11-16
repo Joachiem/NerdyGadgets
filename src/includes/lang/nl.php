@@ -12,8 +12,8 @@ $GLOBALS['t'] = [
     '' => '',
     // footer
     'footer-terms-and-conditions' => 'Algemene Voorwaarden',
-    'footer-taal' => 'english',
-    'footer-taal-title' => 'English',
+    'footer-language' => 'english',
+    'footer-language-title' => 'English',
     '' => '',
     '' => '',
     '' => '',

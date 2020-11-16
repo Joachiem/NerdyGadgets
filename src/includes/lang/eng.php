@@ -9,8 +9,8 @@ $GLOBALS['t'] = [
     '' => '',
     // footer
     'footer-terms-and-conditions' => 'Terms and Conditions',
-    'footer-taal' => 'dutch',
-    'footer-taal-title' => 'Nederlands',
+    'footer-language' => 'dutch',
+    'footer-language-title' => 'Nederlands',
      // hoofdpagina
      'hoofdpagina-recommended-products' => 'Recommended Products',
      'hoofdpagina-seen-recently' => 'Seen Recently',
