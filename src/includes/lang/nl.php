@@ -2,7 +2,7 @@
 
 $GLOBALS['t'] = [
     'lastname' => 'Achternaam',
-    'firstname' => 'voornaam',
+    'firstname' => 'Voornaam',
 
     //Navbar
     'navbar-products' => 'Producten',

@@ -2,14 +2,14 @@
 
 $GLOBALS['t'] = [
     'lastname' => 'Lastname',
-    'firstname' => 'firstname',
+    'firstname' => 'Firstname',
+
     //Navbar
     'navbar-products' => 'Products',
     'navbar-categories' => 'Categories',
     'navbar-language' => 'dutch',
     'navbar-language-title' => 'Nederlands',
-    'navbar-log-in' => 'Log in',
-
+    'navbar-log-in' => 'Sign in',
 
     //product-index
     'Product-index-search' => 'Search',
@@ -19,7 +19,7 @@ $GLOBALS['t'] = [
     'Product-index-sort-price-desc' => 'Price descending',
     'Product-index-sort-name-asc' => 'Name acsending',
     'Product-index-sort-name-desc' => 'Name descnding',
-    'Product-index-vat' => 'including VAT',
+    'Product-index-vat' => 'Including VAT',
     'Product-index-product-num' => 'Article Number:',
     'Product-index-not-found' => 'Yarr, er zijn geen resultaten gevonden',
 
