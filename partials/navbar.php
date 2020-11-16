@@ -16,7 +16,6 @@
                 </a>
             </div>
 
-
         </div>
 
         <div class="flex align-center bg-gray-100 rounded flex-grow lg:flex-grow-0 max-w-full mx-8 lg:mx-0">

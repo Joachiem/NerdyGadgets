@@ -1,20 +1,20 @@
 <?php
 class DB
 {
-    private $host = 'localhost';
-    private $db = 'nerdygadgets';
-    private $user = 'root';
-    private $pass = '';
-    private $charset = 'utf8mb4';
-    private $conn;
+    private static $host = 'localhost';
+    private static $db = 'nerdygadgets';
+    private static $user = 'root';
+    private static $pass = '';
+    private static $charset = 'utf8mb4';
+    private static $conn;
 
     /**
-     * Construcs mysql connection
+     * Construcs a pdo connection
      * @return mixed
      */
-    public function __construct()
+    public static function make_conn()
     {
-        $dsn = "mysql:host=$this->host;dbname=$this->db;charset=$this->charset";
+        $dsn = "mysql:host=" . self::$host . ";dbname=" . self::$db . ";charset=" . self::$charset;
         $options = [
             PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
@@ -22,39 +22,55 @@ class DB
         ];
 
         try {
-            $this->conn = new PDO($dsn, $this->user, $this->pass, $options);
+            self::$conn = new PDO($dsn, self::$user, self::$pass, $options);
         } catch (\PDOException $e) {
             throw new \PDOException($e->getMessage(), (int)$e->getCode());
         }
     }
 
     /**
-     * Mysql check for result
-     * @param mixed Result data
-     * @return mixed Data or error
+     * make executions to the database
+     * @param string $query
+     * @param array $values
+     * @return mixed $result
      */
-    private function returnQuery($result)
+    public static function execute($query)
     {
-        try {
-            if (!$result || mysqli_num_rows($result) > 0) {
-                return $result;
-            } else {
-                return '0 results found!';
+        self::make_conn();
+
+        $handle = self::$conn->prepare($query);
+
+        $args = func_get_args();
+
+        if (isset($args[1])) {
+            foreach ($args[1] as $i => $value) {
+                $handle->bindValue($i + 1, $value);
             }
-        } catch (\Throwable $th) {
-            return $th;
         }
+
+        $handle->execute();
+
+        $result = $handle->fetchAll(PDO::FETCH_OBJ);
+
+        return $result;
     }
 
+
     /**
-     * Closes mysqli connection
+     * inject variables in a query
+     * @param string $query
+     * @return mixed $result
      */
-    public function closeConnection()
+    public static function prepare($query)
     {
-        try {
-            mysqli_close($this->connection);
-        } catch (\Throwable $th) {
-            return $th;
+        $args = func_get_args();
+
+        if (!isset($args[1])) return $query;
+
+        foreach ($args[1] as $i => $value) {
+            $query = str_replace('$' . ($i + 1), $value, $query);
         }
+
+        return $query;
     }
 }
