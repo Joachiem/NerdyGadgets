@@ -94,7 +94,14 @@
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
                             Achternaam
                         </label>
-                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="lastname" id="grid-last-name" type="text" value="<?php isset($_SESSION['form']["lastname"]) ? print($_SESSION['form']["lastname"]) : '' ?>">
+                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white <?php print isset($error_messages->lastname) ? 'border-red-500' : 'border-gray-200' ?>" name="lastname" id="grid-last-name" type="text" value="<?php isset($_SESSION['form']["lastname"]) ? print($_SESSION['form']["lastname"]) : '' ?>">
+
+                        <?php if (isset($error_messages->lastname)) { ?>
+
+                            <p class="text-red-500 text-xs italic"><?php print $error_messages->lastname ?></p>
+
+                        <?php } ?>
+
                     </div>
                 </div>
                 <div class="flex flex-wrap -mx-3 mb-6">
@@ -103,6 +110,13 @@
                             E-mailadress
                         </label>
                         <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" name="email" id="email" type="email" value="<?php isset($_SESSION['form']["email"]) ? print($_SESSION['form']["email"]) : '' ?>">
+
+                        <?php if (isset($error_messages->email)) { ?>
+
+                            <p class="text-red-500 text-xs italic"><?php print $error_messages->email ?></p>
+
+                        <?php } ?>
+
                         <p class="text-gray-600 text-xs italic"></p>
                     </div>
                 </div>
