@@ -20,7 +20,7 @@
                         <?php $Images = $product_obj['images'] ?>
                         <?php $Result = $product_obj['product'] ?>
 
-                        <tr id="row-<?php print $id; ?>">
+                        <tr class="cart-items" id="row-<?php print $id; ?>">
                             <td class="hidden pb-4 md:table-cell">
                                 <a href="#">
                                     <img src="/public/StockItemIMG/<?php print $Images[0]['ImagePath']; ?>" class="w-20 rounded" alt="Thumbnail">
@@ -40,7 +40,7 @@
                                         <button data-action="decrement" value="<?php print($id) ?>" id="decrement-btn" class="focus:outline-none bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none">
                                             <span class="flex justify-center pb-1 m-auto text-2xl font-thin">−</span>
                                         </button>
-                                        <input min="0" type="number" class="focus:outline-none z-10 select-none w-12 outline-none focus:outline-none text-center  bg-gray-300 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-gray-700  outline-none" name="custom-input-number" value="<?php print($product_obj['qty']) ?>"></input>
+                                        <input id="qty-<?php print($id) ?>" min="0" type="number" class="focus:outline-none z-10 select-none w-12 outline-none focus:outline-none text-center  bg-gray-300 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-gray-700  outline-none" name="custom-input-number" value="<?php print($product_obj['qty']) ?>"></input>
                                         <button data-action="increment" value="<?php print($id) ?>" id="increment-btn" class="focus:outline-none bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer">
                                             <span class="flex justify-center pb-1 m-auto text-2xl font-thin">+</span>
                                         </button>
@@ -48,14 +48,12 @@
                                 </div>
                             </td>
                             <td class="hidden text-right md:table-cell">
-                                <span class="text-sm lg:text-base font-medium">
+                                <span id="price-<?php print($id) ?>" class="text-sm lg:text-base font-medium">
                                     <?php print sprintf("€ %.2f", $Result['SellPrice']); ?>
                                 </span>
                             </td>
                             <td class="text-right">
-                                <span class="text-sm lg:text-base font-medium">
-                                    €20.00
-                                </span>
+                                <span id="total-price-<?php print($id) ?>" class="text-sm lg:text-base font-medium"></span>
                             </td>
                         </tr>
                     <?php } ?>
@@ -142,6 +140,20 @@
 </style>
 
 <script>
+    function calculatePrice() {
+        const items = document.querySelectorAll(`.cart-items`);
+        items.forEach(item => {
+            let id = item.id.split('-')[1]
+            console.log(id)
+
+            document.querySelector(`#total-price-${id}`).innerHTML = '$ ' + id;
+
+        });
+
+    }
+
+    calculatePrice()
+
     function decrement(e) {
         change(e, -1)
     }
