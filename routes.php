@@ -51,6 +51,10 @@ Route::get('/checkout/pay', function () {
 Route::get('/checkout/complete', function () {
     View::show('checkout/complete');
 });
+Route::post('/checkout/address', function () {
+    Checkout::address();
+    Route::redirect('/checkout/address', '/checkout/pay');
+});
 
 
 Route::put('/cookie', function () {

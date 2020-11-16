@@ -73,7 +73,7 @@
     <div class="overflow-hidden rounded-lg shadow-lg mb-8 max-w-lg">
 
         <div class="leading-tight p-2 md:p-4 bg-white">
-            <form class="w-full max-w-lg">
+            <form class="w-full max-w-lg" action="" method="POST">
                 <div class="flex flex-wrap -mx-3 mb-6">
                     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
@@ -100,7 +100,7 @@
                 </div>
                 <div class="flex md:items-center justify-between">
                     <a href="/checkout/account" class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">Terug</a>
-                    <a href="/checkout/pay" class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">Doorgaan</a>
+                    <input class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit" value="Doorgaan" name="submit">
                 </div>
             </form>
         </div>
