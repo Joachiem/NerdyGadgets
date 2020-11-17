@@ -65,13 +65,10 @@ Route::get('/checkout/complete', function () {
     View::show('checkout/complete');
 });
 Route::post('/checkout/account', function () {
-    Checkout::account();
-    Checkout::checkaccount();
-    Route::redirect('/checkout/account', '/checkout/address');
+    Checkout::storeUserInfo();
 });
 Route::post('/checkout/address', function () {
-    Checkout::address();
-    Route::redirect('/checkout/address', '/checkout/pay');
+    Checkout::storeShippingInfo();
 });
 
 
