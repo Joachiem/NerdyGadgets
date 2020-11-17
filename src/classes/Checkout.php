@@ -69,6 +69,7 @@ class Checkout
             $_SESSION['form'] = $data;
         } else {
             $_SESSION['form'] = $_SESSION['form'] + $data;
+            if (array_key_exists($_SESSION['form']) )
         }
 
         $error_messages = [];
