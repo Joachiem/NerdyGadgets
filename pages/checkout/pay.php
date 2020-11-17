@@ -1,4 +1,4 @@
-<?php Checkout::pay(); ?>
+<?php Checkout::checkaddressInfo()?>
 <div class="w-full py-6">
     <div class="flex">
         <div class="w-1/4">

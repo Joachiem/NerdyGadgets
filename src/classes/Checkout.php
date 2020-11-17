@@ -78,14 +78,27 @@ class Checkout
 
     public static function checkAccountInfo()
     {
-        if (isset($_SESSION['form'])) {
-            print_r($_SESSION['form']);
+        $form = $_SESSION['form'];
+        if (isset($form)) {
             
-            if(empty($_SESSION['form']["firstname"]) || empty($_SESSION['form']["lastname"]) || empty($_SESSION['form']["email"]) || empty($_SESSION['form']["phonenumber"])) {
+            if(empty($form["firstname"]) || empty($form["lastname"]) || empty($form["email"]) || empty($form["phonenumber"])) {
                 Route::redirect('/checkout/address', '/checkout/account');
             }
         } else {
             Route::redirect('/checkout/address', '/checkout/account');
+        }
+    }
+
+    public static function checkaddressInfo()
+    {
+        $form = $_SESSION['form'];
+        if (isset($form)) {
+            
+            if(empty($form["firstname"]) || empty($form["lastname"]) || empty($form["email"]) || empty($form["phonenumber"]) || empty($form["postcode"]) || empty($form["housenmr"]) || empty($form["shipping"])) {
+                Route::redirect('/checkout/pay', '/checkout/address');
+            }
+        } else {
+            Route::redirect('/checkout/pay', '/checkout/address');
         }
     }
 
@@ -97,10 +110,4 @@ class Checkout
             Route::redirect('/checkout/account', '/cart');
         }
     }
-
-    public static function pay()
-    {
-        print_r($_SESSION['form']);
-    }
-
 }
