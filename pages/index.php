@@ -1,3 +1,35 @@
+<div class="container my-12 mx-auto px-4 md:px-12">
+    <div class="flex flex-wrap -mx-1 lg:-mx-4 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
+
+        <?php foreach ($arg as $product) { ?>
+
+            <article class="flex justify-between flex-col overflow-hidden rounded-lg shadow-lg bg-white">
+                <a href="/products/view?=<?php print $product->StockItemID ?>">
+                    <div>
+                        <img alt="Placeholder" class="block object-cover p-4 w-full" src="/public/StockItemIMG/<?php print $product->ImagePath ?>">
+                    </div>
+                </a>
+
+                <div class="flex items-center justify-between leading-tight p-2 md:p-4">
+                    <h1 class="text-lg">
+                        <a class="no-underline hover:underline text-black" href="/products/view?=<?php print $product->StockItemID ?>">
+                            <?php print $product->StockItemName ?>
+                        </a>
+                    </h1>
+                </div>
+            </article>
+
+        <?php } ?>
+
+    </div>
+</div>
+
+
+
+
+<!-- 
+
+
 <section class="container pb-8">
 
     <div class="my-4">
@@ -95,4 +127,4 @@
             </div>
         </div>
     </div>
-</section>
+</section> -->

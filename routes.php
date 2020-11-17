@@ -13,7 +13,9 @@ Route::redirect('/checkout', '/checkout/account');
 
 // index
 Route::get('/', function () {
-    View::show('index');
+    $arg = DB::execute($GLOBALS['q']['products'], [], ['102,188,32']);
+
+    View::show('index', $arg);
 });
 
 
@@ -47,6 +49,11 @@ Route::get('/products/view', function () {
 Route::get('/categories', function () {
     Category::index();
 });
+
+Route::get('/categories', function () {
+    Category::index();
+});
+
 
 
 // checkout
