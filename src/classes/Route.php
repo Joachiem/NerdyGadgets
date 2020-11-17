@@ -6,6 +6,7 @@ class Route
      */
     public static $validRoutes = array();
 
+
     /**
      * GET - READ
      * get route for reading records or showing page
@@ -21,6 +22,7 @@ class Route
         self::call($route, $callback, 'GET');
     }
 
+
     /**
      * POST - CREATE
      * post route for creating records
@@ -31,6 +33,7 @@ class Route
     {
         self::call($route, $callback, 'POST');
     }
+
 
     /**
      * PUT - UPDATE
@@ -43,6 +46,7 @@ class Route
         self::call($route, $callback, 'PUT');
     }
 
+
     /**
      * PATCH - UPDATE
      * patch route for updating records
@@ -54,6 +58,7 @@ class Route
         self::call($route, $callback, 'PATCH');
     }
 
+
     /**
      * DELETE - DELETE
      * delete route for deleting records
@@ -64,6 +69,7 @@ class Route
     {
         self::call($route, $callback, 'DELETE');
     }
+
 
     /**
      * show error page on a 404
@@ -79,6 +85,7 @@ class Route
         }
     }
 
+
     /**
      * redirect the page if given url is met 
      * @param string $from
@@ -91,6 +98,7 @@ class Route
         }
     }
 
+
     /**
      * change the url of the page
      * @param string $url
@@ -100,6 +108,7 @@ class Route
         header('Location: http://' . $_SERVER['HTTP_HOST'] . '' . $url);
         die();
     }
+
 
     /**
      * check the given url for end '/'
@@ -117,6 +126,7 @@ class Route
         return self::add_slash_url($url);
     }
 
+
     /**
      * get the url of the page
      * @return string $url
@@ -126,6 +136,7 @@ class Route
         return '/' . $url;
     }
 
+    
     /**
      * go one page back
      */
@@ -135,6 +146,7 @@ class Route
             header("Location: " . $_SERVER["HTTP_REFERER"]);
         }
     }
+
 
     /**
      * check the route and the current page

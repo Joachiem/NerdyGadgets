@@ -8,6 +8,7 @@ class DB
     private static string $charset = 'utf8mb4';
     private static pdo $conn;
 
+
     /**
      * Construcs a pdo connection
      * @return mixed
@@ -27,6 +28,7 @@ class DB
             throw new \PDOException($e->getMessage(), (int)$e->getCode());
         }
     }
+    
 
     /**
      * make executions to the database
