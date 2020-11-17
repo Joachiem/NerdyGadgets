@@ -1,4 +1,5 @@
 <?php
+
 class Checkout
 {
     public static function address()
@@ -67,5 +68,32 @@ class Checkout
 
             Route::redirect('/checkout/account', '/checkout/account');
         }
+    }
+
+    public static function complete()
+    {
+        $arg = [];
+        $images = '';
+
+        if (isset($_SESSION['cart'])) {
+            $products = $_SESSION['cart'];
+
+            $arg = [];
+
+            foreach ($products as $id => $qty) {
+
+                $product = DB::execute($GLOBALS['q']['product'], [$id]);
+
+                $images = DB::execute($GLOBALS['q']['product-images'], [$id]);
+
+                $arg[$id] = [
+                    'qty' => $qty,
+                    'product' => $product,
+                    'images' => $images
+                ];
+            }
+        }
+
+        View::show('checkout/complete', $arg);
     }
 }
