@@ -73,7 +73,7 @@
 
 
 <div class="flex justify-center">
-    <div class="overflow-hidden rounded-lg shadow-lg mb-8 max-w-lg">
+    <div class="overflow-hidden rounded-lg shadow-lg mb-8 max-w-xl">
 
         <div class="leading-tight p-2 md:p-4 bg-white">
             <form class="w-full max-w-lg">
@@ -103,7 +103,7 @@
                             <tr class="cart-items" id="row-<?php print $id; ?>">
                                 <td class="hidden pb-4 md:table-cell">
                                     <img src="/public/StockItemIMG/<?php print $Images[0]->ImagePath; ?>"
-                                         class="w-20 rounded" alt="Thumbnail">
+                                         class="w-20 p-1 rounded" alt="Thumbnail">
                                 </td>
                                 <td>
                                     <a href="/products/view?id=<?php print $id; ?>">
