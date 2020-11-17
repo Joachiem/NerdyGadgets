@@ -8,7 +8,7 @@ class Checkout
 
         $data = $_POST;
         unset($data['submit']);
-        $_SESSION['form'] = $data;
+        $_SESSION['form'] = $_SESSION['form'] + $data;
 
         $error_messages = [];
         $form_fields = [
@@ -53,6 +53,11 @@ class Checkout
         }
     }
 
+    public static function pay()
+    {
+        print_r($_SESSION['form']);
+    }
+
     public static function account()
     {
 
@@ -60,7 +65,7 @@ class Checkout
 
         $data = $_POST;
         unset($data['submit']);
-        $_SESSION['form'] = $data;
+        $_SESSION['form'] = $_SESSION['form'] + $data;
 
         $error_messages = [];
         $form_fields = [
