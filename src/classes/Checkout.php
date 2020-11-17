@@ -65,7 +65,11 @@ class Checkout
 
         $data = $_POST;
         unset($data['submit']);
-        $_SESSION['form'] = $_SESSION['form'] + $data;
+        if (empty($_SESSION['form'])) {
+            $_SESSION['form'] = $data;
+        } else {
+            $_SESSION['form'] = $_SESSION['form'] + $data;
+        }
 
         $error_messages = [];
         $form_fields = [
