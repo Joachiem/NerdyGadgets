@@ -3,7 +3,7 @@
 class View
 {
     public static function show($file, $arg = [])
-    {   
+    {
         include "src/functions/connect.php";
 
         print '<!DOCTYPE html>';
@@ -12,11 +12,11 @@ class View
         include "partials/header.php";
 
         print '<body>';
-        print '<div class="min-h-screen relative pb-56 bg-gray-200">';
+        print '<div class="min-h-screen relative bg-gray-200">';
 
         include "partials/navbar.php";
 
-        print '<div class="pt-24 container mx-auto">';
+        print '<div class="pt-20 container mx-auto">';
 
         if (file_exists("pages/$file.php")) {
             include "pages/$file.php";

@@ -10,12 +10,14 @@
                     </div>
                 </a>
 
-                <div class="flex items-center justify-between leading-tight p-2 md:p-4">
+                <div class="flex flex-col items-center text-center justify-between leading-tight p-2 md:p-4">
                     <h1 class="text-lg">
                         <a class="no-underline hover:underline text-black" href="/products/view?=<?php print $product->StockItemID ?>">
                             <?php print $product->StockItemName ?>
                         </a>
                     </h1>
+
+                    <h1 class="text-2xl pt-4">€ <?php print round($product->SellPrice, 2) ?></h1>
                 </div>
             </article>
 
