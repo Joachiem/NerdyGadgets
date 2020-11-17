@@ -1,6 +1,6 @@
 <?php $error_messages = isset($_SESSION['form']['error_messages']) ? (object)$_SESSION['form']['error_messages'] : []; ?>
 <?php Checkout::noItemsInCart(); ?>
-<?php Checkout::checkAccount(); ?>
+<?php Checkout::checkAccountInfo(); ?>
 <div class="w-full py-6">
     <div class="flex">
         <div class="w-1/4">
@@ -106,15 +106,21 @@
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
                             verzending
                         </label>
+
+                        <?php $s = isset($_SESSION['form']['shipping']) ? $_SESSION['form']['shipping'] : 'PostNl'?>
+
                         <select value="<?php isset($_SESSION['form']["shipping"]) ? print($_SESSION['form']["shipping"]) : '' ?>" name="shipping" class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white <?php print isset($error_messages->shiping) ? 'border-red-500' : 'border-gray-200' ?>" id="email" type="email">
-                            <option value="postnl">PostNL</option>
-                            <option value="dhl">DHL</option>
-                            <option value="ups">UPS</option>
+                            <option value="postnl"<?php print $s === 'postnl' ? 'selected' : '' ?>>PostNL</option>
+                            <option value="dhl"<?php print $s === 'dhl' ? 'selected' : '' ?>>DHL</option>
+                            <option value="ups"<?php print $s === 'ups' ? 'selected' : '' ?>>UPS</option>
                         </select>
+
                         <?php if (isset($error_messages->shipping)) { ?>
 
                             <p class="text-red-500 text-xs italic"><?php print $error_messages->shipping ?></p>
+                        
                         <?php } ?>
+
                     </div>
                 </div>
                 <div class="flex md:items-center justify-between">
