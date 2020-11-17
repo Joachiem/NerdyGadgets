@@ -28,7 +28,7 @@ class DB
             throw new \PDOException($e->getMessage(), (int)$e->getCode());
         }
     }
-    
+
 
     /**
      * make executions to the database
