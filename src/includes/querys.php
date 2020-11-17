@@ -47,5 +47,19 @@ $GLOBALS['q'] = [
 
     'product-images' => 'SELECT ImagePath
     FROM stockitemimages
-    WHERE StockItemID = ?'
+    WHERE StockItemID = ?',
+
+
+
+    'save-people' => "INSERT INTO people 
+    (FullName, PreferredName, SearchName, IsPermittedToLogon, IsExternalLogonProvider, IsSystemUser, IsEmployee, IsSalesperson, Phonenumber, EmailAddress, LastEditedBy)
+    VALUES ('Kahn Aksu', 'Kahn', 'Kahn Kahn Aksu', 1, 0, 1, 0, 0, '(316) 40259250' , 'kahnaksu@hotmail.com', 1)",
+
+    
+    'save-transaction' => "INSERT INTO customertransactions
+    (CustomerID, TransactionTypeID, TransactionDate, AmountExcludingTax, TaxAmount, TransactionAmount, OutstandingBalance, LastEditedBy)
+    VALUES (123, 1, '2020-11-17', 400.00, 60.00, 460.00, 0.00, 10)"
+
+
+
 ];
