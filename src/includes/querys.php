@@ -48,4 +48,10 @@ $GLOBALS['q'] = [
     'product-images' => 'SELECT ImagePath
     FROM stockitemimages
     WHERE StockItemID = ?'
+
+    'save-buyer' => "INSERT INTO people (FullName, PreferredName, SearchName, IsPermittedToLogon, IsExternalLogonProvider, IsSystemUser, IsEmployee, IsSalesperson, EmailAddress, LastEditedBy)
+    VALUES ('Kahn Aksu', 'Kahn', 'Kahn Kahn Aksu', 1, 0, 1, 0, 0, '(316) 40259250' , 'kahnaksu@hotmail.com', 1)"
+
+
+
 ];
