@@ -46,11 +46,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td class="border px-4 py-2">Intro to CSS</td>
-                            <td class="border px-4 py-2">Adam</td>
-                        </tr>
-
+                    
                         <?php foreach ($CustomFields as $SpecName => $SpecText) { ?>
 
                             <tr>
