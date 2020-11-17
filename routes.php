@@ -50,11 +50,6 @@ Route::get('/categories', function () {
     Category::index();
 });
 
-Route::get('/categories', function () {
-    Category::index();
-});
-
-
 
 // checkout
 Route::get('/checkout/account', function () {
