@@ -32,10 +32,24 @@ class Checkout
         }
     }
 
-    public static function checkaccount()
+    public static function checkAccount()
     {
         if (isset($_SESSION['form'])) {
             print_r($_SESSION['form']);
+            
+            if(empty($_SESSION['form']["firstname"]) || empty($_SESSION['form']["lastname"]) || empty($_SESSION['form']["email"]) || empty($_SESSION['form']["phonenumber"])) {
+                Route::redirect('/checkout/address', '/checkout/account');
+            }
+        } else {
+            Route::redirect('/checkout/address', '/checkout/account');
+        }
+    }
+
+    public static function noItemsInCart()
+    {
+        if (!isset($_SESSION['cart'])) {
+            Route::redirect('/checkout/address', '/cart');
+            Route::redirect('/checkout/account', '/cart');
         }
     }
 

@@ -1,4 +1,5 @@
 <?php $error_messages = isset($_SESSION['form']['error_messages']) ? (object)$_SESSION['form']['error_messages'] : [] ?>
+<?php Checkout::noItemsInCart(); ?>
 
 <div class="w-full py-6">
     <div class="flex">
