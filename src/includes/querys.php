@@ -51,7 +51,7 @@ $GLOBALS['q'] = [
 
 
 // QUERYS VOOR LATER
-    // 'save-buyer' => "INSERT INTO people (FullName, PreferredName, SearchName, IsPermittedToLogon, IsExternalLogonProvider, IsSystemUser, IsEmployee, IsSalesperson, EmailAddress, LastEditedBy)
+    // 'save-people' => "INSERT INTO people (FullName, PreferredName, SearchName, IsPermittedToLogon, IsExternalLogonProvider, IsSystemUser, IsEmployee, IsSalesperson, EmailAddress, LastEditedBy)
     // VALUES ('Kahn Aksu', 'Kahn', 'Kahn Kahn Aksu', 1, 0, 1, 0, 0, '(316) 40259250' , 'kahnaksu@hotmail.com', 1)"
 
 //     'save-transaction' => "INSERT INTO customertransactions (CustomerID, TransactionTypeID, TransactionDate, AmountExcludingTax, TaxAmount, TransactionAmount, OutstandingBalance, LastEditedBy)
