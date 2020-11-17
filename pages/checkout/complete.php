@@ -14,7 +14,8 @@
 
         <div class="w-1/4">
             <div class="relative mb-2">
-                <div class="absolute flex align-center items-center align-middle content-center" style="width: calc(100% - 2.5rem - 1rem); top: 50%; transform: translate(-50%, -50%)">
+                <div class="absolute flex align-center items-center align-middle content-center"
+                     style="width: calc(100% - 2.5rem - 1rem); top: 50%; transform: translate(-50%, -50%)">
                     <div class="w-full bg-white rounded items-center align-middle align-center flex-1">
                         <div class="w-0 bg-green-300 py-1 rounded" style="width: 100%;"></div>
                     </div>
@@ -32,7 +33,8 @@
 
         <div class="w-1/4">
             <div class="relative mb-2">
-                <div class="absolute flex align-center items-center align-middle content-center" style="width: calc(100% - 2.5rem - 1rem); top: 50%; transform: translate(-50%, -50%)">
+                <div class="absolute flex align-center items-center align-middle content-center"
+                     style="width: calc(100% - 2.5rem - 1rem); top: 50%; transform: translate(-50%, -50%)">
                     <div class="w-full bg-white rounded items-center align-middle align-center flex-1">
                         <div class="w-0 bg-green-300 py-1 rounded" style="width: 100%;"></div>
                     </div>
@@ -50,7 +52,8 @@
 
         <div class="w-1/4">
             <div class="relative mb-2">
-                <div class="absolute flex align-center items-center align-middle content-center" style="width: calc(100% - 2.5rem - 1rem); top: 50%; transform: translate(-50%, -50%)">
+                <div class="absolute flex align-center items-center align-middle content-center"
+                     style="width: calc(100% - 2.5rem - 1rem); top: 50%; transform: translate(-50%, -50%)">
                     <div class="w-full bg-white rounded items-center align-middle align-center flex-1">
                         <div class="w-0 bg-green-300 py-1 rounded" style="width: 100%;"></div>
                     </div>
@@ -76,11 +79,52 @@
             <form class="w-full max-w-lg">
 
                 <div class="flex w-full flex-wrap mb-6">
-                    <p>complete</p>
+                    <h2>Uw aankoop is voltooid!</h2>
                 </div>
-                <div class="flex md:items-center justify-between">
-                    <a href="/checkout/pay" class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">Terug</a>
-                    <a href="/user" class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">Doorgaan</a>
+                <div>
+                    <!-- <table class="w-full text-sm lg:text-base" cellspacing="0">
+                        <thead>
+                        <tr class="h-12 uppercase">
+                            <th class="hidden md:table-cell"></th>
+                            <th class="text-left">Product</th>
+                            <th class="lg:text-right text-left pl-5 lg:pl-0">
+                                <span class="lg:hidden" title="Quantity">Ant.</span>
+                                <span class="hidden lg:inline">Aantal</span>
+                            </th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <?php print_r($_SESSION['cart']);
+                    foreach ($arg as $id => $product_obj) { ?>
+
+                            <?php $Images = $product_obj['images'] ?>
+                            <?php $Result = $product_obj['product'] ?>
+
+                            <tr class="cart-items" id="row-<?php print $id; ?>">
+                                <td class="hidden pb-4 md:table-cell">
+                                        <img src="/public/StockItemIMG/<?php print $Images[0]->ImagePath; ?>" class="w-20 rounded" alt="Thumbnail">
+                                </td>
+                                <td>
+                                        <a href="/products/view?id=<?php print $id; ?>">
+                                            <p class="mb-2 md:ml-4"><?php print $Result[0]->StockItemName; ?></p>
+                                    </a>
+                                </td>
+                                <td class="hidden text-right md:table-cell">
+                                <span class="text-sm lg:text-base font-medium"> €
+                                    <span id="price-<?php print($id) ?>">
+                                        <?php print sprintf("%.2f", $Result[0]->SellPrice); ?>
+                                    </span>
+                                </span>
+                                </td>
+                            </tr>
+                        <?php } ?>
+                        </tbody>
+                    </table> -->
+                </div>
+                <div class="flex md:items-center justify-around">
+                    <a href="/user"
+                       class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                       type="button">Doorgaan</a>
                 </div>
             </form>
         </div>
