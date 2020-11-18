@@ -3,7 +3,7 @@
 
         <div class="items-center flex flex-row justify-between">
             <a href="/" draggable="false">
-                <img class="logo" id="logo" draggable="false" src="/public/img/logo.svg" />
+                <img class="logo" id="logo" draggable="false" src="/public/img/logo.svg"/>
             </a>
 
             <div class="flex flex-row">
@@ -18,9 +18,12 @@
 
         </div>
 
-        <div class="flex align-center bg-gray-100 rounded flex-grow lg:flex-grow-0 max-w-full mx-8 lg:mx-0">
-            <input class="text-gray-800 border-transparent rounded p-2 px-3 min-w-full" type="text" placeholder="Zoeken!" id="zoek" type="text" name="zoek" value="">
-        </div>
+        <!-- <form method="get" action="/products"> -->
+            <div class="flex align-center bg-gray-100 rounded flex-grow lg:flex-grow-0 max-w-full mx-8 lg:mx-0">
+                <input class="text-gray-800 border-transparent rounded p-2 px-3 min-w-full form-submit" type="text"
+                       placeholder="Zoeken!" id="zoek" type="text" name="search" value="">
+            </div>
+        <!-- </form> -->
 
         <div class="items-center flex flex-row justify-end">
             <a href="/<?php print $GLOBALS['t']['navbar-language'] ?>">
