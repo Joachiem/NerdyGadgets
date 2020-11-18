@@ -13,7 +13,9 @@ Route::redirect('/checkout', '/checkout/account');
 
 // index
 Route::get('/', function () {
-    View::show('index');
+    $arg = DB::execute($GLOBALS['q']['products'], [], ['102,75,32']);
+
+    View::show('index', $arg);
 });
 
 
@@ -39,6 +41,7 @@ Route::get('/products', function () {
     View::show('product/index');
 });
 Route::get('/products/view', function () {
+    if (empty($_GET['id'])) View::show('error/404');
     Product::index($_GET['id']);
 });
 
@@ -63,13 +66,10 @@ Route::get('/checkout/complete', function () {
     Checkout::complete();
 });
 Route::post('/checkout/account', function () {
-    Checkout::account();
-    Checkout::checkaccount();
-    Route::redirect('/checkout/account', '/checkout/address');
+    Checkout::storeUserInfo();
 });
 Route::post('/checkout/address', function () {
-    Checkout::address();
-    Route::redirect('/checkout/address', '/checkout/pay');
+    Checkout::storeShippingInfo();
 });
 
 

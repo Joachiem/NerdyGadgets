@@ -129,6 +129,7 @@ class Route
 
     /**
      * get the url of the page
+     * @param string $url
      * @return string $url
      */
     private static function add_slash_url($url)
@@ -136,7 +137,7 @@ class Route
         return '/' . $url;
     }
 
-    
+
     /**
      * go one page back
      */

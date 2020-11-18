@@ -1,4 +1,5 @@
 <?php $error_messages = isset($_SESSION['form']['error_messages']) ? (object)$_SESSION['form']['error_messages'] : [] ?>
+<?php Checkout::noItemsInCart(); ?>
 
 <div class="w-full py-6">
     <div class="flex">
@@ -125,7 +126,7 @@
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
                             Telefoonnummer
                         </label>
-                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white <?php print isset($error_messages->phonenumber) ? 'border-red-500' : 'border-gray-200' ?>" name="phonenumber" placeholder="06-12345678" id="grid-phonenumber" type="text" value="<?php isset($_SESSION['form']["phonenumber"]) ? print($_SESSION['form']["phonenumber"]) : '' ?>">
+                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white <?php print isset($error_messages->phonenumber) ? 'border-red-500' : 'border-gray-200' ?>" name="phonenumber" placeholder="06-12345678" id="grid-phonenumber" type="tel" pattern="[06]{2}-[0-9]{8}" value="<?php isset($_SESSION['form']["phonenumber"]) ? print($_SESSION['form']["phonenumber"]) : '' ?>">
 
                         <?php if (isset($error_messages->phonenumber)) { ?>
 

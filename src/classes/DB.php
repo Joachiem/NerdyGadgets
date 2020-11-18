@@ -1,12 +1,12 @@
 <?php
 class DB
 {
-    private static string $host = 'localhost';
-    private static string $db = 'nerdygadgets';
-    private static string $user = 'root';
-    private static string $pass = '';
-    private static string $charset = 'utf8mb4';
-    private static pdo $conn;
+    private static $host = 'localhost';
+    private static $db = 'nerdygadgets';
+    private static $user = 'root';
+    private static $pass = '';
+    private static $charset = 'utf8mb4';
+    private static $conn;
 
 
     /**
@@ -28,7 +28,7 @@ class DB
             throw new \PDOException($e->getMessage(), (int)$e->getCode());
         }
     }
-    
+
 
     /**
      * make executions to the database

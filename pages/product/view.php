@@ -3,9 +3,20 @@
     <div class="grid auto-cols-min grid-flow-col grid-cols-2 gap-8 mb-8">
 
         <div class="overflow-hidden rounded-lg shadow-lg object-cover bg-white">
-            <?php for ($i = 0; $i < count($arg['images']); $i++) { ?>
-                <img alt="Placeholder" class="h-full object-cover w-auto" src="/public/StockItemIMG/<?php print $arg['images'][$i]->ImagePath ?>">
+
+            <?php if (isset($arg['images'])) { ?>
+                <?php for ($i = 0; $i < count($arg['images']); $i++) { ?>
+
+                    <img alt="Placeholder" class="h-full object-cover w-auto" src="/public/StockItemIMG/<?php print $arg['images'][$i]->ImagePath ?>">
+
+                <?php } ?>
+            <?php } else { ?>
+
+                <img alt="Placeholder" class="h-full object-cover w-auto" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.clarksonmotors.co.uk%2Fwp-content%2Fuploads%2F2015%2F04%2Fplaceholder-600x400.png&f=1&nofb=1">
+
             <?php } ?>
+
+
         </div>
 
         <div class="overflow-hidden rounded-lg shadow-lg p-2 md:p-4 bg-white">
@@ -46,7 +57,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                    
+
                         <?php foreach ($CustomFields as $SpecName => $SpecText) { ?>
 
                             <tr>
