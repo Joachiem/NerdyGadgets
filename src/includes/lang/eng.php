@@ -10,10 +10,10 @@ $GLOBALS['t'] = [
     'navbar-language' => 'dutch',
     'navbar-language-title' => 'Nederlands',
     'navbar-log-in' => 'Sign in',
+    'navbar-search' => 'Search!',
     '' => '',
 
     //product-index
-    'product-index-search' => 'Search',
     'product-index-num-product' => 'Number of Products on page',
     'product-index-sort' => 'Sort',
     'product-index-sort-price-asc' => 'Price ascending',
