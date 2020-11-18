@@ -18,12 +18,11 @@
 
         </div>
 
-        <!-- <form method="get" action="/products"> -->
-            <div class="flex align-center bg-gray-100 rounded flex-grow lg:flex-grow-0 max-w-full mx-8 lg:mx-0">
-                <input class="text-gray-800 border-transparent rounded p-2 px-3 min-w-full form-submit" type="text"
-                       placeholder="Zoeken!" id="zoek" type="text" name="search" value="">
-            </div>
-        <!-- </form> -->
+        <form class="flex align-center bg-gray-100 rounded flex-grow lg:flex-grow-0 max-w-full mx-8 lg:mx-0"
+              method="get" action="/products">
+            <input class="text-gray-800 border-transparent rounded p-2 px-3 min-w-full form-submit" type="text"
+                   placeholder="Zoeken!" id="zoek" type="text" name="search" value="">
+        </form>
 
         <div class="items-center flex flex-row justify-end">
             <a href="/<?php print $GLOBALS['t']['navbar-language'] ?>">
