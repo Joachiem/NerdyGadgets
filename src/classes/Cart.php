@@ -32,14 +32,6 @@ class Cart
         View::show('cart/index', $arg);
     }
 
-    /**
-     * index page
-     * @param string $id
-     */
-    public static function add($id)
-    {
-        $_SESSION['cart'][$id] = 1;
-    }
 
     /**
      * remove cart item
@@ -52,6 +44,7 @@ class Cart
         $_SESSION['cart'] = $cart;
     }
 
+
     /**
      * index page
      * @param mixed $callback
@@ -60,6 +53,7 @@ class Cart
     {
         $_SESSION['cart'][$id] += 1;
     }
+
 
     /**
      * index page
