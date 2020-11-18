@@ -144,9 +144,6 @@ if (isset($amount)) {
 <div>
     <form>
         <div>
-            <h4><?php print $GLOBALS['t']['product-index-search'] ?>Zoeken</h4>
-
-            <input type="text" name="search" id="search" value="<?php print (isset($_GET['search'])) ? $_GET['search'] : ""; ?>" class="form-submit">
 
             <h4><?php print $GLOBALS['t']['product-index-num-product'] ?></h4>
 

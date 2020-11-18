@@ -21,7 +21,7 @@
         <form method="get" action="/products" class="flex align-center bg-gray-100 rounded flex-grow lg:flex-grow-0 max-w-full mx-8 lg:mx-0">
             <div class="flex-grow">
                 <input class="text-gray-800 rounded p-2 px-3 min-w-full bg-gray-100 form-submit min-h-full outline-none" type="text"
-                       placeholder="Zoeken!" id="zoek" type="text" name="search" value="">
+                       placeholder="Zoeken!" id="zoek" name="search" value="<?php print (isset($_GET['search'])) ? $_GET['search'] : ""; ?>">
                        </div>
                 <button class="flex items-center px-2 focus:outline-none bg-gray-200" type="submit"><ion-icon name="search-outline"></ion-icon></button>
             
