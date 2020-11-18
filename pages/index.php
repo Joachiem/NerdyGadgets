@@ -4,7 +4,7 @@
         <?php foreach ($arg as $product) { ?>
 
             <article class="flex justify-between flex-col overflow-hidden rounded-lg shadow-lg bg-white">
-                <a href="/products/view?=<?php print $product->StockItemID ?>">
+                <a href="/products/view?id=<?php print $product->StockItemID ?>">
                     <div>
                         <img alt="Placeholder" class="block object-cover p-4 w-full" src="/public/StockItemIMG/<?php print $product->ImagePath ?>">
                     </div>
@@ -12,7 +12,7 @@
 
                 <div class="flex flex-col items-center text-center justify-between leading-tight p-2 md:p-4">
                     <h1 class="text-lg">
-                        <a class="no-underline hover:underline text-black" href="/products/view?=<?php print $product->StockItemID ?>">
+                        <a class="no-underline hover:underline text-black" href="/products/view?id=<?php print $product->StockItemID ?>">
                             <?php print $product->StockItemName ?>
                         </a>
                     </h1>
