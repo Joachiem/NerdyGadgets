@@ -3,68 +3,74 @@
         <div class="flex-1">
             <table class="w-full text-sm lg:text-base" cellspacing="0">
                 <thead>
-                    <tr class="h-12 uppercase">
-                        <th class="hidden md:table-cell"></th>
-                        <th class="text-left">Product</th>
-                        <th class="lg:text-right text-left pl-5 lg:pl-0">
-                            <span class="lg:hidden" title="Quantity">Ant.</span>
-                            <span class="hidden lg:inline">Aantal</span>
-                        </th>
-                        <th class="hidden text-right md:table-cell">Prijs per stuk</th>
-                        <th class="text-right">Totaal prijs</th>
-                    </tr>
+                <tr class="h-12 uppercase">
+                    <th class="hidden md:table-cell"></th>
+                    <th class="text-left">Product</th>
+                    <th class="lg:text-right text-left pl-5 lg:pl-0">
+                        <span class="lg:hidden" title="Quantity">Ant.</span>
+                        <span class="hidden lg:inline">Aantal</span>
+                    </th>
+                    <th class="hidden text-right md:table-cell">Prijs per stuk</th>
+                    <th class="text-right">Totaal prijs</th>
+                </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($arg as $id => $product_obj) { ?>
+                <?php foreach ($arg as $id => $product_obj) { ?>
 
-                        <?php $Images = $product_obj['images'] ?>
-                        <?php $Result = $product_obj['product'] ?>
+                    <?php $Images = $product_obj['images'] ?>
+                    <?php $Result = $product_obj['product'] ?>
 
-                        <tr class="cart-items" id="row-<?php print $id; ?>">
-                            <td class="hidden pb-4 md:table-cell">
+                    <tr class="cart-items" id="row-<?php print $id; ?>">
+                        <td class="hidden pb-4 md:table-cell">
+                            <a href="/products/view?id=<?php print $id; ?>">
+                                <img src="/public/StockItemIMG/<?php print $Images[0]->ImagePath; ?>"
+                                     class="w-20 rounded" alt="Thumbnail">
+                            </a>
+                        </td>
+                        <td>
+                            <a>
                                 <a href="/products/view?id=<?php print $id; ?>">
-                                    <img src="/public/StockItemIMG/<?php print $Images[0]->ImagePath; ?>" class="w-20 rounded" alt="Thumbnail">
-                                </a>
-                            </td>
-                            <td>
-                                <a>
-                                    <a href="/products/view?id=<?php print $id; ?>">
-                                        <p class="mb-2 md:ml-4"><?php print $Result[0]->StockItemName; ?></p></a>
-                                    <button onclick="remove(<?php print($id) ?>)" class="text-gray-700 md:ml-4">
-                                        <small>(Verwijder product)</small>
+                                    <p class="mb-2 md:ml-4"><?php print $Result[0]->StockItemName; ?></p></a>
+                                <button onclick="remove(<?php print($id) ?>)" class="text-gray-700 md:ml-4">
+                                    <small>(Verwijder product)</small>
+                                </button>
+                            </a>
+                        </td>
+                        <td class="justify-center md:justify-end md:flex mt-6">
+                            <div class="w-32">
+                                <div class="flex justify-center flex-row h-10 w-full rounded-lg relative bg-transparent mt-1">
+                                    <button data-action="decrement" value="<?php print($id) ?>" id="decrement-btn"
+                                            class="focus:outline-none bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none">
+                                        <span class="flex justify-center pb-1 m-auto text-2xl font-thin">−</span>
                                     </button>
-                                </a>
-                            </td>
-                            <td class="justify-center md:justify-end md:flex mt-6">
-                                <div class="w-32">
-                                    <div class="flex justify-center flex-row h-10 w-full rounded-lg relative bg-transparent mt-1">
-                                        <button data-action="decrement" value="<?php print($id) ?>" id="decrement-btn" class="focus:outline-none bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none">
-                                            <span class="flex justify-center pb-1 m-auto text-2xl font-thin">−</span>
-                                        </button>
-                                        <input id="qty-<?php print($id) ?>" min="0" type="number" class="focus:outline-none z-10 select-none w-12 outline-none focus:outline-none text-center  bg-gray-300 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-gray-700  outline-none" name="custom-input-number" value="<?php print($product_obj['qty']) ?>"></input>
-                                        <button data-action="increment" value="<?php print($id) ?>" id="increment-btn" class="focus:outline-none bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer">
-                                            <span class="flex justify-center pb-1 m-auto text-2xl font-thin">+</span>
-                                        </button>
-                                    </div>
+                                    <input id="qty-<?php print($id) ?>" min="0" type="number"
+                                           class="focus:outline-none z-10 select-none w-12 outline-none focus:outline-none text-center  bg-gray-300 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-gray-700  outline-none"
+                                           name="custom-input-number"
+                                           value="<?php print($product_obj['qty']) ?>"></input>
+                                    <button data-action="increment" value="<?php print($id) ?>" id="increment-btn"
+                                            class="focus:outline-none bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer">
+                                        <span class="flex justify-center pb-1 m-auto text-2xl font-thin">+</span>
+                                    </button>
                                 </div>
-                            </td>
-                            <td class="hidden text-right md:table-cell">
+                            </div>
+                        </td>
+                        <td class="hidden text-right md:table-cell">
                                 <span class="text-sm lg:text-base font-medium"> €
                                     <span id="price-<?php print($id) ?>">
                                         <?php print sprintf("%.2f", $Result[0]->SellPrice); ?>
                                     </span>
                                 </span>
-                            </td>
-                            <td class="text-right">
-                                <span id="total-price-<?php print($id) ?>" class="text-sm lg:text-base font-medium"></span>
-                            </td>
-                        </tr>
-                    <?php }
-                    if (empty($arg)) { ?>
-                            <div class="flex p-2 mb-2 justify-center text-center bg-yellow-300">
+                        </td>
+                        <td class="text-right">
+                            <span id="total-price-<?php print($id) ?>" class="text-sm lg:text-base font-medium"></span>
+                        </td>
+                    </tr>
+                <?php }
+                if (empty($arg)) { ?>
+                    <div class="flex p-2 mb-2 justify-center text-center bg-yellow-300">
                         <ion-icon name="information-circle-outline"></ion-icon>
-                                <h2>Er staan nog geen artikelen in je winkelmandje :(</h2>
-                            </div>
+                        <h2>Er staan nog geen artikelen in je winkelmandje :(</h2>
+                    </div>
                 <?php } ?>
                 </tbody>
             </table>
@@ -75,8 +81,11 @@
                         <h1 class="ml-2 font-bold uppercase">Kortings code</h1>
                     </div>
                     <div class="p-4">
-                        <input class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100 focus:border-gray-600" id="tel" type="text">
-                        <a href="/cart" class="shadow bg-teal-400 hover:bg-teal-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">code toevoegen</a>
+                        <input class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100 focus:border-gray-600"
+                               id="tel" type="text">
+                        <a href="/cart"
+                           class="shadow bg-teal-400 hover:bg-teal-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                           type="button">code toevoegen</a>
 
                     </div>
 
@@ -102,7 +111,8 @@
                             <div class="lg:px-4 lg:py-2 m-2 text-md lg:text-s font-bold text-center text-gray-800">
                                 Totaalprijs
                             </div>
-                            <div id="total-price" class="lg:px-4 lg:py-2 m-2 lg:text-s font-bold text-center text-gray-900">
+                            <div id="total-price"
+                                 class="lg:px-4 lg:py-2 m-2 lg:text-s font-bold text-center text-gray-900">
                             </div>
                         </div>
                         <a href="/checkout/account">

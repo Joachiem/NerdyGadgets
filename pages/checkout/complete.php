@@ -73,16 +73,16 @@
 
 
 <div class="flex justify-center">
-    <div class="overflow-hidden rounded-lg shadow-lg mb-8 max-w-lg">
+    <div class="overflow-hidden rounded-lg shadow-lg mb-8 max-w-xl">
 
         <div class="leading-tight p-2 md:p-4 bg-white">
             <form class="w-full max-w-lg">
 
-                <div class="flex w-full flex-wrap mb-6">
+                <div class="justify-around text-xl flex w-full flex-wrap mb-6">
                     <h2>Uw aankoop is voltooid!</h2>
                 </div>
                 <div>
-                    <!-- <table class="w-full text-sm lg:text-base" cellspacing="0">
+                    <table class="w-full text-sm lg:text-base" cellspacing="0">
                         <thead>
                         <tr class="h-12 uppercase">
                             <th class="hidden md:table-cell"></th>
@@ -91,24 +91,26 @@
                                 <span class="lg:hidden" title="Quantity">Ant.</span>
                                 <span class="hidden lg:inline">Aantal</span>
                             </th>
+                            <th class="hidden text-right md:table-cell">Prijs</th>
                         </tr>
                         </thead>
                         <tbody>
-                        <?php print_r($_SESSION['cart']);
-                    foreach ($arg as $id => $product_obj) { ?>
+                        <?php foreach ($arg as $id => $product_obj) { ?>
 
                             <?php $Images = $product_obj['images'] ?>
                             <?php $Result = $product_obj['product'] ?>
 
                             <tr class="cart-items" id="row-<?php print $id; ?>">
                                 <td class="hidden pb-4 md:table-cell">
-                                        <img src="/public/StockItemIMG/<?php print $Images[0]->ImagePath; ?>" class="w-20 rounded" alt="Thumbnail">
+                                    <img src="/public/StockItemIMG/<?php print $Images[0]->ImagePath; ?>"
+                                         class="w-20 p-1 rounded" alt="Thumbnail">
                                 </td>
                                 <td>
-                                        <a href="/products/view?id=<?php print $id; ?>">
-                                            <p class="mb-2 md:ml-4"><?php print $Result[0]->StockItemName; ?></p>
+                                    <a href="/products/view?id=<?php print $id; ?>">
+                                        <p class="mb-2 md:ml-4"><?php print $Result[0]->StockItemName; ?></p>
                                     </a>
                                 </td>
+                                <td><?php print($product_obj['qty']) ?></td>
                                 <td class="hidden text-right md:table-cell">
                                 <span class="text-sm lg:text-base font-medium"> €
                                     <span id="price-<?php print($id) ?>">
@@ -119,7 +121,7 @@
                             </tr>
                         <?php } ?>
                         </tbody>
-                    </table> -->
+                    </table>
                 </div>
                 <div class="flex md:items-center justify-around">
                     <a href="/user"

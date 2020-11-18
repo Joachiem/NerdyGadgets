@@ -63,7 +63,7 @@ Route::get('/checkout/pay', function () {
     View::show('checkout/pay');
 });
 Route::get('/checkout/complete', function () {
-    View::show('checkout/complete');
+    Checkout::complete();
 });
 Route::post('/checkout/account', function () {
     Checkout::storeUserInfo();
