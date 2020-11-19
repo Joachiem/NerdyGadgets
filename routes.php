@@ -41,7 +41,8 @@ Route::get('/products', function () {
     View::show('product/index');
 });
 Route::get('/products/view', function () {
-    Product::view(isset($_GET['id']) ? $_GET['id'] : null);
+    if (empty($_GET['id'])) View::show('error/404');
+    Product::index($_GET['id']);
 });
 
 
@@ -50,20 +51,6 @@ Route::get('/categories', function () {
     Category::index();
 });
 
-//footer contact
-Route::get('/contact', function () {
-    View::show('/contact/index');
-});
-
-//footer terms of service
-Route::get('/tos', function () {
-    View::show('/tos/index');
-});
-
-//footer privacy
-Route::get('/privacy', function () {
-    View::show('/privacy/index');
-});
 
 // checkout
 Route::get('/checkout/account', function () {

@@ -4,26 +4,16 @@ class Product
 {
     /**
      * index page
+     * @param mixed $callback
      */
-    public static function index()
+    public static function index($id)
     {
-        View::show('product/index');
-    }
-
-    /**
-     * view page
-     * @param string $id
-     */
-    public static function view($id)
-    {
-        if (!$id) View::show('error/404');
-
-        $product = DB::execute($GLOBALS['q']['product'], [$id])[0];
+        $product = DB::execute($GLOBALS['q']['product'], [$id]);
 
         $images = DB::execute($GLOBALS['q']['product-images'], [$id]);
 
         if ($images) {
-            $product->images = $images;
+            $product['images'] = $images;
         }
 
         View::show('product/view', $product);
