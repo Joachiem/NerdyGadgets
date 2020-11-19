@@ -17,7 +17,7 @@
 
     <div class="grid -mx-1 lg:-mx-4 mt-8 grid-cols-4 gap-8">
         <div class="col-span-3">
-            <a><img class="object-cover w-full" src="/public/Img/christmas-sale-purple-discount-banner-with-garland_7993-5998.jpg"></a>
+            <a><img class="rounded object-cover w-full" src="/public/Img/christmas-sale-purple-discount-banner-with-garland_7993-5998.jpg"></a>
         </div>
         <?php $product = $arg[0] ?>
         <div class="flex">
@@ -77,7 +77,6 @@
         <style>
             .material-card {
                 font-family: 'Roboto', sans-serif;
-                background-color: #FFF;
                 box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, .12);
             }
         </style>
