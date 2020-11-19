@@ -17,7 +17,8 @@
 
         <div class="w-1/4">
             <div class="relative mb-2">
-                <div class="absolute flex align-center items-center align-middle content-center" style="width: calc(100% - 2.5rem - 1rem); top: 50%; transform: translate(-50%, -50%)">
+                <div class="absolute flex align-center items-center align-middle content-center"
+                     style="width: calc(100% - 2.5rem - 1rem); top: 50%; transform: translate(-50%, -50%)">
                     <div class="w-full bg-white rounded items-center align-middle align-center flex-1">
                         <div class="w-0 bg-green-300 py-1 rounded" style="width: 0%;"></div>
                     </div>
@@ -35,7 +36,8 @@
 
         <div class="w-1/4">
             <div class="relative mb-2">
-                <div class="absolute flex align-center items-center align-middle content-center" style="width: calc(100% - 2.5rem - 1rem); top: 50%; transform: translate(-50%, -50%)">
+                <div class="absolute flex align-center items-center align-middle content-center"
+                     style="width: calc(100% - 2.5rem - 1rem); top: 50%; transform: translate(-50%, -50%)">
                     <div class="w-full bg-white rounded items-center align-middle align-center flex-1">
                         <div class="w-0 bg-green-300 py-1 rounded" style="width: 0%;"></div>
                     </div>
@@ -53,7 +55,8 @@
 
         <div class="w-1/4">
             <div class="relative mb-2">
-                <div class="absolute flex align-center items-center align-middle content-center" style="width: calc(100% - 2.5rem - 1rem); top: 50%; transform: translate(-50%, -50%)">
+                <div class="absolute flex align-center items-center align-middle content-center"
+                     style="width: calc(100% - 2.5rem - 1rem); top: 50%; transform: translate(-50%, -50%)">
                     <div class="w-full bg-white rounded items-center align-middle align-center flex-1">
                         <div class="w-0 bg-green-300 py-1 rounded" style="width: 0%;"></div>
                     </div>
@@ -79,10 +82,13 @@
             <form action method="POST" class="w-full max-w-lg">
                 <div class="flex flex-wrap -mx-3 mb-6">
                     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                               for="grid-first-name">
                             <?php print $GLOBALS['t']['firstname'] ?>
                         </label>
-                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white <?php print isset($error_messages->firstname) ? 'border-red-500' : 'border-gray-200' ?>" name="firstname" id="grid-first-name" type="text" value="<?php isset($_SESSION['form']["firstname"]) ? print($_SESSION['form']["firstname"]) : '' ?>">
+                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white <?php print isset($error_messages->firstname) ? 'border-red-500' : 'border-gray-200' ?>"
+                               name="firstname" id="grid-first-name" type="text"
+                               value="<?php isset($_SESSION['form']["firstname"]) ? print($_SESSION['form']["firstname"]) : '' ?>">
 
                         <?php if (isset($error_messages->firstname)) { ?>
 
@@ -92,10 +98,13 @@
 
                     </div>
                     <div class="w-full md:w-1/2 px-3">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                               for="grid-last-name">
                             <?php print $GLOBALS['t']['lastname'] ?>
                         </label>
-                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white <?php print isset($error_messages->lastname) ? 'border-red-500' : 'border-gray-200' ?>" name="lastname" id="grid-last-name" type="text" value="<?php isset($_SESSION['form']["lastname"]) ? print($_SESSION['form']["lastname"]) : '' ?>">
+                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white <?php print isset($error_messages->lastname) ? 'border-red-500' : 'border-gray-200' ?>"
+                               name="lastname" id="grid-last-name" type="text"
+                               value="<?php isset($_SESSION['form']["lastname"]) ? print($_SESSION['form']["lastname"]) : '' ?>">
 
                         <?php if (isset($error_messages->lastname)) { ?>
 
@@ -107,10 +116,13 @@
                 </div>
                 <div class="flex flex-wrap -mx-3 mb-6">
                     <div class="w-full px-3">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                               for="grid-password">
                             E-mailadress
                         </label>
-                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white <?php print isset($error_messages->email) ? 'border-red-500' : 'border-gray-200' ?>" name="email" id="grid-email" type="text" value="<?php isset($_SESSION['form']["email"]) ? print($_SESSION['form']["email"]) : '' ?>">
+                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white <?php print isset($error_messages->email) ? 'border-red-500' : 'border-gray-200' ?>"
+                               name="email" id="grid-email" type="text"
+                               value="<?php isset($_SESSION['form']["email"]) ? print($_SESSION['form']["email"]) : '' ?>">
 
                         <?php if (isset($error_messages->email)) { ?>
 
@@ -123,10 +135,14 @@
                 </div>
                 <div class="flex flex-wrap -mx-3 mb-6">
                     <div class="w-full px-3">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                               for="grid-password">
                             Telefoonnummer
                         </label>
-                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white <?php print isset($error_messages->phonenumber) ? 'border-red-500' : 'border-gray-200' ?>" name="phonenumber" placeholder="06-12345678" id="grid-phonenumber" type="tel" pattern="[06]{2}-[0-9]{8}" value="<?php isset($_SESSION['form']["phonenumber"]) ? print($_SESSION['form']["phonenumber"]) : '' ?>">
+                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white <?php print isset($error_messages->phonenumber) ? 'border-red-500' : 'border-gray-200' ?>"
+                               name="phonenumber" placeholder="06-12345678" id="grid-phonenumber" type="tel"
+                               pattern="[06]{2}-[0-9]{8}"
+                               value="<?php isset($_SESSION['form']["phonenumber"]) ? print($_SESSION['form']["phonenumber"]) : '' ?>">
 
                         <?php if (isset($error_messages->phonenumber)) { ?>
 
@@ -137,8 +153,11 @@
                     </div>
                 </div>
                 <div class="flex md:items-center justify-between">
-                    <a href="/cart" class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">Terug</a>
-                    <input class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" name="submit" type="submit" value="Doorgaan">
+                    <a href="/cart"
+                       class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                       type="button">Terug</a>
+                    <input class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                           name="submit" type="submit" value="Doorgaan">
                 </div>
             </form>
         </div>

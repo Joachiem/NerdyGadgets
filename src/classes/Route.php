@@ -1,4 +1,5 @@
 <?php
+
 class Route
 {
     /**
@@ -87,7 +88,7 @@ class Route
 
 
     /**
-     * redirect the page if given url is met 
+     * redirect the page if given url is met
      * @param string $from
      * @param string $to
      */

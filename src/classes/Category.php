@@ -1,4 +1,5 @@
 <?php
+
 class Category
 {
     public static function index()
