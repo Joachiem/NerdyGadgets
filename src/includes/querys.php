@@ -19,12 +19,18 @@ $GLOBALS['q'] = [
     AND ImagePath IS NOT NULL
     ORDER BY StockGroupID ASC',
 
+
+
+
+
     // get a product
     'product' => "SELECT SI.StockItemID,
+    SI.RecommendedRetailPrice,
     (RecommendedRetailPrice*(1+(TaxRate/100))) AS SellPrice,
     StockItemName,
-    CONCAT('Voorraad: ',QuantityOnHand) AS QuantityOnHand,
+    QuantityOnHand,
     SearchDetails, 
+    SG.ImagePath AS StockGroupImagePath,
     (
         CASE WHEN (RecommendedRetailPrice*(1+(TaxRate/100))) > 50 THEN 0 ELSE 6.95 END
     )
@@ -39,11 +45,15 @@ $GLOBALS['q'] = [
     AS BackupImagePath   
     FROM stockitems SI 
     JOIN stockitemholdings SIH USING(stockitemid)
-    JOIN stockitemstockgroups 
+    JOIN stockitemstockgroups
     ON SI.StockItemID = stockitemstockgroups.StockItemID
-    JOIN stockgroups USING(StockGroupID)
+    JOIN stockgroups AS SG USING(StockGroupID)
     WHERE SI.stockitemid = ?
     GROUP BY StockItemID",
+
+
+
+
 
     'product-images' => 'SELECT ImagePath
     FROM stockitemimages

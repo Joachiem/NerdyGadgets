@@ -3,6 +3,15 @@
 $GLOBALS['t'] = [
     'lastname' => 'Achternaam',
     'firstname' => 'Voornaam',
+    'quantity-on-hand' => 'Voorraad',
+    'excl-vat' => 'excl.btw',
+    'incl-vat' => 'incl.btw',
+
+    // alerts
+    'cookie-alert-title' => 'Wij gebruiken functionle cookies',
+    'cookie-alert-message' => 'Leer meer over de privacy op onze privacy pagina',
+    'add-alert-title' => 'Product Toegevoegd',
+    'add-alert-message' => 'Het product is toegevoegd aan het winkelmandje',
 
     //Frontpage
     'salepoint-1' => 'Betrouwbaar en Snel',
@@ -30,7 +39,6 @@ $GLOBALS['t'] = [
     'product-index-sort-price-desc' => 'Prijs aflopend',
     'product-index-sort-name-asc' => 'Naam oplopend',
     'product-index-sort-name-desc' => 'Naam aflopend',
-    'product-index-vat' => 'Inclusief BTW',
     'product-index-product-num' => 'Artikelnummer:',
     'product-index-not-found' => 'Yarr, er zijn geen resultaten gevonden',
     '' => '',
