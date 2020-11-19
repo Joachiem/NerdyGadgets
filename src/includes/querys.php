@@ -49,7 +49,7 @@ $GLOBALS['q'] = [
     FROM stockitemimages
     WHERE StockItemID = ?',
 
-    'products' => "SELECT SI.StockItemID,
+    'products' => "SELECT SI.StockItemID, RecommendedRetailPrice, 
     (RecommendedRetailPrice*(1+(TaxRate/100))) AS SellPrice,
     StockItemName,
     CONCAT('Voorraad: ',QuantityOnHand) AS QuantityOnHand,
