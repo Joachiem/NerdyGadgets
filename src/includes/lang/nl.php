@@ -16,10 +16,10 @@ $GLOBALS['t'] = [
     'navbar-language' => 'english',
     'navbar-language-title' => 'English',
     'navbar-log-in' => 'Inloggen',
+    'navbar-search' => 'Zoeken!',
     '' => '',
 
     //product-index
-    'product-index-search' => 'Zoeken',
     'product-index-num-product' => 'Aantal producten op pagina',
     'product-index-sort' => 'Sorteren',
     'product-index-sort-price-asc' => 'Prijs oplopend',

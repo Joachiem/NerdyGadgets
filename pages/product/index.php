@@ -9,7 +9,6 @@ $CategoryID = isset($_GET['category_id']) ? $_GET['category_id'] : "";
 $PageNumber = isset($_GET['page_number']) ? $_GET['page_number'] : 0;
 
 
-
 if (isset($_GET['sort'])) {
     $SortOnPage = $_GET['sort'];
     $_SESSION["sort"] = $_GET['sort'];
@@ -144,13 +143,13 @@ if (isset($amount)) {
 <div>
     <form>
         <div>
-            <h4><?php print $GLOBALS['t']['product-index-search'] ?>Zoeken</h4>
-
-            <input type="text" name="search" id="search" value="<?php print (isset($_GET['search'])) ? $_GET['search'] : ""; ?>" class="form-submit">
+            <input type="hidden" name="search" id="search"
+                   value="<?php print (isset($_GET['search'])) ? $_GET['search'] : ""; ?>">
 
             <h4><?php print $GLOBALS['t']['product-index-num-product'] ?></h4>
 
-            <input type="hidden" name="category_id" id="category_id" value="<?php print (isset($_GET['category_id'])) ? $_GET['category_id'] : ""; ?>">
+            <input type="hidden" name="category_id" id="category_id"
+                   value="<?php print (isset($_GET['category_id'])) ? $_GET['category_id'] : ""; ?>">
 
             <?php $p = $_SESSION['products_on_page'] ?>
 
@@ -186,7 +185,8 @@ if (isset($amount)) {
 
                 <?php } else { ?>
 
-                    <button id="page_number" class="PageNumber" value="<?php print $i - 1 ?>" type="submit" name="page_number"><?php print $i ?></button>
+                    <button id="page_number" class="PageNumber" value="<?php print $i - 1 ?>" type="submit"
+                            name="page_number"><?php print $i ?></button>
 
                 <?php } ?>
             <?php } ?>
@@ -209,7 +209,8 @@ if (isset($amount)) {
 
                     <?php } elseif (isset($row['BackupImagePath'])) { ?>
 
-                        <div class="ImgFrame" style="background-image: url('<?php print "public/StockGroupIMG/" . $row['BackupImagePath'] ?>'); background-size: cover;"></div>
+                        <div class="ImgFrame"
+                             style="background-image: url('<?php print "public/StockGroupIMG/" . $row['BackupImagePath'] ?>'); background-size: cover;"></div>
 
                     <?php } ?>
 
