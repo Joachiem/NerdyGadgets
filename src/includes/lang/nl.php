@@ -9,9 +9,9 @@ $GLOBALS['t'] = [
     'salepoint-2' => 'Gratis levering boven de 50 euro',
     'salepoint-3' => 'Vandaag besteld = Morgen in huis',
     'salepoint-4' => 'Gratis retouneren',
-    'hp-populair' => 'Populair',
-    'hp-catogoriën' => 'Catogoriën',
-    'hp-producten' => 'Producten',
+    'populair' => 'Populair',
+    'catogories' => 'Catogoriën',
+    'products' => 'Producten',
 
     //Navbar
     'navbar-products' => 'Producten',
