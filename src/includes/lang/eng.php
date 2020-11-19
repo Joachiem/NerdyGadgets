@@ -9,6 +9,8 @@ $GLOBALS['t'] = [
     // alerts
     'cookie-alert-title' => 'We use functional cookies',
     'cookie-alert-message' => 'Learn more about privacy on our privacy page',
+    'add-alert-title' => 'Product Added',
+    'add-alert-message' => 'The product has been added to the shoppingcart',
 
     //Navbar
     'navbar-products' => 'Products',

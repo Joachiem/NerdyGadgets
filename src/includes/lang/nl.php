@@ -8,6 +8,8 @@ $GLOBALS['t'] = [
     // alerts
     'cookie-alert-title' => 'Wij gebruiken functionle cookies',
     'cookie-alert-message' => 'Leer meer over de privacy op onze privacy pagina',
+    'add-alert-title' => 'Product Toegevoegd',
+    'add-alert-message' => 'Het product is toegevoegd aan het winkelmandje',
 
     //Navbar
     'navbar-products' => 'Producten',
