@@ -53,7 +53,7 @@ Route::get('/categories', function () {
 
 //footer links
 Route::get('/contact', function () {
-    View::show('/info/index');
+    View::show('/contact/index');
 });
 
 // checkout
