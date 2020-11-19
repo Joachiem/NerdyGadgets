@@ -28,6 +28,10 @@
                 <p class="text-grey-darker text-xl font-bold"><?php printf("€ %.2f", $arg[0]->SellPrice) ?></p>
             </div>
 
+            <div class="flex flex-col mb-4">
+                <p class="text-grey-darker text-xl font-bold"><?php print($arg[0]->QuantityOnHand) ?></p>
+            </div>
+
             <div class="flex flex-col mb-6">
                 <button id="add-to-cart-btn" class="text-xl shadow bg-green-500 hover:bg-green-600 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"><?php print $GLOBALS['t']['productpage-add-to-cart'] ?></button>
             </div>
