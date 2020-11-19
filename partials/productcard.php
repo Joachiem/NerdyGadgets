@@ -10,9 +10,9 @@
                     <div class="col-span-2 text-gray-700 text-sm">€ <?php print round($product->SellPrice, 2) ?><p class="text-gray-500 text-xs">€ <?php print round($product->RecommendedRetailPrice, 2) ?> excl.tax</p>
                     </div>
                     <div class="text-right">
-                        <p class="tracking-wider uppercase font-bold text-green-700 hover:bg-green-200 bg-green-100 rounded pt-1 pr-2 pl-1 inline-block right-0" href="#">
+                        <button id="add-to-cart-btn" value="<?php print $product->StockItemName ?>" class="tracking-wider uppercase font-bold text-green-700 hover:bg-green-200 bg-green-100 rounded pt-1 pr-2 pl-1 inline-block right-0" href="#">
                             <ion-icon name="cart-outline" size="10px"></ion-icon>
-                        </p>
+                        </button>
                     </div>
                 </div>
             </div>
