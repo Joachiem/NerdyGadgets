@@ -50,13 +50,16 @@
     </div>
 </div>
 <script>
-    (() => {
-        const addToCartBtn = document.querySelector('#add-to-cart-btn')
+     const cartButton = document.querySelectorAll(`.cart-btn`);
 
-        addToCartBtn.addEventListener("click", () => {
+        cartButton.forEach(btn => {
+            btn.addEventListener('click', addToCart);
+        });
+
+        function addToCart(e) {
+            let id = e.target.id.split('-')[2]
             let request = new XMLHttpRequest()
-            request.open('POST', '/cart/add?id=<?php print($_GET['id']) ?>')
+            request.open('POST', `/cart/add?id=${id}`)
             request.send()
-        })
-    })()
+        }
 </script>
