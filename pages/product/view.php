@@ -7,12 +7,14 @@
             <?php if (isset($arg['images'])) { ?>
                 <?php for ($i = 0; $i < count($arg['images']); $i++) { ?>
 
-                    <img alt="Placeholder" class="h-full object-cover w-auto" src="/public/StockItemIMG/<?php print $arg['images'][$i]->ImagePath ?>">
+                    <img alt="Placeholder" class="h-full object-cover w-auto"
+                         src="/public/StockItemIMG/<?php print $arg['images'][$i]->ImagePath ?>">
 
                 <?php } ?>
             <?php } else { ?>
 
-                <img alt="Placeholder" class="h-full object-cover w-auto" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.clarksonmotors.co.uk%2Fwp-content%2Fuploads%2F2015%2F04%2Fplaceholder-600x400.png&f=1&nofb=1">
+                <img alt="Placeholder" class="h-full object-cover w-auto"
+                     src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.clarksonmotors.co.uk%2Fwp-content%2Fuploads%2F2015%2F04%2Fplaceholder-600x400.png&f=1&nofb=1">
 
             <?php } ?>
 
@@ -29,7 +31,8 @@
             </div>
 
             <div class="flex flex-col mb-6">
-                <button id="add-to-cart-btn" class="text-xl shadow bg-green-500 hover:bg-green-600 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"><?php print $GLOBALS['t']['productpage-add-to-cart'] ?></button>
+                <button id="add-to-cart-btn"
+                        class="text-xl shadow bg-green-500 hover:bg-green-600 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"><?php print $GLOBALS['t']['productpage-add-to-cart'] ?></button>
             </div>
 
             <div class="flex flex-col mb-2">
@@ -51,31 +54,31 @@
 
                 <table class="table-auto">
                     <thead>
-                        <tr>
-                            <th class="px-4 py-2"><?php print $GLOBALS['t']['productpage-name'] ?></th>
-                            <th class="px-4 py-2">Data</th>
-                        </tr>
+                    <tr>
+                        <th class="px-4 py-2"><?php print $GLOBALS['t']['productpage-name'] ?></th>
+                        <th class="px-4 py-2">Data</th>
+                    </tr>
                     </thead>
                     <tbody>
 
-                        <?php foreach ($CustomFields as $SpecName => $SpecText) { ?>
+                    <?php foreach ($CustomFields as $SpecName => $SpecText) { ?>
 
-                            <tr>
-                                <td class="border px-4 py-2"><?php print $SpecName; ?></td>
-                                <td class="border px-4 py-2">
-                                    <?php
-                                    if (is_array($SpecText)) {
-                                        foreach ($SpecText as $SubText) {
-                                            print $SubText . " ";
-                                        }
-                                    } else {
-                                        print $SpecText;
+                        <tr>
+                            <td class="border px-4 py-2"><?php print $SpecName; ?></td>
+                            <td class="border px-4 py-2">
+                                <?php
+                                if (is_array($SpecText)) {
+                                    foreach ($SpecText as $SubText) {
+                                        print $SubText . " ";
                                     }
-                                    ?>
-                                </td>
-                            </tr>
+                                } else {
+                                    print $SpecText;
+                                }
+                                ?>
+                            </td>
+                        </tr>
 
-                        <?php } ?>
+                    <?php } ?>
 
                     </tbody>
                 </table>
@@ -88,7 +91,6 @@
 
         </div>
     </div>
-
 
 
 <?php } ?>
