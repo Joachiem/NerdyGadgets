@@ -30,6 +30,7 @@ $GLOBALS['q'] = [
     StockItemName,
     QuantityOnHand,
     SearchDetails, 
+    SG.ImagePath AS StockGroupImagePath,
     (
         CASE WHEN (RecommendedRetailPrice*(1+(TaxRate/100))) > 50 THEN 0 ELSE 6.95 END
     )
@@ -44,9 +45,9 @@ $GLOBALS['q'] = [
     AS BackupImagePath   
     FROM stockitems SI 
     JOIN stockitemholdings SIH USING(stockitemid)
-    JOIN stockitemstockgroups 
+    JOIN stockitemstockgroups
     ON SI.StockItemID = stockitemstockgroups.StockItemID
-    JOIN stockgroups USING(StockGroupID)
+    JOIN stockgroups AS SG USING(StockGroupID)
     WHERE SI.stockitemid = ?
     GROUP BY StockItemID",
 

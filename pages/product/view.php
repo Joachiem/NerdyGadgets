@@ -1,42 +1,45 @@
 <?php if ($arg) { ?>
 
     <div class="grid auto-cols-min grid-flow-col grid-cols-2 gap-8 mb-8">
-
         <div>
             <div class="overflow-hidden h-96 rounded-lg shadow-lg object-cover bg-white">
-
 
                 <?php if (isset($arg->images)) { ?>
                     <?php $i = 0 ?>
                     <?php foreach ($arg->images as $image) { ?>
 
                         <img alt="Placeholder" class="object-cover w-auto <?php print $i > 0 ? 'hidden' : 'block' ?>" src="/public/StockItemIMG/<?php print $image->ImagePath ?>">
-                        <?php $i++ ?>
 
+                        <?php $i++ ?>
                     <?php } ?>
                 <?php } else { ?>
 
-                    <img alt="Placeholder" class="object-cover w-auto" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fwww.clarksonmotors.co.uk%2Fwp-content%2Fuploads%2F2015%2F04%2Fplaceholder-600x400.png&f=1&nofb=1">
+                    <img alt="Placeholder" class="object-cover w-auto" src="/public/StockGroupIMG/<?php print $arg->StockGroupImagePath ?>">
 
                 <?php } ?>
 
             </div>
 
+            <?php if (isset($arg->images)) { ?>
+                <?php if (count($arg->images) > 1) { ?>
 
-            <div class="flex gap-4 mt-4">
+                    <div class="flex gap-4 mt-4">
 
-                <?php if (isset($arg->images)) { ?>
-                    <?php $i = 0 ?>
-                    <?php foreach ($arg->images as $image) { ?>
-                        <div class="flex p-1 overflow-hidden h-20 w-20 rounded-lg shadow-lg bg-white">
+                        <?php $i = 0 ?>
+                        <?php foreach ($arg->images as $image) { ?>
 
-                            <img alt="Placeholder" class="object-cover w-auto" src="/public/StockItemIMG/<?php print $image->ImagePath ?>">
-                            <?php $i++ ?>
-                        </div>
+                            <div class="flex p-1 overflow-hidden h-20 w-20 rounded-lg shadow-lg bg-white">
 
-                    <?php } ?>
-                <?php }  ?>
-            </div>
+                                <img alt="Placeholder" class="object-cover w-auto" src="/public/StockItemIMG/<?php print $image->ImagePath ?>">
+                                <?php $i++ ?>
+                            </div>
+
+                        <?php } ?>
+
+                    </div>
+
+                <?php } ?>
+            <?php } ?>
 
         </div>
 
