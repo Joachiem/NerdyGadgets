@@ -1,4 +1,4 @@
-<div class="container my-12 mx-auto px-4 md:px-12">
+<div class="container mx-auto px-4 md:px-12">
 
     <div class="flex justify-between h-auto text-center">
         <div class="flex items-center">
