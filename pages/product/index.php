@@ -216,7 +216,7 @@ if (isset($amount)) {
                     <div id="StockItemFrameRight">
                         <div class="CenterPriceLeftChild">
                             <h1 class="StockItemPriceText"><?php print sprintf("€ %0.2f", $row["SellPrice"]); ?></h1>
-                            <h6><?php print $GLOBALS['t']['product-index-vat'] ?></h6>
+                            <h6><?php print $GLOBALS['t']['product-index-incl-vat'] ?></h6>
                         </div>
                     </div>
                     <h1 class="StockItemID"><?php print $GLOBALS['t']['product-index-product-num'] ?><?php print $row["StockItemID"]; ?></h1>

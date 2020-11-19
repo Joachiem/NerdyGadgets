@@ -24,12 +24,18 @@
                 <h1 class="text-2xl"> <?php print $arg[0]->StockItemName; ?> </h1>
             </div>
 
-            <div class="flex flex-col mb-4">
-                <p class="text-grey-darker text-xl font-bold"><?php printf("€ %.2f", $arg[0]->SellPrice) ?></p>
+            <div class="">
+                <p class="text-grey-darker text-2xl font-bold"><?php printf("€ %.2f", $arg[0]->SellPrice) ?> </p>
+                <p class="text-sm"><?php print $GLOBALS['t']['product-index-incl-vat'] ?></p>
             </div>
 
-            <div class="flex flex-col mb-4">
-                <p class="text-grey-darker text-xl font-bold"><?php print($arg[0]->QuantityOnHand) ?></p>
+            <div class="mb-4">
+                <p class="text-grey text-gray-800 text-md font-bold"><?php printf("€ %.2f", $arg[0]->RecommendedRetailPrice) ?></p>
+                <p class="text-sm"><?php print $GLOBALS['t']['product-index-excl-vat'] ?></p>
+            </div>
+
+            <div class="flex flex-col mb-2">
+                <p class="text-grey-darker text-xl font-bold"><?php print($GLOBALS['t']['quantity-on-hand'] . ': ' . $arg[0]->QuantityOnHand) ?></p>
             </div>
 
             <div class="flex flex-col mb-6">

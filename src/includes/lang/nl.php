@@ -3,6 +3,7 @@
 $GLOBALS['t'] = [
     'lastname' => 'Achternaam',
     'firstname' => 'Voornaam',
+    'quantity-on-hand' => 'Voorraad',
 
     //Navbar
     'navbar-products' => 'Producten',
@@ -20,7 +21,8 @@ $GLOBALS['t'] = [
     'product-index-sort-price-desc' => 'Prijs aflopend',
     'product-index-sort-name-asc' => 'Naam oplopend',
     'product-index-sort-name-desc' => 'Naam aflopend',
-    'product-index-vat' => 'Inclusief BTW',
+    'product-index-incl-vat' => 'Inclusief BTW',
+    'product-index-excl-vat' => 'Exclusief BTW',
     'product-index-product-num' => 'Artikelnummer:',
     'product-index-not-found' => 'Yarr, er zijn geen resultaten gevonden',
     '' => '',

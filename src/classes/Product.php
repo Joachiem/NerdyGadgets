@@ -3,10 +3,20 @@ class Product
 {
     /**
      * index page
-     * @param mixed $callback
      */
-    public static function index($id)
+    public static function index()
     {
+        View::show('product/index');
+    }
+
+    /**
+     * view page
+     * @param string $id
+     */
+    public static function view($id)
+    {
+        if (!$id) View::show('error/404');
+
         $product = DB::execute($GLOBALS['q']['product'], [$id]);
 
         $images = DB::execute($GLOBALS['q']['product-images'], [$id]);
