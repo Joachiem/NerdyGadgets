@@ -1,4 +1,4 @@
-<div class="container mx-auto px-4 md:px-12">
+<div class="container mx-auto pb-8 px-4 md:px-12">
 
     <div class="flex justify-between h-auto text-center">
         <div class="flex items-center">
@@ -15,25 +15,27 @@
         </div>
     </div>
 
-    <div class="grid mt-4 grid-cols-3 gap-4">
-        <div class="col-span-2 ...">
-            <a><img class="object-cover  w-full" src="/public/Img/christmas-sale-purple-discount-banner-with-garland_7993-5998.jpg"></a>
-
+    <div class="grid -mx-1 lg:-mx-4 mt-8 grid-cols-4 gap-8">
+        <div class="col-span-3">
+            <a><img class="object-cover w-full" src="/public/Img/christmas-sale-purple-discount-banner-with-garland_7993-5998.jpg"></a>
         </div>
-        <div>
-            <article class=" flex max-w-sm rounded material-card bg-white">
+        <?php $product = $arg[0] ?>
+        <div class="flex">
+            <article class="max-w-sm rounded material-card bg-white">
                 <a href="/products/view?id=<?php print $product->StockItemID ?>">
-                    <div class="h-full">
-                        <img class="w-full rounded-t" src="/public/StockItemIMG/<?php print $product->ImagePath ?>">
+                    <div class="h-full flex flex-col justify-between">
+                        <div class="h-full flex items-center">
+                            <img class="w-full rounded-t p-1" src="/public/StockItemIMG/<?php print $product->ImagePath ?>">
+                        </div>
                         <div class="px-2 py-2 inset-x-0 bottom-0">
                             <div class="font-bold text-sm tracking-wide text-left"><?php print $product->StockItemName ?></div>
                             <div class="flex flex-wrap grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-0">
                                 <div class="text-gray-500 text-sm">€ <?php print round($product->SellPrice, 2) ?><p class="text-xs">€ <?php print round($product->RecommendedRetailPrice, 2) ?> ex. btw</p>
                                 </div>
                                 <div class="text-right">
-                                    <a class="tracking-wider uppercase font-bold text-green-700 hover:bg-green-200 bg-green-100 rounded pt-1 pr-2 pl-1 inline-block right-0" href="#">
+                                    <p class="tracking-wider uppercase font-bold text-green-700 hover:bg-green-200 bg-green-100 rounded pt-1 pr-2 pl-1 inline-block right-0" href="#">
                                         <ion-icon name="cart-outline" size="10px"></ion-icon>
-                                    </a>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -43,15 +45,15 @@
             </article>
         </div>
     </div>
-    <div class="flex flex-wrap mt-8 -mx-1 lg:-mx-4 grid lg:grid-cols-5 md:grid-cols-2 grid-cols-1 gap-8">
+    <div class="flex flex-wrap mt-8 -mx-1 lg:-mx-4 grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-8">
 
         <?php foreach ($arg as $product) { ?>
 
             <article class="max-w-sm rounded material-card bg-white">
                 <a href="/products/view?id=<?php print $product->StockItemID ?>">
-                    <div class="h-full">
-                        <div class="h-full">
-                            <img class="w-full rounded-t" src="/public/StockItemIMG/<?php print $product->ImagePath ?>">
+                    <div class="h-full flex flex-col justify-between">
+                        <div class="h-full flex items-center">
+                            <img class="w-full rounded-t p-1" src="/public/StockItemIMG/<?php print $product->ImagePath ?>">
                         </div>
                         <div class="px-2 py-2 inset-x-0 bottom-0">
                             <div class="font-bold text-sm tracking-wide text-left"><?php print $product->StockItemName ?></div>
@@ -59,7 +61,9 @@
                                 <div class="text-gray-500 text-sm">€ <?php print round($product->SellPrice, 2) ?><p class="text-xs">€ <?php print round($product->RecommendedRetailPrice, 2) ?> ex. btw</p>
                                 </div>
                                 <div class="text-right">
-                                    <p class="tracking-wider uppercase font-bold text-green-700 hover:bg-green-200 bg-green-100 rounded pt-1 pr-2 pl-1 inline-block right-0" href="#"><ion-icon name="cart-outline" size="10px"></ion-icon></p>
+                                    <p class="tracking-wider uppercase font-bold text-green-700 hover:bg-green-200 bg-green-100 rounded pt-1 pr-2 pl-1 inline-block right-0" href="#">
+                                        <ion-icon name="cart-outline" size="10px"></ion-icon>
+                                    </p>
                                 </div>
                             </div>
                         </div>
