@@ -4,6 +4,7 @@ $GLOBALS['t'] = [
     'lastname' => 'Lastname',
     'firstname' => 'Firstname',
     'quantity-on-hand' => 'Stock',
+    'excl-vat' => 'excl.vat',
 
 
     // alerts
@@ -28,8 +29,6 @@ $GLOBALS['t'] = [
     'product-index-sort-price-desc' => 'Price descending',
     'product-index-sort-name-asc' => 'Name acsending',
     'product-index-sort-name-desc' => 'Name descnding',
-    'product-index-incl-vat' => 'Inclusive VAT',
-    'product-index-excl-vat' => 'Exclusive VAT',
     'product-index-product-num' => 'Article Number:',
     'product-index-not-found' => 'Yarr, er zijn geen resultaten gevonden',
     '' => '',

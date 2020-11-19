@@ -49,14 +49,12 @@
                 <h1 class="text-2xl"> <?php print $arg->StockItemName; ?> </h1>
             </div>
 
-            <div class="">
+            <div>
                 <p class="text-grey-darker text-2xl font-bold"><?php printf("€ %.2f", $arg->SellPrice) ?> </p>
-                <p class="text-sm"><?php print $GLOBALS['t']['product-index-incl-vat'] ?></p>
             </div>
 
             <div class="mb-4">
-                <p class="text-grey text-gray-800 text-md font-bold"><?php printf("€ %.2f", $arg->RecommendedRetailPrice) ?></p>
-                <p class="text-sm"><?php print $GLOBALS['t']['product-index-excl-vat'] ?></p>
+                <p class="text-grey text-gray-800 text-md font-bold"><?php printf("€ %.2f", $arg->RecommendedRetailPrice) .  print ' ' . $GLOBALS['t']['excl-vat'] ?></p>
             </div>
 
             <div class="flex flex-col mb-2">
