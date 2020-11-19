@@ -20,8 +20,3 @@
     </p>
 </article>
 
-<style>
-    .material-card {
-        font-family: 'Roboto', sans-serif;
-    }
-</style>
