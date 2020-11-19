@@ -10,7 +10,7 @@ $GLOBALS['q'] = [
     // get all categories that have a image
     'categories' => 'SELECT StockGroupID, StockGroupName, ImagePath
     FROM stockgroups
-    WHERE StockGroupID
+    WHERE StockGroupID 
     IN 
     (
         SELECT StockGroupID 
