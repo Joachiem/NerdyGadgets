@@ -2,13 +2,13 @@
 
     <div class="grid auto-cols-min grid-flow-col grid-cols-2 gap-8 mb-8">
         <div>
-            <div class="overflow-hidden h-96 rounded-lg shadow-lg object-cover bg-white">
+            <div class="overflow-hidden rounded-lg shadow-lg object-cover bg-white" style="height: 30rem;">
 
                 <?php if (isset($arg->images)) { ?>
                     <?php $i = 0 ?>
                     <?php foreach ($arg->images as $image) { ?>
 
-                        <img alt="Placeholder" class="object-cover w-auto <?php print $i > 0 ? 'hidden' : 'block' ?>" src="/public/StockItemIMG/<?php print $image->ImagePath ?>">
+                        <img id="big-img-<?php print $i ?>" alt="Placeholder" class="h-full w-full big-img object-contain p-2 <?php print $i > 0 ? 'hidden' : 'block' ?>" src="/public/StockItemIMG/<?php print $image->ImagePath ?>">
 
                         <?php $i++ ?>
                     <?php } ?>
@@ -23,15 +23,16 @@
             <?php if (isset($arg->images)) { ?>
                 <?php if (count($arg->images) > 1) { ?>
 
-                    <div class="flex gap-4 mt-4">
+                    <div class="grid grid-cols-4 gap-4 mt-4">
 
                         <?php $i = 0 ?>
                         <?php foreach ($arg->images as $image) { ?>
 
-                            <div class="flex p-1 overflow-hidden h-20 w-20 rounded-lg shadow-lg bg-white">
+                            <div class="img-btn flex w-full rounded-lg shadow-lg bg-white">
+                                <img id="img-btn-<?php print $i ?>" alt="Placeholder" class="hover:bg-gray-200 p-1 relative rounded object-contain h-auto" src="/public/StockItemIMG/<?php print $image->ImagePath ?>">
 
-                                <img alt="Placeholder" class="object-cover w-auto" src="/public/StockItemIMG/<?php print $image->ImagePath ?>">
                                 <?php $i++ ?>
+
                             </div>
 
                         <?php } ?>
@@ -136,4 +137,18 @@
             request.send()
         })
     })()
+</script>
+
+<script>
+    const imageButtons = document.querySelectorAll('.img-btn')
+    const bigImages = Array.from(document.querySelectorAll('.big-img'))
+
+    imageButtons.forEach(btn => btn.addEventListener('click', showBigImg))
+
+    function showBigImg(e) {
+        const id = e.target.id.split('-')[2]
+
+        bigImages.forEach(bigImg => bigImg.classList.add('hidden'))
+        bigImages.find(e => e.id.split('-')[2] === id).classList.remove('hidden')
+    }
 </script>
