@@ -49,3 +49,14 @@
 
     </div>
 </div>
+<script>
+    (() => {
+        const addToCartBtn = document.querySelector('#add-to-cart-btn')
+
+        addToCartBtn.addEventListener("click", () => {
+            let request = new XMLHttpRequest()
+            request.open('POST', '/cart/add?id=<?php print($_GET['id']) ?>')
+            request.send()
+        })
+    })()
+</script>
