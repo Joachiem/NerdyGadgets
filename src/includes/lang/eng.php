@@ -5,6 +5,7 @@ $GLOBALS['t'] = [
     'firstname' => 'Firstname',
     'quantity-on-hand' => 'Stock',
     'excl-vat' => 'excl.vat',
+    'incl-vat' => 'incl.vat',
 
 
     // alerts

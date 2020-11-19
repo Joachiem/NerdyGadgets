@@ -5,6 +5,7 @@ $GLOBALS['t'] = [
     'firstname' => 'Voornaam',
     'quantity-on-hand' => 'Voorraad',
     'excl-vat' => 'excl.btw',
+    'incl-vat' => 'incl.btw',
 
     // alerts
     'cookie-alert-title' => 'Wij gebruiken functionle cookies',
