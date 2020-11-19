@@ -1,5 +1,4 @@
 <div class="container my-12 mx-auto px-4 md:px-12">
-    <div class="flex flex-wrap -mx-1 lg:-mx-4 grid lg:grid-cols-5 md:grid-cols-2 grid-cols-1 gap-8">
 
     <div class="flex justify-between h-auto text-center">
         <div class="flex items-center">
@@ -16,7 +15,7 @@
         </div>
     </div>
 
-    <div class="flex flex-wrap mt-8 -mx-1 lg:-mx-4 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
+    <div class="flex flex-wrap mt-8 -mx-1 lg:-mx-4 grid lg:grid-cols-5 md:grid-cols-2 grid-cols-1 gap-8">
 
         <?php foreach ($arg as $product) { ?>
 
