@@ -8,10 +8,11 @@ if(isset($_post["submit"])) {
 
     $mailennaar="rached.bataineh@windesheim.nl";
     $headers = "Van: ".$mailenvan;
-    $txt = "You have received an e-mail from ".$naam.".\n\n".$bericht;
+    $txt = "je hebt een E-mail ontvangen van ".$naam.".\n\n".$bericht;
 
  mail($mailennaar, $onderwerp, $txt, $headers);
 header("Location: index.php?mailsend");
+
 }
 ?>
 
