@@ -5,15 +5,15 @@
     <title>Contact form</title>
 </head>
 <body>
-<main>
     <p>E-mail versturen</p>
-    <div class="p-4">
-    <form class="contact-form" action="contactform.php" method="post">
-        <input type="text" name="name" placeholder="Volledige naam"> <br>
-        <input type="text" name="mail" placeholder="Jouw E-mail"> <br>
-        <input type="text" name="subject" placeholder="Onderwerp"> <br>
-        <textarea name="message" placeholder="Bericht"></textarea> <br>
-        <button class="bg-red-500 hover:bg-red-700" type="submit" name="submit">Versturen</button>
-</main>
+    <div>
+        <form action="contactform.php" method="post">
+            <input class="mb-4" type="text" name="name" placeholder="Volledige naam"> <br>
+            <input type="text" name="mail" placeholder="Jouw E-mail"> <br>
+            <input type="text" name="subject" placeholder="Onderwerp"> <br>
+            <textarea name="message" placeholder="Bericht"></textarea> <br>
+            <button class="bg-red-500 hover:bg-red-700 p-2 rounded" type="submit" name="submit">Versturen</button>
+        </form>
+    </div>
 </body>
 </html>
