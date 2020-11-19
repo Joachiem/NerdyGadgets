@@ -14,7 +14,7 @@
                     <?php } ?>
                 <?php } else { ?>
 
-                    <img alt="Placeholder" class="object-cover w-auto" src="/public/StockGroupIMG/<?php print $arg->StockGroupImagePath ?>">
+                    <img alt="Placeholder" class="h-full w-full object-contain w-auto" src="/public/StockGroupIMG/<?php print $arg->StockGroupImagePath ?>">
 
                 <?php } ?>
 
@@ -136,19 +136,17 @@
             request.open('POST', '/cart/add?id=<?php print($_GET['id']) ?>')
             request.send()
         })
+
+        const imageButtons = document.querySelectorAll('.img-btn')
+        const bigImages = Array.from(document.querySelectorAll('.big-img'))
+
+        imageButtons.forEach(btn => btn.addEventListener('click', showBigImg))
+
+        function showBigImg(e) {
+            const id = e.target.id.split('-')[2]
+
+            bigImages.forEach(bigImg => bigImg.classList.add('hidden'))
+            bigImages.find(e => e.id.split('-')[2] === id).classList.remove('hidden')
+        }
     })()
-</script>
-
-<script>
-    const imageButtons = document.querySelectorAll('.img-btn')
-    const bigImages = Array.from(document.querySelectorAll('.big-img'))
-
-    imageButtons.forEach(btn => btn.addEventListener('click', showBigImg))
-
-    function showBigImg(e) {
-        const id = e.target.id.split('-')[2]
-
-        bigImages.forEach(bigImg => bigImg.classList.add('hidden'))
-        bigImages.find(e => e.id.split('-')[2] === id).classList.remove('hidden')
-    }
 </script>
