@@ -20,12 +20,9 @@ class Auth
     public function register($username, $password, $repeat)
     {
         if (empty($username) || empty($password) || empty($repeat)) {
-            print("Please fill all fields!")
-
         }
 
         if ($password !== $repeat) {
-            print("The password does not match the repeat password!");
         }
 
         $this->username = $username;
@@ -46,7 +43,7 @@ class Auth
 
     public function logout()
     {
-       unset($_SESSION["isloggedIn"]); 
+        session_destroy();
+        session_regenerate_id(true);
     }
-    
 }
