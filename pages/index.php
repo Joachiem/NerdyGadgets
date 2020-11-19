@@ -5,13 +5,13 @@
             <ion-icon class="pr-1 pt-1 text-green-500" name="checkmark-done" size="small"></ion-icon><?php print $GLOBALS['t']['salepoint-1'] ?>
         </div>
         <div class="flex items-center">
-            <ion-icon class="pr-1 pt-1 text-green-500" name="checkmark-done" size="small"></ion-icon>Gratis levering boven de 50 euro
+            <ion-icon class="pr-1 pt-1 text-green-500" name="checkmark-done" size="small"></ion-icon><?php print $GLOBALS['t']['salepoint-2'] ?>
         </div>
         <div class="flex items-center">
-            <ion-icon class="pr-1 pt-1 text-green-500" name="checkmark-done" size="small"></ion-icon>Vandaag besteld = Morgen in huis
+            <ion-icon class="pr-1 pt-1 text-green-500" name="checkmark-done" size="small"></ion-icon><?php print $GLOBALS['t']['salepoint-3'] ?>
         </div>
         <div class="flex items-center">
-            <ion-icon class="pr-1 pt-1 text-green-500" name="checkmark-done" size="small"></ion-icon>Gratis retouneren
+            <ion-icon class="pr-1 pt-1 text-green-500" name="checkmark-done" size="small"></ion-icon><?php print $GLOBALS['t']['salepoint-4'] ?>
         </div>
     </div>
 

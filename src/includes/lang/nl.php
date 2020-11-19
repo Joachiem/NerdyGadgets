@@ -6,6 +6,9 @@ $GLOBALS['t'] = [
 
     //Frontpage
     'salepoint-1' => 'Betrouwbaar en Snel',
+    'salepoint-2' => 'Gratis levering boven de 50 euro',
+    'salepoint-3' => 'Vandaag besteld = Morgen in huis',
+    'salepoint-4' => 'Gratis retouneren',
 
     //Navbar
     'navbar-products' => 'Producten',
