@@ -16,7 +16,7 @@ class View
 
         include "partials/navbar.php";
 
-        print '<div class="pt-20 container mx-auto">';
+        print '<div class="pt-20 pb-56 container mx-auto">';
 
         if (file_exists("pages/$file.php")) {
             include "pages/$file.php";
