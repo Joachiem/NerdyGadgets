@@ -11,7 +11,7 @@
         </div>
     </div>
 </div>
-
+    
 <script>
     const cookieAlert = document.querySelector('#cookie-alert')
     const cookieAlertBtn = document.querySelector('#cookie-alert-btn')
