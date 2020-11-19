@@ -17,12 +17,12 @@ class Product
     {
         if (!$id) View::show('error/404');
 
-        $product = DB::execute($GLOBALS['q']['product'], [$id]);
+        $product = DB::execute($GLOBALS['q']['product'], [$id])[0];
 
         $images = DB::execute($GLOBALS['q']['product-images'], [$id]);
 
         if ($images) {
-            $product['images'] = $images;
+            $product->images = $images;
         }
 
         View::show('product/view', $product);
