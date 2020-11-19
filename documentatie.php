@@ -1,4 +1,5 @@
 <?php
+
 /**
  * voorbeelden
  * 
@@ -8,11 +9,14 @@
  * 
  * goede voorbeelden:
  * 
- * $result = DB::execute('select * from stockitems');
- * $result = DB::execute('select * from stockitems where stockitemid = ?', [1]);
- * $result = DB::execute('select * from stockitems $1', [], ['where stockitemid = 1']);
- * $result = DB::execute('select * from stockitems $1', [1], ['where stockitemid = ?']);
- * 
+ */
+
+$result = DB::execute('select * from stockitems');
+$result = DB::execute('select * from stockitems where stockitemid = ?', [1]);
+$result = DB::execute('select * from stockitems $1', [], ['where stockitemid = 1']);
+$result = DB::execute('select * from stockitems $1', [1], ['where stockitemid = ?']);
+
+/**
  * als de query te lang word kun je hem in querys.php zetten en in de query gebruiken:
  * 
  * dit doe je met $GLOBALS['q']
