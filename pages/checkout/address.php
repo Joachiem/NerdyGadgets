@@ -17,7 +17,8 @@
 
         <div class="w-1/4">
             <div class="relative mb-2">
-                <div class="absolute flex align-center items-center align-middle content-center" style="width: calc(100% - 2.5rem - 1rem); top: 50%; transform: translate(-50%, -50%)">
+                <div class="absolute flex align-center items-center align-middle content-center"
+                     style="width: calc(100% - 2.5rem - 1rem); top: 50%; transform: translate(-50%, -50%)">
                     <div class="w-full bg-white rounded items-center align-middle align-center flex-1">
                         <div class="w-0 bg-green-300 py-1 rounded" style="width: 100%;"></div>
                     </div>
@@ -35,7 +36,8 @@
 
         <div class="w-1/4">
             <div class="relative mb-2">
-                <div class="absolute flex align-center items-center align-middle content-center" style="width: calc(100% - 2.5rem - 1rem); top: 50%; transform: translate(-50%, -50%)">
+                <div class="absolute flex align-center items-center align-middle content-center"
+                     style="width: calc(100% - 2.5rem - 1rem); top: 50%; transform: translate(-50%, -50%)">
                     <div class="w-full bg-white rounded items-center align-middle align-center flex-1">
                         <div class="w-0 bg-green-300 py-1 rounded" style="width: 0%;"></div>
                     </div>
@@ -53,7 +55,8 @@
 
         <div class="w-1/4">
             <div class="relative mb-2">
-                <div class="absolute flex align-center items-center align-middle content-center" style="width: calc(100% - 2.5rem - 1rem); top: 50%; transform: translate(-50%, -50%)">
+                <div class="absolute flex align-center items-center align-middle content-center"
+                     style="width: calc(100% - 2.5rem - 1rem); top: 50%; transform: translate(-50%, -50%)">
                     <div class="w-full bg-white rounded items-center align-middle align-center flex-1">
                         <div class="w-0 bg-green-300 py-1 rounded" style="width: 0%;"></div>
                     </div>
@@ -79,10 +82,14 @@
             <form class="w-full max-w-lg" action="" method="POST">
                 <div class="flex flex-wrap -mx-3 mb-6">
                     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                               for="grid-first-name">
                             Postcode
                         </label>
-                        <input value="<?php isset($_SESSION['form']["postcode"]) ? print($_SESSION['form']["postcode"]) : '' ?>" name="postcode" class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white <?php print isset($error_messages->postcode) ? 'border-red-500' : 'border-gray-200' ?>" id="grid-first-name" type="text">
+                        <input value="<?php isset($_SESSION['form']["postcode"]) ? print($_SESSION['form']["postcode"]) : '' ?>"
+                               name="postcode"
+                               class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white <?php print isset($error_messages->postcode) ? 'border-red-500' : 'border-gray-200' ?>"
+                               id="grid-first-name" type="text">
                         <?php if (isset($error_messages->postcode)) { ?>
 
                             <p class="text-red-500 text-xs italic"><?php print $error_messages->postcode ?></p>
@@ -90,10 +97,14 @@
                         <?php } ?>
                     </div>
                     <div class="w-full md:w-1/2 px-3">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                               for="grid-last-name">
                             Huisnummer
                         </label>
-                        <input value="<?php isset($_SESSION['form']["housenmr"]) ? print($_SESSION['form']["housenmr"]) : '' ?>" name="housenmr" class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white <?php print isset($error_messages->housenmr) ? 'border-red-500' : 'border-gray-200' ?>" id="grid-last-name" type="text">
+                        <input value="<?php isset($_SESSION['form']["housenmr"]) ? print($_SESSION['form']["housenmr"]) : '' ?>"
+                               name="housenmr"
+                               class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white <?php print isset($error_messages->housenmr) ? 'border-red-500' : 'border-gray-200' ?>"
+                               id="grid-last-name" type="text">
                         <?php if (isset($error_messages->housenmr)) { ?>
 
                             <p class="text-red-500 text-xs italic"><?php print $error_messages->housenmr ?></p>
@@ -103,13 +114,17 @@
                 </div>
                 <div class="flex flex-wrap -mx-3 mb-6">
                     <div class="w-full px-3">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
+                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                               for="grid-password">
                             verzending
                         </label>
 
-                        <?php $s = isset($_SESSION['form']['shipping']) ? $_SESSION['form']['shipping'] : 'PostNl'?>
+                        <?php $s = isset($_SESSION['form']['shipping']) ? $_SESSION['form']['shipping'] : 'PostNl' ?>
 
-                        <select value="<?php isset($_SESSION['form']["shipping"]) ? print($_SESSION['form']["shipping"]) : '' ?>" name="shipping" class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white <?php print isset($error_messages->shiping) ? 'border-red-500' : 'border-gray-200' ?>" id="email" type="email">
+                        <select value="<?php isset($_SESSION['form']["shipping"]) ? print($_SESSION['form']["shipping"]) : '' ?>"
+                                name="shipping"
+                                class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white <?php print isset($error_messages->shiping) ? 'border-red-500' : 'border-gray-200' ?>"
+                                id="email" type="email">
                             <option value="postnl"<?php print $s === 'postnl' ? 'selected' : '' ?>>PostNL</option>
                             <option value="dhl"<?php print $s === 'dhl' ? 'selected' : '' ?>>DHL</option>
                             <option value="ups"<?php print $s === 'ups' ? 'selected' : '' ?>>UPS</option>
@@ -118,14 +133,17 @@
                         <?php if (isset($error_messages->shipping)) { ?>
 
                             <p class="text-red-500 text-xs italic"><?php print $error_messages->shipping ?></p>
-                        
+
                         <?php } ?>
 
                     </div>
                 </div>
                 <div class="flex md:items-center justify-between">
-                    <a href="/checkout/account" class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">Terug</a>
-                    <input class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit" value="Doorgaan" name="submit">
+                    <a href="/checkout/account"
+                       class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                       type="button">Terug</a>
+                    <input class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                           type="submit" value="Doorgaan" name="submit">
                 </div>
             </form>
         </div>

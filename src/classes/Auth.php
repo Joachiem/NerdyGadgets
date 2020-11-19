@@ -1,4 +1,5 @@
 <?php
+
 class Auth
 {
     private $username;
@@ -39,6 +40,7 @@ class Auth
         $this->username = $username;
         $this->password = $password;
     }
+
     public function logout()
     {
         session_destroy();

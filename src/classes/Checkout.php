@@ -81,8 +81,8 @@ class Checkout
     {
         $form = $_SESSION['form'];
         if (isset($form)) {
-            
-            if(empty($form["firstname"]) || empty($form["lastname"]) || empty($form["email"]) || empty($form["phonenumber"])) {
+
+            if (empty($form["firstname"]) || empty($form["lastname"]) || empty($form["email"]) || empty($form["phonenumber"])) {
                 Route::redirect('/checkout/address', '/checkout/account');
             }
         } else {
@@ -94,8 +94,8 @@ class Checkout
     {
         $form = $_SESSION['form'];
         if (isset($form)) {
-            
-            if(empty($form["firstname"]) || empty($form["lastname"]) || empty($form["email"]) || empty($form["phonenumber"]) || empty($form["postcode"]) || empty($form["housenmr"]) || empty($form["shipping"])) {
+
+            if (empty($form["firstname"]) || empty($form["lastname"]) || empty($form["email"]) || empty($form["phonenumber"]) || empty($form["postcode"]) || empty($form["housenmr"]) || empty($form["shipping"])) {
                 Route::redirect('/checkout/pay', '/checkout/address');
             }
         } else {
