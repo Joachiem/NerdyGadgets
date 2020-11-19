@@ -1,0 +1,1 @@
+<h1>Say hello to terms of service!</h1>

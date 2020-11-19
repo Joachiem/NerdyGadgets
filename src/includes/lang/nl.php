@@ -42,4 +42,13 @@ $GLOBALS['t'] = [
     'productpage-name' => 'Naam',
     'productpage-add-to-cart' => 'In mijn winkelmandje',
     '' => '',
+
+    //footer contact
+    '' => '',
+
+    //footer tos
+    '' => '',
+
+    //privacy
+    'privacy' => '',
 ];

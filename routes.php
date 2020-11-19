@@ -51,6 +51,20 @@ Route::get('/categories', function () {
     Category::index();
 });
 
+//footer contact
+Route::get('/contact', function () {
+    View::show('/contact/index');
+});
+
+//footer terms of service
+Route::get('/tos', function () {
+    View::show('/tos/index');
+});
+
+//footer privacy
+Route::get('/privacy', function () {
+    View::show('/privacy/index');
+});
 
 // checkout
 Route::get('/checkout/account', function () {
