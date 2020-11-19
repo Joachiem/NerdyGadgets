@@ -4,6 +4,9 @@ $GLOBALS['t'] = [
     'lastname' => 'Achternaam',
     'firstname' => 'Voornaam',
 
+    //Frontpage
+    'salepoint-1' => 'Betrouwbaar en Snel',
+
     //Navbar
     'navbar-products' => 'Producten',
     'navbar-categories' => 'Categorieën',

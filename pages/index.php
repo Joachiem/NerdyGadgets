@@ -1,22 +1,20 @@
 <div class="container mb-12 mx-auto px-4 md:px-12">
 
-    <div class="flex justify-between h-auto">
-        <div class="flex-1">
-            <ion-icon name="checkbox-outline" size="small"></ion-icon> Betrouwbaar en Snel
+    <div class="flex justify-between h-auto text-center">
+        <div class="flex items-center">
+            <ion-icon class="pr-1 pt-1 text-green-500" name="checkmark-done" size="small"></ion-icon><?php print $GLOBALS['t']['salepoint-1'] ?>
         </div>
-        <div class="contents">
-            <div class="flex-1 ">
-                <ion-icon name="checkbox-outline" size="small"></ion-icon> Gratis levering boven de 50 euro
-            </div>
-            <div class="flex-1">
-                <ion-icon name="checkbox-outline" size="small"></ion-icon> Vandaag besteld = Morgen in huis
-            </div>
+        <div class="flex items-center">
+            <ion-icon class="pr-1 pt-1 text-green-500" name="checkmark-done" size="small"></ion-icon>Gratis levering boven de 50 euro
         </div>
-        <div class="flex-1  ">
-            <ion-icon name="checkbox-outline" size="small"></ion-icon> Gratis retouneren
+        <div class="flex items-center">
+            <ion-icon class="pr-1 pt-1 text-green-500" name="checkmark-done" size="small"></ion-icon>Vandaag besteld = Morgen in huis
+        </div>
+        <div class="flex items-center">
+            <ion-icon class="pr-1 pt-1 text-green-500" name="checkmark-done" size="small"></ion-icon>Gratis retouneren
         </div>
     </div>
-    
+
     <div class="flex flex-wrap mt-8 -mx-1 lg:-mx-4 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
 
         <?php foreach ($arg as $product) { ?>
