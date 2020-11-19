@@ -51,6 +51,10 @@ Route::get('/categories', function () {
     Category::index();
 });
 
+//footer links
+Route::get('/contact', function () {
+    View::show('/info/index');
+});
 
 // checkout
 Route::get('/checkout/account', function () {
