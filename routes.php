@@ -41,8 +41,7 @@ Route::get('/products', function () {
     View::show('product/index');
 });
 Route::get('/products/view', function () {
-    if (empty($_GET['id'])) View::show('error/404');
-    Product::index($_GET['id']);
+    Product::view(isset($_GET['id']) ? $_GET['id'] : null);
 });
 
 
