@@ -3,7 +3,7 @@
 
         <div class="items-center flex flex-row justify-between">
             <a href="/" draggable="false">
-                <img class="logo" id="logo" draggable="false" src="/public/img/logo.svg" />
+                <img class="logo" id="logo" draggable="false" src="/public/img/logo.svg"/>
             </a>
 
             <div class="flex flex-row">
@@ -18,11 +18,15 @@
 
         </div>
 
-        <form method="get" action="/products" class="flex align-center bg-gray-100 rounded flex-grow lg:flex-grow-0 max-w-full mx-8 lg:mx-0">
+        <form method="get" action="/products"
+              class="flex align-center bg-gray-100 rounded flex-grow lg:flex-grow-0 max-w-full mx-8 lg:mx-0">
             <div class="flex-grow">
-                <input class="placeholder-black text-gray-800 rounded p-2 px-3 min-w-full bg-gray-100 form-submit min-h-full outline-none" type="text" placeholder="<?php print $GLOBALS['t']['navbar-search'] ?>" id="zoek" name="search" value="<?php print (isset($_GET['search'])) ? $_GET['search'] : ""; ?>">
+                <input class="placeholder-black text-gray-800 rounded p-2 px-3 min-w-full bg-gray-100 form-submit min-h-full outline-none"
+                       type="text" placeholder="<?php print $GLOBALS['t']['navbar-search'] ?>" id="zoek" name="search"
+                       value="<?php print (isset($_GET['search'])) ? $_GET['search'] : ""; ?>">
             </div>
-            <button class="flex items-center rounded px-2 focus:outline-none bg-gray-100 hover:bg-gray-200 focus:bg-gray-300" type="submit">
+            <button class="flex items-center rounded px-2 focus:outline-none bg-gray-100 hover:bg-gray-200 focus:bg-gray-300"
+                    type="submit">
                 <ion-icon name="search-outline"></ion-icon>
             </button>
         </form>
