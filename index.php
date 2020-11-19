@@ -11,6 +11,7 @@ require_once "src/includes/querys.php";
 
 require_once "routes.php";
 
+
 // pdo example
 
 
@@ -23,4 +24,3 @@ require_once "routes.php";
 
 // $arg = DB::execute($GLOBALS['q']['test'], [2], ['WHERE ImagePath IS NOT NULL']);
 // View::show('category/index', $arg);
-

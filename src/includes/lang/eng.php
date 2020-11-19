@@ -5,6 +5,11 @@ $GLOBALS['t'] = [
     'firstname' => 'Firstname',
     'quantity-on-hand' => 'Stock',
 
+
+    // alerts
+    'cookie-alert-title' => 'We use functional cookies',
+    'cookie-alert-message' => 'Learn more about privacy on our privacy page',
+
     //Navbar
     'navbar-products' => 'Products',
     'navbar-categories' => 'Categories',
