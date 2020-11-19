@@ -1,4 +1,4 @@
-<article class="max-w-sm rounded material-card bg-white">
+<article class="shadow max-w-sm rounded material-card bg-white">
     <a href="/products/view?id=<?php print $product->StockItemID ?>">
         <div class="h-full flex flex-col justify-between">
             <div class="h-full flex items-center">
@@ -23,6 +23,5 @@
 <style>
     .material-card {
         font-family: 'Roboto', sans-serif;
-        box-shadow: 0px 2px 1px -1px rgba(0, 0, 0, 0.2), 0px 1px 1px 0px rgba(0, 0, 0, 0.14), 0px 1px 3px 0px rgba(0, 0, 0, .12);
     }
 </style>
