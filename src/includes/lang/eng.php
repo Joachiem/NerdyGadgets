@@ -12,6 +12,7 @@ $GLOBALS['t'] = [
     'populair' => 'Populair',
     'catogories' => 'Catagories',
     'products' => 'Products',
+    'tax' => 'excl TAX',
     
     //Navbar
     'navbar-products' => 'Products',
