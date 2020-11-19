@@ -27,14 +27,14 @@
         <?php include "partials/productcard.php";?>
         </div>
     </div>
-    <p class="-mx-1 lg:-mx-4 text-gray-600 text-2xl"><?php print $GLOBALS['t']['hp-populair'] ?></p>
+    <p class="-mx-1 lg:-mx-4 text-gray-600 text-xl"><?php print $GLOBALS['t']['hp-populair'] ?></p>
     <div class="flex mb-4 flex-wrap -mx-1 lg:-mx-4 grid lg:grid-cols-6 md:grid-cols-2 grid-cols-1 gap-8">
 
         <?php foreach ($arg as $product) {include "partials/productcard.php";} ?>
 
     </div>
 
-    <p class="-mx-1 lg:-mx-4 text-gray-600 text-2xl"><?php print $GLOBALS['t']['hp-catogoriën'] ?></p>
+    <p class="-mx-1 lg:-mx-4 text-gray-600 text-xl"><?php print $GLOBALS['t']['hp-catogoriën'] ?></p>
     <div class="flex mb-4 flex-wrap -mx-1 lg:-mx-4 grid lg:grid-cols-6 md:grid-cols-2 grid-cols-1 gap-8">
 
         <?php $arg2 = DB::execute($GLOBALS['q']['categories']);?>
@@ -42,7 +42,7 @@
 
     </div>
     
-    <p class="-mx-1 lg:-mx-4 text-gray-600 text-2xl"><?php print $GLOBALS['t']['hp-producten'] ?></p>
+    <p class="-mx-1 lg:-mx-4 text-gray-600 text-xl"><?php print $GLOBALS['t']['hp-producten'] ?></p>
     <div class="flex mb-4 flex-wrap -mx-1 lg:-mx-4 grid lg:grid-cols-6 md:grid-cols-2 grid-cols-1 gap-8">
 
         <?php foreach ($arg as $product) {include "partials/productcard.php";} ?>
