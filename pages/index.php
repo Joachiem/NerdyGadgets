@@ -1,4 +1,4 @@
-<div class="container mx-auto pb-8 px-4 md:px-12">
+<div class="container mx-auto pb-8 px-4 md:px-18">
 
     <div class="md:hidden hidden lg:flex justify-between h-auto text-center">
         <div class="flex items-center">
@@ -15,7 +15,7 @@
         </div>
     </div>
 
-    <div class="grid -mx-1 lg:-mx-4 mb-8 mt-8 md:grid-cols-1 grid-cols-1 lg:grid-cols-6 grid-rows-2 gap-8">
+    <div class="grid -mx-1 lg:-mx-4 mb-8 mt-4 md:grid-cols-1 grid-cols-1 lg:grid-cols-6 grid-rows-2 gap-8">
         <div class="md:col-span-1 col-span-1 lg:col-span-5 row-span-2">
             <a><img class="shadow-lg rounded object-cover w-full" src="/public/Img/christmas-sale-purple-discount-banner-with-garland_7993-5998.jpg"></a>
         </div>
