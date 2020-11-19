@@ -26,10 +26,13 @@ class View
 
         include "partials/footer.php";
 
+        print '</div>';
+
+        include "src/includes/alert.php";
         include "src/includes/cookie.php";
 
-        print '</div>';
         print '</body>';
+
         print '</html>';
     }
 }

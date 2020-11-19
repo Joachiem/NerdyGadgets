@@ -16,6 +16,10 @@ $result = DB::execute('select * from stockitems where stockitemid = ?', [1]);
 $result = DB::execute('select * from stockitems $1', [], ['where stockitemid = 1']);
 $result = DB::execute('select * from stockitems $1', [1], ['where stockitemid = ?']);
 
+// echo '<pre>';
+// print_r($result);
+// echo '</pre>';
+
 /**
  * als de query te lang word kun je hem in querys.php zetten en in de query gebruiken:
  *
