@@ -1,4 +1,5 @@
 <?php
+
 class DB
 {
     private static $host = 'localhost';
@@ -17,9 +18,9 @@ class DB
     {
         $dsn = "mysql:host=" . self::$host . ";dbname=" . self::$db . ";charset=" . self::$charset;
         $options = [
-            PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
             PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-            PDO::ATTR_EMULATE_PREPARES   => false,
+            PDO::ATTR_EMULATE_PREPARES => false,
         ];
 
         try {
@@ -53,7 +54,7 @@ class DB
 
 
     /**
-     * replace $ in the query whith partial querys 
+     * replace $ in the query whith partial querys
      * these cant be binded to a value
      * @param string $query
      * @param array $partial_queries
