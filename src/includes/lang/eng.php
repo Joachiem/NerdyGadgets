@@ -4,6 +4,12 @@ $GLOBALS['t'] = [
     'lastname' => 'Lastname',
     'firstname' => 'Firstname',
 
+    //Frontpage
+    'salepoint-1' => 'Reliable en Fast',
+    'salepoint-2' => 'Free shipping above 50 euro',
+    'salepoint-3' => 'Order today = Recieve tomorrow',
+    'salepoint-4' => 'Free returns',
+    
     //Navbar
     'navbar-products' => 'Products',
     'navbar-categories' => 'Categories',
