@@ -1,4 +1,8 @@
 <?php
+$arg = new stdClass();
+
+
+
 $ReturnableResult = null;
 $AmountOfPages = 0;
 $queryBuildResult = "";
@@ -60,96 +64,41 @@ if ($SearchString != "") {
 
 
 if ($CategoryID === "") {
+
     if ($queryBuildResult !== "") {
         $queryBuildResult = "WHERE " . $queryBuildResult;
     }
 
-    $allowed = ["SellPrice DESC", "SellPrice", "StockItemName DESC", "StockItemName"];
-    $key = array_search($Sort, $allowed, true);
+    $ReturnableResult = DB::execute($GLOBALS['q']['filterd-products'], [$ShowStockLevel, $ProductsOnPage, $Offset], [$queryBuildResult, $Sort]);
+    $ReturnableResult = json_decode(json_encode($ReturnableResult), true);
 
-    if ($key === "") throw new InvalidArgumentException("Invalid field name");
-
-    $Query = "SELECT SI.StockItemID, SI.StockItemName, SI.MarketingComments, ROUND(TaxRate * RecommendedRetailPrice / 100 + RecommendedRetailPrice,2) as SellPrice,
-                (CASE WHEN (SIH.QuantityOnHand) >= ? THEN 'Ruime voorraad beschikbaar.' ELSE CONCAT('Voorraad: ',QuantityOnHand) END) AS QuantityOnHand, 
-                (SELECT ImagePath
-                FROM stockitemimages 
-                WHERE StockItemID = SI.StockItemID LIMIT 1) as ImagePath,
-                (SELECT ImagePath FROM stockgroups JOIN stockitemstockgroups USING(StockGroupID) WHERE StockItemID = SI.StockItemID LIMIT 1) as BackupImagePath
-                FROM stockitems SI
-                JOIN stockitemholdings SIH USING(stockitemid)
-                $queryBuildResult
-                GROUP BY StockItemID
-                ORDER BY $Sort
-                LIMIT ? OFFSET ?";
-
-
-    $Statement = mysqli_prepare($Connection, $Query);
-    mysqli_stmt_bind_param($Statement, "iii", $ShowStockLevel, $ProductsOnPage, $Offset);
-    mysqli_stmt_execute($Statement);
-    $ReturnableResult = mysqli_stmt_get_result($Statement);
-    $ReturnableResult = mysqli_fetch_all($ReturnableResult, MYSQLI_ASSOC);
-
-    $Query = "
-            SELECT count(*)
-            FROM stockitems SI
-            $queryBuildResult";
-    $Statement = mysqli_prepare($Connection, $Query);
-    mysqli_stmt_execute($Statement);
-    $Result = mysqli_stmt_get_result($Statement);
-    $Result = mysqli_fetch_all($Result, MYSQLI_ASSOC);
+    $amount = DB::execute($GLOBALS['q']['count-products'], [], [$queryBuildResult])[0];
 } else {
+
     if ($queryBuildResult != "") {
         $queryBuildResult .= " AND ";
     }
 
-    $Query = "SELECT SI.StockItemID, SI.StockItemName, SI.MarketingComments, 
-                ROUND(SI.TaxRate * SI.RecommendedRetailPrice / 100 + SI.RecommendedRetailPrice,2) as SellPrice, 
-                (CASE WHEN (SIH.QuantityOnHand) >= ? THEN 'Ruime voorraad beschikbaar.' ELSE CONCAT('Voorraad: ',QuantityOnHand) END) AS QuantityOnHand,
-                (SELECT ImagePath FROM stockitemimages WHERE StockItemID = SI.StockItemID LIMIT 1) as ImagePath,
-                (SELECT ImagePath FROM stockgroups JOIN stockitemstockgroups USING(StockGroupID) WHERE StockItemID = SI.StockItemID LIMIT 1) as BackupImagePath           
-                FROM stockitems SI 
-                JOIN stockitemholdings SIH USING(stockitemid)
-                JOIN stockitemstockgroups USING(StockItemID)
-                JOIN stockgroups ON stockitemstockgroups.StockGroupID = stockgroups.StockGroupID
-                WHERE " . $queryBuildResult . " ? IN (SELECT StockGroupID from stockitemstockgroups WHERE StockItemID = SI.StockItemID)
-                GROUP BY StockItemID
-                ORDER BY " . $Sort . " 
-                LIMIT ? OFFSET ?";
+    $ReturnableResult = DB::execute($GLOBALS['q']['filterd-products-catagory'], [$ShowStockLevel, $ProductsOnPage, $Offset], [$queryBuildResult, $Sort]);
+    $ReturnableResult = json_decode(json_encode($ReturnableResult), true);
 
-    $Statement = mysqli_prepare($Connection, $Query);
-    mysqli_stmt_bind_param($Statement, "iiii", $ShowStockLevel, $CategoryID, $ProductsOnPage, $Offset);
-    mysqli_stmt_execute($Statement);
-    $ReturnableResult = mysqli_stmt_get_result($Statement);
-    $ReturnableResult = mysqli_fetch_all($ReturnableResult, MYSQLI_ASSOC);
-
-    $Query = "SELECT count(*)
-                FROM stockitems SI 
-                WHERE " . $queryBuildResult . " ? IN (SELECT SS.StockGroupID from stockitemstockgroups SS WHERE SS.StockItemID = SI.StockItemID)";
-    $Statement = mysqli_prepare($Connection, $Query);
-    mysqli_stmt_bind_param($Statement, "i", $CategoryID);
-    mysqli_stmt_execute($Statement);
-    $Result = mysqli_stmt_get_result($Statement);
-    $Result = mysqli_fetch_all($Result, MYSQLI_ASSOC);
+    $amount = DB::execute($GLOBALS['q']['count-products-catagory'], [], [$queryBuildResult])[0];
 }
-$amount = $Result[0];
+
 if (isset($amount)) {
-    $AmountOfPages = ceil($amount["count(*)"] / $ProductsOnPage);
+    $AmountOfPages = ceil($amount->ammount / $ProductsOnPage);
 }
+
 ?>
-
-
-<!-- start html moet gesplitst worden -->
 
 <div>
     <form>
         <div>
-            <input type="hidden" name="search" id="search"
-                   value="<?php print (isset($_GET['search'])) ? $_GET['search'] : ""; ?>">
+            <input type="hidden" name="search" id="search" value="<?php print (isset($_GET['search'])) ? $_GET['search'] : ""; ?>">
 
             <h4><?php print $GLOBALS['t']['product-index-num-product'] ?></h4>
 
-            <input type="hidden" name="category_id" id="category_id"
-                   value="<?php print (isset($_GET['category_id'])) ? $_GET['category_id'] : ""; ?>">
+            <input type="hidden" name="category_id" id="category_id" value="<?php print (isset($_GET['category_id'])) ? $_GET['category_id'] : ""; ?>">
 
             <?php $p = $_SESSION['products_on_page'] ?>
 
@@ -185,8 +134,7 @@ if (isset($amount)) {
 
                 <?php } else { ?>
 
-                    <button id="page_number" class="PageNumber" value="<?php print $i - 1 ?>" type="submit"
-                            name="page_number"><?php print $i ?></button>
+                    <button id="page_number" class="PageNumber" value="<?php print $i - 1 ?>" type="submit" name="page_number"><?php print $i ?></button>
 
                 <?php } ?>
             <?php } ?>
@@ -209,8 +157,7 @@ if (isset($amount)) {
 
                     <?php } elseif (isset($row['BackupImagePath'])) { ?>
 
-                        <div class="ImgFrame"
-                             style="background-image: url('<?php print "public/StockGroupIMG/" . $row['BackupImagePath'] ?>'); background-size: cover;"></div>
+                        <div class="ImgFrame" style="background-image: url('<?php print "public/StockGroupIMG/" . $row['BackupImagePath'] ?>'); background-size: cover;"></div>
 
                     <?php } ?>
 
