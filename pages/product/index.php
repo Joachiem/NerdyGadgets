@@ -2,11 +2,10 @@
 $arg = new stdClass();
 
 
-
 $ReturnableResult = null;
 $AmountOfPages = 0;
 $queryBuildResult = "";
-$ShowStockLevel = 1000;
+
 
 $SearchString = isset($_GET['search']) ? $_GET['search'] : "";
 $CategoryID = isset($_GET['category_id']) ? $_GET['category_id'] : "";
@@ -69,7 +68,7 @@ if ($CategoryID === "") {
         $queryBuildResult = "WHERE " . $queryBuildResult;
     }
 
-    $ReturnableResult = DB::execute($GLOBALS['q']['filterd-products'], [$ShowStockLevel, $ProductsOnPage, $Offset], [$queryBuildResult, $Sort]);
+    $ReturnableResult = DB::execute($GLOBALS['q']['filterd-products'], [$ProductsOnPage, $Offset], [$queryBuildResult, $Sort]);
     $ReturnableResult = json_decode(json_encode($ReturnableResult), true);
 
     $amount = DB::execute($GLOBALS['q']['count-products'], [], [$queryBuildResult])[0];
@@ -79,7 +78,7 @@ if ($CategoryID === "") {
         $queryBuildResult .= " AND ";
     }
 
-    $ReturnableResult = DB::execute($GLOBALS['q']['filterd-products-catagory'], [$ShowStockLevel, $ProductsOnPage, $Offset], [$queryBuildResult, $Sort]);
+    $ReturnableResult = DB::execute($GLOBALS['q']['filterd-products-catagory'], [$ProductsOnPage, $Offset], [$queryBuildResult, $Sort]);
     $ReturnableResult = json_decode(json_encode($ReturnableResult), true);
 
     $amount = DB::execute($GLOBALS['q']['count-products-catagory'], [], [$queryBuildResult])[0];

@@ -199,11 +199,7 @@ $GLOBALS['q'] = [
     SI.MarketingComments,
     ROUND(TaxRate * RecommendedRetailPrice / 100 + RecommendedRetailPrice, 2) as SellPrice,
 
-    (
-        CASE WHEN (SIH.QuantityOnHand) >= ? 
-        THEN 'Ruime voorraad beschikbaar.' 
-        ELSE CONCAT('Voorraad: ',QuantityOnHand) END
-    ) AS QuantityOnHand,
+    QuantityOnHand
 
     (
         SELECT ImagePath
@@ -237,12 +233,7 @@ $GLOBALS['q'] = [
     SI.StockItemName,
     SI.MarketingComments, 
     ROUND(SI.TaxRate * SI.RecommendedRetailPrice / 100 + SI.RecommendedRetailPrice,2) as SellPrice, 
-    (
-        CASE WHEN (SIH.QuantityOnHand) >= ?
-        THEN 'Ruime voorraad beschikbaar.'
-        ELSE CONCAT('Voorraad: ',QuantityOnHand) 
-        END
-    ) AS QuantityOnHand,
+    QuantityOnHand,
 
     (
         SELECT ImagePath
