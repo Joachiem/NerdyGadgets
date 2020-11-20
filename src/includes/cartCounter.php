@@ -3,7 +3,7 @@
 
     function update(ammout = <?php print array_sum($_SESSION['cart']) ?>) {
         let cartCounter = document.querySelector('#cart-counter')
-        console.log(ammout)
+
         if (ammout > 0) {
             cartCounter.classList.remove('hidden')
             cartCounter.innerHTML = ammout
