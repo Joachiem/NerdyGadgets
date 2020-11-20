@@ -78,7 +78,7 @@ if ($CategoryID === "") {
         $queryBuildResult .= " AND ";
     }
 
-    $ReturnableResult = DB::execute($GLOBALS['q']['filterd-products-catagory'], [$ProductsOnPage, $Offset], [$queryBuildResult, $Sort]);
+    $ReturnableResult = DB::execute($GLOBALS['q']['filterd-products-catagory'], [$CategoryID, $ProductsOnPage, $Offset], [$queryBuildResult, $Sort]);
     $ReturnableResult = json_decode(json_encode($ReturnableResult), true);
 
     $amount = DB::execute($GLOBALS['q']['count-products-catagory'], [], [$queryBuildResult])[0];
