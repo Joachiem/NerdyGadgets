@@ -9,7 +9,7 @@
 
         <div class="px-2 py-2 inset-x-0 bottom-0">
             <a href="/products/view?id=<?php print $product->StockItemID ?>">
-                <div class="font-bold text-sm tracking-wide text-left"><?php print $product->StockItemName ?></div>
+                <div class="no-underline hover:underline font-bold text-sm tracking-wide text-left"><?php print $product->StockItemName ?></div>
             </a>
 
             <div class="flex flex-wrap grid grid-cols-3 gap-0">
