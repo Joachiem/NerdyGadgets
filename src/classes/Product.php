@@ -7,7 +7,9 @@ class Product
      */
     public static function index()
     {
-        View::show('product/index');
+        $arg = new stdClass();
+
+        View::show('product/index', $arg);
     }
 
     /**
