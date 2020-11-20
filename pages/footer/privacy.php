@@ -1,5 +1,7 @@
 <div class="mb-6 space-y-4 text-lg">
-    <?php print $GLOBALS['t']['p']['title'] ?>
+    <div class="text-3xl font-bold">
+        <?php print $GLOBALS['t']['p']['title'] ?>
+    </div>
     <div>
         <?php print $GLOBALS['t']['p']['1'] ?>
     </div>
