@@ -18,6 +18,8 @@ class Product
     {
         if (!$id) View::show('error/404');
 
+        DB::execute($GLOBALS['q']['product-clicked'], [$id]);
+
         $product = DB::execute($GLOBALS['q']['product'], [$id])[0];
 
         $images = DB::execute($GLOBALS['q']['product-images'], [$id]);

@@ -14,7 +14,7 @@
                     <?php } ?>
                 <?php } else { ?>
 
-                    <img alt="Placeholder" class="h-full w-full object-contain w-auto" src="/public/StockGroupIMG/<?php print $arg->StockGroupImagePath ?>">
+                    <img alt="Placeholder" class="h-full w-full object-cover w-auto" src="/public/StockGroupIMG/<?php print $arg->StockGroupImagePath ?>">
 
                 <?php } ?>
 

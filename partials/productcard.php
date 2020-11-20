@@ -4,7 +4,6 @@
             <a href="/products/view?id=<?php print $product->StockItemID ?>">
                 <img class="w-full rounded-t p-1" src="/public/StockItemIMG/<?php print $product->ImagePath ?>">
             </a>
-
         </div>
 
         <div class="px-2 py-2 inset-x-0 bottom-0">
