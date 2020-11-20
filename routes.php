@@ -1,3 +1,4 @@
+
 <?php
 /*
 * dit zijn de routes van NerdyGadgets
@@ -13,9 +14,7 @@ Route::redirect('/checkout', '/checkout/account');
 
 // index
 Route::get('/', function () {
-    $arg = DB::execute($GLOBALS['q']['products'], [], ['102,75,32,4,46,160']);
-    
-    View::show('index', $arg);
+    Homepage::index();
 });
 
 
