@@ -136,6 +136,8 @@
                 time: 2000
             })
 
+            changeCounter(1)
+
             let request = new XMLHttpRequest()
             request.open('POST', '/cart/add?id=<?php print($_GET['id']) ?>')
             request.send()
