@@ -35,7 +35,7 @@
     <p class="-mx-1 lg:-mx-4 text-gray-600 text-xl"><?php print $GLOBALS['t']['populair'] ?></p>
     <div class="flex mb-4 flex-wrap -mx-1 lg:-mx-4 grid lg:grid-cols-6 md:grid-cols-2 grid-cols-1 gap-8">
 
-        <?php foreach ($arg->products as $product) {
+        <?php foreach ($arg->popularProducts as $product) {
             include "partials/productcard.php";
         } ?>
 
