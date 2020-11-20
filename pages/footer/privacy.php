@@ -1,4 +1,4 @@
-<div class="mb-6 space-y-4">
+<div class="mb-6 space-y-4 text-lg">
     <?php print $GLOBALS['t']['p']['title'] ?>
     <div>
         <?php print $GLOBALS['t']['p']['1'] ?>
