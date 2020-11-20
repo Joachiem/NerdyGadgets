@@ -21,45 +21,59 @@
         </div>
         <?php $product = $arg[0] ?>
         <div class="flex">
-        <?php include "partials/productcard.php";?>
+            <?php include "partials/productcard.php"; ?>
         </div>
         <div class="flex">
-        <?php include "partials/productcard.php";?>
+            <?php include "partials/productcard.php"; ?>
         </div>
     </div>
     <p class="-mx-1 lg:-mx-4 text-gray-600 text-xl"><?php print $GLOBALS['t']['populair'] ?></p>
     <div class="flex mb-4 flex-wrap -mx-1 lg:-mx-4 grid lg:grid-cols-6 md:grid-cols-2 grid-cols-1 gap-8">
 
-        <?php foreach ($arg as $product) {include "partials/productcard.php";} ?>
+        <?php foreach ($arg as $product) {
+            include "partials/productcard.php";
+        } ?>
 
     </div>
 
     <p class="-mx-1 lg:-mx-4 text-gray-600 text-xl"><?php print $GLOBALS['t']['catogories'] ?></p>
     <div class="flex mb-4 flex-wrap -mx-1 lg:-mx-4 grid lg:grid-cols-6 md:grid-cols-2 grid-cols-1 gap-8">
 
-        <?php $arg2 = DB::execute($GLOBALS['q']['categories']);?>
-        <?php foreach ($arg2 as $StockGroup) {include "partials/catagoriecard.php";} ?>
+        <?php $arg2 = DB::execute($GLOBALS['q']['categories']); ?>
+        <?php foreach ($arg2 as $StockGroup) {
+            include "partials/catagoriecard.php";
+        } ?>
 
     </div>
-    
+
     <p class="-mx-1 lg:-mx-4 text-gray-600 text-xl"><?php print $GLOBALS['t']['products'] ?></p>
     <div class="flex mb-4 flex-wrap -mx-1 lg:-mx-4 grid lg:grid-cols-6 md:grid-cols-2 grid-cols-1 gap-8">
 
-        <?php foreach ($arg as $product) {include "partials/productcard.php";} ?>
+        <?php foreach ($arg as $product) {
+            include "partials/productcard.php";
+        } ?>
 
     </div>
 </div>
 <script>
-     const cartButton = document.querySelectorAll(`.cart-btn`);
+    const cartButton = document.querySelectorAll(`.cart-btn`);
 
-        cartButton.forEach(btn => {
-            btn.addEventListener('click', addToCart);
-        });
+    cartButton.forEach(btn => {
+        btn.addEventListener('click', addToCart);
+    });
 
-        function addToCart(e) {
-            let id = e.target.id.split('-')[2]
-            let request = new XMLHttpRequest()
-            request.open('POST', `/cart/add?id=${id}`)
-            request.send()
-        }
+    function addToCart(e) {
+        new Alert({
+            title: '<?php print $GLOBALS['t']['add-alert-title'] ?>',
+            message: '<?php print $GLOBALS['t']['add-alert-message'] ?>',
+            time: 2000
+        })
+
+        changeCounter(1)
+
+        let id = e.target.id.split('-')[2]
+        let request = new XMLHttpRequest()
+        request.open('POST', `/cart/add?id=${id}`)
+        request.send()
+    }
 </script>
