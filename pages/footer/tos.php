@@ -1,4 +1,4 @@
-<div class="pb-10 text-3xl text-center font-extrabold">
+<div class="pb-12 text-3xl text-center font-extrabold">
     <h1>Algemene voorwaarden</h1>
 </div>
 
@@ -237,22 +237,119 @@
 
 <div class="pb-8">
     <h1>
-        Bij een zogenaamde overeenkomst op afstand, gewoonlijk koop op afstand genoemd (bijvoorbeeld een bestelling bij een webwinkel), gelden er speciale aanvullende regels die we apart in dit artikel hebben opgenomen. Er wordt van een koop op afstand gesproken wanneer het gaat om een koopovereenkomst waarbij er geen direct contact is tussen verkoper en consument. Populair gezegd: zonder dat beiden zich in dezelfde ruimte bevinden. Dat geldt daarom niet alleen voor aankopen via internet (webwinkels), maar ook telefonische of schriftelijke bestellingen vallen bij ons onder
-        het begrip koop op afstand.<br>
-        <br>
-        Het belangrijkste onderdeel bij een koop op afstand is dat de consument hierbij een bedenktijd van 14 dagen, (ingaand op de dag na levering,) heeft om van de koop af te zien. Binnen die tijd kan hij gebruik maken van zijn herroepingsrecht, het recht om de koop te ontbinden.
+        1. Bij levering van diensten en een overeenkomst voor levering van digitale inhoud die niet op een materiële drager is geleverd, heeft u als consument een bedenktijd van 14 dagen.
+        De bedenktijd gaat in op de dag dat de overeenkomst wordt aangegaan. Gedurende die periode heeft u de mogelijkheid de overeenkomst te ontbinden zonder dat u hiervoor een reden hoeft op te geven. Dit wordt het herroepingsrecht genoemd.<br>
+        2. Om gebruik te maken van uw herroepingsrecht, geven wij u bij ons aanbod, of uiterlijk bij de levering, duidelijke informatie hoe u dit onder meer kunt doen.
+        U kunt hiervoor het modelformulier voor herroeping gebruiken ons op een andere duidelijke manier laten weten de overeenkomst te ontbinden. Indien de mededeling online gebeurt, bevestigen wij de ontvangst daarvan.<br>
+        3. Indien u de levering van een dienst herroept na ons eerst uitdrukkelijk te hebben verzocht al tijdens de bedenktijd, mogen wij het bedrag in rekening brengen dat evenredig is aan dat gedeelte van de overeenkomst dat door ons al is nagekomen/geleverd.<br>
+
     </h1>
 </div>
 
 <div class="pb-4 text-xl font-bold">
-    <h1>Artikel 10. Koop op afstand</h1>
+    <h1>Artikel 10e. Uitsluiting herroepingsrecht</h1>
 </div>
 
 <div class="pb-8">
     <h1>
-        Bij een zogenaamde overeenkomst op afstand, gewoonlijk koop op afstand genoemd (bijvoorbeeld een bestelling bij een webwinkel), gelden er speciale aanvullende regels die we apart in dit artikel hebben opgenomen. Er wordt van een koop op afstand gesproken wanneer het gaat om een koopovereenkomst waarbij er geen direct contact is tussen verkoper en consument. Populair gezegd: zonder dat beiden zich in dezelfde ruimte bevinden. Dat geldt daarom niet alleen voor aankopen via internet (webwinkels), maar ook telefonische of schriftelijke bestellingen vallen bij ons onder
-        het begrip koop op afstand.<br>
+        Soms geldt er geen herroepingsrecht voor u als consument, maar dat moet door ons dan wel duidelijk en voordat de overeenkomst wordt gesloten, worden vermeld. Het betreft dan onder andere:<br>
+        a. Producten of diensten waarvan de prijs gebonden is aan schommelingen op de financiële markt waarop wij geen invloed hebben en die zich binnen de herroepingstermijn kunnen voordoen.<br>
+        b. Overeenkomsten die gesloten zijn tijdens een openbare veiling. Producten gekocht op een internetveiling vallen hier in beginsel niet onder. Daarvoor geldt wel het herroepingsrecht.<br>
+        c. Geleverde diensten, maar alleen als:<br>
+        - de uitvoering is begonnen met uitdrukkelijke voorafgaande instemming van u; en<br>
+        - u heeft verklaard dat u uw herroepingsrecht verliest nadat wij de overeenkomst volledig hebben uitgevoerd binnen de bedenktijd.<br>
+        d. Producten die op basis van uw specificaties zijn gemaakt, die niet geprefabriceerd zijn en die worden vervaardigd op basis van uw individuele keuze of beslissing, of die duidelijk voor een specifieke persoon bestemd zijn;<br>
+        e. Producten die snel bederven of een beperkte houdbaarheid hebben.<br>
+        f. Verzegelde producten die om redenen van gezondheidsbescherming of hygiëne niet geschikt zijn om te worden teruggezonden en waarvan de verzegeling na levering is verbroken.<br>
+        g. Producten die na levering door hun aard onherroepelijk vermengd zijn met andere producten.<br>
+        h. Verzegelde audio-, video-opnamen en computerprogrammatuur, waarvan de verzegeling na levering is verbroken.<br>
+        i. Losse kranten, tijdschriften of magazines, met uitzondering van abonnementen hierop.<br>
+        j. De levering van digitale inhoud anders dan op een materiële drager, maar alleen als:<br>
+        - de uitvoering is begonnen met uw uitdrukkelijke voorafgaande instemming; en<br>
+        - u heeft verklaard dat u hiermee uw herroepingsrecht verliest<br>
+    </h1>
+</div>
+
+<div class="pb-4 text-xl font-bold">
+    <h1>Artikel 10f. Betaling</h1>
+</div>
+
+<div class="pb-8">
+    <h1>
+        Bij iedere consumentenkoop geldt dat in algemene voorwaarden nooit een vooruitbetaling van meer dan 50% mag worden gevraagd en dat, voor zover er niet iets anders is afgesproken, de koper (de rest van) de koopsom betaalt bij of na bezorging van de bestelling.
+        Volledige vooruitbetaling mag als betaalmethode aangeboden worden, mits er maar een andere mogelijkheid bestaat waarbij u (minimaal 50%) bij of na levering kunt betalen.
+    </h1>
+</div>
+
+<div class="pb-4 text-xl font-bold">
+    <h1>Artikel 10g. Annulering</h1>
+</div>
+
+<div class="pb-8">
+    <h1>
+        Een bestelling kan kosteloos worden geannuleerd als deze nog niet is verzonden, behalve als het gaat om producten en/of diensten die uitgezonderd zijn van het herroepingsrecht.
+    </h1>
+</div>
+
+<div class="pb-4 text-xl font-bold">
+    <h1>Artikel 11. Klachten en klachtentermijn</h1>
+</div>
+
+<div class="pb-8">
+    <h1>
+        Omdat wij onze klanten een optimale service willen verlenen, vinden wij het belangrijk van u te horen als u klachten heeft over onze dienstverlening. Doe dit – mede om eventuele schade te beperken – zo snel mogelijk.
+        Volgens de wet is een klacht op tijd kenbaar gemaakt als dit binnen twee maanden na ontdekking gebeurt. Dit geldt ook in het geval dat het gekochte product niet de eigenschappen heeft die u op grond van de koopovereenkomst mocht verwachten.
+        Het is in uw belang om uw klachten schriftelijk kenbaar te maken.<br>
+        Als u een klacht bij ons indient, zal die uiterlijk binnen 14 dagen worden beantwoord. Hebben wij daarvoor meer tijd nodig, dan laten wij u binnen 14 dagen weten wanneer u antwoord kunt verwachten.
+        Let op: bovengenoemde ziet enkel op klachten inzake de door ons geleverde producten en/of diensten. Voor klachten in het kader van onze verwerking van uw persoonsgegevens gelden andere regels.
+        Voor meer informatie hierover, raadpleeg de privacyverklaring op onze website of neem contact met ons op.
+
+    </h1>
+</div>
+
+<div class="pb-4 text-xl font-bold">
+    <h1>Artikel 12. Geschillen</h1>
+</div>
+
+<div class="pb-8">
+    <h1>
+        1. Op de overeenkomsten waarop deze algemene voorwaarden betrekking hebben, is uitsluitend Nederlands recht van toepassing. Alle geschillen met betrekking tot voornoemde overeenkomsten zullen worden voorgelegd aan de bevoegde rechter.<br>
+        2. Geschillen over de totstandkoming of uitvoering van overeenkomsten met betrekking tot door ons aan u te leveren of geleverde producten en diensten, kunnen, met inachtneming van het hierna bepaalde en in afwijking op het in artikel 12.1 genoemde, door u ook voor bemiddeling worden aangemeld bij ICTWaarborg.
+        ICTWaarborg biedt een bemiddelingsmogelijkheid waarvan consumenten gebruik kunnen maken door het bemiddelingsformulier op www.ictwaarborg.nl in te vullen.<br>
         <br>
-        Het belangrijkste onderdeel bij een koop op afstand is dat de consument hierbij een bedenktijd van 14 dagen, (ingaand op de dag na levering,) heeft om van de koop af te zien. Binnen die tijd kan hij gebruik maken van zijn herroepingsrecht, het recht om de koop te ontbinden.
+        Als voorwaarden geldt onder meer dat:<br>
+        het probleem is besproken met de betrokken ICTWaarborg-deelnemer en de klachtenprocedure van het bedrijf is doorlopen;<br>
+        het moet gaan om een ICT-product of -dienst die valt onder de kenmerkende ICT-activiteiten van de<br>
+        ICTWaarborg-vakgroep(en) waarvoor de deelnemer was aangesloten op het moment dat het probleem ontstond;<br>
+        het bedrijf is gecertificeerd deelnemer op het moment dat u uw bemiddelingsaanvraag indient;<br>
+        er is geen andere partij is ingeschakeld om tot een oplossing te komen. De volledige voorwaarden vindt u op www.ictwaarborg.nl.<br>
+        3. Indien er sprake is van een koop op afstand, als bedoeld in artikel 10, kunt u ook een klacht indienen/het geschil aanhangig maken via het Europese online platform (ODR) voor geschilbeslechting. U vindt dit platform via http://ec.europa.eu/consumers/odr/.<br>
+
+
+    </h1>
+</div>
+
+<div class="pb-4 text-xl font-bold">
+    <h1>Artikel 13. Aanvullende bepalingen</h1>
+</div>
+
+<div class="pb-8">
+    <h1>
+        Buiten de 13 artikelen van deze standaardset algemene voorwaarden van ICTWaarborg kunnen wij aanvullende of afwijkende bepalingen hanteren. Deze worden dan aan deze voorwaarden toegevoegd onder de kop “Aanvullende bepalingen”.
+        Deze extra bepalingen mogen niet in het nadeel van de consument zijn.
+        Versie oktober 2017
+    </h1>
+</div>
+
+<div class="pb-4 text-xl font-bold">
+    <h1>Aanvullende bepalingen NerdyGadgets</h1>
+</div>
+
+<div class="pb-8">
+    <h1>
+        Nerdytgadgets hanteert een ruimere retourregeling dan in de algemene voorwaarden voor consumenten van ICTWaarborg onder artikel 10 zijn opgenomen.
+        Consumenten die bij Nerdytgadgets een bestelling plaatsen krijgen in plaats van de wettelijk bepaalde 14 dagen, 30 dagen om een artikel te retourneren.
+        Voor deze extra periode gelden dezelfde spelregels als voor het herroepingsrecht zoals het opgenomen is in artikel 10.  
+
     </h1>
 </div>
