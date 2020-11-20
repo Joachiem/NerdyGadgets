@@ -69,4 +69,7 @@ $GLOBALS['t'] = [
     'Computing Novelties' => 'Computing Novelties',
     'USB Novelties' => 'USB Novelties',
     'Toys' => 'Toys',
+
+    //privacy page
+    'p' => include 'src/includes/lang/pages/eng-privacy.php',
 ];
