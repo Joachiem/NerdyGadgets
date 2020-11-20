@@ -35,6 +35,20 @@ Route::get('/english', function () {
     Route::back();
 });
 
+//footer contact
+Route::get('/contact', function () {
+    View::show('footer/contact');
+});
+
+//footer tos
+Route::get('/tos', function () {
+    View::show('footer/tos');
+});
+
+//footer privacy
+Route::get('/privacy', function () {
+    View::show('footer/privacy');
+});
 
 // products
 Route::get('/products', function () {
