@@ -13,7 +13,9 @@
     }
 
     function changeCounter(i) {
-        let currentNumber = parseInt(document.querySelector('#cart-counter').innerHTML)
+        let html = document.querySelector('#cart-counter').innerHTML
+        let currentNumber = html ? parseInt(html) : 0
+        
         update(currentNumber + i)
     }
 </script>
