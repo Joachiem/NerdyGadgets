@@ -60,4 +60,16 @@ $GLOBALS['t'] = [
     'productpage-name' => 'Naam',
     'productpage-add-to-cart' => 'In mijn winkelmandje',
     '' => '',
+
+    // categorys
+    'Novelty Items' => 'Hebbedingtjes',
+    'Clothing' => 'Kleding',
+    'T-Shirts' => 'T-Shirts',
+    'Computing Novelties' => 'Computer accessoires',
+    'USB Novelties' => 'USB accessoires',
+    'Toys' => 'Speelgoed',
+
+
+    //privacy page
+    'p' => include 'src/includes/lang/pages/nl-privacy.php',
 ];

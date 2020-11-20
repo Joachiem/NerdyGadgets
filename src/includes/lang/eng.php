@@ -23,7 +23,7 @@ $GLOBALS['t'] = [
     'catogories' => 'Catagories',
     'products' => 'Products',
     'tax' => 'excl TAX',
-    
+
     //Navbar
     'navbar-products' => 'Products',
     'navbar-categories' => 'Categories',
@@ -61,4 +61,15 @@ $GLOBALS['t'] = [
     'productpage-name' => 'Name',
     'productpage-add-to-cart' => 'Add to cart',
     '' => '',
+
+    // categorys
+    'Novelty Items' => 'Novelty Items',
+    'Clothing' => 'Clothing',
+    'T-Shirts' => 'T-Shirts',
+    'Computing Novelties' => 'Computing Novelties',
+    'USB Novelties' => 'USB Novelties',
+    'Toys' => 'Toys',
+
+    //privacy page
+    'p' => include 'src/includes/lang/pages/eng-privacy.php',
 ];

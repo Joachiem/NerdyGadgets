@@ -14,7 +14,7 @@
                     <?php } ?>
                 <?php } else { ?>
 
-                    <img alt="Placeholder" class="h-full w-full object-contain w-auto" src="/public/StockGroupIMG/<?php print $arg->StockGroupImagePath ?>">
+                    <img alt="Placeholder" class="h-full w-full object-cover w-auto" src="/public/StockGroupIMG/<?php print $arg->StockGroupImagePath ?>">
 
                 <?php } ?>
 
@@ -135,6 +135,8 @@
                 message: '<?php print $GLOBALS['t']['add-alert-message'] ?>',
                 time: 2000
             })
+
+            changeCounter(1)
 
             let request = new XMLHttpRequest()
             request.open('POST', '/cart/add?id=<?php print($_GET['id']) ?>')
