@@ -2,7 +2,7 @@
 
 return [
     //privacy page
-    'title' => '<b>Privacy Policy for NerdyGadgets</b>',
+    'title' => '<h1>Privacy Policy for NerdyGadgets</h1>',
     '1' => '<p>This is the NerdyGadgets website</p>
         <p>Our business address is Campus 2 - 8017CA in Zwolle</p>
         <p>Our registration number at the Kamer van Koophandel is 123456789</p>

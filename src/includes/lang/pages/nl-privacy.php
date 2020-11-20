@@ -2,7 +2,7 @@
 
 return [
     //privacy page
-    'title' => '<b>Privacybeleid NerdyGadgets</b>',
+    'title' => '<h1>Privacybeleid NerdyGadgets</h1>',
     '1' => '<p>Dit is de website van NerdyGadgets</p>
         <p>Ons bedrijfsadres is Campus 2 – 8017CA te Zwolle</p>
         <p>Ons Inschrijvingsnummer bij de Kamer van Koophandel is 123456789</p>
