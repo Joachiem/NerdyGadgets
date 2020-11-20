@@ -52,6 +52,9 @@ $GLOBALS['q'] = [
     GROUP BY StockItemID",
 
 
+    'product-clicked' => 'UPDATE stockitems 
+    SET ClickedON = ClickedON + 1
+    WHERE StockItemID = ?',
 
 
 

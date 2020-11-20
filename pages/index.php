@@ -16,13 +16,18 @@
     </div>
 
     <div class="grid -mx-1 lg:-mx-4 mb-8 mt-4 md:grid-cols-1 grid-cols-1 lg:grid-cols-6 grid-rows-2 gap-8">
-        <div class="md:col-span-1 col-span-1 lg:col-span-5 row-span-2">
-            <a><img class="shadow-lg rounded object-cover w-full" src="/public/Img/christmas-sale-purple-discount-banner-with-garland_7993-5998.jpg"></a>
+        <div class="md:col-span-1 col-span-1 lg:col-span-5 row-span-2 bg-white shadow-lg rounded object-cover overflow-hidden">
+            <img class="rounded object-cover h-full w-full" src="/public/Img/christmas-sale-purple-discount-banner-with-garland_7993-5998.jpg">
         </div>
-        <?php $product = $arg[0] ?>
+
+        <?php $product = $arg->products[0] ?>
+
         <div class="flex">
             <?php include "partials/productcard.php"; ?>
         </div>
+
+        <?php $product = $arg->products[1] ?>
+
         <div class="flex">
             <?php include "partials/productcard.php"; ?>
         </div>
@@ -30,7 +35,7 @@
     <p class="-mx-1 lg:-mx-4 text-gray-600 text-xl"><?php print $GLOBALS['t']['populair'] ?></p>
     <div class="flex mb-4 flex-wrap -mx-1 lg:-mx-4 grid lg:grid-cols-6 md:grid-cols-2 grid-cols-1 gap-8">
 
-        <?php foreach ($arg as $product) {
+        <?php foreach ($arg->products as $product) {
             include "partials/productcard.php";
         } ?>
 
@@ -39,8 +44,7 @@
     <p class="-mx-1 lg:-mx-4 text-gray-600 text-xl"><?php print $GLOBALS['t']['catogories'] ?></p>
     <div class="flex mb-4 flex-wrap -mx-1 lg:-mx-4 grid lg:grid-cols-6 md:grid-cols-2 grid-cols-1 gap-8">
 
-        <?php $arg2 = DB::execute($GLOBALS['q']['categories']); ?>
-        <?php foreach ($arg2 as $StockGroup) {
+        <?php foreach ($arg->categories as $StockGroup) {
             include "partials/catagoriecard.php";
         } ?>
 
@@ -49,7 +53,7 @@
     <p class="-mx-1 lg:-mx-4 text-gray-600 text-xl"><?php print $GLOBALS['t']['products'] ?></p>
     <div class="flex mb-4 flex-wrap -mx-1 lg:-mx-4 grid lg:grid-cols-6 md:grid-cols-2 grid-cols-1 gap-8">
 
-        <?php foreach ($arg as $product) {
+        <?php foreach ($arg->products as $product) {
             include "partials/productcard.php";
         } ?>
 
