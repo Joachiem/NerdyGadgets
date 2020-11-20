@@ -13,6 +13,16 @@ $GLOBALS['t'] = [
     'add-alert-title' => 'Product Toegevoegd',
     'add-alert-message' => 'Het product is toegevoegd aan het winkelmandje',
 
+    //Frontpage
+    'salepoint-1' => 'Betrouwbaar en Snel',
+    'salepoint-2' => 'Gratis levering boven de 50 euro',
+    'salepoint-3' => 'Vandaag besteld = Morgen in huis',
+    'salepoint-4' => 'Gratis retouneren',
+    'populair' => 'Populair',
+    'catogories' => 'Catogoriën',
+    'products' => 'Producten',
+    'tax' => 'excl BTW',
+
     //Navbar
     'navbar-products' => 'Producten',
     'navbar-categories' => 'Categorieën',

@@ -14,6 +14,16 @@ $GLOBALS['t'] = [
     'add-alert-title' => 'Product Added',
     'add-alert-message' => 'The product has been added to the shoppingcart',
 
+    //Frontpage
+    'salepoint-1' => 'Reliable en Fast',
+    'salepoint-2' => 'Free shipping above 50 euro',
+    'salepoint-3' => 'Order today = Recieve tomorrow',
+    'salepoint-4' => 'Free returns',
+    'populair' => 'Populair',
+    'catogories' => 'Catagories',
+    'products' => 'Products',
+    'tax' => 'excl TAX',
+    
     //Navbar
     'navbar-products' => 'Products',
     'navbar-categories' => 'Categories',
