@@ -198,8 +198,7 @@ $GLOBALS['q'] = [
     SI.StockItemName,
     SI.MarketingComments,
     ROUND(TaxRate * RecommendedRetailPrice / 100 + RecommendedRetailPrice, 2) as SellPrice,
-
-    QuantityOnHand
+    QuantityOnHand,
 
     (
         SELECT ImagePath
@@ -219,6 +218,7 @@ $GLOBALS['q'] = [
 
     FROM stockitems SI
     JOIN stockitemholdings SIH USING(stockitemid)
+    
     $1
     GROUP BY StockItemID
     ORDER BY $2
