@@ -20,13 +20,14 @@
             <img class="rounded object-cover h-full w-full" src="/public/Img/christmas-sale-purple-discount-banner-with-garland_7993-5998.jpg">
         </div>
 
-        <?php $product = $arg->popularSaleProducts[0] ?>
+        <?php $product = [] ?>
+        <?php if ($arg->popularSaleProducts) $product = $arg->popularSaleProducts[0] ?>
 
         <div class="flex">
             <?php include "partials/productcard.php"; ?>
         </div>
 
-        <?php $product = $arg->popularSaleProducts[1] ?>
+        <?php if ($arg->popularSaleProducts) $product = $arg->popularSaleProducts[1] ?>
 
         <div class="flex">
             <?php include "partials/productcard.php"; ?>

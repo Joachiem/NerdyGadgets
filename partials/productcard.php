@@ -1,10 +1,12 @@
+<?php if (!$product) return ?>
+
 <article class="shadow-lg max-w-sm rounded material-card bg-white">
     <div class="h-full flex flex-col justify-between">
         <div class="h-full flex items-center">
             <a href="/products/view?id=<?php print $product->StockItemID ?>">
-                <?php if (isset($product->ImagePath) AND !empty($product->ImagePath)) {?>
-                <img class="w-full rounded-t p-1" src="/public/StockItemIMG/<?php print $product->ImagePath ?>">
-                <?php } else {?>
+                <?php if (isset($product->ImagePath) and !empty($product->ImagePath)) { ?>
+                    <img class="w-full rounded-t p-1" src="/public/StockItemIMG/<?php print $product->ImagePath ?>">
+                <?php } else { ?>
                     <img class="w-full rounded-t p-1" src="/public/StockGroupIMG/<?php print $product->StockGroupImagePath ?>">
                 <?php } ?>
             </a>
