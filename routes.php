@@ -65,6 +65,9 @@ Route::get('/categories', function () {
 
 
 // checkout
+Route::get('/checkout/loginorguest', function () {
+    View::show('checkout/loginorguest');
+});
 Route::get('/checkout/account', function () {
     View::show('checkout/account');
 });

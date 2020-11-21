@@ -115,7 +115,7 @@
                                  class="lg:px-4 lg:py-2 m-2 lg:text-s font-bold text-center text-gray-900">
                             </div>
                         </div>
-                        <a href="/checkout/account">
+                        <a href="/checkout/loginorguest">
                             <button class="flex justify-center w-full px-10 py-3 mt-6 font-medium text-white uppercase bg-green-400 rounded-full shadow item-center hover:bg-green-500 focus:shadow-outline focus:outline-none">
                                 <span class="ml-2 mt-5px">Afrekenen</span>
                             </button>
