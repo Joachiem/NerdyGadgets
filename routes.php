@@ -76,6 +76,7 @@ Route::get('/checkout/address', function () {
 });
 Route::get('/checkout/pay', function () {
     View::show('checkout/pay');
+    Mail::paymentComplete();
 });
 Route::get('/checkout/complete', function () {
     Checkout::complete();
