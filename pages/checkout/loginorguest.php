@@ -2,38 +2,24 @@
 <?php Checkout::noItemsInCart(); ?>
 
 <div class="flex justify-center">
-    <div class="overflow-hidden rounded-lg shadow-lg mb-8 max-w-lg">
+    <div class="overflow-hidden rounded-lg shadow-lg mb-8">
 
-        <div class="leading-tight flex flex-grid grid-cols-2 gap-4 p-2 md:p-4 bg-white">
-            <div>
-                <form action= method="POST">
-                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                        for="grid-first-name">
-
-                        <?php print $GLOBALS['t']['firstname'] ?>
-                    
-                    </label>
-                    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white <?php print isset($error_messages->firstname) ? 'border-red-500' : 'border-gray-200' ?>"
-                        name="firstname" id="grid-first-name" type="text"
-                        value="<?php isset($_SESSION['form']["firstname"]) ? print($_SESSION['form']["firstname"]) : '' ?>">
-
-                    <?php if (isset($error_messages->firstname)) { ?>
-
-                    <p class="text-red-500 text-xs italic"><?php print $error_messages->firstname ?></p>
-
-                <?php } ?>
-
-                </form>
+        <div class="leading-tight flex grid grid-cols-2 gap-8 p-2 md:p-4 bg-white">
+            <div class="w-64 h-full flex flex-col justify-between">
+                <h1 class="mb-2">Doorgaan als gast</h1>
+                <div class="inset-x-0 bottom-0">
+                    <a href="/checkout/account">
+                        <button class="flex justify-center w-64 px-10 py-3 mt-6 font-medium text-white uppercase bg-green-400 rounded-full shadow item-center hover:bg-green-500 focus:shadow-outline focus:outline-none">
+                            <span class="ml-2 mt-5px">Proceed</span>
+                        </button>
+                    </a>
+                </div>
             </div>
             <div>
-                <form action= method="POST">
-                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                        for="grid-first-name">
-
-                        <?php print $GLOBALS['t']['firstname'] ?>
-                    
-                    </label>
-                    <input class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white <?php print isset($error_messages->firstname) ? 'border-red-500' : 'border-gray-200' ?>"
+                <form action method="POST">
+                    <h1 class="mb-2">Login</h1>
+                    <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name"> Email </label>
+                    <input type="email" class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white <?php print isset($error_messages->firstname) ? 'border-red-500' : 'border-gray-200' ?>"
                         name="firstname" id="grid-first-name" type="text"
                         value="<?php isset($_SESSION['form']["firstname"]) ? print($_SESSION['form']["firstname"]) : '' ?>">
 
@@ -43,6 +29,24 @@
 
                 <?php } ?>
 
+                <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name"> Wachtwoord </label>
+                    <input type="password" class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white <?php print isset($error_messages->firstname) ? 'border-red-500' : 'border-gray-200' ?>"
+                        name="firstname" id="grid-first-name" type="text"
+                        value="<?php isset($_SESSION['form']["firstname"]) ? print($_SESSION['form']["firstname"]) : '' ?>">
+
+                    <?php if (isset($error_messages->firstname)) { ?>
+
+                    <p class="text-red-500 text-xs italic"><?php print $error_messages->firstname ?></p>
+
+                <?php } ?>
+                
+                <a href="/register" class="underline text-xs text-blue-700">Ik heb nog geen account</a>
+
+                <a href="/checkout/account">
+                    <button class="flex justify-center w-full px-10 py-3 mt-6 font-medium text-white uppercase bg-green-400 rounded-full shadow item-center hover:bg-green-500 focus:shadow-outline focus:outline-none">
+                        <span class="ml-2 mt-5px">Login</span>
+                    </button>
+                </a>
                 </form>
             </div>
         

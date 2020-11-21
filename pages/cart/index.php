@@ -55,11 +55,11 @@
                             </div>
                         </td>
                         <td class="hidden text-right md:table-cell">
-                                <span class="text-sm lg:text-base font-medium"> €
-                                    <span id="price-<?php print($id) ?>">
-                                        <?php print sprintf("%.2f", $Result[0]->SellPrice); ?>
-                                    </span>
+                            <span class="text-sm lg:text-base font-medium"> €
+                                <span id="price-<?php print($id) ?>">
+                                    <?php print sprintf("%.2f", $Result[0]->SellPrice); ?>
                                 </span>
+                            </span>
                         </td>
                         <td class="text-right">
                             <span id="total-price-<?php print($id) ?>" class="text-sm lg:text-base font-medium"></span>
