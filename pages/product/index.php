@@ -49,35 +49,13 @@
 <div>
 
     <?php if (isset($arg->products) && count($arg->products) > 0) { ?>
-        <?php foreach ($arg->products as $product) { ?>
+        <div class="flex mb-4 flex-wrap -mx-1 lg:-mx-4 grid lg:grid-cols-5 md:grid-cols-2 grid-cols-1 gap-8">
 
-            <a href='/products/view?id=<?php print $product->StockItemID; ?>'>
-                <div>
+            <?php foreach ($arg->products as $product) {
+                include "partials/productcard.php";
+            } ?>
 
-                    <?php if (isset($product->ImagePath)) { ?>
-
-                        <img src="<?php print "public/StockItemIMG/" . $product->ImagePath; ?>"></img>
-
-                    <?php } elseif (isset($product->BackupImagePath)) { ?>
-
-                        <div style="background-image: url('<?php print "public/StockGroupIMG/" . $product->BackupImagePath ?>'); background-size: cover;"></div>
-
-                    <?php } ?>
-
-                    <div>
-                        <div>
-                            <h1><?php print sprintf("€ %0.2f", $product->SellPrice); ?></h1>
-                            <h6><?php print $GLOBALS['t']['incl-vat'] ?></h6>
-                        </div>
-                    </div>
-                    <h1><?php print $GLOBALS['t']['product-index-product-num'] ?><?php print $product->StockItemID; ?></h1>
-                    <p><?php print $product->StockItemName; ?></p>
-                    <p><?php print $product->MarketingComments; ?></p>
-                    <p><?php print $product->QuantityOnHand; ?></p>
-                </div>
-            </a>
-
-        <?php } ?>
+        </div>
     <?php } else { ?>
 
         <h2><?php print $GLOBALS['t']['product-index-not-found'] ?></h2>

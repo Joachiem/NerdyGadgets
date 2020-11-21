@@ -197,6 +197,7 @@ $GLOBALS['q'] = [
     SI.StockItemID,
     SI.StockItemName,
     SI.MarketingComments,
+    RecommendedRetailPrice,
     ROUND(TaxRate * RecommendedRetailPrice / 100 + RecommendedRetailPrice, 2) as SellPrice,
     QuantityOnHand,
 
@@ -231,8 +232,9 @@ $GLOBALS['q'] = [
     'filterd-products-catagory' => "SELECT
     SI.StockItemID,
     SI.StockItemName,
-    SI.MarketingComments, 
-    ROUND(SI.TaxRate * SI.RecommendedRetailPrice / 100 + SI.RecommendedRetailPrice,2) as SellPrice, 
+    SI.MarketingComments,
+    RecommendedRetailPrice,
+    ROUND(SI.TaxRate * SI.RecommendedRetailPrice / 100 + SI.RecommendedRetailPrice,2) as SellPrice,
     QuantityOnHand,
 
     (
