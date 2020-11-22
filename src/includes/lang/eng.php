@@ -4,8 +4,9 @@ $GLOBALS['t'] = [
     'lastname' => 'Lastname',
     'firstname' => 'Firstname',
     'quantity-on-hand' => 'Stock',
-    'excl-vat' => 'excl.vat',
-    'incl-vat' => 'incl.vat',
+    'excl-vat' => ' excl VAT',
+    'incl-vat' => ' incl VAT',
+    'in-stock' => 'In Stock: ',
 
 
     // alerts
@@ -22,7 +23,6 @@ $GLOBALS['t'] = [
     'populair' => 'Populair',
     'catogories' => 'Catagories',
     'products' => 'Products',
-    'tax' => 'excl TAX',
 
     //Navbar
     'navbar-products' => 'Products',

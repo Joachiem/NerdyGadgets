@@ -4,8 +4,9 @@ $GLOBALS['t'] = [
     'lastname' => 'Achternaam',
     'firstname' => 'Voornaam',
     'quantity-on-hand' => 'Voorraad',
-    'excl-vat' => 'excl.btw',
-    'incl-vat' => 'incl.btw',
+    'excl-vat' => ' excl BTW',
+    'incl-vat' => ' incl BTW',
+    'in-stock' => 'In Vooraad: ',
 
     // alerts
     'cookie-alert-title' => 'Wij gebruiken functionle cookies',
@@ -21,7 +22,6 @@ $GLOBALS['t'] = [
     'populair' => 'Populair',
     'catogories' => 'Catogoriën',
     'products' => 'Producten',
-    'tax' => 'excl BTW',
 
     //Navbar
     'navbar-products' => 'Producten',

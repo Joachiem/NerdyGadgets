@@ -11,14 +11,19 @@
                 <div class="no-underline hover:underline font-bold text-sm tracking-wide text-left"><?php print $product->StockItemName ?></div>
             </a>
 
-            <div class="flex flex-wrap grid grid-cols-3 gap-0">
-                <div class="col-span-2 text-gray-700 text-sm">€ <?php print round($product->SellPrice, 2) ?><p class="text-gray-500 text-xs">€ <?php print round($product->RecommendedRetailPrice, 2) ?> <?php print $GLOBALS['t']['tax'] ?></p>
+            <div class="flex justify-between gap-0">
+                <div class="col-span-2 text-gray-700 text-sm">
+                    <p>€ <?php print round($product->SellPrice, 2) ?></p>
+                    <p class="text-gray-500 text-xs">€ <?php print round($product->RecommendedRetailPrice, 2) . $GLOBALS['t']['excl-vat'] ?></p>
+                    <p class="text-gray-600 text-sm"><?php print print $GLOBALS['t']['in-stock'] . $product->QuantityOnHand; ?></p>
+
                 </div>
-                <div class="text-right">
+                <div class="flex items-end">
                     <button class="cart-btn tracking-wider uppercase font-bold text-green-700 hover:bg-green-200 bg-green-100 rounded inline-block right-0">
                         <ion-icon id="cart-btn-<?php print $product->StockItemID ?>" name="cart-outline" class="pt-1 pr-2 pl-1" size="10px"></ion-icon>
                     </button>
                 </div>
+
             </div>
         </div>
     </div>

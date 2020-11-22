@@ -9,6 +9,42 @@ class Product
     {
         $arg = new stdClass();
 
+        $arg->field_values = new stdClass();
+
+        $fields = [
+            'products_on_page' => [
+                'default' => 25,
+                'accepted' => [25, 50, 75]
+            ],
+            'sort_on_page' => [
+                'default' => 'price_low_high',
+                'accepted' => [
+                    'price_low_high',
+                    'price_high_low',
+                    'name_low_high',
+                    'name_high_low'
+                ]
+            ]
+        ];
+
+
+
+
+
+        foreach ($fields as $name => $field) {
+
+            // if (isset($_GET[$name])) 
+            //     $val = $_GET[$name];
+            //     $_SESSION[$name] = $_GET[$name];
+            // } elseif (isset($_SESSION[$name])) {
+            //     $val = $_SESSION[$name];
+            // }
+
+            $val = isset($_GET[$name]) ?  $_GET[$name] : $field['default'];
+
+            $arg->field_values->$name = in_array($val, $field['accepted']) ? $val : $field['default'];
+        }
+
         $query_build_result = "";
 
         $arg->page_number = isset($_GET['page_number']) ? $_GET['page_number'] : 0;
@@ -16,27 +52,9 @@ class Product
         $category_id = isset($_GET['category_id']) ? $_GET['category_id'] : "";
 
 
-        if (isset($_GET['sort'])) {
-            $sort_on_page = $_GET['sort'];
-            $_SESSION["sort"] = $_GET['sort'];
-        } elseif (isset($_SESSION["sort"])) {
-            $sort_on_page = $_SESSION["sort"];
-        } else {
-            $sort_on_page = "price_low_high";
-            $_SESSION["sort"] = "price_low_high";
-        }
 
-        if (isset($_GET['products_on_page'])) {
-            $products_on_page = $_GET['products_on_page'];
-            $_SESSION['products_on_page'] = $_GET['products_on_page'];
-        } elseif (isset($_SESSION['products_on_page'])) {
-            $products_on_page = $_SESSION['products_on_page'];
-        } else {
-            $products_on_page = 25;
-            $_SESSION['products_on_page'] = 25;
-        }
 
-        $offset = $arg->page_number * $products_on_page;
+        $offset = $arg->page_number * $arg->field_values->products_on_page;
 
         $sort_options = [
             'price_low_high' => 'SellPrice',
@@ -45,7 +63,7 @@ class Product
             'name_high_low' => 'StockItemName DESC'
         ];
 
-        $sort = $sort_options[$sort_on_page] ?: 'SellPrice';
+        $sort = $sort_options[$arg->field_values->sort_on_page] ?: 'SellPrice';
 
         $search_values = explode(' ', $search_string);
 
@@ -74,7 +92,7 @@ class Product
                 $query_build_result = "WHERE " . $query_build_result;
             }
 
-            $arg->products = DB::execute($GLOBALS['q']['filterd-products'], [$products_on_page, $offset], [$query_build_result, $sort]);
+            $arg->products = DB::execute($GLOBALS['q']['filterd-products'], [$arg->field_values->products_on_page, $offset], [$query_build_result, $sort]);
             $arg->ammount = DB::execute($GLOBALS['q']['count-products'], [], [$query_build_result])[0]->ammount;
         } else {
 
@@ -82,14 +100,19 @@ class Product
                 $query_build_result .= " AND ";
             }
 
-            $arg->products = DB::execute($GLOBALS['q']['filterd-products-catagory'], [$category_id, $products_on_page, $offset], [$query_build_result, $sort]);
+            $arg->products = DB::execute($GLOBALS['q']['filterd-products-catagory'], [$category_id, $arg->field_values->products_on_page, $offset], [$query_build_result, $sort]);
             $arg->ammount = DB::execute($GLOBALS['q']['count-products-catagory'], [$category_id], [$query_build_result])[0]->ammount;
         }
 
         if (isset($arg->ammount)) {
-            $arg->ammount = ceil($arg->ammount / $products_on_page);
+            $arg->ammount = ceil($arg->ammount / $arg->field_values->products_on_page);
         }
 
+        // print'<pre>';
+
+        // print_r($_GET);
+
+        // print_r($_SESSION);
 
         View::show('product/index', $arg);
     }
