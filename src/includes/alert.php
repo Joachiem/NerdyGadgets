@@ -6,7 +6,7 @@
                 <p id="message" class="text-sm"></p>
             </div>
             <button id="alert-btn" class="self-center w-10 h-10 ml-4 mr-1 flex justify-between items-center bg-transparent focus:outline-none hover:bg-red-700 text-red-700 hover:text-white p-2 border border-red-600 hover:border-transparent rounded rounded-full">
-                <ion-icon size="" name="close-outline"></ion-icon>
+                <ion-icon name="close-outline"></ion-icon>
             </button>
         </div>
     </div>

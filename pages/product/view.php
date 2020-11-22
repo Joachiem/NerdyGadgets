@@ -130,6 +130,10 @@
         const addToCartBtn = document.querySelector('#add-to-cart-btn')
 
         addToCartBtn.addEventListener('click', () => {
+            let request = new XMLHttpRequest()
+            request.open('POST', '/cart/add?id=<?php print($_GET['id']) ?>')
+            request.send()
+
             new Alert({
                 title: '<?php print $GLOBALS['t']['add-alert-title'] ?>',
                 message: '<?php print $GLOBALS['t']['add-alert-message'] ?>',
@@ -137,10 +141,6 @@
             })
 
             changeCounter(1)
-
-            let request = new XMLHttpRequest()
-            request.open('POST', '/cart/add?id=<?php print($_GET['id']) ?>')
-            request.send()
         })
 
         const imageButtons = document.querySelectorAll('.img-btn')

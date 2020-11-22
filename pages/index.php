@@ -68,6 +68,11 @@
     });
 
     function addToCart(e) {
+        let id = e.target.id.split('-')[2]
+        let request = new XMLHttpRequest()
+        request.open('POST', `/cart/add?id=${id}`)
+        request.send()
+
         new Alert({
             title: '<?php print $GLOBALS['t']['add-alert-title'] ?>',
             message: '<?php print $GLOBALS['t']['add-alert-message'] ?>',
@@ -75,10 +80,5 @@
         })
 
         changeCounter(1)
-
-        let id = e.target.id.split('-')[2]
-        let request = new XMLHttpRequest()
-        request.open('POST', `/cart/add?id=${id}`)
-        request.send()
     }
 </script>
