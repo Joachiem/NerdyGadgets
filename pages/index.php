@@ -73,7 +73,7 @@
             time: 2000
         })
 
-        changeCounter(1);
+        changeCounter(1)
 
         let id = e.target.id.split('-')[2]
         let request = new XMLHttpRequest()
