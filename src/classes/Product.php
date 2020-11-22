@@ -60,7 +60,8 @@ class Product
                 if ($i != 0) {
                     $query_build_result .= "AND ";
                 }
-                $query_build_result .= "SI.SearchDetails LIKE '%$search_values[$i]%' ";
+                $search_value = filter_var($search_values[$i], FILTER_SANITIZE_STRING);
+                $query_build_result .= "SI.SearchDetails LIKE '%$search_value%' ";
             }
             if ($query_build_result != "") {
                 $query_build_result .= " OR ";
