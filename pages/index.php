@@ -69,16 +69,17 @@
 
     function addToCart(e) {
         let id = e.target.id.split('-')[2]
-        let request = new XMLHttpRequest()
-        request.open('POST', `/cart/add?id=${id}`)
-        request.send()
 
-        new Alert({
-            title: '<?php print $GLOBALS['t']['add-alert-title'] ?>',
-            message: '<?php print $GLOBALS['t']['add-alert-message'] ?>',
-            time: 2000
+        request('/cart/add', 'POST', {
+            'id': id
+        }).then((result) => {
+            new Alert({
+                title: result.title,
+                message: result.message,
+                time: 2000
+            })
+
+            changeCounter(1)
         })
-
-        changeCounter(1)
     }
 </script>

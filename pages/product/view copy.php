@@ -130,14 +130,3 @@ if ($arg != null) {
         dots[slideIndex - 1].className += " active";
     }
 </script>
-<script>
-    (() => {
-        const addToCartBtn = document.querySelector('#add-to-cart-btn')
-
-        addToCartBtn.addEventListener("click", () => {
-            let request = new XMLHttpRequest()
-            request.open('POST', '/cart/add?id=<?php print($_GET['id']) ?>')
-            request.send()
-        })
-    })()
-</script>

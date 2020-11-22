@@ -31,6 +31,7 @@ class View
         include "src/includes/alert.php";
         include "src/includes/cookie.php";
         include "src/includes/cartCounter.php";
+        include "src/includes/request.php";
 
         print '</body>';
 

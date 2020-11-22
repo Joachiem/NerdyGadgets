@@ -50,9 +50,14 @@ class Cart
      * index page
      * @param mixed $callback
      */
-    public static function increment($id)
+    public static function increment()
     {
-        $_SESSION['cart'][$id] += 1;
+        $data = json_decode(file_get_contents('php://input'));
+
+        $_SESSION['cart'][$data->id] += 1;
+
+        http_response_code(201);
+        print json_encode(array('title' => $GLOBALS['t']['add-alert-title'], 'message' => $GLOBALS['t']['add-alert-message']));
     }
 
 
