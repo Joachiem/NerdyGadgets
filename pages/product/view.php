@@ -128,9 +128,9 @@
 <script>
     (() => {
         const addToCartBtn = document.querySelector('#add-to-cart-btn')
+        const id = <?php print $arg->StockItemID ?>
 
         addToCartBtn.addEventListener('click', () => {
-            let id = e.target.id.split('-')[2]
 
             request('/cart/add', 'POST', {
                 'id': id

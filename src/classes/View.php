@@ -27,11 +27,11 @@ class View
         include "partials/footer.php";
 
         print '</div>';
-
+        
+        include "src/includes/request.php";
         include "src/includes/alert.php";
         include "src/includes/cookie.php";
         include "src/includes/cartCounter.php";
-        include "src/includes/request.php";
 
         print '</body>';
 
