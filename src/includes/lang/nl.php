@@ -20,7 +20,7 @@ $GLOBALS['t'] = [
     'salepoint-3' => 'Vandaag besteld = Morgen in huis',
     'salepoint-4' => 'Gratis retouneren',
     'populair' => 'Populair',
-    'catogories' => 'Catogoriën',
+    'catogories' => 'Categorieën',
     'products' => 'Producten',
 
     //Navbar
