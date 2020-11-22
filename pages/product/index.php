@@ -50,7 +50,7 @@
                 <div class="flex text-gray-700">
                     <div class="flex h-12 font-medium rounded-full bg-gray-300">
                         <?php for ($i = 1; $i <= $arg->ammount; $i++) { ?>
-                            <?php if ($arg->page_number == ($i - 1)) { ?>
+                            <?php if ($arg->field_values->page_number == ($i - 1)) { ?>
 
                                 <div class="w-12 md:flex justify-center items-center hidden rounded-full bg-purple-600 text-white">
                                     <?php print $i; ?>
