@@ -36,8 +36,6 @@
 
         <input type="hidden" name="search" value="<?php print (isset($_GET['search'])) ? $_GET['search'] : ""; ?>">
 
-        <h4><?php print $GLOBALS['t']['product-index-num-product'] ?></h4>
-
         <input type="hidden" name="category_id" value="<?php print (isset($_GET['category_id'])) ? $_GET['category_id'] : ""; ?>">
 
         <?php if ($arg->ammount > 0) { ?>

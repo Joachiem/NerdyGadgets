@@ -9,7 +9,7 @@ $GLOBALS['t'] = [
     'in-stock' => 'In Vooraad: ',
 
     // alerts
-    'cookie-alert-title' => 'Wij gebruiken functionle cookies',
+    'cookie-alert-title' => 'Wij gebruiken functionele cookies',
     'cookie-alert-message' => 'Leer meer over de privacy op onze privacy pagina',
     'add-alert-title' => 'Product Toegevoegd',
     'add-alert-message' => 'Het product is toegevoegd aan het winkelmandje',
@@ -33,7 +33,7 @@ $GLOBALS['t'] = [
     '' => '',
 
     //product-index
-    'product-index-num-product' => 'Producten op pagina:',
+    'product-index-num-product' => 'Producten per pagina:',
     'product-index-sort' => 'Sorteren op:',
     'sort-price-asc' => 'Prijs oplopend',
     'sort-price-desc' => 'Prijs aflopend',
