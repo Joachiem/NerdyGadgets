@@ -72,6 +72,9 @@
 
     </div>
     <form>
+        <input type="hidden" name="search" value="<?php print (isset($_GET['search'])) ? $_GET['search'] : ""; ?>">
+        <input type="hidden" name="category_id" value="<?php print (isset($_GET['category_id'])) ? $_GET['category_id'] : ""; ?>">
+
         <?php if ($arg->ammount > 1) { ?>
             <div class="flex flex-col items-center my-12">
                 <div class="flex text-gray-700">
