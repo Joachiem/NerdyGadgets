@@ -1,7 +1,7 @@
 <div>
-    <form>
-        <div class="shadow-lg max-w-sm rounded material-card bg-white">
-            <div class="h-full flex flex-row justify-between">
+    <form class="flex flex-col items-center">
+        <div class="shadow-lg max-w-sm rounded material-card bg-white ">
+            <div class="h-full flex flex-row justify-center">
                 <div class="px-2 py-2 inset-x-0 bottom-0">
                     <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
                         <?php print $GLOBALS['t']['product-index-sort'] ?>
@@ -35,7 +35,6 @@
         </div>
 
         <input type="hidden" name="search" value="<?php print (isset($_GET['search'])) ? $_GET['search'] : ""; ?>">
-
         <input type="hidden" name="category_id" value="<?php print (isset($_GET['category_id'])) ? $_GET['category_id'] : ""; ?>">
 
         <?php if ($arg->ammount > 0) { ?>
@@ -61,7 +60,6 @@
             </div>
         <?php } ?>
 
-    </form>
 </div>
 
 <div>
@@ -73,29 +71,28 @@
         <?php foreach ($arg->products as $product) include "partials/productcard.php" ?>
 
     </div>
-    <form>
-        <?php if ($arg->ammount > 0) { ?>
-            <div class="flex flex-col items-center my-12">
-                <div class="flex text-gray-700">
-                    <div class="flex h-12 font-medium rounded-full bg-gray-300">
-                        <?php for ($i = 1; $i <= $arg->ammount; $i++) { ?>
-                            <?php if ($arg->field_values->page_number == ($i - 1)) { ?>
+    <?php if ($arg->ammount > 0) { ?>
+        <div class="flex flex-col items-center my-12">
+            <div class="flex text-gray-700">
+                <div class="flex h-12 font-medium rounded-full bg-gray-300">
+                    <?php for ($i = 1; $i <= $arg->ammount; $i++) { ?>
+                        <?php if ($arg->field_values->page_number == ($i - 1)) { ?>
 
-                                <div class="w-12 md:flex justify-center items-center hidden rounded-full bg-purple-600 text-white">
-                                    <?php print $i; ?>
-                                </div>
+                            <div class="w-12 md:flex justify-center items-center hidden rounded-full bg-purple-600 text-white">
+                                <?php print $i; ?>
+                            </div>
 
-                            <?php } else { ?>
-                                <div class="w-12 md:flex justify-center items-center hidden">
-                                    <button class="p-3 focus:outline-none" value="<?php print $i - 1 ?>" type="submit" name="page_number"><?php print $i ?></button>
-                                </div>
+                        <?php } else { ?>
+                            <div class="w-12 md:flex justify-center items-center hidden">
+                                <button class="p-3 focus:outline-none" value="<?php print $i - 1 ?>" type="submit" name="page_number"><?php print $i ?></button>
+                            </div>
 
-                            <?php } ?>
                         <?php } ?>
-                    </div>
+                    <?php } ?>
                 </div>
             </div>
-        <?php } ?>
+        </div>
+    <?php } ?>
 
     </form>
 
