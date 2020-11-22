@@ -66,7 +66,7 @@
 
     <?php if (!isset($arg->products) && count($arg->products) === 0) return print $GLOBALS['t']['product-index-not-found'] ?>
 
-    <div class="flex mb-4 flex-wrap -mx-1 lg:-mx-4 grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-8">
+    <div class="flex mb-8 flex-wrap -mx-1 lg:-mx-4 grid lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-2 grid-cols-1 gap-8">
 
         <?php foreach ($arg->products as $product) include "partials/productcard.php" ?>
 
@@ -76,7 +76,7 @@
         <input type="hidden" name="category_id" value="<?php print (isset($_GET['category_id'])) ? $_GET['category_id'] : ""; ?>">
 
         <?php if ($arg->ammount > 1) { ?>
-            <div class="flex flex-col items-center my-12">
+            <div class="flex flex-col items-center my-12 mt-8">
                 <div class="flex text-gray-700">
                     <div class="flex h-12 font-medium rounded-full bg-gray-300">
                         <?php for ($i = 1; $i <= $arg->ammount; $i++) { ?>
