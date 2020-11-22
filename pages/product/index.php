@@ -1,12 +1,7 @@
 <div>
     <form class="flex flex-col items-center">
-<<<<<<< HEAD
         <div class="shadow-lg max-w-sm rounded material-card bg-white mb-12">
-            <div class="h-full flex flex-row justify-center">
-=======
-        <div class="shadow-lg max-w-sm rounded material-card bg-white ">
             <div class="h-full grid grid-cols-2">
->>>>>>> 88a94ae925c9091be62d254e2fc3a1991d53acd8
                 <div class="px-2 py-2 inset-x-0 bottom-0">
                     <label class="block uppercase tracking-wide text-center text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
                         <?php print $GLOBALS['t']['product-index-sort'] ?>
