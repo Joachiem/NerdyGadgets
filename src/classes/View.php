@@ -35,6 +35,5 @@ class View
         print '</body>';
 
         print '</html>';
-        
     }
 }
