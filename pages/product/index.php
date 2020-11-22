@@ -42,7 +42,7 @@
 
         <?php if ($arg->ammount > 0) { ?>
             <?php for ($i = 1; $i <= $arg->ammount; $i++) { ?>
-                <?php if ($arg->page_number == ($i - 1)) { ?>
+                <?php if ($arg->field_values->page_number == ($i - 1)) { ?>
 
                     <div>
                         <?php print $i; ?>
