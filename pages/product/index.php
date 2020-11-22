@@ -19,7 +19,7 @@
 
                 <div class="px-2 py-2 inset-x-0 bottom-0">
                     <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
-                        <?php print $GLOBALS['t']['product-index-sort'] ?>
+                        <?php print $GLOBALS['t']['product-index-num-product'] ?>
                     </label>
 
                     <?php $p = $arg->field_values->products_on_page ?>
