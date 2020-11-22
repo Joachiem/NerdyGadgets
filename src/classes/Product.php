@@ -66,7 +66,7 @@ class Product
                 $query_build_result .= " OR ";
             }
             if ($arg->field_values->search != '' || $arg->field_values->search != null) {
-                $query_build_result .= "SI.StockItemID ='$arg->field_values->search'";
+                $query_build_result .= "SI.StockItemID ='" . $arg->field_values->search . "'";
             }
         }
 
