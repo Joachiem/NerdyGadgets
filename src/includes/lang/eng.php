@@ -34,12 +34,12 @@ $GLOBALS['t'] = [
     '' => '',
 
     //product-index
-    'product-index-num-product' => 'Number of Products on page',
-    'product-index-sort' => 'Sort',
+    'product-index-num-product' => ' Products per page:',
+    'product-index-sort' => 'Sort by:',
     'sort-price-asc' => 'Price ascending',
     'sort-price-desc' => 'Price descending',
-    'sort-name-asc' => 'Name acsending',
-    'sort-name-desc' => 'Name descnding',
+    'sort-name-asc' => 'Name A-Z',
+    'sort-name-desc' => 'Name Z-A',
     'product-index-product-num' => 'Article Number:',
     'product-index-not-found' => 'Yarr, er zijn geen resultaten gevonden',
     '' => '',
