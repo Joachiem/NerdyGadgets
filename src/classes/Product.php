@@ -8,8 +8,8 @@ class Product
     public static function index()
     {
         $arg = new stdClass();
-
         $arg->field_values = new stdClass();
+        $query_build_result = "";
 
         $fields = [
             'products_on_page' => [
@@ -27,10 +27,6 @@ class Product
             ]
         ];
 
-
-
-
-
         foreach ($fields as $name => $field) {
 
             if (isset($_GET[$name])) $_SESSION[$name] = $_GET[$name];
@@ -39,8 +35,6 @@ class Product
             $val = isset($val) ? $val : $field['default'];
             $arg->field_values->$name = in_array($val, $field['accepted']) ? $val : $field['default'];
         }
-
-        $query_build_result = "";
 
         $arg->field_values->page_number = isset($_GET['page_number']) ? $_GET['page_number'] : 0;
         $arg->field_values->search = isset($_GET['search']) ? $_GET['search'] : "";
@@ -59,8 +53,6 @@ class Product
         $sort = $sort_options[$arg->field_values->sort_on_page] ?: 'SellPrice';
 
         $search_values = explode(' ', $arg->field_values->search);
-
-
 
 
         if ($arg->field_values->search != '') {
@@ -93,19 +85,13 @@ class Product
                 $query_build_result .= " AND ";
             }
 
-            $arg->products = DB::execute($GLOBALS['q']['filterd-products-catagory'], [$arg->field_values->category_id , $arg->field_values->products_on_page, $offset], [$query_build_result, $sort]);
-            $arg->ammount = DB::execute($GLOBALS['q']['count-products-catagory'], [$arg->field_values->category_id ], [$query_build_result])[0]->ammount;
+            $arg->products = DB::execute($GLOBALS['q']['filterd-products-catagory'], [$arg->field_values->category_id, $arg->field_values->products_on_page, $offset], [$query_build_result, $sort]);
+            $arg->ammount = DB::execute($GLOBALS['q']['count-products-catagory'], [$arg->field_values->category_id], [$query_build_result])[0]->ammount;
         }
 
         if (isset($arg->ammount)) {
             $arg->ammount = ceil($arg->ammount / $arg->field_values->products_on_page);
         }
-
-        // print'<pre>';
-
-        // print_r($_GET);
-
-        // print_r($_SESSION);
 
         View::show('product/index', $arg);
     }
