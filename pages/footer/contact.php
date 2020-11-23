@@ -9,7 +9,7 @@
         <h2 class="pb-4 text-xl font-bold">Consument</h2>
 
         <p>
-            <a href="mailto:klantenservice@nerdygadgets.nl">klantenservice@nerdygadgets.nl</a><br>
+            klantenservice<br><a href="mailto:klantenservice@nerdygadgets.nl">klantenservice@nerdygadgets.nl</a><br>
             
         </p>
 
