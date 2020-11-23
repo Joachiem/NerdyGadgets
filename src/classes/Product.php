@@ -8,35 +8,40 @@ class Product
     public static function index()
     {
         $arg = new stdClass();
-
+        $arg->field_values = new stdClass();
         $query_build_result = "";
 
-        $arg->page_number = isset($_GET['page_number']) ? $_GET['page_number'] : 0;
-        $search_string = isset($_GET['search']) ? $_GET['search'] : "";
-        $category_id = isset($_GET['category_id']) ? $_GET['category_id'] : "";
+        $fields = [
+            'products_on_page' => [
+                'default' => 25,
+                'accepted' => [25, 50, 75]
+            ],
+            'sort_on_page' => [
+                'default' => 'price_low_high',
+                'accepted' => [
+                    'price_low_high',
+                    'price_high_low',
+                    'name_low_high',
+                    'name_high_low'
+                ]
+            ]
+        ];
 
+        foreach ($fields as $name => $field) {
 
-        if (isset($_GET['sort'])) {
-            $sort_on_page = $_GET['sort'];
-            $_SESSION["sort"] = $_GET['sort'];
-        } elseif (isset($_SESSION["sort"])) {
-            $sort_on_page = $_SESSION["sort"];
-        } else {
-            $sort_on_page = "price_low_high";
-            $_SESSION["sort"] = "price_low_high";
+            if (isset($_GET[$name])) $_SESSION[$name] = $_GET[$name];
+            if (isset($_SESSION[$name])) $val = $_SESSION[$name];
+
+            $val = isset($val) ? $val : $field['default'];
+            $arg->field_values->$name = in_array($val, $field['accepted']) ? $val : $field['default'];
         }
 
-        if (isset($_GET['products_on_page'])) {
-            $products_on_page = $_GET['products_on_page'];
-            $_SESSION['products_on_page'] = $_GET['products_on_page'];
-        } elseif (isset($_SESSION['products_on_page'])) {
-            $products_on_page = $_SESSION['products_on_page'];
-        } else {
-            $products_on_page = 25;
-            $_SESSION['products_on_page'] = 25;
-        }
+        $arg->field_values->page_number = isset($_GET['page_number']) ? $_GET['page_number'] : 0;
+        $arg->field_values->search = isset($_GET['search']) ? $_GET['search'] : "";
+        $arg->field_values->category_id = isset($_GET['category_id']) ? $_GET['category_id'] : "";
 
-        $offset = $arg->page_number * $products_on_page;
+
+        $offset = $arg->field_values->page_number * $arg->field_values->products_on_page;
 
         $sort_options = [
             'price_low_high' => 'SellPrice',
@@ -45,36 +50,35 @@ class Product
             'name_high_low' => 'StockItemName DESC'
         ];
 
-        $sort = $sort_options[$sort_on_page] ?: 'SellPrice';
+        $sort = $sort_options[$arg->field_values->sort_on_page] ?: 'SellPrice';
 
-        $search_values = explode(' ', $search_string);
-
-
+        $search_values = explode(' ', $arg->field_values->search);
 
 
-        if ($search_string != '') {
+        if ($arg->field_values->search != '') {
             for ($i = 0; $i < count($search_values); $i++) {
                 if ($i != 0) {
                     $query_build_result .= "AND ";
                 }
-                $query_build_result .= "SI.SearchDetails LIKE '%$search_values[$i]%' ";
+                $search_value = filter_var($search_values[$i], FILTER_SANITIZE_STRING);
+                $query_build_result .= "SI.SearchDetails LIKE '%$search_value%' ";
             }
             if ($query_build_result != "") {
                 $query_build_result .= " OR ";
             }
-            if ($search_string != '' || $search_string != null) {
-                $query_build_result .= "SI.StockItemID ='$search_string'";
+            if ($arg->field_values->search != '' || $arg->field_values->search != null) {
+                $query_build_result .= "SI.StockItemID ='" . $arg->field_values->search . "'";
             }
         }
 
 
-        if ($category_id === '') {
+        if ($arg->field_values->category_id  === '') {
 
             if ($query_build_result !== "") {
                 $query_build_result = "WHERE " . $query_build_result;
             }
 
-            $arg->products = DB::execute($GLOBALS['q']['filterd-products'], [$products_on_page, $offset], [$query_build_result, $sort]);
+            $arg->products = DB::execute($GLOBALS['q']['filterd-products'], [$arg->field_values->products_on_page, $offset], [$query_build_result, $sort]);
             $arg->ammount = DB::execute($GLOBALS['q']['count-products'], [], [$query_build_result])[0]->ammount;
         } else {
 
@@ -82,14 +86,13 @@ class Product
                 $query_build_result .= " AND ";
             }
 
-            $arg->products = DB::execute($GLOBALS['q']['filterd-products-catagory'], [$category_id, $products_on_page, $offset], [$query_build_result, $sort]);
-            $arg->ammount = DB::execute($GLOBALS['q']['count-products-catagory'], [$category_id], [$query_build_result])[0]->ammount;
+            $arg->products = DB::execute($GLOBALS['q']['filterd-products-catagory'], [$arg->field_values->category_id, $arg->field_values->products_on_page, $offset], [$query_build_result, $sort]);
+            $arg->ammount = DB::execute($GLOBALS['q']['count-products-catagory'], [$arg->field_values->category_id], [$query_build_result])[0]->ammount;
         }
 
         if (isset($arg->ammount)) {
-            $arg->ammount = ceil($arg->ammount / $products_on_page);
+            $arg->ammount = ceil($arg->ammount / $arg->field_values->products_on_page);
         }
-
 
         View::show('product/index', $arg);
     }

@@ -4,11 +4,12 @@ $GLOBALS['t'] = [
     'lastname' => 'Achternaam',
     'firstname' => 'Voornaam',
     'quantity-on-hand' => 'Voorraad',
-    'excl-vat' => 'excl.btw',
-    'incl-vat' => 'incl.btw',
+    'excl-vat' => ' excl BTW',
+    'incl-vat' => ' incl BTW',
+    'in-stock' => 'In Vooraad: ',
 
     // alerts
-    'cookie-alert-title' => 'Wij gebruiken functionle cookies',
+    'cookie-alert-title' => 'Wij gebruiken functionele cookies',
     'cookie-alert-message' => 'Leer meer over de privacy op onze privacy pagina',
     'add-alert-title' => 'Product Toegevoegd',
     'add-alert-message' => 'Het product is toegevoegd aan het winkelmandje',
@@ -21,7 +22,6 @@ $GLOBALS['t'] = [
     'populair' => 'Populair',
     'catogories' => 'Categorieën',
     'products' => 'Producten',
-    'tax' => 'excl BTW',
 
     //Navbar
     'navbar-products' => 'Producten',
@@ -33,13 +33,13 @@ $GLOBALS['t'] = [
     '' => '',
 
     //product-index
-    'product-index-num-product' => 'Aantal producten op pagina',
-    'product-index-sort' => 'Sorteren',
+    'product-index-num-product' => 'Producten per pagina',
+    'product-index-sort' => 'Sorteren op',
     'sort-price-asc' => 'Prijs oplopend',
     'sort-price-desc' => 'Prijs aflopend',
-    'sort-name-asc' => 'Naam oplopend',
-    'sort-name-desc' => 'Naam aflopend',
-    'product-index-product-num' => 'Artikelnummer:',
+    'sort-name-asc' => 'Naam A-Z',
+    'sort-name-desc' => 'Naam Z-A',
+    'product-index-product-num' => 'Artikelnummer',
     'product-index-not-found' => 'Yarr, er zijn geen resultaten gevonden',
     '' => '',
 
