@@ -29,9 +29,19 @@
 
             <div class="flex justify-between gap-0">
                 <div class="col-span-2 text-gray-700 text-sm">
-                    <p>€ <?php print round($product->SellPrice, 2) ?></p>
-                    <p class="text-gray-500 text-xs">€ <?php print round($product->RecommendedRetailPrice, 2) . $GLOBALS['t']['excl-vat'] ?></p>
-                    <p class="text-gray-600 text-sm"><?php print print $GLOBALS['t']['in-stock'] . $product->QuantityOnHand; ?></p>
+                    <?php if (isset($product->DiscountPrice)) {?>
+
+                        <p class="inline line-through">€ <?php print round($product->SellPrice, 2) ?></p> <p class="text-lg inline text-green-600">€ <?php printf("%.2f", $product->DiscountPrice, 2) ?></p>
+                        <p class="text-gray-500 text-xs ">€ <?php printf("%.2f", $product->DiscountPriceNoVat, 2); print($GLOBALS['t']['excl-vat']) ?></p>
+                        <p class="text-gray-600 text-sm"><?php print print $GLOBALS['t']['in-stock'] . $product->QuantityOnHand; ?></p>
+
+                    <?php } else {?>
+
+                        <p>€ <?php print round($product->SellPrice, 2) ?></p>
+                        <p class="text-gray-500 text-xs">€ <?php print round($product->RecommendedRetailPrice, 2) . $GLOBALS['t']['excl-vat'] ?></p>
+                        <p class="text-gray-600 text-sm"><?php print print $GLOBALS['t']['in-stock'] . $product->QuantityOnHand; ?></p>
+
+                    <?php } ?>
 
                 </div>
                 <div class="flex items-end">
