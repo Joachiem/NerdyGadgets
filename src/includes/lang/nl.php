@@ -68,4 +68,8 @@ $GLOBALS['t'] = [
     'Computing Novelties' => 'Computer accessoires',
     'USB Novelties' => 'USB accessoires',
     'Toys' => 'Speelgoed',
+
+
+    //privacy page
+    'p' => include 'src/includes/lang/pages/nl-privacy.php',
 ];
