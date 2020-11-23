@@ -2,242 +2,244 @@
 
 return [
     //TOS page
-    'title-tos' => '<h1>Algemene voorwaarden</h1>',
+    'title-tos' => '<h1>General terms and conditions</h1>',
 
-    '1-tos' => '<p>Algemene Voorwaarden ICTWaarborg voor consumenten</p>',
+    '1-tos' => '<p>General Terms and Conditions of ICTWaarborg for consumers</p>',
 
-    '1.1-tos' => '<p> ICTWaarborg hanteert consumentvriendelijke algemene voorwaarden. Dit wil zeggen dat ze zo duidelijk en begrijpelijk mogelijk zijn geschreven en de rechten van de consument op geen enkele manier beperken.
-        Alle leden van ICTWaarborg moeten, als zij zaken doen met een consument, de hieronder weergegeven voorwaarden hanteren. In een enkel geval, bijvoorbeeld wanneer zij lid zijn van de Nederlandse Thuiswinkel Organisatie of Stichting Webshop Keurmerk, kan het zijn dat zij de voorwaarden van die organisaties hanteren.
-        Dit is overigens alleen mogelijk bij een zogenaamde koop op afstand (zie de toelichting bij artikel 10).</p>',
+    '1.1-tos' => '<p> ICTWaarborg uses consumer-friendly general terms and conditions. This means that they are written as clearly and comprehensibly as possible and do not limit the rights of the consumer in any way.
+    All members of ICTWaarborg must, when doing business with a consumer, apply the conditions set out below. In some cases, for example when they are a member of the Dutch Thuiswinkel Organization or Stichting Webshop Keurmerk, it may be that they apply the conditions of those organizations.
+    This is only possible with a so-called distance selling (see the explanation to Article 10).</p>',
 
-    '2-tos' => '<p>Algemeen</p>',
+    '2-tos' => '<p>General</p>',
 
-    '2.1-tos' => '<p><h1>Algemene voorwaarden worden vaak terecht gezien als moeilijke "kleine lettertjes". Daarom proberen wij in deze voorwaarden in begrijpelijke taal te spreken over zaken als prijs, levertijd, tijdstip van betaling en hetgeen precies wordt geleverd. Omdat lang niet iedereen op de hoogte is van de inhoud van de wettelijke gang van zaken die bij een koopovereenkomst geldt, beginnen we met een korte toelichting op uw wettelijke rechten als koper.</h1>
-        <br>
-        <h1>Degene die u een product of een dienst levert (voor het gemak spreken we in deze voorwaarden dan over ‘verkoper’) is volgens de wet verplicht dat hetgeen hij levert die de eigenschappen bezit die een koper mag verwachten op grond van de (koop)overeenkomst die hij met de verkoper heeft gesloten (dit wordt conformiteit genoemd). Daarbij spelen het soort product en de mededelingen die de verkoper daarover heeft gedaan mee, bijvoorbeeld over speciale eigenschappen van het product. Overigens is het verstandig zulke zaken dan voor alle duidelijkheid wel apart schriftelijk vast te leggen.
-            De koper mag verder ook afgaan op reclame-uitingen van de fabrikant, tenzij de verkoper uitdrukkelijk heeft laten weten het niet eens te zijn met die beweringen. Voor de goede orde hebben we een conformiteitsverklaring opgenomen in artikel 7.</h1>
-        <br>
-        <h1>Wanneer blijkt dat het product toch niet de eigenschappen heeft die op grond van de koopovereenkomst mochten worden verwacht, kan de koper – naast alle andere rechten die de wet hem toekent (bijvoorbeeld uitstel van betaling) – van de verkoper eisen:
-            aflevering van wat ontbreekt;
-            herstel van de gebreken, tenzij dit onmogelijk is of van de verkoper niet kan worden gevergd;
-            of vervanging, tenzij dit onmogelijk is of van de verkoper niet kan worden gevergd.</h1>
-        <br>
-        <h1>De verkoper kan herstel of vervanging weigeren als de kosten hiervan in geen verhouding staan tot andere redelijke oplossingen, bijvoorbeeld vermindering van de koopprijs of teruggave van de koopsom en vergoeding van eventueel geleden schade.</h1></p>',
-
-
-    '3-tos' => '<h1>Artikel 1. Alle afspraken op schrift </h1>',
-
-    '3.1-tos' => '<p> Wij streven er naar onze afspraken over de prijs, eigenschappen van het te leveren product, levertijd, tijdstip van betaling e.d. zoveel mogelijk schriftelijk vast te leggen.
-    Ook aanvullende afspraken (bijvoorbeeld over hard- en software die bij een pc/notebook extra bij een standaardconfiguratie of in afwijking van een standaardconfiguratie wordt geleverd) worden schriftelijk vastgelegd.
-    Afspraken m.b.t. reparaties worden eveneens schriftelijk vastgelegd.</p>',
+    '2.1-tos' => '<p><h1>Terms and conditions are often rightly seen as difficult "fine print". That is why we try to speak in understandable language in these terms and conditions about matters such as price, delivery time, time of payment and what exactly is being delivered. Because not everyone is aware of the content of the legal procedure that applies to a purchase agreement, we start with a brief explanation of your legal rights as a buyer. </h1>
+    <br>
+    <h1> The person who supplies you with a product or a service (for the sake of convenience we then refer to "seller" in these terms and conditions) is required by law that what he supplies possessing the properties that a buyer may expect under the ( purchase) agreement that he has concluded with the seller (this is called conformity). The type of product and the statements that the seller has made about it play a role in this, for example about special properties of the product. Incidentally, it is wise to record such matters separately in writing for the sake of clarity.
+        The buyer may also rely on advertisements from the manufacturer, unless the seller has expressly stated that he does not agree with those statements. For the record, we have included a declaration of conformity in Article 7. </h1>
+    <br>
+    <h1> If it turns out that the product does not have the properties that could be expected on the basis of the purchase agreement, the buyer can - in addition to all other rights that the law grants him / her (for example, deferment of payment) - demand from the seller:
+        delivery of what is missing;
+        repair of the defects, unless this is impossible or cannot be required of the seller;
+        or replacement, unless this is impossible or cannot be required of the seller. </h1>
+    <br>
+    <h1> The seller may refuse repair or replacement if the costs thereof are disproportionate to other reasonable solutions, for example reduction of the purchase price or refund of the purchase price and compensation for any damage suffered.</h1></p>',
 
 
-    '4-tos' => '<h1>Artikel 2. Het aanbod</h1>',
+    '3-tos' => '<h1>Article 1. All agreements in writing </h1>',
+
+    '3.1-tos' => '<p> We strive to record in writing as much as possible our agreements about the price, characteristics of the product to be delivered, delivery time, time of payment, etc.
+    Additional agreements (for example about hardware and software that are supplied with a PC / notebook in addition to a standard configuration or in deviation from a standard configuration) are also laid down in writing.
+    Agreements regarding repairs are also recorded in writing.</p>',
 
 
-    '4.1-tos' => '<h1> 1. Als voor ons aanbod (en de prijs daarvan) een beperkte geldigheidsduur geldt of hieraan voorwaarden zijn verbonden, dan wordt dit bij het aanbod vermeld.<br>
-    2. Het aanbod met betrekking tot producten geldt zolang de voorraad strekt.<br>
-    3. Wij zullen de aangeboden producten/diensten zodanig omschrijven dat u als consument een goede beoordeling kunt maken. De bij het aanbod geplaatste afbeeldingen zijn waarheidsgetrouw; als dit niet mogelijk is, dan zullen wij dat vermelden.<br>
-    4. Indien er sprake is van "digitale producten", wordt bij het aanbod vermeld of er sprake is van beveiligde producten.<br>
-    5. Voor zover als mogelijk en indien van toepassing vermelden wij bij het aanbod voor welke hardware dan wel software de aangeboden producten/diensten (zoals software) geschikt zijn.<br> </h1>',
+    '4-tos' => '<h1>Article 2. The offer</h1>',
+
+
+    '4.1-tos' => '<h1> 1. If our offer (and its price) is subject to a limited period of validity or if conditions are attached to it, this will be stated in the offer. <br>
+    2. The offer with regard to products is valid while stocks last. <br>
+    3. We will describe the products / services offered in such a way that you as a consumer can make a proper assessment. The images placed with the offer are truthful; if this is not possible, we will mention it. <br>
+    4. In the case of "digital products", the offer will state whether it concerns protected products. <br>
+    5. As far as possible and if applicable, we will state in the offer for which hardware or software the offered products / services (such as software) are suitable.<br> </h1>',
 
 
 
-    '5-tos' => '<h1>Artikel 3. De prijs</h1>',
+    '5-tos' => '<h1>Article 3. The price</h1>',
 
     '5.1-tos' => ' <h1>
-    1. Onze prijzen zijn inclusief btw, exclusief bijkomende kosten zoals verzend- en afleveringskosten en heffingen zoals verwijderingsbijdrage of kopieerheffing. Deze zullen overigens tijdig, voor het sluiten van de overeenkomst worden vermeld.<br>
-    2. Gedurende de periode dat het aanbod geldt, worden de prijzen van de aangeboden producten/diensten niet verhoogd, behalve als deze het gevolg zijn van wettelijke regelingen (hieronder valt bijvoorbeeld de verhoging van
-    het btw-tarief).<br>
-    3. Gaat het om een prijsverhoging vanaf 3 maanden nadat wij met u de overeenkomst hebben gesloten, dan kunt u deze overeenkomst opzeggen met ingang van de dag waarop de prijsverhoging ingaat.<br>
-    4. Een uitzondering geldt voor prijzen die te maken hebben met schommelingen op de financiële markt waarop wij geen invloed hebben.
-    In dat geval kunnen wij variabele prijzen aanbieden, maar wanneer dat het geval is zullen we bij het aanbod vermelden dat het gaat om richtprijzen die gebonden zijn aan de schommelingen op de financiële markt.<br> </h1>',
+    1. Our prices are inclusive of VAT, exclusive of additional costs such as shipping and delivery costs and levies such as disposal fee or copy levy. These will be stated in good time before the agreement is concluded. <br>
+    2. During the period that the offer applies, the prices of the products / services offered will not be increased, except if they are the result of legal regulations (this includes, for example
+    the VAT rate). <br>
+    3. If it concerns a price increase from 3 months after we have concluded the agreement with you, you can cancel this agreement with effect from the day on which the price increase takes effect. <br>
+    4. An exception applies to prices that are related to fluctuations in the financial market over which we have no influence.
+    In that case we can offer variable prices, but if that is the case, we will state in the offer that it concerns target prices that are linked to the fluctuations in the financial market.<br> </h1>',
 
 
-    '6-tos' => '<h1>Artikel 4. Betaling</h1>',
+    '6-tos' => '<h1>Article 4. Payment</h1>',
 
     '6.1-tos' => '<h1>
-    Wij bieden diverse betaalmethoden aan, die van tijd tot tijd kunnen verschillen. Bij betaling ontvangt u van ons een factuur. Net als u hebben wij onze betalingsverplichtingen. Indien u uw betaling uitstelt zijn daar voor ons kosten aan verbonden.
-    Als dit wettelijk is toegestaan kunnen wij u de schade die wij daardoor lijden (renteverlies en redelijke kosten om alsnog het openstaande bedrag te innen) in rekening brengen</h1>',
+    We offer various payment methods, which may vary from time to time. You will receive an invoice from us upon payment. Just like you, we have our payment obligations. If you postpone your payment, we will incur costs.
+    If permitted by law, we may charge you for the damage we suffer as a result (loss of interest and reasonable costs to still collect the outstanding amount).</h1>',
 
-    '7-tos' => '<h1>Artikel 5. Levering en uitvoering</h1>',
+    '7-tos' => '<h1>Article 5. Delivery and implementation</h1>',
 
     '7.1-tos' => '<h1>
-    1. Wij streven er uiteraard naar altijd uiterlijk op het afgesproken tijdstip te leveren. Dit gebeurt zo snel mogelijk doch uiterlijk binnen 30 dagen, tenzij een kortere of langere leveringstermijn is afgesproken.
-    Mocht er toch te laat worden geleverd, en er is geen sprake van overmacht, dan heeft u als koper - wanneer is afgesproken dat u tegelijk bij levering zou betalen - het recht de betaling uit te stellen tot er wel is geleverd.
-    Als u dat wilt kunt u bij te late levering de koopovereenkomst geheel of gedeeltelijk ontbinden, behalve wanneer de ernst van de overschrijding van de leveringstermijn dit niet rechtvaardigt.<br>
-    2. Levering gebeurt op het adres dat u aan ons heeft doorgegeven. Als de bezorging is vertraagd, of als een bestelling of dienst niet of slechts gedeeltelijk kan worden uitgevoerd, ontvangt u hiervan zo spoedig mogelijk bericht.
-    De uiterste termijn hiervoor is 30 dagen nadat u de (koop)overeenkomst heeft gesloten. Na deze termijn heeft u het recht om de overeenkomst zonder kosten te ontbinden en recht op eventuele schadevergoeding.<br>
-    3. Na ontbinding zullen wij het bedrag dat u heeft betaald zo spoedig mogelijk, doch uiterlijk binnen 14 dagen na ontbinding, terugbetalen.<br>
-    4. Als de levering van een apart besteld product onmogelijk blijkt te zijn, doen wij ons best om u een vervangend artikel te leveren. Uiterlijk bij de bezorging zal dit op duidelijke en begrijpelijke wijze worden gemeld.
-    Gaat het om een koop op afstand (zie artikel 10), dan kunt u alsnog gebruik maken van uw herroepingsrecht. De kosten van retourzending zijn in dat geval voor onze rekening.<br>
-    5. Het risico van beschadiging en/of vermissing van producten berust tot het moment van bezorging aan u of aan een door u aangewezen derde, bij ons, tenzij u zelf voor een aflevermethode heeft gekozen die wij niet standaard aanbieden.<br></h1>',
+    1. Naturally, we strive to always deliver at the agreed time. This will be done as soon as possible, but no later than 30 days, unless a shorter or longer delivery period has been agreed.
+    If delivery is still late, and there is no question of force majeure, then you as the buyer - if it has been agreed that you would pay at the same time - have the right to postpone payment until delivery has been made.
+    If you wish, you can dissolve the purchase agreement in whole or in part in the event of late delivery, except when the seriousness of the exceeding of the delivery period does not justify this. <br>
+    2. Delivery takes place at the address you have given us. If delivery is delayed, or if an order or service cannot or only partially be executed, you will be notified as soon as possible.
+    The deadline for this is 30 days after you have concluded the (purchase) agreement. After this period you have the right to terminate the agreement without costs and you are entitled to any compensation. <br>
+    3. After dissolution, we will refund the amount you have paid as soon as possible, but no later than 14 days after dissolution. <br>
+    4. If the delivery of a separately ordered product proves to be impossible, we will do our best to provide you with a replacement item. This will be reported in a clear and comprehensible manner at the latest at the time of delivery.
+    If it concerns a distance purchase (see article 10), you can still use your right of withdrawal. In that case, the costs of return shipment are for our account. <br>
+    5. The risk of damage and / or loss of products rests with us until the moment of delivery to you or to a third party designated by you, unless you have chosen a delivery method that we do not offer as standard.<br></h1>',
 
-    '8-tos' => '<h1>Artikel 6. Garantie</h1>',
+    '8-tos' => '<h1>Article 6. Guarantee</h1>',
 
     '8.1-tos' => '<h1>
-    Voor al onze nieuwe producten geldt minimaal een volledige garantie van één jaar. Uitgezonderd hiervan zijn accus, waarvoor een andere garantietermijn kan gelden.
-    Het kan zijn dat fabrikanten of importeurs van producten of bepaalde onderdelen (zoals de hard disk) een eigen garantie bieden.
-    Ook in het geval u een beroep op zo"n garantie wilt doen, kunt u bij ons terecht. Als verkoper blijven wij dus te allen tijde uw aanspreekpunt.<br>
+    All our new products come with a full one-year warranty. Excluded from this are batteries, for which a different warranty period may apply.
+    It is possible that manufacturers or importers of products or certain components (such as the hard disk) offer their own warranty.
+    You can also contact us if you want to rely on such a warranty, so as a seller we remain your point of contact at all times.
     <br>
-    Let op!
-    Wij maken u er op attent dat rechten op de garantie kunnen worden verspeeld wanneer u zelf veranderingen aanbrengt op de geleverde producten (zowel hard- als software).</h1>',
+    Pay attention!
+    We draw your attention to the fact that warranty rights can be forfeited if you make changes to the delivered products (both hardware and software).</h1>',
 
-    '9-tos' => '<h1>Artikel 7. Conformiteit</h1>',
+    '9-tos' => '<h1>Article 7. Conformity</h1>',
 
     '9.1-tos' => '<h1>
-    Wij staan er voor in dat onze producten en diensten voldoen aan de (koop)overeenkomst, de in ons aanbod vermelde specificaties, aan de redelijke eisen van deugdelijkheid en bruikbaarheid en de op de datum van de totstandkoming van de (koop)overeenkomst bestaande wettelijke bepalingen en overheidsvoorschriften.
-    Eventuele garanties, als bedoeld in artikel 6, doen geen afbreuk aan het in dit artikel bedoelde recht.</h1>',
+    We guarantee that our products and services comply with the (purchase) agreement, the specifications stated in our offer, the reasonable requirements of reliability and usability and the legal provisions existing on the date of the conclusion of the (purchase) agreement. and government regulations.
+    Any guarantees, as referred to in Article 6, do not affect the right referred to in this Article.</h1>',
 
-    '10-tos' => '<h1>Artikel 8. Privacyregeling</h1>',
+    '10-tos' => '<h1>Article 8. Privacy regulation</h1>',
 
     '10.1-tos' => '<h1>
-    Wij hechten veel waarde aan een duidelijk en transparant privacybeleid en hiervoor gelden dan ook de volgende regels:
-    alleen die persoonsgegevens worden verzameld die noodzakelijk zijn om onze dienstverlening richting u te onderhouden en te verbeteren of wanneer wij dit op basis van de wet- en regelgeving mogen of moeten; uw persoonsgegevens worden met inachtneming van de geldende privacywetgeving verwerkt, opgeslagen en beheerd.
-    Meer hierover leest u in de privacyverklaring die wij op onze website hebben gepubliceerd; al uw persoonsgegevens die onze medewerkers onder ogen komen, worden strikt vertrouwelijk behandeld (documenten, e-mails etc.)
-    al onze medewerkers hebben hiertoe ook een geheimhoudingsbepaling in hun arbeidsovereenkomst ondertekend.<br>
-    Wij verstrekken uw persoonsgegevens enkel aan derde partijen wanneer wij met deze partijen schriftelijke afspraken hebben gemaakt over de verwerking van uw persoonsgegevens.<br>
+    We attach great importance to a clear and transparent privacy policy and the following rules apply:
+    only those personal data are collected that are necessary to maintain and improve our services to you or when we are allowed or required to do so on the basis of laws and regulations; your personal data will be processed, stored and managed in compliance with applicable privacy legislation.
+    You can read more about this in the privacy statement that we have published on our website; all your personal data that our employees see will be treated with strict confidentiality (documents, e-mails, etc.)
+    all our employees have also signed a confidentiality clause in their employment contract for this purpose. <br>
+    We only provide your personal data to third parties when we have made written agreements with these parties about the processing of your personal data. <br>
     <br>
-    Als consument heeft u diverse rechten. Binnen vier weken na ontvangst van het verzoek inzake de uitoefening van uw wettelijke rechten, geven wij u informatie over uw verzoek en onze behandeling hiervan.
-    Meer informatie over onze omgang met uw privacy? In onze privacyverklaring geven we aan welke persoonsgegevens wij van u verwerken en op welke wijze wij deze verzamelen, voor welke doeleinden wij dit doen, aan wie wij uw persoonsgegevens verstrekken, hoe lang wij uw persoonsgegevens bewaren, hoe we uw persoonsgegevens beveiligen en hoe u hierover klachten kunt indienen en/of contact met ons kunt opnemen.</h1>',
+    As a consumer you have various rights. Within four weeks of receiving the request to exercise your legal rights, we will provide you with information about your request and our handling thereof.
+    More information about how we deal with your privacy? In our privacy statement we indicate which personal data we process from you and how we collect it, for what purposes we do this, to whom we provide your personal data, how long we keep your personal data, how we protect your personal data and how submit complaints and / or contact us.</h1>',
 
-    '11-tos' => '<h1>Artikel 9. Eigendomsvoorbehoud</h1>',
+    '11-tos' => '<h1>Article 9. Retention of title</h1>',
 
     '11.1-tos' => '<h1>
-    Wij behouden de eigendom voor zolang de koop niet volledig is betaald.
-    Op onze reparatieopdrachten geven wij een zo duidelijk mogelijke omschrijving van de door u voor reparatie aangeboden artikelen, zodat uw eigendomsrechten niet in het geding zijn als het reparatiebedrijf failliet gaat terwijl uw artikelen daar net op dat moment zijn.</h1>',
+    We retain ownership as long as the purchase has not been paid in full.
+    On our repair orders, we provide as clear a description as possible of the items that you offer for repair, so that your property rights are not compromised if the repair company goes bankrupt while your items are there at that time.</h1>',
 
-    '12-tos' => '<h1>Artikel 10. Koop op afstand</h1>',
+    '12-tos' => '<h1>Article 10. Buy at a distance</h1>',
 
     '12.1-tos' => '<h1>
-    Bij een zogenaamde overeenkomst op afstand, gewoonlijk koop op afstand genoemd (bijvoorbeeld een bestelling bij een webwinkel), gelden er speciale aanvullende regels die we apart in dit artikel hebben opgenomen. Er wordt van een koop op afstand gesproken wanneer het gaat om een koopovereenkomst waarbij er geen direct contact is tussen verkoper en consument. Populair gezegd: zonder dat beiden zich in dezelfde ruimte bevinden. Dat geldt daarom niet alleen voor aankopen via internet (webwinkels), maar ook telefonische of schriftelijke bestellingen vallen bij ons onder
-    het begrip koop op afstand.<br>
+    In a so-called distance contract, usually referred to as a distance purchase (for example, an order from a web store), special additional rules apply that we have included separately in this article. A distance purchase is referred to when it concerns a purchase agreement in which there is no direct contact between seller and consumer. In popular terms: without both being in the same room. That therefore applies not only to purchases via the internet (web shops), but also telephone or written orders are covered by us
+    the concept of distance selling. <br>
     <br>
-    Het belangrijkste onderdeel bij een koop op afstand is dat de consument hierbij een bedenktijd van 14 dagen, (ingaand op de dag na levering,) heeft om van de koop af te zien. Binnen die tijd kan hij gebruik maken van zijn herroepingsrecht, het recht om de koop te ontbinden.</h1>',
+    The most important part of a distance purchase is that the consumer has a reflection period of 14 days (starting on the day after delivery) to cancel the purchase. Within that time he can make use of his right of withdrawal, the right to cancel the purchase.</h1>',
 
-    '13-tos' => '<h1>Artikel 10a. Informatie</h1>',
+    '13-tos' => '<h1>Article 10a. Information</h1>',
 
     '13.1-tos' => '<h1>
-    De informatie die u voorafgaand aan de koop krijgt, is zodanig dat u het aanbod goed kunt beoordelen, bijvoorbeeld door afbeeldingen die een waarheidsgetrouwe weergave zijn van de producten. De informatie is duidelijk en begrijpelijk en ook snel en gemakkelijk (tijdig voor het sluiten van de overeenkomst) vindbaar op onze website.<br>
+    The information that you receive prior to the purchase is such that you can properly assess the offer, for example through images that are a true representation of the products. The information is clear and comprehensible and can also be found on our website quickly and easily (in time for the conclusion of the agreement). <br>
     <br>
-    Daarnaast krijgt u duidelijke informatie over uw rechten en verplichtingen, zoals:<br>
-    - de totaal te betalen prijs, inclusief alle bijkomende kosten (deze worden ook apart vermeld), waaronder bijvoorbeeld een eventuele thuiskopieheffing of afleveringskosten;<br>
-    - de manier waarop de overeenkomst tot stand komt;<br>
-    - het al dan niet van toepassing zijn van het herroepingsrecht, hoe u gebruik maakt van het herroepingsrecht, het modelformulier voor herroeping, maar ook wie welke kosten draagt als er gebruik wordt gemaakt van het herroepingsrecht;<br>
-    - de wijze van betaling, aflevering of uitvoering van de overeenkomst;<br>
-    - de termijn dat de prijs of de mogelijkheid om het aanbod te aanvaarden geldt;<br>
-    - de tarieven die u moet betalen als u contact met ons wilt opnemen, wanneer dit anders is dan het basistarief. Indien u reeds klant bent en contact zoekt over de gesloten overeenkomst zal het tarief nooit hoger zijn dan het basistarief;<br>
-    - inzage in de gegevens die wij over u hebben opgeslagen;<br>
-    - de minimale duur van de overeenkomst op afstand als het gaat om een doorlopende of periodieke aflevering van producten of diensten. Daarnaast worden de totale prijs en de totale kosten per factureringsperiode vermeld. Als voor een dergelijke overeenkomst een vast tarief geldt, bevat de totale prijs ook de totale maandelijkse kosten. Daarnaast krijgt u de volgende informatie:<br>
-    a. ons bezoekadres, waar een klacht kan worden ingediend;<br>
-    b. de manier waarop u van uw herroepingsrecht gebruik kunt maken;<br>
-    c. informatie over bestaande service na aankoop en garanties;<br>
-    d. de hiervoor in 10a en onder Identiteit vermelde gegevens;<br>
-    e. de voorwaarden voor opzegging van de overeenkomst.<br>
+    You will also receive clear information about your rights and obligations, such as: <br>
+    - the total price to be paid, including all additional costs (these are also stated separately), including, for example, any home copy levy or delivery costs; <br>
+    - the way in which the agreement is concluded; <br>
+    - whether or not the right of withdrawal applies, how you make use of the right of withdrawal, the model withdrawal form, but also who bears what costs if the right of withdrawal is used; <br>
+    - the method of payment, delivery or performance of the agreement; <br>
+    - the period during which the price or the possibility to accept the offer applies; <br>
+    - the rates you have to pay if you want to contact us, when this is different from the basic rate. If you are already a customer and seek contact about the concluded agreement, the rate will never be higher than the basic rate; <br>
+    - access to the data we have stored about you; <br>
+    - the minimum duration of the distance contract if it concerns a continuous or periodic delivery of products or services. In addition, the total price and total costs per billing period are stated. If a flat rate applies to such an agreement, the total price includes the total monthly cost. You will also receive the following information: <br>
+    a. our visiting address, where a complaint can be submitted; <br>
+    b. the way in which you can make use of your right of withdrawal; <br>
+    c. information about existing after-sales service and guarantees; <br>
+    d. the data stated above in 10a and under Identity; <br>
+    e. the conditions for terminating the agreement. <br>
     <br>
-    Ook voor deze informatie geldt dat deze duidelijk en begrijpelijk is en snel en makkelijk vindbaar op onze website voordat de overeenkomst wordt gesloten. Na sluiten van de overeenkomst, maar uiterlijk bij levering van het product of de dienst krijgt u als koper alle in 10a genoemde informatie en wel zodanig dat deze door u makkelijk kan worden opgeslagen op een, zoals dat wettelijk heet,
-    duurzame gegevensdrager. Een duurzame gegevensdrager is een middel waardoor informatie zodanig wordt bewaard dat u deze later nog eens kunt lezen, zoals een cd, pdf-bestand of een document dat kan worden afgedrukt. Een e-mail wordt ook als duurzame gegevensdrager gezien. Als u de informatie al op deze manier heeft gekregen voor het sluiten van de overeenkomst is dit voldoende en hoeft de informatie niet nogmaals te worden verstrekt.</h1>',
+    This information is also clear and comprehensible and can be found quickly and easily on our website before the agreement is concluded. After concluding the agreement, but no later than upon delivery of the product or service, you as the buyer will receive all the information referred to in 10a, in such a way that you can easily store it on a, as it is legally called,
+    durable data carrier. A durable medium is a means by which information is stored in such a way that you can read it again later, such as a CD, PDF file or a document that can be printed. An e-mail is also seen as a durable data carrier. If you have already received the information in this way before concluding the agreement, this is sufficient and the information does not have to be provided again.</h1>',
 
-    '14-tos' => '<h1>Artikel 10b. Totstandkoming, bevestiging en beveiliging</h1>',
+    '14-tos' => '<h1>Article 10b. Creation, confirmation and security</h1>',
 
     '14.1-tos' => '<h1>
-    Een overeenkomst komt tot stand op het moment van aanbod en aanvaarding. (Daarmee wordt bedoeld dat de ene partij iets voor een bepaalde prijs aanbiedt ("deze laptop kost € 350,00") en de ander daar ja tegen zegt.)
-    Een bestelling wordt geplaatst (het aanbod wordt aanvaard) als u het bestelproces doorloopt en uiteindelijk door de definitieve bestelknop te activeren de bestelling plaatst. Zodra u een bestelling heeft geplaatst, krijgt u van ons een bevestiging.
-    Dit kan per e-mail, sms of op een andere manier zijn. Zolang dit niet is gebeurd, kunt u nog afzien van de koop door de Overeenkomst te ontbinden. Als u via internet bestelt, zorgen wij voor beveiliging van de uitgewisselde data en voor een veilige webomgeving.</h1>',
+    An agreement is concluded at the time of offer and acceptance. (This means that one party offers something for a certain price ("this laptop costs € 350.00") and the other says yes.)
+    An order is placed (the offer is accepted) when you go through the ordering process and finally place the order by activating the final order button. As soon as you have placed an order, you will receive a confirmation from us.
+    This can be by e-mail, text message or in another way. As long as this has not happened, you can still cancel the purchase by canceling the Agreement. If you order via the internet, we ensure the security of the exchanged data and a safe web environment.</h1>',
 
-    '15-tos' => '<h1>Artikel 10c. Bedenktijd bij levering van producten (herroepingsrecht)</h1>',
+    '15-tos' => '<h1>Article 10c. Reflection period for delivery of products (right of withdrawal)</h1>',
 
     '15.1-tos' => '<h1>
-    1. Bij de aankoop van producten heeft u als consument een bedenktijd van 14 dagen. De bedenktijd gaat in de dag nadat u het product heeft ontvangen of dat dit namens u is gedaan.<br>
-    Of:<br>
-    - als u in één bestelling meerdere producten heeft besteld: de dag waarop u, of een door u aangewezen derde, het laatste product uit die bestelling heeft ontvangen<br>
-    - als de levering van een product bestaat uit verschillende zendingen of onderdelen: de dag waarop u, of een door u aangewezen derde, de laatste zending of het laatste onderdeel heeft ontvangen;<br>
-    - bij overeenkomsten voor regelmatige levering van producten gedurende een bepaalde periode, zoals iedere maand een tijdschrift: de dag waarop u, of een door u aangewezen derde, het eerste product heeft ontvangen. Gedurende die periode heeft u de mogelijkheid de overeenkomst te ontbinden zonder dat u hiervoor een reden hoeft op te geven.<br>
-    U kunt hiervoor het modelformulier voor herroeping gebruiken of ons op een andere duidelijke<br>
-    manier laten weten de overeenkomst te ontbinden. Indien de mededeling online gebeurt, bevestigen wij de ontvangst daarvan. Binnen 14 dagen na de herroeping moet u de producten terugzenden. Dit wordt het herroepingsrecht genoemd.<br>
-    2. Tijdens de bedenktijd behoort u zorgvuldig om te gaan met het product en de verpakking. Daaronder wordt verstaan dat u het product slechts in die mate uitpakt of gebruikt voor zover dat nodig is om te kunnen beoordelen of u het wilt behouden. Indien u van uw herroepingsrecht gebruik maakt, behoort u het product met alle geleverde toebehoren en – indien redelijkerwijze mogelijk – in de originele staat en verpakking naar ons terug te sturen. Wij geven u duidelijke informatie hoe u dit kunt doen.<br>
-    3. U bent alleen aansprakelijk voor waardevermindering die het gevolg is van een manier van omgaan met het product die verder gaat dan toegestaan in lid 2. Wij zijn gerechtigd de waardevermindering te verrekenen met het door u terug te ontvangen bedrag.<br>
-    4. Indien u gebruik maakt van uw herroepingsrecht, hoeft u hoogstens de kosten van terugzending te betalen. Indien dit niet per gewone post mogelijk is, zullen wij voor u een inschatting van de kosten maken. Als wij de retourkosten voor onze rekening nemen zullen wij dat duidelijk vermelden.<br>
-    5. Alle overige kosten die u al heeft betaald, zullen wij u zo spoedig mogelijk, in ieder geval uiterlijk binnen 14 dagen na de herroeping terugbetalen. Wij zijn gerechtigd te wachten met terugbetaling totdat wij de producten hebben ontvangen of totdat u heeft aangetoond de producten te hebben geretourneerd.<br>
-    6. Als u heeft gekozen voor een duurdere methode van levering dan de goedkoopste standaardlevering, hoeven wij de bijkomende kosten voor de duurdere methode niet terug te betalen.<br></h1>',
+    1. When purchasing products, you as a consumer have a cooling-off period of 14 days. The reflection period starts the day after you have received the product or if this was done on your behalf. <br>
+    Or: <br>
+    - if you ordered several products in one order: the day on which you, or a third party designated by you, received the last product from that order <br>
+    - if the delivery of a product consists of several shipments or parts: the day on which you, or a third party designated by you, received the last shipment or the last part; <br>
+    - in the case of contracts for regular delivery of products during a certain period, such as a magazine every month: the day on which you, or a third party designated by you, received the first product. During that period you have the option to dissolve the agreement without having to state a reason. <br>
+    You can use the model withdrawal form for this or send us another clear <br>
+    way to cancel the agreement. If the notification is made online, we will confirm receipt thereof. You must return the products within 14 days of the withdrawal. This is called the right of withdrawal. <br>
+    2. During the reflection period, you should handle the product and packaging with care. This means that you only unpack or use the product to the extent necessary to assess whether you want to keep it. If you make use of your right of withdrawal, you should return the product with all accessories supplied and - if reasonably possible - in its original condition and packaging to us. We give you clear information on how to do this. <br>
+    3. You are only liable for depreciation that is the result of a way of handling the product that goes beyond what is permitted in paragraph 2. We are entitled to set off the depreciation against the amount you will receive back. <br>
+    4. If you make use of your right of withdrawal, you will not have to pay more than the costs of return. If this is not possible by regular mail, we will make an estimate of the costs for you. If we bear the return costs, we will clearly state this. <br>
+    5. We will reimburse you for all other costs that you have already paid as soon as possible, in any case no later than 14 days after the cancellation. We are entitled to withhold a refund until we have received the products or until you have demonstrated that you have returned the products. <br>
+    6. If you have opted for a more expensive method of delivery than the cheapest standard delivery, we do not have to refund the additional costs for the more expensive method.<br></h1>',
 
-    '16-tos' => '<h1>Artikel 10d. Bedenktijd bij levering van diensten en digitale producten</h1>',
+    '16-tos' => '<h1>Article 10d. Reflection period for the delivery of services and digital products</h1>',
 
     '16.1-tos' => '<h1>
-    1. Bij levering van diensten en een overeenkomst voor levering van digitale inhoud die niet op een materiële drager is geleverd, heeft u als consument een bedenktijd van 14 dagen.
-    De bedenktijd gaat in op de dag dat de overeenkomst wordt aangegaan. Gedurende die periode heeft u de mogelijkheid de overeenkomst te ontbinden zonder dat u hiervoor een reden hoeft op te geven. Dit wordt het herroepingsrecht genoemd.<br>
-    2. Om gebruik te maken van uw herroepingsrecht, geven wij u bij ons aanbod, of uiterlijk bij de levering, duidelijke informatie hoe u dit onder meer kunt doen.
-    U kunt hiervoor het modelformulier voor herroeping gebruiken ons op een andere duidelijke manier laten weten de overeenkomst te ontbinden. Indien de mededeling online gebeurt, bevestigen wij de ontvangst daarvan.<br>
-    3. Indien u de levering van een dienst herroept na ons eerst uitdrukkelijk te hebben verzocht al tijdens de bedenktijd, mogen wij het bedrag in rekening brengen dat evenredig is aan dat gedeelte van de overeenkomst dat door ons al is nagekomen/geleverd.<br></h1>',
+    1. When providing services and an agreement for the supply of digital content that is not supplied on a tangible medium, you as a consumer have a cooling-off period of 14 days.
+    The reflection period starts on the day the agreement is entered into. During that period you have the option to terminate the agreement without having to state a reason. This is called the right of withdrawal. <br>
+    2. In order to exercise your right of withdrawal, we will provide you with clear information on how to do this with our offer or at the latest upon delivery.
+    You can use the model withdrawal form to let us know in another clear way that you want to terminate the agreement. If the communication is made online, we will confirm receipt thereof. <br>
+    3. If you cancel the delivery of a service after having first explicitly requested us during the reflection period, we may charge the amount that is proportional to that part of the agreement that has already been fulfilled / delivered by us.<br></h1>',
 
-    '17-tos' => '<h1>Artikel 10e. Uitsluiting herroepingsrecht</h1>',
+    '17-tos' => '<h1>
+    Article 10e. Exclusion of right of withdrawal</h1>',
 
     '17.1-tos' => '<h1>
-    Soms geldt er geen herroepingsrecht voor u als consument, maar dat moet door ons dan wel duidelijk en voordat de overeenkomst wordt gesloten, worden vermeld. Het betreft dan onder andere:<br>
-    a. Producten of diensten waarvan de prijs gebonden is aan schommelingen op de financiële markt waarop wij geen invloed hebben en die zich binnen de herroepingstermijn kunnen voordoen.<br>
-    b. Overeenkomsten die gesloten zijn tijdens een openbare veiling. Producten gekocht op een internetveiling vallen hier in beginsel niet onder. Daarvoor geldt wel het herroepingsrecht.<br>
-    c. Geleverde diensten, maar alleen als:<br>
-    - de uitvoering is begonnen met uitdrukkelijke voorafgaande instemming van u; en<br>
-    - u heeft verklaard dat u uw herroepingsrecht verliest nadat wij de overeenkomst volledig hebben uitgevoerd binnen de bedenktijd.<br>
-    d. Producten die op basis van uw specificaties zijn gemaakt, die niet geprefabriceerd zijn en die worden vervaardigd op basis van uw individuele keuze of beslissing, of die duidelijk voor een specifieke persoon bestemd zijn;<br>
-    e. Producten die snel bederven of een beperkte houdbaarheid hebben.<br>
-    f. Verzegelde producten die om redenen van gezondheidsbescherming of hygiëne niet geschikt zijn om te worden teruggezonden en waarvan de verzegeling na levering is verbroken.<br>
-    g. Producten die na levering door hun aard onherroepelijk vermengd zijn met andere producten.<br>
-    h. Verzegelde audio-, video-opnamen en computerprogrammatuur, waarvan de verzegeling na levering is verbroken.<br>
-    i. Losse kranten, tijdschriften of magazines, met uitzondering van abonnementen hierop.<br>
-    j. De levering van digitale inhoud anders dan op een materiële drager, maar alleen als:<br>
-    - de uitvoering is begonnen met uw uitdrukkelijke voorafgaande instemming; en<br>
-    - u heeft verklaard dat u hiermee uw herroepingsrecht verliest<br></h1>',
+    Sometimes there is no right of withdrawal for you as a consumer, but this must be stated by us clearly and before the agreement is concluded. This concerns, among other things: <br>
+    a. Products or services whose price is dependent on fluctuations in the financial market over which we have no influence and which may occur within the withdrawal period. <br>
+    b. Agreements concluded during a public auction. In principle, products purchased at an internet auction are not covered. The right of withdrawal does apply for this. <br>
+    c. Services provided, but only if: <br>
+    - the performance has started with your explicit prior consent; and <br>
+    - you have declared that you will lose your right of withdrawal after we have fully performed the agreement within the reflection period. <br>
+    d. Products that are made to your specifications, that are not prefabricated and that are manufactured based on your individual choice or decision, or that are clearly intended for a specific person; <br>
+    e. Products that spoil quickly or have a limited shelf life. <br>
+    f. Sealed products that are not suitable for return for reasons of health protection or hygiene and of which the seal has been broken after delivery. <br>
+    g. Products that by their nature are irrevocably mixed with other products after delivery. <br>
+    h. Sealed audio, video recordings and computer software, the seal of which has been broken after delivery. <br>
+    i. Individual newspapers, magazines or magazines, with the exception of subscriptions to these. <br>
+    j. The delivery of digital content other than on a tangible medium, but only if: <br>
+    - the performance has started with your explicit prior consent; and <br>
+    - you have declared that you thereby lose your right of withdrawal<br></h1>',
 
-    '18-tos' => '<h1>Artikel 10f. Betaling</h1>',
+    '18-tos' => '<h1>Article 10f. Payment</h1>',
 
     '18.1-tos' => '<h1>
-    Bij iedere consumentenkoop geldt dat in algemene voorwaarden nooit een vooruitbetaling van meer dan 50% mag worden gevraagd en dat, voor zover er niet iets anders is afgesproken, de koper (de rest van) de koopsom betaalt bij of na bezorging van de bestelling.
-    Volledige vooruitbetaling mag als betaalmethode aangeboden worden, mits er maar een andere mogelijkheid bestaat waarbij u (minimaal 50%) bij of na levering kunt betalen.</h1>',
+    For every consumer purchase, the general terms and conditions may never require a prepayment of more than 50% and that, unless otherwise agreed, the buyer pays (the rest of) the purchase price on or after delivery of the order.
+    Full prepayment may be offered as a payment method, provided there is only another option whereby you can pay (at least 50%) on or after delivery.</h1>',
 
-    '19-tos' => '<h1>Artikel 10g. Annulering</h1>',
+    '19-tos' => '<h1>Article 10g. Cancellation</h1>',
 
     '19.1-tos' => '<h1>
-    Een bestelling kan kosteloos worden geannuleerd als deze nog niet is verzonden, behalve als het gaat om producten en/of diensten die uitgezonderd zijn van het herroepingsrecht.</h1>',
+    An order can be canceled free of charge if it has not yet been shipped, except when it concerns products and / or services that are exempt from the right of withdrawal.</h1>',
 
-    '20-tos' => '<h1>Artikel 11. Klachten en klachtentermijn</h1>',
+    '20-tos' => '<h1>Article 11. Complaints and complaint period</h1>',
 
     '20.1-tos' => '<h1>
-    Omdat wij onze klanten een optimale service willen verlenen, vinden wij het belangrijk van u te horen als u klachten heeft over onze dienstverlening. Doe dit – mede om eventuele schade te beperken – zo snel mogelijk.
-    Volgens de wet is een klacht op tijd kenbaar gemaakt als dit binnen twee maanden na ontdekking gebeurt. Dit geldt ook in het geval dat het gekochte product niet de eigenschappen heeft die u op grond van de koopovereenkomst mocht verwachten.
-    Het is in uw belang om uw klachten schriftelijk kenbaar te maken.<br>
-    Als u een klacht bij ons indient, zal die uiterlijk binnen 14 dagen worden beantwoord. Hebben wij daarvoor meer tijd nodig, dan laten wij u binnen 14 dagen weten wanneer u antwoord kunt verwachten.
-    Let op: bovengenoemde ziet enkel op klachten inzake de door ons geleverde producten en/of diensten. Voor klachten in het kader van onze verwerking van uw persoonsgegevens gelden andere regels.
-    Voor meer informatie hierover, raadpleeg de privacyverklaring op onze website of neem contact met ons op.</h1>',
+    Because we want to provide our customers with an optimal service, we think it is important to hear from you if you have any complaints about our services. Do this - partly to limit any damage - as soon as possible.
+    According to the law, a complaint is made known in time if this is done within two months of discovery. This also applies in the event that the purchased product does not have the properties that you could expect on the basis of the purchase agreement.
+    It is in your interest to make your complaints known in writing. <br>
+    If you submit a complaint to us, it will be answered within 14 days. If we need more time for this, we will let you know within 14 days when you can expect an answer.
+    Note: the above only refers to complaints regarding the products and / or services supplied by us. Different rules apply to complaints in the context of our processing of your personal data.
+    For more information about this, consult the privacy statement on our website or contact us.</h1>',
 
-    '21-tos' => '<h1>Artikel 12. Geschillen</h1>',
+    '21-tos' => '<h1>Article 12. Disputes</h1>',
 
     '21.1-tos' => '<h1>
-    1. Op de overeenkomsten waarop deze algemene voorwaarden betrekking hebben, is uitsluitend Nederlands recht van toepassing. Alle geschillen met betrekking tot voornoemde overeenkomsten zullen worden voorgelegd aan de bevoegde rechter.<br>
-    2. Geschillen over de totstandkoming of uitvoering van overeenkomsten met betrekking tot door ons aan u te leveren of geleverde producten en diensten, kunnen, met inachtneming van het hierna bepaalde en in afwijking op het in artikel 12.1 genoemde, door u ook voor bemiddeling worden aangemeld bij ICTWaarborg.
-    ICTWaarborg biedt een bemiddelingsmogelijkheid waarvan consumenten gebruik kunnen maken door het bemiddelingsformulier op www.ictwaarborg.nl in te vullen.<br>
+    1. The agreements to which these general terms and conditions apply are exclusively governed by Dutch law. All disputes with regard to the aforementioned agreements will be submitted to the competent court. <br>
+    2. Disputes about the formation or performance of agreements with regard to products and services to be delivered or delivered to you by us can, with due observance of the provisions below and in deviation from the provisions referred to in article 12.1, also be registered by you for mediation. at ICTWaarborg.
+    ICTWaarborg offers a mediation option that consumers can use by filling in the mediation form on www.ictwaarborg.nl. <br>
     <br>
-    Als voorwaarden geldt onder meer dat:<br>
-    het probleem is besproken met de betrokken ICTWaarborg-deelnemer en de klachtenprocedure van het bedrijf is doorlopen;<br>
-    het moet gaan om een ICT-product of -dienst die valt onder de kenmerkende ICT-activiteiten van de<br>
-    ICTWaarborg-vakgroep(en) waarvoor de deelnemer was aangesloten op het moment dat het probleem ontstond;<br>
-    het bedrijf is gecertificeerd deelnemer op het moment dat u uw bemiddelingsaanvraag indient;<br>
-    er is geen andere partij is ingeschakeld om tot een oplossing te komen. De volledige voorwaarden vindt u op www.ictwaarborg.nl.<br>
-    3. Indien er sprake is van een koop op afstand, als bedoeld in artikel 10, kunt u ook een klacht indienen/het geschil aanhangig maken via het Europese online platform (ODR) voor geschilbeslechting. U vindt dit platform via http://ec.europa.eu/consumers/odr/.<br></h1>',
+    Conditions include that: <br>
+    the problem has been discussed with the relevant ICTWaarborg participant and the companies complaints procedure has been completed; <br>
+    it must concern an ICT product or service that falls under the typical ICT activities of the <br>
+    ICTWaarborg department (s) to which the participant was affiliated when the problem arose; <br>
+    the company is a certified participant when you submit your mediation application; <br>
+    no other party has been engaged to come to a solution. The complete conditions can be found at www.ictwaarborg.nl. <br>
+    3. In the event of a distance purchase, as referred to in Article 10, you can also file a complaint / submit the dispute via the European online platform (ODR) for dispute resolution. You can find this platform at http://ec.europa.eu/consumers/odr/.<br></h1>',
 
-    '22-tos' => '<h1>Artikel 13. Aanvullende bepalingen</h1>',
+    '22-tos' => '<h1>Article 13. Additional provisions</h1>',
 
     '22.1-tos' => '<h1>
-    Buiten de 13 artikelen van deze standaardset algemene voorwaarden van ICTWaarborg kunnen wij aanvullende of afwijkende bepalingen hanteren. Deze worden dan aan deze voorwaarden toegevoegd onder de kop “Aanvullende bepalingen”.
-    Deze extra bepalingen mogen niet in het nadeel van de consument zijn.
-    Versie oktober 2017</h1>',
+    In addition to the 13 articles of this standard set of general terms and conditions of ICTWaarborg, we can use additional or deviating provisions. These will then be added to these terms and conditions under the heading “Additional provisions”.
+    These extra provisions must not be to the disadvantage of the consumer.
+    Version October 2017</h1>',
 
-    '23-tos' => '<h1>Aanvullende bepalingen NerdyGadgets</h1>',
+    '23-tos' => '<h1>
+    Additional Terms NerdyGadgets</h1>',
 
     '23.1-tos' => ' <h1>
-    Nerdytgadgets hanteert een ruimere retourregeling dan in de algemene voorwaarden voor consumenten van ICTWaarborg onder artikel 10 zijn opgenomen.
-    Consumenten die bij Nerdytgadgets een bestelling plaatsen krijgen in plaats van de wettelijk bepaalde 14 dagen, 30 dagen om een artikel te retourneren.
-    Voor deze extra periode gelden dezelfde spelregels als voor het herroepingsrecht zoals het opgenomen is in artikel 10.  </h1>',
+    Nerdytgadgets uses a broader return policy than the general terms and conditions for consumers of ICTWaarborg under Article 10.
+    Instead of the legally stipulated 14 days, consumers who place an order with Nerdytgadgets receive 30 days to return an item.
+    For this extra period the same rules apply as for the right of withdrawal as included in article 10.  </h1>',
 
 
 ];
