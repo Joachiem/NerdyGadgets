@@ -4,8 +4,9 @@ $GLOBALS['t'] = [
     'lastname' => 'Lastname',
     'firstname' => 'Firstname',
     'quantity-on-hand' => 'Stock',
-    'excl-vat' => 'excl.vat',
-    'incl-vat' => 'incl.vat',
+    'excl-vat' => ' excl VAT',
+    'incl-vat' => ' incl VAT',
+    'in-stock' => 'In Stock: ',
 
 
     // alerts
@@ -22,7 +23,6 @@ $GLOBALS['t'] = [
     'populair' => 'Populair',
     'catogories' => 'Catagories',
     'products' => 'Products',
-    'tax' => 'excl TAX',
 
     //Navbar
     'navbar-products' => 'Products',
@@ -34,13 +34,13 @@ $GLOBALS['t'] = [
     '' => '',
 
     //product-index
-    'product-index-num-product' => 'Number of Products on page',
-    'product-index-sort' => 'Sort',
-    'product-index-sort-price-asc' => 'Price ascending',
-    'product-index-sort-price-desc' => 'Price descending',
-    'product-index-sort-name-asc' => 'Name acsending',
-    'product-index-sort-name-desc' => 'Name descnding',
-    'product-index-product-num' => 'Article Number:',
+    'product-index-num-product' => ' Products per page',
+    'product-index-sort' => 'Sort by',
+    'sort-price-asc' => 'Price ascending',
+    'sort-price-desc' => 'Price descending',
+    'sort-name-asc' => 'Name A-Z',
+    'sort-name-desc' => 'Name Z-A',
+    'product-index-product-num' => 'Article Number',
     'product-index-not-found' => 'Yarr, er zijn geen resultaten gevonden',
     '' => '',
 
@@ -72,4 +72,7 @@ $GLOBALS['t'] = [
 
     //privacy page
     'p' => include 'src/includes/lang/pages/eng-privacy.php',
+
+    //TOS page
+    'tos' => include 'src/includes/lang/pages/eng-TOS.php',
 ];
