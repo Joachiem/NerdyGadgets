@@ -10,6 +10,7 @@
                     <?php $s = $arg->field_values->sort_on_page ?>
 
                     <select name="sort_on_page" class="appearance-none text-center block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white border-gray-200" onchange="this.form.submit()">
+                        <option value="most_clicked" <?php $s === "most_clicked" ? print "selected" : "" ?>><?php print $GLOBALS['t']['sort-most-clicked'] ?></option>
                         <option value="price_low_high" <?php $s === "price_low_high" ? print "selected" : "" ?>><?php print $GLOBALS['t']['sort-price-asc'] ?></option>
                         <option value="price_high_low" <?php $s === "price_high_low" ? print "selected" : "" ?>><?php print $GLOBALS['t']['sort-price-desc'] ?></option>
                         <option value="name_low_high" <?php $s === "name_low_high" ? print "selected" : "" ?>><?php print $GLOBALS['t']['sort-name-asc'] ?></option>

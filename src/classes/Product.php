@@ -19,6 +19,7 @@ class Product
             'sort_on_page' => [
                 'default' => 'price_low_high',
                 'accepted' => [
+                    'most_clicked',
                     'price_low_high',
                     'price_high_low',
                     'name_low_high',
@@ -44,6 +45,7 @@ class Product
         $offset = $arg->field_values->page_number * $arg->field_values->products_on_page;
 
         $sort_options = [
+            'most_clicked' => 'ClickedON',
             'price_low_high' => 'SellPrice',
             'price_high_low' => 'SellPrice DESC',
             'name_low_high' => 'StockItemName',

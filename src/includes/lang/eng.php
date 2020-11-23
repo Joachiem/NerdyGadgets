@@ -36,6 +36,7 @@ $GLOBALS['t'] = [
     //product-index
     'product-index-num-product' => ' Products per page',
     'product-index-sort' => 'Sort by',
+    'sort-most-clicked' => 'Most visited',
     'sort-price-asc' => 'Price ascending',
     'sort-price-desc' => 'Price descending',
     'sort-name-asc' => 'Name A-Z',
