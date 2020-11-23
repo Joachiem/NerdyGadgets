@@ -31,7 +31,7 @@
                 <div class="col-span-2 text-gray-700 text-sm">
                     <?php if (isset($product->DiscountPrice)) {?>
 
-                        <p class="inline line-through">€ <?php print round($product->SellPrice, 2) ?></p> <p class="text-lg inline logo-color font-bold">€ <?php printf("%.2f", $product->DiscountPrice, 2) ?></p>
+                        <p class="inline line-through">€ <?php print round($product->SellPrice, 2) ?></p> <p class="text-lg inline text-green-600 font-bold font-bold">€ <?php printf("%.2f", $product->DiscountPrice, 2) ?></p>
                         <p class="text-gray-500 text-xs ">€ <?php printf("%.2f", $product->DiscountPriceNoVat, 2); print($GLOBALS['t']['excl-vat']) ?></p>
                         <p class="text-gray-600 text-sm"><?php print print $GLOBALS['t']['in-stock'] . $product->QuantityOnHand; ?></p>
 
@@ -54,8 +54,3 @@
         </div>
     </div>
 </article>
-<style>
-.logo-color {
-    color: #C637A0;
-}
-</style>
