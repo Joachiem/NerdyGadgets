@@ -1,7 +1,11 @@
+<html>
+
 <h1>Contactinformatie</h1>
 
 <div class="border flex mb-4 flex-wrap mx-1 lg:-mx-4 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
-    <div class="border flex-1">
+
+<!-- Blok 1 -->
+    <div class="flex-auto shadow-lg max-w-sm rounded material-card bg-white px-2 py-2 inset-x-0 bottom-0">
         <h2>Consument</h2>
 
         <p>
@@ -13,7 +17,9 @@
         <p>Betalingen en administratieve<br><a href="mailto:administratie@nerdygadgets.nl">administratie@nerdygadgets.nl</a></p>
     </div>
 
-    <div class="border flex-auto">
+
+<!-- Blok 2 -->
+    <div class="flex-auto shadow-lg max-w-sm rounded material-card bg-white px-2 py-2 inset-x-0 bottom-0">
         <h2>Zakelijk</h2>
         <p>
             <a href="mailto:verkoop@nerdygadgets.nl">verkoop@nerdygadgets.nl</a><br>
@@ -21,7 +27,9 @@
         </p>
     </div>
 
-    <div class="border flex-auto">
+
+<!-- Blok 3 -->
+    <div class="flex-auto shadow-lg max-w-sm rounded material-card bg-white px-2 py-2 inset-x-0 bottom-0">
         <h2>Sociale Media</h2>
 
         <p>
@@ -31,4 +39,3 @@
             Twitter: <a onclick="window.open(this.href); return false;" href="https://twitter.com/nerdygadgets">@nerdygadgets</a><br>
         </p>
     </div>
-</div>
