@@ -80,7 +80,7 @@ $GLOBALS['t'] = [
     'contact-info' => 'Contactinformation',
     'contact-customer' => 'Customer',
     'contact-customerservice' => 'Customer Support',
-    'contact-service' => 'Service and Guarantee',
+    'contact-service' => 'Service and Warrenty',
     'contact-payments' => 'Payments and administration',
     'contact-commercial' => 'Business',
 
