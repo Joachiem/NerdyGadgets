@@ -1,36 +1,38 @@
 <html>
 
-<h1>Contactinformatie</h1>
+<h1 class="pb-12 text-3xl text-center font-extrabold">Contactinformatie </h1>
 
-<div class="border flex mb-4 flex-wrap mx-1 lg:-mx-4 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
+<div class="flex mb-4 flex-wrap mx-1 lg:-mx-4 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
 
 <!-- Blok 1 -->
     <div class="flex-auto shadow-lg max-w-sm rounded material-card bg-white px-2 py-2 inset-x-0 bottom-0">
-        <h2>Consument</h2>
+        <h2 class="pb-4 text-xl font-bold">Consument</h2>
 
         <p>
             <a href="mailto:klantenservice@nerdygadgets.nl">klantenservice@nerdygadgets.nl</a><br>
-            <a href="tel:0572328120">0572 328120</a>
+            
         </p>
 
         <p><br>Service en garantie<br><a href="mailto:service@nerdygadgets.nl">service@nerdygadgets.nl</a></p><br>
-        <p>Betalingen en administratieve<br><a href="mailto:administratie@nerdygadgets.nl">administratie@nerdygadgets.nl</a></p>
+        <p>Betalingen en administratieve<br><a href="mailto:administratie@nerdygadgets.nl">administratie@nerdygadgets.nl</a></p><br>
+        <p>Tel: <a >0572 328120</a></p>
     </div>
 
 
 <!-- Blok 2 -->
     <div class="flex-auto shadow-lg max-w-sm rounded material-card bg-white px-2 py-2 inset-x-0 bottom-0">
-        <h2>Zakelijk</h2>
+        <h2 class="pb-4 text-xl font-bold">Zakelijk</h2>
         <p>
-            <a href="mailto:verkoop@nerdygadgets.nl">verkoop@nerdygadgets.nl</a><br>
-            <a href="tel:0572328123">0572 328123</a>
+            <a href="mailto:verkoop@nerdygadgets.nl">verkoop@nerdygadgets.nl</a>
+            <br><br>Tel: <a >0572 328123</a><br>
+            
         </p>
     </div>
 
 
 <!-- Blok 3 -->
     <div class="flex-auto shadow-lg max-w-sm rounded material-card bg-white px-2 py-2 inset-x-0 bottom-0">
-        <h2>Sociale Media</h2>
+        <h2 class="pb-4 text-xl font-bold">Sociale Media</h2>
 
         <p>
             Facebook: <a onclick="window.open(this.href); return false;" href="https://www.facebook.com/nerdygadgets.nl/">nerdygadgets</a><br>
@@ -39,3 +41,4 @@
             Twitter: <a onclick="window.open(this.href); return false;" href="https://twitter.com/nerdygadgets">@nerdygadgets</a><br>
         </p>
     </div>
+</div>
