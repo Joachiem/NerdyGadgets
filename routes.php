@@ -34,24 +34,9 @@ Route::get('/english', function () {
     Route::back();
 });
 
-//footer contact
-Route::get('/contact', function () {
-    View::show('footer/contact');
-});
-
-//footer tos
-Route::get('/tos', function () {
-    View::show('footer/tos');
-});
-
-//footer privacy
-Route::get('/privacy', function () {
-    View::show('footer/privacy');
-});
-
 // products
 Route::get('/products', function () {
-    View::show('product/index');
+    Product::index();
 });
 Route::get('/products/view', function () {
     Product::view(isset($_GET['id']) ? $_GET['id'] : null);
@@ -94,7 +79,7 @@ Route::get('/cart', function () {
     Cart::index();
 });
 Route::post('/cart/add', function () {
-    Cart::increment($_GET['id']);
+    Cart::increment();
 });
 Route::delete('/cart/remove', function () {
     Cart::remove($_GET['id']);
@@ -104,6 +89,18 @@ Route::put('/cart/increment', function () {
 });
 Route::put('/cart/decrement', function () {
     Cart::decrement($_GET['id']);
+});
+
+
+//contact tos privacy
+Route::get('/contact', function () {
+    View::show('footer/contact');
+});
+Route::get('/tos', function () {
+    View::show('footer/tos');
+});
+Route::get('/privacy', function () {
+    View::show('footer/privacy');
 });
 
 

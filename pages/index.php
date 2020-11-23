@@ -20,13 +20,14 @@
             <img class="rounded object-cover h-full w-full" src="/public/Img/christmas-sale-purple-discount-banner-with-garland_7993-5998.jpg">
         </div>
 
-        <?php $product = $arg->products[0] ?>
+        <?php $product = [] ?>
+        <?php if ($arg->popularSaleProducts) $product = $arg->popularSaleProducts[0] ?>
 
         <div class="flex">
             <?php include "partials/productcard.php"; ?>
         </div>
 
-        <?php $product = $arg->products[1] ?>
+        <?php if ($arg->popularSaleProducts) $product = $arg->popularSaleProducts[1] ?>
 
         <div class="flex">
             <?php include "partials/productcard.php"; ?>
@@ -67,17 +68,18 @@
     });
 
     function addToCart(e) {
-        new Alert({
-            title: '<?php print $GLOBALS['t']['add-alert-title'] ?>',
-            message: '<?php print $GLOBALS['t']['add-alert-message'] ?>',
-            time: 2000
-        })
-
-        changeCounter(1)
-
         let id = e.target.id.split('-')[2]
-        let request = new XMLHttpRequest()
-        request.open('POST', `/cart/add?id=${id}`)
-        request.send()
+
+        request('/cart/add', 'POST', {
+            'id': id
+        }).then((result) => {
+            new Alert({
+                title: result.title,
+                message: result.message,
+                time: 2000
+            })
+
+            changeCounter(1)
+        })
     }
 </script>
