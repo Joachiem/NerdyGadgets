@@ -1,21 +1,21 @@
 <html>
 
-<h1 class="pb-12 text-3xl text-center font-extrabold">Contactinformatie </h1>
+<h1 class="pb-12 text-3xl text-center font-extrabold"><?php print $GLOBALS['t']['contact-info'] ?> </h1>
 
 <div class="flex flex-wrap grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
 
     <!-- Blok 1 -->
     <div class="flex-auto shadow-lg max-w-sm rounded material-card bg-white px-2 py-2 inset-x-0 bottom-0">
-        <h2 class="pb-4 text-xl font-bold">Consument</h2>
+        <h2 class="pb-4 text-xl font-bold"><?php print $GLOBALS['t']['contact-customer'] ?></h2>
 
         <p>
-            Klantenservice<br><a class="underline" 
+        <?php print $GLOBALS['t']['contact-customerservice'] ?><br><a class="underline" 
                 href="mailto:klantenservice@nerdygadgets.nl">klantenservice@nerdygadgets.nl</a><br>
         </p>
 
-        <p><br>Service en garantie<br><a class="underline" 
+        <p><br><?php print $GLOBALS['t']['contact-service'] ?><br><a class="underline" 
                 href="mailto:service@nerdygadgets.nl">service@nerdygadgets.nl</a></p><br>
-        <p>Betalingen en administratieve<br><a class="underline"
+        <p><?php print $GLOBALS['t']['contact-payments'] ?><br><a class="underline"
                 href="mailto:administratie@nerdygadgets.nl">administratie@nerdygadgets.nl</a></p><br>
         <p>Tel: 06-51423256</p>
     </div>
@@ -23,7 +23,7 @@
 
     <!-- Blok 2 -->
     <div class="flex-auto shadow-lg max-w-sm rounded material-card bg-white px-2 py-2 inset-x-0 bottom-0">
-        <h2 class="pb-4 text-xl font-bold">Zakelijk</h2>
+        <h2 class="pb-4 text-xl font-bold"><?php print $GLOBALS['t']['contact-commercial'] ?></h2>
         <p>
             <a class="underline" 
                 href="mailto:verkoop@nerdygadgets.nl">verkoop@nerdygadgets.nl</a><br>
@@ -36,7 +36,7 @@
 
     <!-- Blok 3 -->
     <div class="flex-auto shadow-lg max-w-sm rounded material-card bg-white px-2 py-2 inset-x-0 bottom-0">
-        <h2 class="pb-4 text-xl font-bold">Sociale Media</h2>
+        <h2 class="pb-4 text-xl font-bold">Social Media</h2>
 
         <p>
             Facebook: <a class="underline" onclick="window.open(this.href); return false;"
