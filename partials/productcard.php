@@ -23,6 +23,7 @@
 
             </a>
         </div>
+
         <?php if ($product->QuantityOnHand > 10) {
             $stock = $GLOBALS['t']['large-stock'];
         } elseif ($product->QuantityOnHand > 0) {
@@ -30,6 +31,7 @@
         } elseif ($product->QuantityOnHand === 0) {
             $stock = $GLOBALS['t']['no-stock'];
         } ?>
+
         <div class="px-2 py-2 inset-x-0 bottom-0">
             <a href="/products/view?id=<?php print $product->StockItemID ?>">
                 <div class="no-underline hover:underline font-bold text-sm tracking-wide text-left"><?php print $product->StockItemName ?></div>
