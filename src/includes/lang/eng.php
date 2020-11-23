@@ -8,7 +8,6 @@ $GLOBALS['t'] = [
     'incl-vat' => ' incl VAT',
     'in-stock' => 'In Stock: ',
 
-
     // alerts
     'cookie-alert-title' => 'We use functional cookies',
     'cookie-alert-message' => 'Learn more about privacy on our privacy page',
@@ -41,7 +40,10 @@ $GLOBALS['t'] = [
     'sort-name-asc' => 'Name A-Z',
     'sort-name-desc' => 'Name Z-A',
     'product-index-product-num' => 'Article Number',
-    'product-index-not-found' => 'Yarr, er zijn geen resultaten gevonden',
+    'product-index-not-found' => 'Yarr, no results found!',
+    'large-stock' => 'In stock',
+    'low-stock' => 'Almost sold out!',
+    'no-stock' => 'Sold out!',
     '' => '',
 
     // footer
@@ -72,4 +74,7 @@ $GLOBALS['t'] = [
 
     //privacy page
     'p' => include 'src/includes/lang/pages/eng-privacy.php',
+
+    //TOS page
+    'tos' => include 'src/includes/lang/pages/eng-TOS.php',
 ];

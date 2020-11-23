@@ -6,7 +6,7 @@ $GLOBALS['t'] = [
     'quantity-on-hand' => 'Voorraad',
     'excl-vat' => ' excl BTW',
     'incl-vat' => ' incl BTW',
-    'in-stock' => 'In Vooraad: ',
+    'in-stock' => 'In Voorraad: ',
 
     // alerts
     'cookie-alert-title' => 'Wij gebruiken functionele cookies',
@@ -41,6 +41,9 @@ $GLOBALS['t'] = [
     'sort-name-desc' => 'Naam Z-A',
     'product-index-product-num' => 'Artikelnummer',
     'product-index-not-found' => 'Yarr, er zijn geen resultaten gevonden',
+    'large-stock' => 'Op voorraad',
+    'low-stock' => 'Bijna uitverkocht!',
+    'no-stock' => 'Uitverkocht!',
     '' => '',
 
     // footer
@@ -69,7 +72,9 @@ $GLOBALS['t'] = [
     'USB Novelties' => 'USB accessoires',
     'Toys' => 'Speelgoed',
 
-
     //privacy page
     'p' => include 'src/includes/lang/pages/nl-privacy.php',
+
+    //TOS page
+    'tos' => include 'src/includes/lang/pages/nl-TOS.php',
 ];

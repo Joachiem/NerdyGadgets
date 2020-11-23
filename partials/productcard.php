@@ -11,16 +11,26 @@
 
                 <?php } elseif (isset($product->StockGroupImagePath) and !empty($product->StockGroupImagePath)) { ?>
 
-                    <img class="w-full rounded-t p-1" src="/public/StockGroupIMG/<?php print $product->StockGroupImagePath ?>">
+                    <img class="w-full rounded-t p-1"
+                         src="/public/StockGroupIMG/<?php print $product->StockGroupImagePath ?>">
 
                 <?php } else { ?>
 
-                    <img class="w-full rounded-t p-1" src="/public/StockGroupIMG/<?php print $product->BackupImagePath ?>">
+                    <img class="w-full rounded-t p-1"
+                         src="/public/StockGroupIMG/<?php print $product->BackupImagePath ?>">
 
                 <?php } ?>
 
             </a>
         </div>
+
+        <?php if ($product->QuantityOnHand > 10) {
+            $stock = $GLOBALS['t']['large-stock'];
+        } elseif ($product->QuantityOnHand > 0) {
+            $stock = $GLOBALS['t']['low-stock'];
+        } elseif ($product->QuantityOnHand === 0) {
+            $stock = $GLOBALS['t']['no-stock'];
+        } ?>
 
         <div class="px-2 py-2 inset-x-0 bottom-0">
             <a href="/products/view?id=<?php print $product->StockItemID ?>">
@@ -45,8 +55,10 @@
 
                 </div>
                 <div class="flex items-end">
-                    <button id="cart-btn" class="cart-btn tracking-wider uppercase font-bold text-green-700 hover:bg-green-200 bg-green-100 rounded inline-block right-0 focus:outline-none">
-                        <ion-icon id="cart-btn-<?php print $product->StockItemID ?>" name="cart-outline" class="pt-1 pr-2 pl-1" size="10px"></ion-icon>
+                    <button id="cart-btn"
+                            class="cart-btn tracking-wider uppercase font-bold text-green-700 hover:bg-green-200 bg-green-100 rounded inline-block right-0 focus:outline-none">
+                        <ion-icon id="cart-btn-<?php print $product->StockItemID ?>" name="cart-outline"
+                                  class="pt-1 pr-2 pl-1" size="10px"></ion-icon>
                     </button>
                 </div>
 
