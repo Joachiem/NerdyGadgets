@@ -21,7 +21,15 @@
 
             </a>
         </div>
-
+<?php
+if ($product->QuantityOnHand > 10) {
+    $stock = $GLOBALS['t']['large-stock'];
+} elseif ($product->QuantityOnHand > 0) {
+    $stock = $GLOBALS['t']['low-stock'];
+} elseif ($product->QuantityOnHand === 0) {
+    $stock = $GLOBALS['t']['no-stock'];
+}
+?>
         <div class="px-2 py-2 inset-x-0 bottom-0">
             <a href="/products/view?id=<?php print $product->StockItemID ?>">
                 <div class="no-underline hover:underline font-bold text-sm tracking-wide text-left"><?php print $product->StockItemName ?></div>
@@ -31,7 +39,7 @@
                 <div class="col-span-2 text-gray-700 text-sm">
                     <p>€ <?php print round($product->SellPrice, 2) ?></p>
                     <p class="text-gray-500 text-xs">€ <?php print round($product->RecommendedRetailPrice, 2) . $GLOBALS['t']['excl-vat'] ?></p>
-                    <p class="text-gray-600 text-sm"><?php print print $GLOBALS['t']['in-stock'] . $product->QuantityOnHand; ?></p>
+                    <p class="text-gray-600 text-sm"><?php print $stock; ?></p>
 
                 </div>
                 <div class="flex items-end">
