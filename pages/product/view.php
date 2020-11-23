@@ -14,7 +14,7 @@
                     <?php } ?>
                 <?php } else { ?>
 
-                    <img alt="Placeholder" class="h-full w-full object-contain w-auto" src="/public/StockGroupIMG/<?php print $arg->StockGroupImagePath ?>">
+                    <img alt="Placeholder" class="h-full w-full object-cover w-auto" src="/public/StockGroupIMG/<?php print $arg->StockGroupImagePath ?>">
 
                 <?php } ?>
 
@@ -128,19 +128,21 @@
 <script>
     (() => {
         const addToCartBtn = document.querySelector('#add-to-cart-btn')
+        const id = <?php print $arg->StockItemID ?>
 
         addToCartBtn.addEventListener('click', () => {
-            new Alert({
-                title: '<?php print $GLOBALS['t']['add-alert-title'] ?>',
-                message: '<?php print $GLOBALS['t']['add-alert-message'] ?>',
-                time: 2000
+
+            request('/cart/add', 'POST', {
+                'id': id
+            }).then((result) => {
+                new Alert({
+                    title: result.title,
+                    message: result.message,
+                    time: 2000
+                })
+
+                changeCounter(1)
             })
-
-            changeCounter(1)
-
-            let request = new XMLHttpRequest()
-            request.open('POST', '/cart/add?id=<?php print($_GET['id']) ?>')
-            request.send()
         })
 
         const imageButtons = document.querySelectorAll('.img-btn')
