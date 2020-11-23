@@ -72,4 +72,7 @@ $GLOBALS['t'] = [
 
     //privacy page
     'p' => include 'src/includes/lang/pages/nl-privacy.php',
+
+    //TOS page
+    'tos' => include 'src/includes/lang/pages/nl-TOS.php',
 ];
