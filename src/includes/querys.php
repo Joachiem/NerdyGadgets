@@ -67,7 +67,7 @@ $GLOBALS['q'] = [
     RecommendedRetailPrice, 
     (RecommendedRetailPrice * ( 1 + ( TaxRate / 100 ))) AS SellPrice,
     StockItemName,
-    CONCAT('Voorraad: ',QuantityOnHand) AS QuantityOnHand,
+    QuantityOnHand,
     SearchDetails,
     stockgroups.ImagePath AS StockGroupImagePath,  
     (
@@ -111,7 +111,7 @@ $GLOBALS['q'] = [
     'popular-sale-products' => "SELECT SI.StockItemID, RecommendedRetailPrice, 
     (RecommendedRetailPrice*(1+(TaxRate/100))) AS SellPrice,
     StockItemName,
-    CONCAT('Voorraad: ',QuantityOnHand) AS QuantityOnHand,
+    QuantityOnHand,
     SearchDetails,
     stockgroups.ImagePath AS StockGroupImagePath,  
     (
@@ -178,7 +178,7 @@ $GLOBALS['q'] = [
     'products' => "SELECT SI.StockItemID, RecommendedRetailPrice, 
     (RecommendedRetailPrice*(1+(TaxRate/100))) AS SellPrice,
     StockItemName,
-    CONCAT('Voorraad: ',QuantityOnHand) AS QuantityOnHand,
+    QuantityOnHand,
     SearchDetails,
     stockgroups.ImagePath AS StockGroupImagePath, 
 
