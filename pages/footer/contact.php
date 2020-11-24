@@ -38,7 +38,7 @@
 
         <p>
             Facebook: <a class="underline" onclick="window.open(this.href); return false;"
-                         href="https://www.facebook.com/nerdygadgets.nl/">Nerdygadgets</a><br>
+                         href="https://www.facebook.com/nerdygadgets/">Nerdygadgets</a><br>
             Instagram: <a class="underline" onclick="window.open(this.href); return false;"
                           href="https://www.instagram.com/nerdygadgets.nl/">@Nerdygadgets</a><br>
             YouTube: <a class="underline" onclick="window.open(this.href); return false;" 
