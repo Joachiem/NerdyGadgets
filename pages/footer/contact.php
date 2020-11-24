@@ -1,4 +1,3 @@
-<html>
 
 <h1 class="pb-12 text-3xl text-center font-extrabold"><?php print $GLOBALS['t']['contact-info'] ?> </h1>
 
