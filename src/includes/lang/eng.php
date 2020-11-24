@@ -77,7 +77,7 @@ $GLOBALS['t'] = [
     'tos' => include 'src/includes/lang/pages/eng-TOS.php',
     
     //Contact page
-    'contact-info' => 'Contactinformation',
+    'contact-info' => 'Contact information',
     'contact-customer' => 'Customer',
     'contact-customerservice' => 'Customer Support',
     'contact-service' => 'Service and Warranty',
