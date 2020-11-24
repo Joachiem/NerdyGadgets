@@ -61,9 +61,9 @@
     </div>
 </div>
 <script>
-    const cartButton = document.querySelectorAll(`.cart-btn`);
+    const cartButtons = document.querySelectorAll(`.cart-btn`);
 
-    cartButton.forEach(btn => {
+    cartButtons.forEach(btn => {
         btn.addEventListener('click', addToCart);
     });
 

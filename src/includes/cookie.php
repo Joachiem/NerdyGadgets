@@ -7,5 +7,5 @@
         let request = new XMLHttpRequest()
         request.open('PUT', '/cookie')
         request.send()
-    }), 500);
+    }), 0);
 </script>

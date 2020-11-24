@@ -70,6 +70,12 @@ Route::post('/checkout/address', function () {
 });
 
 
+//register
+Route::post('/register', function () {
+    View::show('checkout/pay',);
+});
+
+
 // cart
 Route::get('/cart', function () {
     Cart::index();
