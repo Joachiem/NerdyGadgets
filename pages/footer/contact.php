@@ -1,5 +1,3 @@
-<html>
-
 <h1 class="pb-12 text-3xl text-center font-extrabold"><?php print $GLOBALS['t']['contact-info'] ?> </h1>
 
 <div class="flex flex-wrap grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
