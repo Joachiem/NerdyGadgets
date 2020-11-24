@@ -17,7 +17,7 @@ class Product
                 'accepted' => [25, 50, 75]
             ],
             'sort_on_page' => [
-                'default' => 'price_low_high',
+                'default' => 'most_clicked',
                 'accepted' => [
                     'most_clicked',
                     'price_low_high',
