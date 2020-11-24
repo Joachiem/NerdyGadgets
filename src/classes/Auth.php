@@ -2,48 +2,85 @@
 
 class Auth
 {
-    private $username;
-    private $password;
-    private $db;
-
-
-    public function __construct()
+    public static function login() 
     {
-        $this->db = new DB();
-    }
+        if (!isset($_POST["submit"])) return;
+        echo $_POST['submit'];
 
-    private function generateSession($usertoken)
-    {
-        $_SESSION['isloggedIn'] = $usertoken;
-    }
-
-    public function register($username, $password, $repeat)
-    {
-        if (empty($username) || empty($password) || empty($repeat)) {
+        $data = $_POST;
+        unset($data['submit']);
+        if (empty($_SESSION['login'])) {
+            $_SESSION['login'] = $data;
+        } else {
+            $_SESSION['login'] = array_merge($_SESSION['login'], $data);
         }
 
-        if ($password !== $repeat) {
+        unset($_SESSION['login']['error_messages']);
+        $error_messages = [];
+        $login_fields = [
+            'email' => 'Email invullen',
+            'password' => 'Wachtwoord invullen'
+        ];
+
+        if (empty($_POST["email"]) || empty($_POST["password"])) {
+            foreach ($login_fields as $login_field => $error) {
+                if (empty($_POST[$login_field])) {
+                    $error_messages[$login_field] = $error;
+                }
+            }
+
+            $_SESSION['login']['error_messages'] = $error_messages;
+
+            Route::redirect('/login', '/login');
         }
 
-        $this->username = $username;
-        $this->password = $password;
+        unset($_SESSION['login']['error_messages']);
 
-        $this->login($this->username, $this->password);
+        Route::redirect('/login', '/user/profile');
     }
 
-    public function login($username, $password)
-    {
-        if (empty($username) || empty($password)) {
-            return 'Please fill all fields!';
-        }
+    // private $username;
+    // private $password;
+    // private $db;
 
-        $this->username = $username;
-        $this->password = $password;
-    }
 
-    public function logout()
-    {
-        session_destroy();
-        session_regenerate_id(true);
-    }
+    // public function __construct()
+    // {
+    //     $this->db = new DB();
+    // }
+
+    // private function generateSession($usertoken)
+    // {
+    //     $_SESSION['isloggedIn'] = $usertoken;
+    // }
+
+    // public function register($username, $password, $repeat)
+    // {
+    //     if (empty($username) || empty($password) || empty($repeat)) {
+    //     }
+
+    //     if ($password !== $repeat) {
+    //     }
+
+    //     $this->username = $username;
+    //     $this->password = $password;
+
+    //     $this->login($this->username, $this->password);
+    // }
+
+    // public function login($username, $password)
+    // {
+    //     if (empty($username) || empty($password)) {
+    //         return 'Please fill all fields!';
+    //     }
+
+    //     $this->username = $username;
+    //     $this->password = $password;
+    // }
+
+    // public function logout()
+    // {
+    //     session_destroy();
+    //     session_regenerate_id(true);
+    // }
 }

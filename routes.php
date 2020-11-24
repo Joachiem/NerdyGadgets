@@ -22,6 +22,16 @@ Route::get('/', function () {
 Route::get('/login', function () {
     View::show('user/login');
 });
+Route::get('/register', function () {
+    View::show('user/register');
+});
+Route::post('/profile', function () {
+    Auth::login();
+});
+Route::get('user/profile', function () {
+    View::show('user/profile');
+});
+
 
 
 // language
