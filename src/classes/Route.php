@@ -88,7 +88,7 @@ class Route
 
 
     /**
-     * redirect the page if given url is met
+     * redirect the page or rediret if p1 is met
      * @param string $to/$from
      * @param string $to optioneel 
      */
