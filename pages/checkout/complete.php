@@ -9,7 +9,7 @@
                 </div>
             </div>
 
-            <div class="text-xs text-center text-gray-800 md:text-base">Gegevens</div>
+            <div class="text-xs text-center text-gray-800 md:text-base"><?php print $GLOBALS['t']['information'] ?></div>
         </div>
 
         <div class="w-1/4">
@@ -28,7 +28,7 @@
                 </div>
             </div>
 
-            <div class="text-xs text-center text-gray-800 md:text-base">Verzending</div>
+            <div class="text-xs text-center text-gray-800 md:text-base"><?php print $GLOBALS['t']['shipping'] ?></div>
         </div>
 
         <div class="w-1/4">
@@ -47,7 +47,7 @@
                 </div>
             </div>
 
-            <div class="text-xs text-center text-gray-800 md:text-base">Betalen</div>
+            <div class="text-xs text-center text-gray-800 md:text-base"><?php print $GLOBALS['t']['payment'] ?></div>
         </div>
 
         <div class="w-1/4">
@@ -66,7 +66,7 @@
                 </div>
             </div>
 
-            <div class="text-xs text-center text-gray-800 md:text-base">Afronden</div>
+            <div class="text-xs text-center text-gray-800 md:text-base"><?php print $GLOBALS['t']['overview'] ?></div>
         </div>
     </div>
 </div>
@@ -79,19 +79,19 @@
             <form class="w-full max-w-lg">
 
                 <div class="justify-around text-xl flex w-full flex-wrap mb-6">
-                    <h2>Uw aankoop is voltooid!</h2>
+                    <h2><?php print $GLOBALS['t']['payment-done'] ?></h2>
                 </div>
                 <div>
                     <table class="w-full text-sm lg:text-base" cellspacing="0">
                         <thead>
                         <tr class="h-12 uppercase">
                             <th class="hidden md:table-cell"></th>
-                            <th class="text-left">Product</th>
+                            <th class="text-left"><?php print $GLOBALS['t']['products'] ?></th>
                             <th class="lg:text-right text-left pl-5 lg:pl-0">
                                 <span class="lg:hidden" title="Quantity">Ant.</span>
-                                <span class="hidden lg:inline">Aantal</span>
+                                <span class="hidden lg:inline"><?php print $GLOBALS['t']['quantity'] ?></span>
                             </th>
-                            <th class="hidden text-right md:table-cell">Prijs</th>
+                            <th class="hidden text-right md:table-cell"><?php print $GLOBALS['t']['price'] ?></th>
                         </tr>
                         </thead>
                         <tbody>
@@ -124,9 +124,9 @@
                     </table>
                 </div>
                 <div class="flex md:items-center justify-around">
-                    <a href="/user"
+                    <a href="/"
                        class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-                       type="button">Doorgaan</a>
+                       type="button"><?php print $GLOBALS['t']['continue'] ?></a>
                 </div>
             </form>
         </div>

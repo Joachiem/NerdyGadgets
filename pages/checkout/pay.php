@@ -10,7 +10,7 @@
                 </div>
             </div>
 
-            <div class="text-xs text-center text-gray-800 md:text-base">Gegevens</div>
+            <div class="text-xs text-center text-gray-800 md:text-base"><?php print $GLOBALS['t']['information'] ?></div>
         </div>
 
         <div class="w-1/4">
@@ -29,7 +29,7 @@
                 </div>
             </div>
 
-            <div class="text-xs text-center text-gray-800 md:text-base">Verzending</div>
+            <div class="text-xs text-center text-gray-800 md:text-base"><?php print $GLOBALS['t']['shipping'] ?></div>
         </div>
 
         <div class="w-1/4">
@@ -48,7 +48,7 @@
                 </div>
             </div>
 
-            <div class="text-xs text-center text-gray-800 md:text-base">Betalen</div>
+            <div class="text-xs text-center text-gray-800 md:text-base"><?php print $GLOBALS['t']['payment'] ?></div>
         </div>
 
         <div class="w-1/4">
@@ -67,7 +67,7 @@
                 </div>
             </div>
 
-            <div class="text-xs text-center text-gray-800 md:text-base">Afronden</div>
+            <div class="text-xs text-center text-gray-800 md:text-base"><?php print $GLOBALS['t']['overview'] ?></div>
         </div>
     </div>
 </div>
@@ -82,7 +82,7 @@
                     <div class="w-full px-3 mb-6 md:mb-0">
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                                for="grid-first-name">
-                            Welke betaling
+                               <?php print $GLOBALS['t']['choose-payment'] ?>
                         </label>
                         <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
                                id="grid-first-name" type="text">
@@ -92,10 +92,10 @@
                 <div class="flex md:items-center justify-between">
                     <a href="/checkout/address"
                        class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-                       type="button">Terug</a>
+                       type="button"><?php print $GLOBALS['t']['back'] ?></a>
                     <a href="/checkout/complete"
                        class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-                       type="button">Betalen</a>
+                       type="button"><?php print $GLOBALS['t']['continue'] ?></a>
                 </div>
             </form>
         </div>

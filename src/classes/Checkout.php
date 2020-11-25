@@ -55,9 +55,10 @@ class Checkout
             'postcode' => 'Postcode invullen',
             'housenmr' => 'Huisnummer invullen',
             'shipping' => 'Verzending invullen',
+            'delivery' => 'Bezorging invullen'
         ];
 
-        if (empty($_POST["postcode"]) || empty($_POST["housenmr"]) || empty($_POST["shipping"])) {
+        if (empty($_POST["postcode"]) || empty($_POST["housenmr"]) || empty($_POST["shipping"]) || empty($_POST["delivery"])) {
             foreach ($form_fields as $form_field => $error) {
                 if (empty($_POST[$form_field])) {
                     $error_messages[$form_field] = $error;
