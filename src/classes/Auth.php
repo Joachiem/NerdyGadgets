@@ -37,7 +37,7 @@ class Auth
 
         unset($_SESSION['login']['error_messages']);
         print($_POST['password']);
-        Route::redirect('/user/profile');
+       //Route::redirect('/user/profile');
     }
 
     // private $username;
