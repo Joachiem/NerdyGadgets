@@ -35,6 +35,7 @@ $GLOBALS['t'] = [
     //product-index
     'product-index-num-product' => 'Producten per pagina',
     'product-index-sort' => 'Sorteren op',
+    'sort-most-clicked' => 'Meest bezocht',
     'sort-price-asc' => 'Prijs oplopend',
     'sort-price-desc' => 'Prijs aflopend',
     'sort-name-asc' => 'Naam A-Z',
@@ -77,4 +78,13 @@ $GLOBALS['t'] = [
 
     //TOS page
     'tos' => include 'src/includes/lang/pages/nl-TOS.php',
+
+    //Contact page
+    'contact-info' => 'Contactinformatie',
+    'contact-customer' => 'Consument',
+    'contact-customerservice' => 'Klantenservice',
+    'contact-service' => 'Service en garantie',
+    'contact-payments' => 'Betalingen en administratieve',
+    'contact-commercial' => 'Zakelijk',
+    
 ];
