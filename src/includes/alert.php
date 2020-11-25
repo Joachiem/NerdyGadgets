@@ -42,7 +42,7 @@
             }
 
             this.alertContainer.classList.remove('opacity-0')
-            this.alertContainer.classList.add('opacity-1')           
+            this.alertContainer.classList.add('opacity-1')
 
             this.alertBtn.addEventListener('click', () => this.resolve())
         }
