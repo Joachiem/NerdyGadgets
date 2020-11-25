@@ -3,34 +3,22 @@
 class Cart
 {
     /**
-     * index page
+     * cart page
      * @param mixed $callback
      */
     public static function index()
     {
-        $arg = [];
-        $images = '';
+        $cart_products = $_SESSION['cart'];
 
-        if (isset($_SESSION['cart'])) {
-            $products = $_SESSION['cart'];
+        $ids = implode(', ', array_keys($cart_products));
 
-            $arg = [];
+        $products = DB::execute($GLOBALS['q']['products'], [], [$ids]);
 
-            foreach ($products as $id => $qty) {
-
-                $product = DB::execute($GLOBALS['q']['product'], [$id]);
-
-                $images = DB::execute($GLOBALS['q']['product-images'], [$id]);
-
-                $arg[$id] = [
-                    'qty' => $qty,
-                    'product' => $product,
-                    'images' => $images
-                ];
-            }
+        foreach ($products as $product) {
+            $product->qty = $cart_products[$product->StockItemID];
         }
 
-        View::show('cart/index', $arg);
+        View::show('cart/index', $products);
     }
 
 
