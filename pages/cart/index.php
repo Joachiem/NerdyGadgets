@@ -23,15 +23,15 @@
 
                                     <?php if (isset($product->ImagePath) and !empty($product->ImagePath)) { ?>
 
-                                        <img class="w-full rounded-t p-1" src="/public/StockItemIMG/<?php print $product->ImagePath ?>">
+                                        <img class="w-20 rounded" src="/public/StockItemIMG/<?php print $product->ImagePath ?>">
 
                                     <?php } elseif (isset($product->StockGroupImagePath) and !empty($product->StockGroupImagePath)) { ?>
 
-                                        <img class="w-full rounded-t p-1" src="/public/StockGroupIMG/<?php print $product->StockGroupImagePath ?>">
+                                        <img class="w-20 rounded" src="/public/StockGroupIMG/<?php print $product->StockGroupImagePath ?>">
 
                                     <?php } else { ?>
 
-                                        <img class="w-full rounded-t p-1" src="/public/StockGroupIMG/<?php print $product->BackupImagePath ?>">
+                                        <img class="w-20 rounded" src="/public/StockGroupIMG/<?php print $product->BackupImagePath ?>">
 
                                     <?php } ?>
 
@@ -53,7 +53,7 @@
                                         <button data-action="decrement" value="<?php print $product->StockItemID ?>" id="decrement-btn" class="focus:outline-none bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none">
                                             <span class="flex justify-center pb-1 m-auto text-2xl font-thin">−</span>
                                         </button>
-                                        <input id="qty-<?php print $product->StockItemID ?>" min="0" type="number" class="focus:outline-none z-10 select-none w-12 outline-none focus:outline-none text-center  bg-gray-300 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-gray-700  outline-none" name="custom-input-number" value="<?php print($product_obj['qty']) ?>"></input>
+                                        <input id="qty-<?php print $product->StockItemID ?>" value="<?php print $product->qty ?>" min="0" type="number" class="focus:outline-none z-10 select-none w-12 outline-none focus:outline-none text-center  bg-gray-300 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-gray-700  outline-none" name="custom-input-number"></input>
                                         <button data-action="increment" value="<?php print $product->StockItemID ?>" id="increment-btn" class="focus:outline-none bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer">
                                             <span class="flex justify-center pb-1 m-auto text-2xl font-thin">+</span>
                                         </button>

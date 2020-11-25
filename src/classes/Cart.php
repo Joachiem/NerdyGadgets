@@ -10,7 +10,10 @@ class Cart
     {
         $cart_products = $_SESSION['cart'];
 
-        $ids = implode(', ', array_keys($cart_products));
+        if (isset($cart_products)) $ids = implode(', ', array_keys($cart_products));
+
+        if (!$ids) return View::show('cart/index');
+
 
         $products = DB::execute($GLOBALS['q']['products'], [], [$ids]);
 
@@ -41,6 +44,8 @@ class Cart
     public static function increment()
     {
         $data = json_decode(file_get_contents('php://input'));
+
+        if (!$data) return;
 
         if (isset($_SESSION['cart'][$data->id])) $_SESSION['cart'][$data->id] += 1;
         else  $_SESSION['cart'][$data->id] = 1;
