@@ -86,5 +86,25 @@ $GLOBALS['t'] = [
     'contact-service' => 'Service en garantie',
     'contact-payments' => 'Betalingen en administratieve',
     'contact-commercial' => 'Zakelijk',
-    
+
+    //Checkout page
+    'shipping' => 'Verzending',
+    'information' => 'Gegevens',
+    'payment' => 'Betalen',
+    'overview' => 'Afronden',
+    'mail' => 'E-mailadres',
+    'phonenumber' => 'Telefoonnummer',
+    'back' => 'Terug',
+    'continue' => 'Doorgaan',
+    'zip' => 'Postcode',
+    'house-number' => 'Huisnummer',
+    'choose-payment' => 'Kies een betaalmogelijkheid',
+    'payment-done' => 'Uw aankoop is voltooid!',
+    'quantity' => 'Aantal',
+    'price' => 'Prijs'
+
+ 
+
+
+
 ];

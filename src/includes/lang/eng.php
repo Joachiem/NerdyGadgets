@@ -87,4 +87,24 @@ $GLOBALS['t'] = [
     'contact-payments' => 'Payments and administration',
     'contact-commercial' => 'Business',
 
+    //Checkout page
+    'shipping' => 'Shipping',
+    'information' => 'Information',
+    'payment' => 'Payment',
+    'overview' => 'Overview',
+    'mail' => 'E-mailaddress',
+    'phonenumber' => 'Phonenumber',
+    'back' => 'Back',
+    'continue' => 'Continue',
+    'zip' => 'Zipcode',
+    'house-number' => 'House number',
+    'choose-payment' => 'Coose your payment option',
+    'payment-done' => 'Your purchase is complete!',
+    'quantity' => 'Quantity',
+    'price' => 'Price'
+
+    
+
+
+
 ];

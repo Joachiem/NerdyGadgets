@@ -12,7 +12,7 @@
                 </div>
             </div>
 
-            <div class="text-xs text-center text-gray-800 md:text-base">Gegevens</div>
+            <div class="text-xs text-center text-gray-800 md:text-base"><?php print $GLOBALS['t']['information'] ?></div>
         </div>
 
         <div class="w-1/4">
@@ -31,7 +31,7 @@
                 </div>
             </div>
 
-            <div class="text-xs text-center text-gray-800 md:text-base">Verzending</div>
+            <div class="text-xs text-center text-gray-800 md:text-base"><?php print $GLOBALS['t']['shipping'] ?></div>
         </div>
 
         <div class="w-1/4">
@@ -50,7 +50,7 @@
                 </div>
             </div>
 
-            <div class="text-xs text-center text-gray-800 md:text-base">Betalen</div>
+            <div class="text-xs text-center text-gray-800 md:text-base"><?php print $GLOBALS['t']['payment'] ?></div>
         </div>
 
         <div class="w-1/4">
@@ -69,7 +69,7 @@
                 </div>
             </div>
 
-            <div class="text-xs text-center text-gray-800 md:text-base">Afronden</div>
+            <div class="text-xs text-center text-gray-800 md:text-base"><?php print $GLOBALS['t']['overview'] ?></div>
         </div>
     </div>
 </div>
@@ -84,7 +84,7 @@
                     <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                                for="grid-first-name">
-                            Postcode
+                               <?php print $GLOBALS['t']['zip'] ?>
                         </label>
                         <input value="<?php isset($_SESSION['form']["postcode"]) ? print($_SESSION['form']["postcode"]) : '' ?>"
                                name="postcode"
@@ -99,7 +99,7 @@
                     <div class="w-full md:w-1/2 px-3">
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                                for="grid-last-name">
-                            Huisnummer
+                               <?php print $GLOBALS['t']['house-number'] ?>
                         </label>
                         <input value="<?php isset($_SESSION['form']["housenmr"]) ? print($_SESSION['form']["housenmr"]) : '' ?>"
                                name="housenmr"
@@ -116,7 +116,7 @@
                     <div class="w-full px-3">
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                                for="grid-password">
-                            verzending
+                               <?php print $GLOBALS['t']['shipping'] ?>
                         </label>
 
                         <?php $s = isset($_SESSION['form']['shipping']) ? $_SESSION['form']['shipping'] : 'PostNl' ?>
@@ -141,9 +141,9 @@
                 <div class="flex md:items-center justify-between">
                     <a href="/checkout/account"
                        class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-                       type="button">Terug</a>
+                       type="button"><?php print $GLOBALS['t']['back'] ?></a>
                     <input class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-                           type="submit" value="Doorgaan" name="submit">
+                           type="submit" value="<?php print $GLOBALS['t']['continue'] ?>" name="submit">
                 </div>
             </form>
         </div>
