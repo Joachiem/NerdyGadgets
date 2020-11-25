@@ -49,7 +49,7 @@
 
         resolve() {
             this.alertContainer.classList.remove('opacity-1')
-            this.alertContainer.classList.add('opacity-0') 
+            this.alertContainer.classList.add('opacity-0')
             
             setTimeout(() => this.alertContainer.classList.add('hidden'), 500);
 
