@@ -60,6 +60,9 @@ Route::get('/categories', function () {
 
 
 // checkout
+Route::get('/checkout/loginorguest', function () {
+    View::show('checkout/loginorguest');
+});
 Route::get('/checkout/account', function () {
     View::show('checkout/account');
 });
@@ -68,6 +71,7 @@ Route::get('/checkout/address', function () {
 });
 Route::get('/checkout/pay', function () {
     View::show('checkout/pay');
+    Mail::paymentComplete();
 });
 Route::get('/checkout/complete', function () {
     Checkout::complete();

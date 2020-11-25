@@ -88,14 +88,16 @@ class Route
 
 
     /**
-     * redirect the page if given url is met
-     * @param string $from
-     * @param string $to
+     * redirect the page or rediret if p1 is met
+     * @param string $to/$from
+     * @param string $to optioneel 
      */
-    public static function redirect($from, $to)
+    public static function redirect($p1, $p2 = false)
     {
-        if (self::add_slash_url($_GET['url']) === $from) {
-            self::change_url($to);
+        if (!$p2) return self::change_url($p1);
+
+        if (self::add_slash_url($_GET['url']) === $p1) {
+            return self::change_url($p2);
         }
     }
 
