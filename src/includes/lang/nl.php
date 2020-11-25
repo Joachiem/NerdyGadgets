@@ -78,4 +78,13 @@ $GLOBALS['t'] = [
 
     //TOS page
     'tos' => include 'src/includes/lang/pages/nl-TOS.php',
+
+    //Contact page
+    'contact-info' => 'Contactinformatie',
+    'contact-customer' => 'Consument',
+    'contact-customerservice' => 'Klantenservice',
+    'contact-service' => 'Service en garantie',
+    'contact-payments' => 'Betalingen en administratieve',
+    'contact-commercial' => 'Zakelijk',
+    
 ];
