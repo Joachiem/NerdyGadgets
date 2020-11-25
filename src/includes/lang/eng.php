@@ -102,7 +102,10 @@ $GLOBALS['t'] = [
     'delivery' => 'Choose your delivery time',
     'payment-done' => 'Your purchase is complete!',
     'quantity' => 'Quantity',
-    'price' => 'Price'
+    'price' => 'Price',
+    'continue-guest' => 'Continue as guest',
+    'password' => 'Password',
+    'no-account' => 'I dont have an account',
 
     
 
