@@ -127,9 +127,16 @@ $GLOBALS['q'] = [
         WHERE StockItemID = SI.StockItemID
         LIMIT 1
     ) 
-    AS BackupImagePath, 
-
-     (
+    AS BackupImagePath,
+    (
+        RecommendedRetailPrice * ( 1 + (( TaxRate / 100))) * (1 - (SD.DiscountPercentage / 100))
+    )
+    AS DiscountPrice, 
+    (
+        RecommendedRetailPrice * (1 - (SD.DiscountPercentage / 100))
+    )
+    AS DiscountPriceNoVat, SD.DiscountPercentage,
+    (
         SELECT ImagePath
         FROM stockitemimages
         WHERE StockItemID = SI.StockItemID
@@ -141,7 +148,11 @@ $GLOBALS['q'] = [
     JOIN stockitemstockgroups 
     ON SI.StockItemID = stockitemstockgroups.StockItemID
     JOIN stockgroups USING(StockGroupID)
-    WHERE StockGroupID = 11
+    JOIN specialdeals SD ON SI.StockItemID = SD.StockItemID
+    WHERE SI.StockItemID IN
+        (
+            SELECT StockItemID FROM specialdeals
+        )
     GROUP BY StockItemID
     ORDER BY ClickedON DESC
     LIMIT ?",

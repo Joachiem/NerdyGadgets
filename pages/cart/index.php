@@ -55,11 +55,11 @@
                             </div>
                         </td>
                         <td class="hidden text-right md:table-cell">
-                                <span class="text-sm lg:text-base font-medium"> €
-                                    <span id="price-<?php print($id) ?>">
-                                        <?php print sprintf("%.2f", $Result[0]->SellPrice); ?>
-                                    </span>
+                            <span class="text-sm lg:text-base font-medium"> €
+                                <span id="price-<?php print($id) ?>">
+                                    <?php print sprintf("%.2f", $Result[0]->SellPrice); ?>
                                 </span>
+                            </span>
                         </td>
                         <td class="text-right">
                             <span id="total-price-<?php print($id) ?>" class="text-sm lg:text-base font-medium"></span>
@@ -115,7 +115,7 @@
                                  class="lg:px-4 lg:py-2 m-2 lg:text-s font-bold text-center text-gray-900">
                             </div>
                         </div>
-                        <a href="/checkout/account">
+                        <a href="/checkout/loginorguest">
                             <button class="flex justify-center w-full px-10 py-3 mt-6 font-medium text-white uppercase bg-green-400 rounded-full shadow item-center hover:bg-green-500 focus:shadow-outline focus:outline-none">
                                 <span class="ml-2 mt-5px">Afrekenen</span>
                             </button>

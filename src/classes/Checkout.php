@@ -109,6 +109,7 @@ class Checkout
         if (!isset($_SESSION['cart'])) {
             Route::redirect('/checkout/address', '/cart');
             Route::redirect('/checkout/account', '/cart');
+            Route::redirect('/checkout/loginorguest', '/cart');
         }
     }
 
