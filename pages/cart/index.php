@@ -18,7 +18,7 @@
 
                     <?php foreach ($arg as $product) { ?>
 
-                        <tr class="cart-items" id="row-<?php print $product->StockItemID; ?>">
+                        <tr class="cart-items" id="row-<?php print $product->StockItemID ?>">
                             <td class="hidden pb-4 md:table-cell">
                                 <a href="/products/view?id=<?php print $product->StockItemID ?>">
 
@@ -40,22 +40,23 @@
                             </td>
                             <td>
                                 <a>
-                                    <a href="/products/view?id=<?php print $product->StockItemID; ?>">
-                                        <p class="mb-2 md:ml-4"><?php print $product->StockItemName; ?></p>
+                                    <a href="/products/view?id=<?php print $product->StockItemID ?>">
+                                        <p class="mb-2 md:ml-4"><?php print $product->StockItemName ?></p>
                                     </a>
                                     <button onclick="remove(<?php print($product->StockItemID) ?>)" class="text-gray-700 md:ml-4">
                                         <small>(Verwijder product)</small>
                                     </button>
                                 </a>
                             </td>
+
                             <td class="justify-center md:justify-end md:flex mt-6">
                                 <div class="w-32">
                                     <div class="flex justify-center flex-row h-10 w-full rounded-lg relative bg-transparent mt-1">
                                         <button data-action="decrement" value="<?php print $product->StockItemID ?>" id="decrement-btn" class="focus:outline-none bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none">
                                             <span class="flex justify-center pb-1 m-auto text-2xl font-thin">−</span>
                                         </button>
-                                        <input id="qty-<?php print $product->StockItemID ?>" value="<?php print $product->qty ?>" min="0" type="number" class="focus:outline-none z-10 select-none w-12 outline-none focus:outline-none text-center  bg-gray-300 font-semibold text-md hover:text-black focus:text-black  md:text-basecursor-default flex items-center text-gray-700  outline-none" name="custom-input-number"></input>
-                                        <button data-action="increment" value="<?php print $product->StockItemID ?>" id="increment-btn" class="focus:outline-none bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer">
+                                        <input id="qty-<?php print $product->StockItemID ?>" value="<?php print $product->qty ?>" min="0" type="number" class="focus:outline-none z-10 select-none w-12 outline-none focus:outline-none text-center bg-gray-300 font-semibold text-md hover:text-black focus:text-black md:text-basecursor-default flex items-center text-gray-700 outline-none" name="custom-input-number"></input>
+                                        <button data-action="increment" value="<?php print $product->StockItemID ?>" id="increment-btn" class="focus:outline-none bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer outline-none">
                                             <span class="flex justify-center pb-1 m-auto text-2xl font-thin">+</span>
                                         </button>
                                     </div>
@@ -64,7 +65,7 @@
                             <td class="hidden text-right md:table-cell">
                                 <span class="text-sm lg:text-base font-medium"> €
                                     <span id="price-<?php print $product->StockItemID ?>">
-                                        <?php print sprintf("%.2f", $product->SellPrice); ?>
+                                        <?php print sprintf("%.2f", $product->SellPrice) ?>
                                     </span>
                                 </span>
                             </td>
@@ -133,88 +134,65 @@
 
 <style>
     input[type=number] {
-        -moz-appearance: textfield;
+        -moz-appearance: textfield
     }
 
     input[type='number']::-webkit-inner-spin-button,
     input[type='number']::-webkit-outer-spin-button {
-        -webkit-appearance: none;
-        margin: 0;
+        -webkit-appearance: none margin: 0
     }
 </style>
 
+
+
+
 <script>
-    function calculatePrice() {
-        const data = <?php echo json_encode($arg, true) ?>;
-        // data.forEach((product) => console.log(product))
-
-        const items = document.querySelectorAll(`.cart-items`);
-        let totalPrice = 0;
-
-        items.forEach(item => {
-            const id = item.id.split('-')[1];
-            const qty = document.querySelector(`#qty-${id}`).value;
-            const price = document.querySelector(`#price-${id}`).innerHTML;
-            const totalItemPrice = price * qty;
-
-            totalPrice += totalItemPrice;
-
-            document.querySelector(`#total-price-${id}`).innerHTML = `€ ${totalItemPrice.toFixed(2)}`;
-
-        });
-        totalPrice += 6.75;
-
-        document.querySelector(`#total-price`).innerHTML = `€ ${totalPrice.toFixed(2)}`;
-    }
-
     calculatePrice()
 
-    function decrement(e) {
-        change(e, -1)
+    function calculatePrice() {
+        const items = document.querySelectorAll('.cart-items')
+        let totalPrice = 0
+        totalPrice += 6.75
+
+        items.forEach(item => {
+            const id = item.id.split('-')[1]
+            const qty = document.querySelector(`#qty-${id}`).value
+            const price = document.querySelector(`#price-${id}`).innerHTML
+            totalPrice += price * qty
+
+            document.querySelector(`#total-price-${id}`).innerHTML = `€ ${(price * qty).toFixed(2)}`
+        })
+
+        document.querySelector('#total-price').innerHTML = `€ ${totalPrice.toFixed(2)}`
     }
 
-    function increment(e) {
-        change(e, +1)
-    }
+    const decrementButtons = document.querySelectorAll('button[data-action="decrement"]')
+    const incrementButtons = document.querySelectorAll('button[data-action="increment"]')
 
-    function change(e, val) {
-        const btn = e.target.parentNode.parentElement.querySelector('button[data-action="decrement"]');
-        const target = btn.nextElementSibling;
-        let value = Number(target.value);
-        if (value > 0 || val === 1) {
-            value += val
-            call(btn.value, val)
-            target.value = value;
-            calculatePrice()
+    decrementButtons.forEach(btn => btn.addEventListener('click', (e) => change(e, -1)))
+    incrementButtons.forEach(btn => btn.addEventListener('click', (e) => change(e, +1)))
 
-        }
+    function change(e, change) {
+        const b = e.target.parentNode.parentElement.querySelector('button[data-action="decrement"]')
+        const t = b.nextElementSibling
+        let val = Number(t.value)
 
-        target.value = value;
-    }
+        if (val <= 0 && change <= 0) return
 
-    const decrementButtons = document.querySelectorAll(`button[data-action="decrement"]`);
-    const incrementButtons = document.querySelectorAll(`button[data-action="increment"]`);
-
-    decrementButtons.forEach(btn => {
-        btn.addEventListener("click", decrement);
-    });
-
-    incrementButtons.forEach(btn => {
-        btn.addEventListener("click", increment);
-    });
-
-    function call(id, val) {
-        let request = new XMLHttpRequest()
-        request.open('PUT', `/cart/${val === 1 ? 'increment' : 'decrement'}?id=${id}`)
-        request.send()
+        t.value = val += change
+        calculatePrice()
+        request('/cart/change-product-amount', 'PUT', {
+            'id': b.value,
+            'amount': t.value,
+        })
     }
 
     function remove(id) {
-        let request = new XMLHttpRequest()
-        request.open('DELETE', `/cart/remove?id=${id}`)
-        request.send()
+        request('/cart/remove', 'DELETE', {
+            'id': id,
+        })
 
-        document.querySelector(`#row-${id}`).remove();
-        calculatePrice();
+        document.querySelector(`#row-${id}`).remove()
+        calculatePrice()
     }
 </script>

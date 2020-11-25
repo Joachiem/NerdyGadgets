@@ -90,6 +90,9 @@ Route::put('/cart/increment', function () {
 Route::put('/cart/decrement', function () {
     Cart::decrement($_GET['id']);
 });
+Route::put('/cart/change-product-amount', function () {
+    Cart::changeProductAmount();
+});
 
 
 //contact tos privacy

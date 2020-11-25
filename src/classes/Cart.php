@@ -31,36 +31,29 @@ class Cart
      */
     public static function remove($id)
     {
-        $cart = $_SESSION['cart'];
-        unset($cart[$id]);
-        $_SESSION['cart'] = $cart;
-    }
-
-
-    /**
-     * index page
-     * @param mixed $callback
-     */
-    public static function increment()
-    {
         $data = json_decode(file_get_contents('php://input'));
-
         if (!$data) return;
 
-        if (isset($_SESSION['cart'][$data->id])) $_SESSION['cart'][$data->id] += 1;
-        else  $_SESSION['cart'][$data->id] = 1;
+        $cart = $_SESSION['cart'];
+        unset($cart[$data->id]);
+        $_SESSION['cart'] = $cart;
 
-        http_response_code(201);
-        print json_encode(['title' => $GLOBALS['t']['add-alert-title'], 'message' => $GLOBALS['t']['add-alert-message']]);
+        http_response_code(204);
     }
 
 
     /**
-     * index page
+     * cheange the pruduct ammout of the card
      * @param mixed $callback
      */
-    public static function decrement($id)
+    public static function changeProductAmount()
     {
-        $_SESSION['cart'][$id] -= 1;
+        $data = json_decode(file_get_contents('php://input'));
+        if (!$data) return;
+
+        if (isset($_SESSION['cart'][$data->id])) $_SESSION['cart'][$data->id] = $data->amount;
+        else $_SESSION['cart'][$data->id] = 1;
+
+        http_response_code(204);
     }
 }
