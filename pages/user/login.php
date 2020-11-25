@@ -4,6 +4,7 @@
     <div class="overflow-hidden rounded-lg shadow-lg mb-8 max-w-lg">
         <div class="leading-tight p-2 md:p-4 bg-white">
             <form action method="POST" class="w-full max-w-lg">
+
                 <div class="mb-4">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
                         Username
@@ -23,11 +24,12 @@
                 <input class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
                             type="submit" value="Sign in">
                     <div class="text-right">
-                        <a class="inline font-bold text-sm text-blue-500 hover:text-blue-800" href="#">
+                        <a class="w-full flex text-right inset-y-0 right-0 font-bold text-sm text-blue-500 hover:text-blue-800" href="forgot">
                             Forgot Password?
                         </a>
-                        <a class="inline font-bold text-sm text-blue-500 hover:text-blue-800" href="register">
-                            register?
+                        
+                        <a class="w-full text-right flex inset-y-0 right-0 font-bold text-sm text-blue-500 hover:text-blue-800" href="register">
+                           <p> Register?</p>
                         </a>
                     </div>
                 </div>

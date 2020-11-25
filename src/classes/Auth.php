@@ -36,8 +36,14 @@ class Auth
         }
 
         unset($_SESSION['login']['error_messages']);
-        print($_POST['password']);
-       //Route::redirect('/user/profile');
+       
+        $password = $_POST["password"] . "abcd";
+        $hash = hash("sha256", $password);
+        $hash = $hash."abcd";
+        $email = $_POST["email"];
+        $result = DB::execute('select EmailAddress, HashedPassword from people where EmailAddress = "?" AND HashedPassword = "?"', [$email, $hash]);
+        print_r($result);
+       //Route::redirect('/profile');
     }
 
     // private $username;
