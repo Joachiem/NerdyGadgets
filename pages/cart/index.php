@@ -15,6 +15,7 @@
                     </tr>
                 </thead>
                 <tbody>
+
                     <?php foreach ($arg as $product) { ?>
 
                         <tr class="cart-items" id="row-<?php print $product->StockItemID; ?>">
@@ -71,13 +72,17 @@
                                 <span id="total-price-<?php print $product->StockItemID ?>" class="text-sm lg:text-base font-medium"></span>
                             </td>
                         </tr>
-                    <?php }
-                    if (empty($arg)) { ?>
+
+                    <?php } ?>
+                    <?php if (empty($arg)) { ?>
+
                         <div class="flex p-2 mb-2 justify-center text-center bg-yellow-300">
                             <ion-icon name="information-circle-outline"></ion-icon>
                             <h2>Er staan nog geen artikelen in je winkelmandje :(</h2>
                         </div>
+
                     <?php } ?>
+
                 </tbody>
             </table>
             <hr class="pb-6 mt-6">
@@ -89,10 +94,7 @@
                     <div class="p-4">
                         <input class="appearance-none block w-full text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-gray-100 focus:border-gray-600" id="tel" type="text">
                         <a href="/cart" class="shadow bg-teal-400 hover:bg-teal-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">code toevoegen</a>
-
                     </div>
-
-
                     <div class="p-4">
                         <p class="mb-4 italic"></p>
                     </div>
@@ -129,7 +131,6 @@
     </div>
 </div>
 
-
 <style>
     input[type=number] {
         -moz-appearance: textfield;
@@ -144,6 +145,9 @@
 
 <script>
     function calculatePrice() {
+        const data = <?php echo json_encode($arg, true) ?>;
+        // data.forEach((product) => console.log(product))
+
         const items = document.querySelectorAll(`.cart-items`);
         let totalPrice = 0;
 
@@ -154,11 +158,12 @@
             const totalItemPrice = price * qty;
 
             totalPrice += totalItemPrice;
-            totalPrice += 6.75;
 
             document.querySelector(`#total-price-${id}`).innerHTML = `€ ${totalItemPrice.toFixed(2)}`;
 
         });
+        totalPrice += 6.75;
+
         document.querySelector(`#total-price`).innerHTML = `€ ${totalPrice.toFixed(2)}`;
     }
 
