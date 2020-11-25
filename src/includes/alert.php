@@ -1,4 +1,4 @@
-<div id="alert" class="opacity-0 transition ease-in-out duration-500 select-none right-0 bottom-0 fixed m-8">
+<div id="alert" class="opacity-0 transition ease-in-out duration-500 select-none right-0 bottom-0 fixed m-8 hidden">
     <div class="bg-white border-t-4 border-purple-600 rounded text-teal-darkest px-4 py-3 shadow-lg" role="alert">
         <div class="flex justify-between">
             <div class="mr-4">
@@ -34,6 +34,7 @@
             document.querySelector('#message').innerHTML = message
 
             this.alertBtn.classList.remove('hidden')
+            this.alertContainer.classList.remove('hidden')
 
             if (time) {
                 setTimeout(() => this.resolve(), time);
@@ -41,14 +42,17 @@
             }
 
             this.alertContainer.classList.remove('opacity-0')
-            this.alertContainer.classList.add('opacity-1')
+            this.alertContainer.classList.add('opacity-1')           
 
             this.alertBtn.addEventListener('click', () => this.resolve())
         }
 
         resolve() {
             this.alertContainer.classList.remove('opacity-1')
-            this.alertContainer.classList.add('opacity-0')
+            this.alertContainer.classList.add('opacity-0') 
+            
+            setTimeout(() => this.alertContainer.classList.add('hidden'), 500);
+
             this.alertPromise()
         }
     }
