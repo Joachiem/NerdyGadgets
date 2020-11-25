@@ -1,4 +1,4 @@
-<div class="mb-6 space-y-4 text-lg">
+<div class="mb-6 space-y-4 text-base">
     <div class="text-3xl text-center pb-12 font-extrabold">
         <?php print $GLOBALS['t']['p']['title'] ?>
     </div>
