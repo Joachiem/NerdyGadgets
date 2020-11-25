@@ -101,7 +101,10 @@ $GLOBALS['t'] = [
     'choose-payment' => 'Kies een betaalmogelijkheid',
     'payment-done' => 'Uw aankoop is voltooid!',
     'quantity' => 'Aantal',
-    'price' => 'Prijs'
+    'price' => 'Prijs',
+    'continue-guest' => 'Doorgaan als gast',
+    'password' => 'Wachtwoord',
+    'no-account' => 'Ik heb nog geen account'
 
  
 
