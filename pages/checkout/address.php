@@ -142,14 +142,14 @@
                     <div class="w-full px-3">
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
                                for="grid-password">
-                               <?php print $GLOBALS['t']['shipping'] ?>
+                               <?php print $GLOBALS['t']['delivery'] ?>
                         </label>
 
                         <?php $s = isset($_SESSION['form']['delivery']) ? $_SESSION['form']['delivery'] : 'Moring' ?>
 
                         <select value="<?php isset($_SESSION['form']["delivery"]) ? print($_SESSION['form']["delivery"]) : '' ?>"
                                 name="delivery"
-                                class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white <?php print isset($error_messages->shiping) ? 'border-red-500' : 'border-gray-200' ?>"
+                                class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white <?php print isset($error_messages->delivery) ? 'border-red-500' : 'border-gray-200' ?>"
                                 id="email" type="email">
                             <option value="morning"<?php print $s === 'morning' ? 'selected' : '' ?>>Morning</option>
                             <option value="afternoon"<?php print $s === 'afternoon' ? 'selected' : '' ?>>Afternoon</option>
