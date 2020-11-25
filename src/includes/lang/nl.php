@@ -99,6 +99,7 @@ $GLOBALS['t'] = [
     'zip' => 'Postcode',
     'house-number' => 'Huisnummer',
     'choose-payment' => 'Kies een betaalmogelijkheid',
+    'delivery' => 'Kies een bezorgmoment',
     'payment-done' => 'Uw aankoop is voltooid!',
     'quantity' => 'Aantal',
     'price' => 'Prijs',
