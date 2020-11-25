@@ -4,8 +4,9 @@ class Auth
 {
     public static function login() 
     {
-        if (!isset($_POST["submit"])) return;
-        echo $_POST['submit'];
+        
+        
+        
 
         $data = $_POST;
         unset($data['submit']);
@@ -35,8 +36,8 @@ class Auth
         }
 
         unset($_SESSION['login']['error_messages']);
-
-        Route::redirect('/login', '/user/profile');
+        print($_POST['password']);
+        Route::redirect('/user/profile');
     }
 
     // private $username;

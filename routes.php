@@ -25,7 +25,7 @@ Route::get('/login', function () {
 Route::get('/register', function () {
     View::show('user/register');
 });
-Route::post('/profile', function () {
+Route::post('/login', function () {
     Auth::login();
 });
 Route::get('user/profile', function () {
