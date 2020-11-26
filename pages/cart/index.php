@@ -143,9 +143,6 @@
     }
 </style>
 
-
-
-
 <script>
     calculatePrice()
 
@@ -184,12 +181,16 @@
         request('/cart/change-product-amount', 'PUT', {
             'id': b.value,
             'amount': t.value,
+        }).then((result) => {
+            setCounter(result.amount);
         })
     }
 
     function remove(id) {
         request('/cart/remove', 'DELETE', {
             'id': id,
+        }).then((result) => {
+            setCounter(result.amount);
         })
 
         document.querySelector(`#row-${id}`).remove()

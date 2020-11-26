@@ -78,17 +78,15 @@ Route::post('/checkout/address', function () {
 Route::get('/cart', function () {
     Cart::index();
 });
-Route::post('/cart/add', function () {
-    Cart::increment();
-});
+
 Route::delete('/cart/remove', function () {
-    Cart::remove($_GET['id']);
+    Cart::remove();
 });
 Route::put('/cart/increment', function () {
-    Cart::increment($_GET['id']);
+    Cart::increment();
 });
 Route::put('/cart/decrement', function () {
-    Cart::decrement($_GET['id']);
+    Cart::decrement();
 });
 Route::put('/cart/change-product-amount', function () {
     Cart::changeProductAmount();
