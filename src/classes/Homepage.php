@@ -4,7 +4,6 @@ class Homepage
 {
     /**
      * index page
-     * @param mixed $callback
      */
     public static function index()
     {
