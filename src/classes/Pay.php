@@ -12,7 +12,7 @@ class Pay
                     "currency" => "EUR",
                     "value" => "{$price}"
                 ],
-                "description" => "Uw bestelling #{$ordernr} bij NerdyGadgets",
+                "description" => "NerdyGadgets - #{$ordernr}",
                 "redirectUrl" => "{$redir}",
                 "webhookUrl" => "https://webshop.example.org/mollie-webhook/",
             ]);
