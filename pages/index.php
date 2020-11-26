@@ -70,7 +70,7 @@
     function addToCart(e) {
         let id = e.target.id.split('-')[2]
 
-        request('/cart/add', 'POST', {
+        request('/cart/increment', 'PUT', {
             'id': id
         }).then((result) => {
             new Alert({
