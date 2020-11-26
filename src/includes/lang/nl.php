@@ -1,6 +1,7 @@
 <?php
 
 $GLOBALS['t'] = [
+    'username' => 'Gebruikersnaam',
     'lastname' => 'Achternaam',
     'firstname' => 'Voornaam',
     'quantity-on-hand' => 'Voorraad',
@@ -105,10 +106,13 @@ $GLOBALS['t'] = [
     'price' => 'Prijs',
     'continue-guest' => 'Doorgaan als gast',
     'password' => 'Wachtwoord',
-    'no-account' => 'Ik heb nog geen account'
+    'no-account' => 'Ik heb nog geen account',
 
- 
-
-
+    //Register
+    'repeatpassword' => 'Wachtwoord herhalen',
+    'register' => 'Registeren',
+    'emailorpasswordwrong' => 'E-mail of wachtwoord zijn verkeerd!',
+    'forgotpassword' => 'Wachtwoord vergeten?',
+    'signin' => 'Inloggen',
 
 ];
