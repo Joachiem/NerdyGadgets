@@ -1,4 +1,6 @@
-<?php Checkout::checkaddressInfo() ?>
+<?php Checkout::checkaddressInfo();
+Pay::mollieCreate(69.69, 1111, "https://webshop.example.com/order/12345/");
+?>
 <div class="w-full py-6">
     <div class="flex">
         <div class="w-1/4">
@@ -93,7 +95,7 @@
                     <a href="/checkout/address"
                        class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
                        type="button"><?php print $GLOBALS['t']['back'] ?></a>
-                    <a href="<?php Pay::mollieCreate(69.69, 1111, "https://webshop.example.com/order/12345/"); ?>"
+                    <a href="/checkout/complete"
                        class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
                        type="button"><?php print $GLOBALS['t']['continue'] ?></a>
                 </div>

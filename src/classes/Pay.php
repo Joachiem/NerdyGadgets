@@ -4,6 +4,8 @@ class Pay
 {
     public static function mollieCreate($price, $ordernr, $redir)
     {
+        $mollie = new \Mollie\Api\MollieApiClient();
+        $mollie->setApiKey("test_uGtVRSpdytPa7S86RVAzcT2SeAmc5C");
         try {
             $payment = $mollie->payments->create([
                 "amount" => [
