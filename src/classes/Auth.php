@@ -4,10 +4,6 @@ class Auth
 {
     public static function login() 
     {
-        
-        
-        
-
         $data = $_POST;
         unset($data['submit']);
         if (empty($_SESSION['login'])) {
@@ -43,6 +39,13 @@ class Auth
         $email = $_POST["email"];
         $result = DB::execute('select EmailAddress, HashedPassword from people where EmailAddress = "?" AND HashedPassword = "?"', [$email, $hash]);
         print_r($result);
+
+        if(empty($result)) {
+            $_SESSION["loginfail"] = true;
+            Route::redirect('/login', '/login');
+        }
+        
+
        //Route::redirect('/profile');
     }
 

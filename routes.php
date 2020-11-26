@@ -31,7 +31,12 @@ Route::post('/login', function () {
 Route::get('/profile', function () {
     View::show('user/profile');
 });
-
+//Route::get('/loginfail', function () {
+  //  View::show('user/loginfail');
+//});
+//Route::post('/loginfail', function () {
+  //  Auth::loginfail();
+//});    
 
 
 
