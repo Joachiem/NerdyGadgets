@@ -4,7 +4,6 @@ class Cart
 {
     /**
      * cart page
-     * @param mixed $callback
      */
     public static function index()
     {
@@ -28,7 +27,7 @@ class Cart
 
     /**
      * increment cart item
-     * @param string $id
+     * @return mixed callback
      */
     public static function increment()
     {
@@ -42,9 +41,10 @@ class Cart
         return print json_encode(['title' => $GLOBALS['t']['add-alert-title'], 'message' => $GLOBALS['t']['add-alert-message']]);
     }
 
+
     /**
      * increment cart item
-     * @param string $id
+     * @return mixed callback
      */
     public static function decrement()
     {
@@ -62,7 +62,7 @@ class Cart
 
     /**
      * cheange the pruduct ammout of the card
-     * @param mixed $callback
+     * @return mixed callback
      */
     public static function changeProductAmount()
     {

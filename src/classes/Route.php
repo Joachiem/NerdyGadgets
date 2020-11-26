@@ -16,10 +16,6 @@ class Route
      */
     public static function get($route, $callback)
     {
-        // $routeArray = explode('/', $route);
-        // print_r($routeArray);
-        // return $callback($_GET['url']);
-
         self::call($route, $callback, 'GET');
     }
 
@@ -147,7 +143,7 @@ class Route
     public static function back()
     {
         if (isset($_SERVER["HTTP_REFERER"])) {
-            header("Location: " . $_SERVER["HTTP_REFERER"]);
+            header('Location: ' . $_SERVER["HTTP_REFERER"]);
         }
     }
 
