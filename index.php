@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+require_once 'vendor/autoload.php';
+
 spl_autoload_register(function ($class_name) {
     require_once 'src/classes/' . $class_name . '.php';
 });
