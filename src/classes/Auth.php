@@ -28,7 +28,7 @@ class Auth
 
             $_SESSION['login']['error_messages'] = $error_messages;
 
-            Route::redirect('/login', '/login');
+            Route::redirect('/login');
         }
 
         unset($_SESSION['login']['error_messages']);
@@ -42,8 +42,15 @@ class Auth
 
         if(empty($result)) {
             $_SESSION["loginfail"] = true;
-            Route::redirect('/login', '/login');
+            Route::redirect('/login');
+        } else {
+            $_SESSION["loginfail"] = false;
+           $_SESSION['user'] = ""
+            
+
+            Route::redirect('/profile');
         }
+
         
 
        //Route::redirect('/profile');

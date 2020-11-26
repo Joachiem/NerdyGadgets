@@ -10,7 +10,7 @@
                         Username
                     </label>
                     <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-                        name="email" id="email" type="email" placeholder="email">
+                    value="<?php isset($_SESSION['login']["email"]) ? print($_SESSION['login']["email"]) : '' ?>" name="email" id="email" type="email" placeholder="email">
                 </div>
                 <div class="mb-6">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
@@ -21,8 +21,8 @@
                     
                        <?php if(isset($_SESSION["loginfail"]) == TRUE) {?>
                         <p
-                     class="text-red-500 text-xs italic">E-mail or password are wrong!.</p>
-                       <?php } ?>
+                     class="text-red-500 text-xs italic">E-mail or password are wrong!</p>
+                       <?php } print_r($_SESSION); ?>
                    
                 </div>
                 <div class="flex items-center justify-between">

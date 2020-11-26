@@ -37,6 +37,9 @@ Route::get('/profile', function () {
 //Route::post('/loginfail', function () {
   //  Auth::loginfail();
 //});    
+Route::get('/test', function () {
+    View::show('user/test');
+});
 
 
 
