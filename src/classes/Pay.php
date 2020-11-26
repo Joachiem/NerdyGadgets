@@ -1,7 +1,5 @@
 <?php
 
-use Mollie\Api\MollieApiClient;
-
 class Pay
 {
     public static function mollieCreate($price, $ordernr, $redir)
