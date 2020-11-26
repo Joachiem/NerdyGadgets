@@ -106,6 +106,8 @@ $GLOBALS['t'] = [
     'continue-guest' => 'Continue as guest',
     'password' => 'Password',
     'no-account' => 'I dont have an account',
+    'pay' => 'Pay',
+    'mollie' => 'All our payments take place at Mollie, after payment you will be automatically returned to this site.',
 
     
 

@@ -2,7 +2,7 @@
 
 class Pay
 {
-    public static function mollieCreate($price, $ordernr, $redir)
+    public static function mollieCreate($price, $ordernr)
     {
         $mollie = new \Mollie\Api\MollieApiClient();
         $mollie->setApiKey("test_uGtVRSpdytPa7S86RVAzcT2SeAmc5C");
@@ -12,9 +12,12 @@ class Pay
                     "currency" => "EUR",
                     "value" => "{$price}"
                 ],
+                "method" => \Mollie\Api\Types\PaymentMethod::IDEAL,
                 "description" => "NerdyGadgets - #{$ordernr}",
-                "redirectUrl" => "{$redir}",
-                "webhookUrl" => "https://webshop.example.org/mollie-webhook/",
+                "redirectUrl" => "http://localhost/checkout/complete",
+                "metadata" => [
+                    "order_id" => $ordernr,
+                ],
             ]);
 
             header("Location: " . $payment->getCheckoutUrl(), true, 303);

@@ -105,7 +105,9 @@ $GLOBALS['t'] = [
     'price' => 'Prijs',
     'continue-guest' => 'Doorgaan als gast',
     'password' => 'Wachtwoord',
-    'no-account' => 'Ik heb nog geen account'
+    'no-account' => 'Ik heb nog geen account',
+    'pay' => 'Betalen',
+    'mollie' => 'Al onze betalingen vinden plaats bij Mollie, na betaling word je automatisch teruggestuurd naar deze site.',
 
  
 

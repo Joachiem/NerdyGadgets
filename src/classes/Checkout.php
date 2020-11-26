@@ -4,7 +4,7 @@ class Checkout
 {
     public static function paying()
     {
-        Pay::mollieCreate(69.69, 1111, "https://webshop.example.com/order/12345/");
+        Pay::mollieCreate(69.69, 1111);
     }
 
     public static function storeUserInfo()
