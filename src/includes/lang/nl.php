@@ -7,6 +7,7 @@ $GLOBALS['t'] = [
     'excl-vat' => ' excl BTW',
     'incl-vat' => ' incl BTW',
     'in-stock' => 'In Voorraad: ',
+    'add' => 'Toevoegen',
 
     // alerts
     'cookie-alert-title' => 'Wij gebruiken functionele cookies',
@@ -65,6 +66,17 @@ $GLOBALS['t'] = [
     'productpage-add-to-cart' => 'In mijn winkelmandje',
     '' => '',
 
+    // cart
+    'shipping-costs' => 'Verzendkosten',
+    'order-details' => 'Bestelgegevens',
+    'total-price' => 'Totaalprijs',
+    'payment' => 'Afrekenen',
+    'discount-code' => 'Kortingscode',
+    'no-products' => 'Er staan nog geen artikelen in je winkelmandje :(',
+    'ppp' => 'Prijs per stuk',
+    'amount' => 'Aantal',
+    '' => '',
+
     // categorys
     'Novelty Items' => 'Hebbedingtjes',
     'Clothing' => 'Kleding',
@@ -86,5 +98,5 @@ $GLOBALS['t'] = [
     'contact-service' => 'Service en garantie',
     'contact-payments' => 'Betalingen en administratieve',
     'contact-commercial' => 'Zakelijk',
-    
+
 ];
