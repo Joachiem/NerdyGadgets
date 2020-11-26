@@ -27,6 +27,5 @@ class Pay
 
     public static function paymentComplete()
     {
-
     }
 }

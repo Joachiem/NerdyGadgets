@@ -66,6 +66,9 @@ Route::get('/checkout/pay', function () {
 Route::get('/checkout/complete', function () {
     Checkout::complete();
 });
+Route::get('/checkout/paying', function () {
+    Checkout::paying();
+});
 Route::post('/checkout/account', function () {
     Checkout::storeUserInfo();
 });
