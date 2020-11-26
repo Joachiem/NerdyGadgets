@@ -1,4 +1,4 @@
-<section class="container py-8 flex justify-center">
+<section class="container py-2 flex justify-center">
 
 <div class="flex justify-center">
     <div class="mx-4 overflow-hidden rounded-lg shadow-lg mb-8 max-w-lg">
