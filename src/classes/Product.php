@@ -9,7 +9,7 @@ class Product
     {
         $arg = new stdClass();
         $arg->field_values = new stdClass();
-        $query_build_result = "";
+        $query_build_result = '';
 
         $fields = [
             'products_on_page' => [
@@ -38,8 +38,8 @@ class Product
         }
 
         $arg->field_values->page_number = isset($_GET['page_number']) ? $_GET['page_number'] : 0;
-        $arg->field_values->search = isset($_GET['search']) ? $_GET['search'] : "";
-        $arg->field_values->category_id = isset($_GET['category_id']) ? $_GET['category_id'] : "";
+        $arg->field_values->search = isset($_GET['search']) ? $_GET['search'] : '';
+        $arg->field_values->category_id = isset($_GET['category_id']) ? $_GET['category_id'] : '';
 
 
         $offset = $arg->field_values->page_number * $arg->field_values->products_on_page;
@@ -60,13 +60,13 @@ class Product
         if ($arg->field_values->search != '') {
             for ($i = 0; $i < count($search_values); $i++) {
                 if ($i != 0) {
-                    $query_build_result .= "AND ";
+                    $query_build_result .= 'AND ';
                 }
                 $search_value = filter_var($search_values[$i], FILTER_SANITIZE_STRING);
                 $query_build_result .= "SI.SearchDetails LIKE '%$search_value%' ";
             }
-            if ($query_build_result != "") {
-                $query_build_result .= " OR ";
+            if ($query_build_result !== '') {
+                $query_build_result .= ' OR ';
             }
             if ($arg->field_values->search != '' || $arg->field_values->search != null) {
                 $query_build_result .= "SI.StockItemID ='" . $arg->field_values->search . "'";
@@ -76,16 +76,16 @@ class Product
 
         if ($arg->field_values->category_id  === '') {
 
-            if ($query_build_result !== "") {
-                $query_build_result = "WHERE " . $query_build_result;
+            if ($query_build_result !== '') {
+                $query_build_result = 'WHERE ' . $query_build_result;
             }
 
             $arg->products = DB::execute($GLOBALS['q']['filterd-products'], [$arg->field_values->products_on_page, $offset], [$query_build_result, $sort]);
             $arg->ammount = DB::execute($GLOBALS['q']['count-products'], [], [$query_build_result])[0]->ammount;
         } else {
 
-            if ($query_build_result != "") {
-                $query_build_result .= " AND ";
+            if ($query_build_result !== '') {
+                $query_build_result .= ' AND ';
             }
 
             $arg->products = DB::execute($GLOBALS['q']['filterd-products-catagory'], [$arg->field_values->category_id, $arg->field_values->products_on_page, $offset], [$query_build_result, $sort]);
