@@ -13,6 +13,7 @@
     <link rel="mask-icon" href="public/img/favicon/safari-pinned-tab.svg" color="#5bbad5">
     <link rel="shortcut icon" href="public/img/favicon/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="public/css/main.css" rel="stylesheet">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="msapplication-config" content="public/img/favicon/browserconfig.xml">
     <meta name="theme-color" content="#ffffff">
