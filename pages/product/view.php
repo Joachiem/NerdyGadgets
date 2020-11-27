@@ -132,7 +132,7 @@
 
         addToCartBtn.addEventListener('click', () => {
 
-            request('/cart/add', 'POST', {
+            request('/cart/increment', 'PUT', {
                 'id': id
             }).then((result) => {
                 new Alert({

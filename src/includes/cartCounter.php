@@ -1,7 +1,7 @@
 <script>
-    document.addEventListener('DOMContentLoaded', () => update());
+    document.addEventListener('DOMContentLoaded', () => setCounter());
 
-    function update(ammout = <?php print isset($_SESSION['cart']) ? array_sum($_SESSION['cart']) : 0 ?>) {
+    function setCounter(ammout = <?php print isset($_SESSION['cart']) ? array_sum($_SESSION['cart']) : 0 ?>) {
         let cartCounter = document.querySelector('#cart-counter')
 
         if (ammout > 0) {
@@ -15,6 +15,6 @@
     function changeCounter(i) {
         let html = document.querySelector('#cart-counter').innerHTML
         let currentNumber = html ? parseInt(html) : 0
-        update(currentNumber + i)
+        setCounter(currentNumber + i)
     }
 </script>

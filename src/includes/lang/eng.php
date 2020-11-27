@@ -7,6 +7,7 @@ $GLOBALS['t'] = [
     'excl-vat' => ' excl VAT',
     'incl-vat' => ' incl VAT',
     'in-stock' => 'In Stock: ',
+    'add' => 'Add',
 
     // alerts
     'cookie-alert-title' => 'We use functional cookies',
@@ -65,6 +66,17 @@ $GLOBALS['t'] = [
     'productpage-add-to-cart' => 'Add to cart',
     '' => '',
 
+    // cart
+    'shipping-costs' => 'Shipping costs',
+    'order-details' => 'Order details',
+    'total-price' => 'Total price',
+    'payment' => 'Payment',
+    'discount-code' => 'Discount code',
+    'no-products' => 'There are no items in your shopping cart yet :(',
+    'ppp' => 'Price per piece',
+    'amount' => 'Amount',
+    '' => '',
+
     // categorys
     'Novelty Items' => 'Novelty Items',
     'Clothing' => 'Clothing',
@@ -78,7 +90,7 @@ $GLOBALS['t'] = [
 
     //TOS page
     'tos' => include 'src/includes/lang/pages/eng-TOS.php',
-    
+
     //Contact page
     'contact-info' => 'Contact information',
     'contact-customer' => 'Customer',
