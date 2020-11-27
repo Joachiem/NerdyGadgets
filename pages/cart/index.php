@@ -3,83 +3,97 @@
         <div class="flex-1">
             <table class="w-full text-sm lg:text-base" cellspacing="0">
                 <thead>
-                    <tr class="h-12 uppercase">
-                        <th class="hidden md:table-cell"></th>
-                        <th class="text-left">Product</th>
-                        <th class="lg:text-right text-left pl-5 lg:pl-0">
-                            <span class="hidden lg:inline"><?php print $GLOBALS['t']['amount'] ?></span>
-                        </th>
-                        <th class="hidden text-right md:table-cell"><?php print $GLOBALS['t']['ppp'] ?></th>
-                        <th class="text-right"><?php print $GLOBALS['t']['total-price'] ?></th>
-                    </tr>
+                <tr class="h-12 uppercase">
+                    <th class="hidden md:table-cell"></th>
+                    <th class="text-left">Product</th>
+                    <th class="lg:text-right text-left pl-5 lg:pl-0">
+                        <span class="hidden lg:inline"><?php print $GLOBALS['t']['amount'] ?></span>
+                    </th>
+                    <th class="hidden text-right md:table-cell"><?php print $GLOBALS['t']['ppp'] ?></th>
+                    <th class="text-right"><?php print $GLOBALS['t']['total-price'] ?></th>
+                </tr>
                 </thead>
                 <tbody>
 
-                    <?php foreach ($arg as $product) { ?>
+                <?php foreach ($arg as $product) { ?>
 
-                        <tr class="cart-items" id="row-<?php print $product->StockItemID ?>">
-                            <td class="hidden pb-4 md:table-cell">
-                                <a href="/products/view?id=<?php print $product->StockItemID ?>">
+                    <tr class="cart-items" id="row-<?php print $product->StockItemID ?>">
+                        <td class="hidden pb-4 md:table-cell">
+                            <a href="/products/view?id=<?php print $product->StockItemID ?>">
 
-                                    <?php if (isset($product->ImagePath) and !empty($product->ImagePath)) { ?>
+                                <?php if (isset($product->ImagePath) and !empty($product->ImagePath)) { ?>
 
-                                        <img class="w-20 h-20 rounded object-contain" src="/public/StockItemIMG/<?php print $product->ImagePath ?>">
+                                    <img class="w-20 h-20 rounded object-contain"
+                                         src="/public/StockItemIMG/<?php print $product->ImagePath ?>">
 
-                                    <?php } elseif (isset($product->StockGroupImagePath) and !empty($product->StockGroupImagePath)) { ?>
+                                <?php } elseif (isset($product->StockGroupImagePath) and !empty($product->StockGroupImagePath)) { ?>
 
-                                        <img class="w-20 h-20 rounded object-contain" src="/public/StockGroupIMG/<?php print $product->StockGroupImagePath ?>">
+                                    <img class="w-20 h-20 rounded object-contain"
+                                         src="/public/StockGroupIMG/<?php print $product->StockGroupImagePath ?>">
 
-                                    <?php } else { ?>
+                                <?php } else { ?>
 
-                                        <img class="w-20 h-20 rounded object-contain" src="/public/StockGroupIMG/<?php print $product->BackupImagePath ?>">
+                                    <img class="w-20 h-20 rounded object-contain"
+                                         src="/public/StockGroupIMG/<?php print $product->BackupImagePath ?>">
 
-                                    <?php } ?>
+                                <?php } ?>
 
-                                </a>
-                            </td>
+                            </a>
+                        </td>
 
-                            <td>
-                                <div class="flex flex-col items-start">
-                                    <a class="mb-1 font-semibold md:ml-4 " href="/products/view?id=<?php print $product->StockItemID ?>"><?php print $product->StockItemName ?></a>
-                                    <button class="text-red-400 text-sm md:ml-4" onclick="remove(<?php print($product->StockItemID) ?>)">Verwijder product</button>
-                                    <span class="text-gray-600 text-xs md:ml-4"><?php print $GLOBALS['t']['quantity-on-hand'] . ': ' . $product->QuantityOnHand ?></span>
+                        <td>
+                            <div class="flex flex-col items-start">
+                                <a class="mb-1 font-semibold md:ml-4 "
+                                   href="/products/view?id=<?php print $product->StockItemID ?>"><?php print $product->StockItemName ?></a>
+                                <button class="text-red-400 text-sm md:ml-4"
+                                        onclick="remove(<?php print($product->StockItemID) ?>)">Verwijder product
+                                </button>
+                                <span class="text-gray-600 text-xs md:ml-4"><?php print $GLOBALS['t']['quantity-on-hand'] . ': ' . $product->QuantityOnHand ?></span>
+                            </div>
+                        </td>
+
+                        <td class="justify-center md:justify-end md:flex mt-6">
+                            <div class="w-32">
+                                <div class="flex justify-center flex-row h-10 w-full rounded-lg relative bg-transparent mt-1">
+                                    <button data-action="decrement" value="<?php print $product->StockItemID ?>"
+                                            id="decrement-btn"
+                                            class="focus:outline-none bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none">
+                                        <span class="flex justify-center pb-1 m-auto text-2xl font-thin">−</span>
+                                    </button>
+                                    <input id="qty-<?php print $product->StockItemID ?>"
+                                           value="<?php print $product->qty ?>" min="0" type="number"
+                                           class="focus:outline-none z-10 select-none w-12 outline-none focus:outline-none text-center bg-gray-300 font-semibold text-md hover:text-black focus:text-black md:text-basecursor-default flex items-center text-gray-700 outline-none"
+                                           name="custom-input-number"></input>
+                                    <button data-action="increment" value="<?php print $product->StockItemID ?>"
+                                            id="increment-btn"
+                                            class="focus:outline-none bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer outline-none">
+                                        <span class="flex justify-center pb-1 m-auto text-2xl font-thin">+</span>
+                                    </button>
                                 </div>
-                            </td>
-
-                            <td class="justify-center md:justify-end md:flex mt-6">
-                                <div class="w-32">
-                                    <div class="flex justify-center flex-row h-10 w-full rounded-lg relative bg-transparent mt-1">
-                                        <button data-action="decrement" value="<?php print $product->StockItemID ?>" id="decrement-btn" class="focus:outline-none bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-l cursor-pointer outline-none">
-                                            <span class="flex justify-center pb-1 m-auto text-2xl font-thin">−</span>
-                                        </button>
-                                        <input id="qty-<?php print $product->StockItemID ?>" value="<?php print $product->qty ?>" min="0" type="number" class="focus:outline-none z-10 select-none w-12 outline-none focus:outline-none text-center bg-gray-300 font-semibold text-md hover:text-black focus:text-black md:text-basecursor-default flex items-center text-gray-700 outline-none" name="custom-input-number"></input>
-                                        <button data-action="increment" value="<?php print $product->StockItemID ?>" id="increment-btn" class="focus:outline-none bg-gray-300 text-gray-600 hover:text-gray-700 hover:bg-gray-400 h-full w-20 rounded-r cursor-pointer outline-none">
-                                            <span class="flex justify-center pb-1 m-auto text-2xl font-thin">+</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </td>
-                            <td class="hidden text-right md:table-cell">
+                            </div>
+                        </td>
+                        <td class="hidden text-right md:table-cell">
                                 <span class="text-sm lg:text-base font-medium"> €
                                     <span id="price-<?php print $product->StockItemID ?>">
                                         <?php print sprintf("%.2f", $product->SellPrice) ?>
                                     </span>
                                 </span>
-                            </td>
-                            <td class="text-right">
-                                <span id="total-price-<?php print $product->StockItemID ?>" class="text-sm lg:text-base font-medium"></span>
-                            </td>
-                        </tr>
+                        </td>
+                        <td class="text-right">
+                            <span id="total-price-<?php print $product->StockItemID ?>"
+                                  class="text-sm lg:text-base font-medium"></span>
+                        </td>
+                    </tr>
 
-                    <?php } ?>
-                    <?php if (empty($arg)) { ?>
+                <?php } ?>
+                <?php if (empty($arg)) { ?>
 
-                        <div class="flex p-2 mb-2 justify-center text-center bg-yellow-300">
-                            <ion-icon name="information-circle-outline"></ion-icon>
-                            <h2><?php print $GLOBALS['t']['no-products'] ?></h2>
-                        </div>
+                    <div class="flex p-2 mb-2 justify-center text-center bg-yellow-300">
+                        <ion-icon name="information-circle-outline"></ion-icon>
+                        <h2><?php print $GLOBALS['t']['no-products'] ?></h2>
+                    </div>
 
-                    <?php } ?>
+                <?php } ?>
 
                 </tbody>
             </table>
@@ -90,8 +104,11 @@
                         <h1 class="ml-2 font-bold uppercase"><?php print $GLOBALS['t']['discount-code'] ?></h1>
                     </div>
                     <div class="p-4 grid grid-cols-3 gap-4">
-                        <input class="col-span-2 appearance-none block w-full text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-gray-100 focus:border-gray-600" id="tel" type="text">
-                        <a href="/cart" class="flex justify-center w-full shadow bg-teal-400 hover:bg-teal-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button"><?php print $GLOBALS['t']['add'] ?></a>
+                        <input class="col-span-2 appearance-none block w-full text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-gray-100 focus:border-gray-600"
+                               id="tel" type="text">
+                        <a href="/cart"
+                           class="flex justify-center w-full shadow bg-teal-400 hover:bg-teal-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
+                           type="button"><?php print $GLOBALS['t']['add'] ?></a>
                     </div>
                 </div>
                 <div class="lg:px-2 lg:w-1/2">
@@ -103,7 +120,7 @@
                             <div class="lg:px-4 lg:py-2 m-2 text-md lg:text-s font-bold text-center text-gray-800">
                                 <?php print $GLOBALS['t']['shipping-costs'] ?>
                             </div>
-                            <div class="lg:px-4 lg:py-2 m-2 lg:text-s font-bold text-center text-gray-900">
+                            <div id="shipping-cost" class="lg:px-4 lg:py-2 m-2 lg:text-s font-bold text-center text-gray-900">
                                 € 6.75
                             </div>
                         </div>
@@ -111,7 +128,8 @@
                             <div class="lg:px-4 lg:py-2 m-2 text-md lg:text-s font-bold text-center text-gray-800">
                                 <?php print $GLOBALS['t']['total-price'] ?>
                             </div>
-                            <div id="total-price" class="lg:px-4 lg:py-2 m-2 lg:text-s font-bold text-center text-gray-900">
+                            <div id="total-price"
+                                 class="lg:px-4 lg:py-2 m-2 lg:text-s font-bold text-center text-gray-900">
                             </div>
                         </div>
                         <a href="/checkout/login">
@@ -132,7 +150,6 @@
     function calculatePrice() {
         const items = document.querySelectorAll('.cart-items')
         let totalPrice = 0
-        totalPrice += 6.75
 
         items.forEach(item => {
             const id = item.id.split('-')[1]
@@ -142,6 +159,13 @@
 
             document.querySelector(`#total-price-${id}`).innerHTML = `€ ${(price * qty).toFixed(2)}`
         })
+
+        if (totalPrice < 50) {
+            totalPrice += 6.75
+            document.querySelector('#shipping-cost').innerHTML = `€ 6.75`
+        } else {
+            document.querySelector('#shipping-cost').innerHTML = `Gratis`
+        }
 
         document.querySelector('#total-price').innerHTML = `€ ${totalPrice.toFixed(2)}`
     }

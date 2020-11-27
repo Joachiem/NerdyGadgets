@@ -4,7 +4,7 @@ class Checkout
 {
     public static function paying()
     {
-        Pay::mollieCreate(69.69, 1111);
+        Pay::mollieCreate(Cart::totalPrice(), 1111);
     }
 
     public static function storeUserInfo()
