@@ -12,7 +12,6 @@ class Pay
                     "currency" => "EUR",
                     "value" => "{$price}"
                 ],
-                "method" => \Mollie\Api\Types\PaymentMethod::IDEAL,
                 "description" => "NerdyGadgets - #{$ordernr}",
                 "redirectUrl" => "http://localhost/checkout/complete",
                 "metadata" => [
