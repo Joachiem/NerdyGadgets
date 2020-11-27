@@ -52,7 +52,6 @@ class Auth
         }
 
 
-
         //Route::redirect('/profile');
     }
 
