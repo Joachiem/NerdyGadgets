@@ -82,6 +82,7 @@
                     <h2><?php print $GLOBALS['t']['payment-done'] ?></h2>
                 </div>
                 <div>
+                    <?php print(Pay::checkPayment()) ?>
                     <table class="w-full text-sm lg:text-base" cellspacing="0">
                         <thead>
                         <tr class="h-12 uppercase">
