@@ -164,7 +164,7 @@
             totalPrice += 6.75
             document.querySelector('#shipping-cost').innerHTML = `€ 6.75`
         } else {
-            document.querySelector('#shipping-cost').innerHTML = `Gratis`
+            document.querySelector('#shipping-cost').innerHTML = `<?php print($GLOBALS['t']['free']); ?>`
         }
 
         document.querySelector('#total-price').innerHTML = `€ ${totalPrice.toFixed(2)}`

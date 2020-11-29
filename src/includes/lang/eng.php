@@ -75,6 +75,7 @@ $GLOBALS['t'] = [
     'no-products' => 'There are no items in your shopping cart yet :(',
     'ppp' => 'Price per piece',
     'amount' => 'Amount',
+    'free' => 'Free',
     '' => '',
 
     // categorys
@@ -120,9 +121,4 @@ $GLOBALS['t'] = [
     'no-account' => 'I dont have an account',
     'pay' => 'Pay',
     'mollie' => 'All our payments take place at Mollie, after payment you will be automatically returned to this site.',
-
-    
-
-
-
 ];
