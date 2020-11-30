@@ -236,11 +236,9 @@
         if (discount > 0) {
             discountContainer.classList.remove('hidden')
 
-
             discountAmmount.innerHTML = `€ ${(totalPrice * discount).toFixed(2)}`
 
             totalPrice -= totalPrice * discount
-
         } else {
             discountContainer.classList.add('hidden')
         }
