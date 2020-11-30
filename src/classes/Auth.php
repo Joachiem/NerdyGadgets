@@ -33,9 +33,8 @@ class Auth
 
         unset($_SESSION['login']['error_messages']);
 
-        $password = $_POST["password"] . "abcd";
+        $password = $_POST["password"] . "y80HoN9I";
         $hash = hash("sha256", $password);
-        $hash = $hash . "abcd";
         $email = $_POST["email"];
         $result = DB::execute('select PersonID, FullName, EmailAddress, HashedPassword from people where EmailAddress = "?" AND HashedPassword = "?"', [$email, $hash]);
         print_r($result);
@@ -50,53 +49,5 @@ class Auth
 
             Route::redirect('/profile');
         }
-
-
-        //Route::redirect('/profile');
     }
-
-    // private $username;
-    // private $password;
-    // private $db;
-
-
-    // public function __construct()
-    // {
-    //     $this->db = new DB();
-    // }
-
-    // private function generateSession($usertoken)
-    // {
-    //     $_SESSION['isloggedIn'] = $usertoken;
-    // }
-
-    // public function register($username, $password, $repeat)
-    // {
-    //     if (empty($username) || empty($password) || empty($repeat)) {
-    //     }
-
-    //     if ($password !== $repeat) {
-    //     }
-
-    //     $this->username = $username;
-    //     $this->password = $password;
-
-    //     $this->login($this->username, $this->password);
-    // }
-
-    // public function login($username, $password)
-    // {
-    //     if (empty($username) || empty($password)) {
-    //         return 'Please fill all fields!';
-    //     }
-
-    //     $this->username = $username;
-    //     $this->password = $password;
-    // }
-
-    // public function logout()
-    // {
-    //     session_destroy();
-    //     session_regenerate_id(true);
-    // }
 }
