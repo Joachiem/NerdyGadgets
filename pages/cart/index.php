@@ -98,38 +98,38 @@
                         <span id="discount-code" class="col-span-2"></span>
                         <a id="remove-discount" class="flex justify-center items-center w-full shadow bg-red-400 hover:bg-red-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">Verwijderen</a>
                     </div>
-                    <div class="lg:px-2 lg:w-1/2">
-                        <div class="p-2">
-                            <h1 class="ml-2 font-bold uppercase"><?php print $GLOBALS['t']['order-details'] ?></h1>
+                </div>
+                <div class="lg:px-2 lg:w-1/2">
+                    <div class="p-2">
+                        <h1 class="ml-2 font-bold uppercase"><?php print $GLOBALS['t']['order-details'] ?></h1>
+                    </div>
+                    <div class="p-4">
+                        <div id="discount-container" class="flex justify-between pt-4 border-b hidden">
+                            <div class="lg:px-4 lg:py-2 m-2 text-md lg:text-s font-bold text-center text-gray-800">
+                                <?php print $GLOBALS['t']['discount'] ?>
+                            </div>
+                            <div id="discount-ammount" class="lg:px-4 lg:py-2 m-2 lg:text-s font-bold text-center text-gray-900"></div>
                         </div>
-                        <div class="p-4">
-                            <div id="discount-container" class="flex justify-between pt-4 border-b hidden">
-                                <div class="lg:px-4 lg:py-2 m-2 text-md lg:text-s font-bold text-center text-gray-800">
-                                    <?php print $GLOBALS['t']['discount'] ?>
-                                </div>
-                                <div id="discount-ammount" class="lg:px-4 lg:py-2 m-2 lg:text-s font-bold text-center text-gray-900"></div>
+                        <div class="flex justify-between pt-4 border-b">
+                            <div class="lg:px-4 lg:py-2 m-2 text-md lg:text-s font-bold text-center text-gray-800">
+                                <?php print $GLOBALS['t']['shipping-cost'] ?>
                             </div>
-                            <div class="flex justify-between pt-4 border-b">
-                                <div class="lg:px-4 lg:py-2 m-2 text-md lg:text-s font-bold text-center text-gray-800">
-                                    <?php print $GLOBALS['t']['shipping-cost'] ?>
-                                </div>
-                                <div id="shipping-cost" class="lg:px-4 lg:py-2 m-2 lg:text-s font-bold text-center text-gray-900">
-                                    € 6.75
-                                </div>
+                            <div id="shipping-cost" class="lg:px-4 lg:py-2 m-2 lg:text-s font-bold text-center text-gray-900">
+                                € 6.75
                             </div>
-                            <div class="flex justify-between pt-4 border-b">
-                                <div class="lg:px-4 lg:py-2 m-2 text-md lg:text-s font-bold text-center text-gray-800">
-                                    <?php print $GLOBALS['t']['total-price'] ?>
-                                </div>
-                                <div id="total-price" class="lg:px-4 lg:py-2 m-2 lg:text-s font-bold text-center text-gray-900">
-                                </div>
-                            </div>
-                            <a href="/checkout/login">
-                                <button class="flex justify-center w-full px-10 py-3 mt-6 font-medium text-white uppercase bg-green-400 rounded-full shadow item-center hover:bg-green-500 focus:shadow-outline focus:outline-none font-bold">
-                                    <span class="ml-2 mt-5px"><?php print $GLOBALS['t']['payment'] ?></span>
-                                </button>
-                            </a>
                         </div>
+                        <div class="flex justify-between pt-4 border-b">
+                            <div class="lg:px-4 lg:py-2 m-2 text-md lg:text-s font-bold text-center text-gray-800">
+                                <?php print $GLOBALS['t']['total-price'] ?>
+                            </div>
+                            <div id="total-price" class="lg:px-4 lg:py-2 m-2 lg:text-s font-bold text-center text-gray-900">
+                            </div>
+                        </div>
+                        <a href="/checkout/login">
+                            <button class="flex justify-center w-full px-10 py-3 mt-6 font-medium text-white uppercase bg-green-400 rounded-full shadow item-center hover:bg-green-500 focus:shadow-outline focus:outline-none font-bold">
+                                <span class="ml-2 mt-5px"><?php print $GLOBALS['t']['payment'] ?></span>
+                            </button>
+                        </a>
                     </div>
                 </div>
             </div>
