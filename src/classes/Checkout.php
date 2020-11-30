@@ -157,26 +157,30 @@ class Checkout
         $shipping = $form['shipping'];
         $delivery = $form['delivery'];
 
+        $totalitems = array_sum($_SESSION['cart']);
+        $totalchilleritems = 0;
 
         foreach($_SESSION['Cart'] AS $key => $value){
             $productInfo = DB::execute($GLOBALS['q']['get-product-info'], [$key]);
+            $itemname = $productInfo['Stockitemname'];
+            $package = $productInfo['UnitpackageID'];
+            $discription = $productInfo['SearchDetails'];
+            $taxrate = $productInfo['Taxrate'];
+            $recommendedprice = $productInfo['RecommendedretailPrice'];
 
-        $itemname = $productInfo['Stockitemname'];
-        $package = $productInfo['UnitpackageID'];
-        $discription = $productInfo['SearchDetails'];
-        $taxrate = $productInfo['Taxrate'];
-        $recommendedprice = $productInfo['RecommendedretailPrice'];
+            $setProductInfo = DB::execute($GLOBALS['q']['set-product-info'], [$key]);
 
-        $setProductInfo = DB::execute($GLOBALS['q']['set-product-info'], [$key]);
+            if ($productInfo['IsChillerStock'] === 1) {
+                $totalchilleritems += $value;
+            }
+        }
+
+        $totaldryitems = $totalitems - $totalchilleritems;
+
         $setPeopleInfo = DB::execute($GLOBALS['q']['set-people-info'], [$key]);
         $setPeopleAddress = DB::execute($GLOBALS['q']['set-people-address'], [$key]);
         $setDeliveryMethod = DB::execute($GLOBALS['q']['set-delivery-method'], [$key]);
         $setOrderInfo= DB::execute($GLOBALS['q']['set-order-info'], [$key]);
-        
-
-
-        $email = $form['email'];
-        $naam = $form['firstname'] . " " . $form['lastname'];
 
         $user = DB::execute('SELECT * FROM people WHERE EmailAddress = "?"', [$email]);
         if (empty($user)) {
@@ -185,10 +189,9 @@ class Checkout
             $id = $user['peopleId'];
         }
         
-        $checkaddress = DB::execute('SELECT * FROM peopleaddress WHERE peopleid = "?" AND zipcode = "?" AND housenmr = ?', [$id, $zipcode, $housenmr]);
+        $checkaddress = DB::execute('SELECT * FROM peopleaddress WHERE peopleid = ? AND zipcode = "?" AND housenmr = ?', [$id, $zipcode, $housenmr]);
         if (empty($checkaddress)) {
             //send address informatie naar peopleaddres table
-        };
-  }   
-}
+        }
+    }
 }

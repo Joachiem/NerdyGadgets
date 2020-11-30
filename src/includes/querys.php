@@ -46,7 +46,7 @@ $GLOBALS['q'] = [
         WHERE StockItemID = SI.StockItemID
         LIMIT 1
     ) 
-    AS BackupImagePath   
+    AS BackupImagePath, IsChillerStock 
     FROM stockitems SI 
     JOIN stockitemholdings SIH USING(stockitemid)
     JOIN stockitemstockgroups
