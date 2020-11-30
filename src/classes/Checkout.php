@@ -111,8 +111,8 @@ class Checkout
 
 
     public static function noItemsInCart()
-    {
-        if (!isset($_SESSION['cart'])) {
+    {   
+        if (!isset($_SESSION['cart']) || empty($_SESSION['cart']) || array_sum($_SESSION['cart']) < 1) {
             Route::redirect('/checkout/address', '/cart');
             Route::redirect('/checkout/account', '/cart');
             Route::redirect('/checkout/loginorguest', '/cart');
@@ -182,7 +182,7 @@ class Checkout
         
         $checkaddress = DB::execute('SELECT * FROM peopleaddress WHERE peopleid = "?" AND zipcode = "?" AND housenmr = ?', [$id, $zipcode, $housenmr]);
         if (empty($checkaddress)) {
-            //send address informatie naar 
+            //send address informatie naar peopleaddres table
         };
   }   
 }
