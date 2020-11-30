@@ -352,24 +352,24 @@ $GLOBALS['q'] = [
     'get-product-info' => "SELECT Stockitemname, UnitpackageID, SearchDetails, Taxrate, RecommendedRetailPrice FROM stockitems WHERE StockItemID = ? ",
     
     
-    'set-product-info' => "INSERT INTO Orderlines (Orderid, Stockitemid, Discription, Packagetypeid, Quantity, Unitprice, Taxrate, lastEditedWhen)
-    VALUES (?, ?, '?', ?, ?, ?, ?, '?')",
+    'set-product-info' => "INSERT INTO Orderlines (OrderID, StockItemID, Discription, PackageTypeID, Quantity, UnitPrice, TaxRate, lastEditedWhen)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
     
     
-    'set-people-info' => "INSERT INTO People(Fullname, Email, Phonenumber, Validfrom , ValidTo)
-    VALUES ('?', '?', '?', '?', '9999-12-31 23:59:59')",
+    'set-people-info' => "INSERT INTO People(FullName ,IsPermittedToLogon, IsEmployee, IsSalesPerson, EmailAddress, PhoneNumber, LastEditedBy, ValidFrom , ValidTo)
+    VALUES (?, 1, 0, 0, ?, ?, 1, ?, '9999-12-31 23:59:59')",
 
     'set-people-address' => "INSERT INTO Peopleaddress (PeopleID, Address)
-    VALUES (?, '?')",
+    VALUES (?, ?)",
 
     'set-order-info' => "INSERT INTO Orders (OrderID, CustomeriD, OrderDate, LastEditedWhen)
-    VALUES (?, ?, '?', '?')",
+    VALUES (?, ?, ?, ?)",
 
     'set-invoice-details' => "INSERT INTO Invoices(InvoiceID, CustomerID, BillToCustomerID, OrderID, DeliveryMethodID, InvoiceDate, CustomerPurchaseOrderNumber, DeliveryInstructions, TotalDryItems, TotalChillerItems, LastEditedWhen)
-    VALUES (?, ?, ?, ?, ?, '?', 0,'?', ?, ?,'?')",
+    VALUES (?, ?, ?, ?, ?, ?, 0,?, ?, ?,?)",
 
     'set-invoicelines-details' => "INSERT INTO invoicelines(InvoiceID, StockItemID, Description, PackageTypeID, Quantity, UnitPrice, TaxRate, TaxAmount, ExtendedPrice, LastEditedWhen)
-    VALUES (?, ?, '?', ?, ?, ?, ?, ?, ?, '?')",
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)",
 
 
     

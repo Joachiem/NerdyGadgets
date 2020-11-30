@@ -4,6 +4,7 @@ class Checkout
 {
     public static function paying()
     {
+        self::sendData();
         Pay::mollieCreate(Cart::totalPrice(), 1111);
     }
 
@@ -180,10 +181,24 @@ class Checkout
 
         // create new invoice id
         $invoiceIDMAX = DB::execute('SELECT MAX(InvoiceID)+1 FROM Invoices'); //Creer hoogste invoice ID
+        
+        //add user to db
+        $user = DB::execute('SELECT * FROM people WHERE EmailAddress = ?', [$email])[0];
+        if (empty($user)) {
+            //send account information to people table
+            $setPeopleInfo = DB::execute($GLOBALS['q']['set-people-info'], [$fullname, $email, $phonenumber, $dateToday]);
+            $user = DB::execute('SELECT PersonID FROM people WHERE EmailAddress = ?', [$email])[0];
+            $id = $user->PersonID;
+        } else {
+            $id = $user->PersonID;
+        }
 
-
-
-
+        //add address to db
+        $checkaddress = DB::execute('SELECT * FROM peopleaddress WHERE peopleid = ? AND zipcode = ? AND housenmr = ?', [$id, $zipcode, $housenmr]);
+        if (empty($checkaddress)) {
+            //send address information to peopleaddres table
+            $setPeopleAddress = DB::execute($GLOBALS['q']['set-people-address'], [$id, $deliveryInstructions]);
+        }
         //get info and send info of each product in cart
         foreach ($_SESSION['Cart'] as $key => $value) {
             $productInfo = DB::execute($GLOBALS['q']['get-product-info'], [$key]);
@@ -205,7 +220,7 @@ class Checkout
             if ($productInfo['IsChillerStock'] === 1) {
                 $totalchilleritems += $value;
             }
-
+            
             //send order information to orderlines table
             $setProductInfo = DB::execute($GLOBALS['q']['set-product-info'], [$orderIDMax, $key, $discription, $package, $value, $recommendedprice, $taxrate, $dateToday]);
 
@@ -213,25 +228,9 @@ class Checkout
             $setProductInfo = DB::execute($GLOBALS['q']['set-invoicelines-details'], [$invoiceIDMAX, $key, $discription, $package, $value, $recommendedprice, $taxrate, $taxamount, $totalpriceincl, $dateToday]);
         }
 
-        //set varaibles
         $totaldryitems = $totalitems - $totalchilleritems;
+
         $setInvoiceDetails = DB::execute($GLOBALS['q']['set-invoice-details'], [$invoiceIDMAX, $id, $id, $orderIDMax, $delivery,$datetodayonly ,$totaldryitems,$totalchilleritems ,$dateToday]);
-        $setPeopleInfo = DB::execute($GLOBALS['q']['set-people-info'], [$fullname, $email, $phonenumber, $dateToday]);
-        $setPeopleAddress = DB::execute($GLOBALS['q']['set-people-address'], [$id, $deliveryInstructions]);
         $setOrderInfo = DB::execute($GLOBALS['q']['set-order-info'], [$orderIDMax, $id, $dateToday, $datetodayonly]);
-
-        //add user to db
-        $user = DB::execute('SELECT * FROM people WHERE EmailAddress = "?"', [$email]);
-        if (empty($user)) {
-            //send account information to people table
-        } else {
-            $id = $user['peopleId'];
-        }
-
-        //add address to db
-        $checkaddress = DB::execute('SELECT * FROM peopleaddress WHERE peopleid = ? AND zipcode = "?" AND housenmr = ?', [$id, $zipcode, $housenmr]);
-        if (empty($checkaddress)) {
-            //send address information to peopleaddres table
-        }
     }
 }
