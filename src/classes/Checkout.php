@@ -175,10 +175,10 @@ class Checkout
         $deliveryInstructions = $form['postcode'] . " " . $form['housenmr'];
 
         //check new orderID
-        $orderIDMax = DB::execute('SELECT MAX(OrderID)+1 FROM Orders', [$key]); //Creer hoogste order ID
+        $orderIDMax = DB::execute('SELECT MAX(OrderID)+1 FROM Orders'); //Creer hoogste order ID
 
         // create new invoice id
-        $invoiceIDMAX = DB::execute('SELECT MAX(InvoiceID)+1 FROM Invoices', [$key]); //Creer hoogste invoice ID
+        $invoiceIDMAX = DB::execute('SELECT MAX(InvoiceID)+1 FROM Invoices'); //Creer hoogste invoice ID
 
         //get info and send info of each product in cart
         foreach ($_SESSION['Cart'] as $key => $value) {
@@ -206,8 +206,8 @@ class Checkout
             $setProductInfo = DB::execute($GLOBALS['q']['set-product-info'], [$key]);
 
             //send order information to invoicelines table
+            $setProductInfo = DB::execute($GLOBALS['q']['set-invoicelines-details'], [$key]);
         }
-
 
         //set varaibles
         $totaldryitems = $totalitems - $totalchilleritems;
