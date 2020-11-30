@@ -77,7 +77,7 @@ class Checkout
                 }
             }
             $_SESSION['form']['error_messages'] = $error_messages;
-            
+
             Route::redirect('/checkout/address', '/checkout/address');
         } else {
             print_r($_SESSION['form']);
@@ -91,7 +91,7 @@ class Checkout
 
 
     public static function checkAccountInfo()
-    {   
+    {
         //check if info is not empty
         $form = $_SESSION['form'];
         if (isset($form)) {
@@ -120,7 +120,7 @@ class Checkout
 
 
     public static function noItemsInCart()
-    {   
+    {
         //test if there are items in cart and redirect if necessery 
         if (!isset($_SESSION['cart']) || empty($_SESSION['cart']) || array_sum($_SESSION['cart']) < 1) {
             Route::redirect('/checkout/address', '/cart');
@@ -174,8 +174,16 @@ class Checkout
         $dateToday = date("d/m/Y");
         $deliveryInstructions = $form['postcode'] . " " . $form['housenmr'];
 
+
+        //check new orderID
+        $orderIDMax = DB::execute('SELECT MAX(OrderID)+1 FROM Orders', [$key]); //Creer hoogste order ID
+        $checkOrderID = DB::execute('SELECT MAX(OrderID) FROM Orders ', [$key]); //Haalt de orderID op van de nety geplaatste bestelling
+
+        // create new invoice id
+        $invoiceIDMAX = DB::execute('SELECT MAX(InvoiceID)+1 FROM Invoices', [$key]); //Creer hoogste invoice ID
+
         //get info and send info of each product in cart
-        foreach($_SESSION['Cart'] AS $key => $value){
+        foreach ($_SESSION['Cart'] as $key => $value) {
             $productInfo = DB::execute($GLOBALS['q']['get-product-info'], [$key]);
             $itemname = $productInfo['Stockitemname'];
             $package = $productInfo['UnitpackageID'];
@@ -190,13 +198,6 @@ class Checkout
             }
         }
 
-       //check new orderID
-       $orderIDMax= DB::execute('SELECT MAX(OrderID)+1 FROM Orders', [$key]); //Creer hoogste order ID
-       $checkOrderID = DB::execute('SELECT MAX(OrderID) FROM Orders ', [$key]); //Haalt de orderID op van de nety geplaatste bestelling
-
-       // create new invoice id
-       $invoiceIDMAX = DB::execute('SELECT MAX(InvoiceID)+1 FROM Invoices', [$key]); //Creer hoogste invoice ID
-
 
         //set varaibles
         $totaldryitems = $totalitems - $totalchilleritems;
@@ -204,7 +205,7 @@ class Checkout
         $setPeopleInfo = DB::execute($GLOBALS['q']['set-people-info'], [$key]);
         $setPeopleAddress = DB::execute($GLOBALS['q']['set-people-address'], [$key]);
         $setDeliveryMethod = DB::execute($GLOBALS['q']['set-delivery-method'], [$key]);
-        $setOrderInfo= DB::execute($GLOBALS['q']['set-order-info'], [$key]);
+        $setOrderInfo = DB::execute($GLOBALS['q']['set-order-info'], [$key]);
 
         //add user to db
         $user = DB::execute('SELECT * FROM people WHERE EmailAddress = "?"', [$email]);
@@ -213,7 +214,7 @@ class Checkout
         } else {
             $id = $user['peopleId'];
         }
-        
+
         //add address to db
         $checkaddress = DB::execute('SELECT * FROM peopleaddress WHERE peopleid = ? AND zipcode = "?" AND housenmr = ?', [$id, $zipcode, $housenmr]);
         if (empty($checkaddress)) {
