@@ -1,4 +1,3 @@
-
 <?php
 /*
 * dit zijn de routes van NerdyGadgets
@@ -32,13 +31,11 @@ Route::get('/profile', function () {
     View::show('user/profile');
 });
 //Route::get('/loginfail', function () {
-  //  View::show('user/loginfail');
+//  View::show('user/loginfail');
 //});
 //Route::post('/loginfail', function () {
-  //  Auth::loginfail();
+//  Auth::loginfail();
 //});    
-
-
 
 
 // language
