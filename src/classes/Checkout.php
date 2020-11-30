@@ -145,4 +145,45 @@ class Checkout
 
         View::show('checkout/complete', $arg);
     }
+
+    public static function sendData()
+    {
+        $form = $_SESSION['form'];
+        $email = $form['email'];
+        $fullname = $form['firstname'] . " " . $form['lastname'];
+        $phonenumber = $form['phonenumber'];
+        $zipcode = $form['postcode'];
+        $housenmr = $form['housenmr'];
+        $shipping = $form['shipping'];
+        $delivery = $form['delivery'];
+
+
+        foreach($_SESSION['Cart'] AS $key => $value){
+            $productInfo = DB::execute($GLOBALS['q']['get-product-info'], [$key]);
+
+        $itemname = $productInfo['Stockitemname'];
+        $package = $productInfo['UnitpackageID'];
+        $discription = $productInfo['SearchDetails'];
+        $taxrate = $productInfo['Taxrate'];
+        $recommendedprice = $productInfo['RecommendedretailPrice'];
+
+        $sendProductInfo = DB::execute($GLOBALS['q']['send-product-info'], [$key]);
+
+
+        $email = $form['email'];
+        $naam = $form['firstname'] . " " . $form['lastname'];
+
+        $user = DB::execute('SELECT * FROM people WHERE EmailAddress = "?"', [$email]);
+        if (empty($user)) {
+            //send account informatie naar people tabel
+        } else {
+            $id = $user['peopleId'];
+        }
+        
+        $checkaddress = DB::execute('SELECT * FROM peopleaddress WHERE peopleid = "?" AND zipcode = "?" AND housenmr = ?', [$id, $zipcode, $housenmr]);
+        if (empty($checkaddress)) {
+            //send address informatie naar 
+        };
+  }   
+}
 }
