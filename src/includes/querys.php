@@ -353,29 +353,23 @@ $GLOBALS['q'] = [
     
     
     'set-product-info' => "INSERT INTO Orderlines (Orderid, Stockitemid, Discription, Packagetypeid, Quantity, Unitprice, Taxrate, lastEditedWhen)
-    VALUES (23890, 1, 'Mug', 7, 2, 25, 6,'25-11-2020 12:00:00')",
+    VALUES (?, ?, '?', ?, ?, ?, ?, '?')",
     
     
-    'set-people-info' => "INSERT INTO People(PeopleID, Fullname, Email, Phonenumber, Validfrom , ValidTo)
-    VALUES (2873, 'Kahn Aksu', 'kahnaksu@hotmail.com', '0640259250', '9999-12-31 23:59:59', '2020-01-01 23:59:59')",
+    'set-people-info' => "INSERT INTO People(Fullname, Email, Phonenumber, Validfrom , ValidTo)
+    VALUES ('?', '?', '?', '?', '9999-12-31 23:59:59')",
 
-    'set-people-address' => "INSERT INTO Peopleaddress (AddressID, PeopleID, Address)
-    VALUES (237, 2873, 'Willem dreeslaan 27')",
-
-    'set-delivery-method' => "INSERT INTO invoices (DeliveryMethodID, Comments)
-    VALUES (3, 'Afternoon') ",
+    'set-people-address' => "INSERT INTO Peopleaddress (PeopleID, Address)
+    VALUES (?, '?')",
 
     'set-order-info' => "INSERT INTO Orders (OrderID, CustomeriD, OrderDate, LastEditedWhen)
-    VALUES (MAX(), 2873, '25-11-2020', '25-11-2020 12:00:00')",
-
-    'set-order-details' => "INSERT INTO Orderlines (OrderID, StockItemID, Discription, PackageTypeID, Quantity, UnitPrice, TaxRate, LastEditedWhen)
-    VALUES (23890, 1, 'Mug', 7, 2, 25, 6,'25-11-2020 12:00:00')",
+    VALUES (?, ?, '?', '?')",
 
     'set-invoice-details' => "INSERT INTO Invoices(InvoiceID, CustomerID, BillToCustomerID, OrderID, DeliveryMethodID, InvoiceDate, CustomerPurchaseOrderNumber, DeliveryInstructions, TotalDryItems, TotalChillerItems, LastEditedWhen)
-    VALUES (23890, 341, 341, 7, 3, '12-12-2012', 12626,'Willem Dreeslaan 27', 1, 1,'25-11-2020 12:00:00')",
+    VALUES (?, ?, ?, ?, ?, '?', 0,'?', ?, ?,'?')",
 
     'set-invoicelines-details' => "INSERT INTO invoicelines(InvoiceID, StockItemID, Description, PackageTypeID, Quantity, UnitPrice, TaxRate, TaxAmount, ExtendedPrice, LastEditedWhen)
-    VALUES (23890, 1, 'mug', 7.00, , 3.00, 6.00, 6.00, 25.00, '25-11-2020 12:00:00')",
+    VALUES (?, ?, '?', ?, ?, ?, ?, ?, ?, '?')",
 
 
     

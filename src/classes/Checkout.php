@@ -214,7 +214,6 @@ class Checkout
 
         $setPeopleInfo = DB::execute($GLOBALS['q']['set-people-info'], [$key]);
         $setPeopleAddress = DB::execute($GLOBALS['q']['set-people-address'], [$key]);
-        $setDeliveryMethod = DB::execute($GLOBALS['q']['set-delivery-method'], [$key]);
         $setOrderInfo = DB::execute($GLOBALS['q']['set-order-info'], [$key]);
 
         //add user to db
