@@ -366,7 +366,7 @@ $GLOBALS['q'] = [
     VALUES (3, 'Afternoon') ",
 
     'set-order-info' => "INSERT INTO Orders (Orderid, Customerid, Orderdate,lasteditedwhen)
-    VALUES (23890, 2873, '25-11-2020', '25-11-2020 12:00:00')",
+    VALUES (MAX(), 2873, '25-11-2020', '25-11-2020 12:00:00')",
 
     'set-order-details' => "INSERT INTO Orderlines (Orderid, Stockitemid, Discription, Packagetypeid, Quantity, Unitprice, Taxrate, lasteditedwhen)
     VALUES (23890, 1, 'Mug', 7, 2, 25, 6,'25-11-2020 12:00:00')",

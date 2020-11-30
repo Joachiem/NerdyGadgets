@@ -180,7 +180,10 @@ class Checkout
             }
         }
 
-       
+       //check new orderID
+       $orderIDMax= DB::execute('SELECT MAX(OrderID)+1 FROM Orders', [$key]);
+       $checkOrderID = DB::execute('SELECT * FROM people WHERE EmailAddress = "?"', [$email]);
+
 
         //set varaibles
         $totaldryitems = $totalitems - $totalchilleritems;
