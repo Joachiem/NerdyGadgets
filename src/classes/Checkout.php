@@ -174,16 +174,6 @@ class Checkout
         $dateToday = date("d/m/Y");
         $deliveryInstructions = $form['postcode'] . " " . $form['housenmr'];
 
-        //Total amount excluding tax
-        $totalpriceexcl = 'Quantity' * 'Unitprice';
-
-        //Tax amount
-        $taxamount = ($totalpriceexcl * 'Taxrate') / 100;
-
-        //Total amount including tax
-        $totalpriceincl = $totalpriceexcl + $taxamount;
-
-
         //check new orderID
         $orderIDMax = DB::execute('SELECT MAX(OrderID)+1 FROM Orders', [$key]); //Creer hoogste order ID
 
@@ -198,6 +188,15 @@ class Checkout
             $discription = $productInfo['SearchDetails'];
             $taxrate = $productInfo['Taxrate'];
             $recommendedprice = $productInfo['RecommendedretailPrice'];
+
+            //Total amount excluding tax
+            $totalpriceexcl = 'Quantity' * 'Unitprice';
+
+            //Tax amount
+            $taxamount = ($totalpriceexcl * 'Taxrate') / 100;
+
+            //Total amount including tax
+            $totalpriceincl = $totalpriceexcl + $taxamount;
 
             if ($productInfo['IsChillerStock'] === 1) {
                 $totalchilleritems += $value;
