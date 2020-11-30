@@ -1,7 +1,7 @@
 <?php
 
 $GLOBALS['t'] = [
-    'username' => 'gebruikersnaam',
+    'username' => 'Gebruikersnaam',
     'lastname' => 'Achternaam',
     'firstname' => 'Voornaam',
     'quantity-on-hand' => 'Voorraad',
@@ -12,7 +12,7 @@ $GLOBALS['t'] = [
 
     // alerts
     'cookie-alert-title' => 'Wij gebruiken functionele cookies',
-    'cookie-alert-message' => 'Leer meer over de privacy op onze privacy pagina',
+    'cookie-alert-message' => 'Leer meer over jouw privacy op onze privacy pagina',
     'add-alert-title' => 'Product Toegevoegd',
     'add-alert-message' => 'Het product is toegevoegd aan het winkelmandje',
     'discount-error-alert-title' => 'Niet geldig',
@@ -133,7 +133,7 @@ $GLOBALS['t'] = [
     //Register
     'repeatpassword' => 'Wachtwoord herhalen',
     'register' => 'Registreren',
-    'emailorpasswordwrong' => 'E-mail of wachtwoord zijn verkeerd!',
+    'emailorpasswordwrong' => 'E-mail en/of wachtwoord zijn onjuist!',
     'forgotpassword' => 'Wachtwoord vergeten?',
     'signin' => 'Inloggen',
 ];
