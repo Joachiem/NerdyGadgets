@@ -2,6 +2,11 @@
 
 class Checkout
 {
+    public static function paying()
+    {
+        Pay::mollieCreate(Cart::totalPrice(), 1111);
+    }
+
     public static function storeUserInfo()
     {
         if (!isset($_POST["submit"])) return;

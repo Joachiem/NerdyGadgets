@@ -1,6 +1,7 @@
 <?php
 
 $GLOBALS['t'] = [
+    'username' => 'username',
     'lastname' => 'Lastname',
     'firstname' => 'Firstname',
     'quantity-on-hand' => 'Stock',
@@ -73,7 +74,7 @@ $GLOBALS['t'] = [
     '' => '',
 
     // cart
-    'shipping-costs' => 'Shipping costs',
+    'shipping-cost' => 'Shipping costs',
     'order-details' => 'Order details',
     'total-price' => 'Total price',
     'payment' => 'Payment',
@@ -82,6 +83,8 @@ $GLOBALS['t'] = [
     'ppp' => 'Price per piece',
     'amount' => 'Amount',
     'discount' => 'Discount',
+    'free' => 'Free',
+    '' => '',
 
     // categorys
     'Novelty Items' => 'Novelty Items',
@@ -129,4 +132,13 @@ $GLOBALS['t'] = [
 
 
 
+    'pay' => 'Pay',
+    'mollie' => 'All our payments take place at Mollie, after payment you will be automatically returned to this site.',
+
+    //Register
+    'repeatpassword' => 'Repeat password',
+    'register' => 'Register',
+    'emailorpasswordwrong' => 'E-mail or password are wrong!',
+    'forgotpassword' => 'Forgot password?',
+    'signin' => 'Sign in',
 ];

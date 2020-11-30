@@ -41,7 +41,8 @@
                             <td>
                                 <div class="flex flex-col items-start">
                                     <a class="mb-1 font-semibold md:ml-4 " href="/products/view?id=<?php print $product->StockItemID ?>"><?php print $product->StockItemName ?></a>
-                                    <button class="text-red-400 text-sm md:ml-4" onclick="remove(<?php print($product->StockItemID) ?>)">Verwijder product</button>
+                                    <button class="text-red-400 text-sm md:ml-4" onclick="remove(<?php print($product->StockItemID) ?>)">Verwijder product
+                                    </button>
                                     <span class="text-gray-600 text-xs md:ml-4"><?php print $GLOBALS['t']['quantity-on-hand'] . ': ' . $product->QuantityOnHand ?></span>
                                 </div>
                             </td>
@@ -89,13 +90,18 @@
                     <div class="p-2">
                         <h1 class="ml-2 font-bold uppercase"><?php print $GLOBALS['t']['discount-code'] ?></h1>
                     </div>
-                    <div id="discount-code-add-container" class="p-4 grid grid-cols-3 gap-4">
+                    <<<<<<< HEAD <div id="discount-code-add-container" class="p-4 grid grid-cols-3 gap-4">
                         <input id="discount-input" class="col-span-2 appearance-none block w-full text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-gray-100 focus:border-gray-600" id="tel" type="text">
                         <a id="add-discount" class="flex justify-center items-center w-full shadow bg-teal-400 hover:bg-teal-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button"><?php print $GLOBALS['t']['add'] ?></a>
-                    </div>
-                    <div id="discount-add-container" class="p-4 grid grid-cols-3 gap-4 items-center hidden">
-                        <span id="discount-code" class="col-span-2"></span>
-                        <a id="remove-discount" class="flex justify-center items-center w-full shadow bg-red-400 hover:bg-red-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">Verwijderen</a>
+                </div>
+                <div id="discount-add-container" class="p-4 grid grid-cols-3 gap-4 items-center hidden">
+                    <span id="discount-code" class="col-span-2"></span>
+                    <a id="remove-discount" class="flex justify-center items-center w-full shadow bg-red-400 hover:bg-red-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">Verwijderen</a>
+                    =======
+                    <div class="p-4 grid grid-cols-3 gap-4">
+                        <input class="col-span-2 appearance-none block w-full text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-gray-100 focus:border-gray-600" id="tel" type="text">
+                        <a href="/cart" class="flex justify-center w-full shadow bg-teal-400 hover:bg-teal-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button"><?php print $GLOBALS['t']['add'] ?></a>
+                        >>>>>>> ff7905cc9383af414183299d9fb6dcd455fec711
                     </div>
                 </div>
                 <div class="lg:px-2 lg:w-1/2">
@@ -111,9 +117,9 @@
                         </div>
                         <div class="flex justify-between pt-4 border-b">
                             <div class="lg:px-4 lg:py-2 m-2 text-md lg:text-s font-bold text-center text-gray-800">
-                                <?php print $GLOBALS['t']['shipping-costs'] ?>
+                                <?php print $GLOBALS['t']['shipping-cost'] ?>
                             </div>
-                            <div id="shipping-costs" class="lg:px-4 lg:py-2 m-2 lg:text-s font-bold text-center text-gray-900">
+                            <div id="shipping-cost" class="lg:px-4 lg:py-2 m-2 lg:text-s font-bold text-center text-gray-900">
                                 € 6.75
                             </div>
                         </div>
@@ -138,6 +144,8 @@
 
 <script>
     document.addEventListener('DOMContentLoaded', () => getDiscount());
+
+    const freeText = <?php print($GLOBALS['t']['free']); ?>
 
     const addDiscountBtn = document.querySelector('#add-discount')
     const removeDiscountBtn = document.querySelector('#remove-discount')
@@ -220,7 +228,7 @@
 
     function calculatePrice() {
         const items = document.querySelectorAll('.cart-items')
-        const shippingCosts = document.querySelector('#shipping-costs')
+        const shippingCost = document.querySelector('#shipping-cost')
 
         let totalPrice = 0
 
@@ -244,10 +252,10 @@
         }
 
         if (totalPrice === 0 || totalPrice >= 50) {
-            shippingCosts.innerHTML = '0.-'
+            shippingCost.innerHTML = freeText
         } else {
             totalPrice += 6.75
-            shippingCosts.innerHTML = '6.75'
+            shippingCost.innerHTML = '6.75'
         }
 
         document.querySelector('#total-price').innerHTML = `€ ${totalPrice.toFixed(2)}`

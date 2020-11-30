@@ -1,4 +1,4 @@
-<?php Checkout::checkaddressInfo() ?>
+<?php Checkout::checkaddressInfo(); ?>
 <div class="w-full py-6">
     <div class="flex">
         <div class="w-1/4">
@@ -79,23 +79,15 @@
         <div class="leading-tight p-2 md:p-4 bg-white">
             <form class="w-full max-w-lg">
                 <div class="flex flex-wrap -mx-3 mb-6">
-                    <div class="w-full px-3 mb-6 md:mb-0">
-                        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
-                               for="grid-first-name">
-                               <?php print $GLOBALS['t']['choose-payment'] ?>
-                        </label>
-                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
-                               id="grid-first-name" type="text">
-                        <p class="text-red-500 text-xs italic">Please fill out this field.</p>
-                    </div>
+                    <div class="w-full px-3 mb-6 md:mb-0"><?php print $GLOBALS['t']['mollie'] ?></div>
                 </div>
-                <div class="flex md:items-center justify-between">
+                <div class="flex md:items-center justify-around">
                     <a href="/checkout/address"
                        class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
                        type="button"><?php print $GLOBALS['t']['back'] ?></a>
-                    <a href="/checkout/complete"
+                    <a href="/checkout/paying"
                        class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
-                       type="button"><?php print $GLOBALS['t']['continue'] ?></a>
+                       type="button"><?php print $GLOBALS['t']['pay'] ?></a>
                 </div>
             </form>
         </div>

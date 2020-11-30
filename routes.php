@@ -1,4 +1,3 @@
-
 <?php
 /*
 * dit zijn de routes van NerdyGadgets
@@ -21,6 +20,15 @@ Route::get('/', function () {
 // auth
 Route::get('/login', function () {
     View::show('user/login');
+});
+Route::get('/register', function () {
+    View::show('user/register');
+});
+Route::post('/login', function () {
+    Auth::login();
+});
+Route::get('/profile', function () {
+    View::show('user/profile');
 });
 
 
@@ -61,10 +69,12 @@ Route::get('/checkout/address', function () {
 });
 Route::get('/checkout/pay', function () {
     View::show('checkout/pay');
-    Mail::paymentComplete();
 });
 Route::get('/checkout/complete', function () {
     Checkout::complete();
+});
+Route::get('/checkout/paying', function () {
+    Checkout::paying();
 });
 Route::post('/checkout/account', function () {
     Checkout::storeUserInfo();
