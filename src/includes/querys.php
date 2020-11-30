@@ -352,19 +352,31 @@ $GLOBALS['q'] = [
     'get-product-info' => "SELECT Stockitemname, UnitpackageID, SearchDetails, Taxrate, RecommendedretailPrice FROM stockitems WHERE StockItemID = ? ",
     
     
-    'send-product-info' => "INSERT INTO Orderlines (Orderid, Stockitemid, Discription, Packagetypeid, Quantity, Unitprice, Taxrate, lasteditedwhen)
+    'set-product-info' => "INSERT INTO Orderlines (Orderid, Stockitemid, Discription, Packagetypeid, Quantity, Unitprice, Taxrate, lasteditedwhen)
     VALUES (23890, 1, 'Mug', 7, 2, 25, 6,'25-11-2020 12:00:00')",
     
     
-    'send-people-info' => "INSERT INTO People(peopleid, Fullname, email, Phonenumber, Validfrom , ValidTo)
+    'set-people-info' => "INSERT INTO People(peopleid, Fullname, email, Phonenumber, Validfrom , ValidTo)
     VALUES (2873, 'Kahn Aksu', 'kahnaksu@hotmail.com', '0640259250', '9999-12-31 23:59:59', '2020-01-01 23:59:59')",
 
-    'send-people-address' => "INSERT INTO Peopleaddress (addressid, Peopleid, address)
+    'set-people-address' => "INSERT INTO Peopleaddress (addressid, Peopleid, address)
     VALUES (237, 2873, 'Willem dreeslaan 27')",
 
-    'send-delivery-method' => "INSERT INTO invoices (DeliveryMethodID, Comments)
-    VALUES (3, 'Afternoon') "
+    'set-delivery-method' => "INSERT INTO invoices (DeliveryMethodID, Comments)
+    VALUES (3, 'Afternoon') ",
+
+    'set-order-info' => "INSERT INTO Orders (Orderid, Customerid, Orderdate,lasteditedwhen)
+    VALUES (23890, 2873, '25-11-2020', '25-11-2020 12:00:00')",
+
+    'set-order-details' => "INSERT INTO Orderlines (Orderid, Stockitemid, Discription, Packagetypeid, Quantity, Unitprice, Taxrate, lasteditedwhen)
+    VALUES (23890, 1, 'Mug', 7, 2, 25, 6,'25-11-2020 12:00:00')",
+
+    'set-invoice-details' => "INSERT INTO Invoices(invoiceid, customerid, billtocustomerid, orderid, deliverymethod, invoicedate, customerpurchaseordernumber, deliveryinstructions, totaldryitems, totalchilleritems, lasteditedwhen)
+    VALUES (23890, 341, 341, 7, 3, '12-12-2012', 12626,'Willem Dreeslaan 27', 1, 1,'25-11-2020 12:00:00')",
+
+    'set-invoicelines-details' => "INSERT INTO invoicelines(invoiceid, stockitemid, description, packagetype, Unitprice, Taxrate, Taxamount, extendedprice, lasteditedwhen)
+    VALUES (23890, 1, 'mug', 7.00, 3.00, 6.00, 6.00, 25.00, '25-11-2020 12:00:00')",
 
 
-
+    
 ];
