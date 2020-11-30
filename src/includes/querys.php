@@ -359,8 +359,8 @@ $GLOBALS['q'] = [
     'set-people-info' => "INSERT INTO People(FullName ,IsPermittedToLogon, IsEmployee, IsSalesPerson, EmailAddress, PhoneNumber, LastEditedBy, ValidFrom , ValidTo)
     VALUES (?, 1, 0, 0, ?, ?, 1, ?, '9999-12-31 23:59:59')",
 
-    'set-people-address' => "INSERT INTO Peopleaddress (PeopleID, Address)
-    VALUES (?, ?)",
+    'set-people-address' => "INSERT INTO Peopleaddress (peopleid, zipcode, housenmr)
+    VALUES (?, ?, ?)",
 
     'set-order-info' => "INSERT INTO Orders (OrderID, CustomeriD, OrderDate, LastEditedWhen)
     VALUES (?, ?, ?, ?)",
