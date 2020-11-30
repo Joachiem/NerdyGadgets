@@ -90,208 +90,202 @@
                     <div class="p-2">
                         <h1 class="ml-2 font-bold uppercase"><?php print $GLOBALS['t']['discount-code'] ?></h1>
                     </div>
-                    <<<<<<< HEAD <div id="discount-code-add-container" class="p-4 grid grid-cols-3 gap-4">
+                    <div id="discount-code-add-container" class="p-4 grid grid-cols-3 gap-4">
                         <input id="discount-input" class="col-span-2 appearance-none block w-full text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-gray-100 focus:border-gray-600" id="tel" type="text">
                         <a id="add-discount" class="flex justify-center items-center w-full shadow bg-teal-400 hover:bg-teal-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button"><?php print $GLOBALS['t']['add'] ?></a>
-                </div>
-                <div id="discount-add-container" class="p-4 grid grid-cols-3 gap-4 items-center hidden">
-                    <span id="discount-code" class="col-span-2"></span>
-                    <a id="remove-discount" class="flex justify-center items-center w-full shadow bg-red-400 hover:bg-red-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">Verwijderen</a>
-                    =======
-                    <div class="p-4 grid grid-cols-3 gap-4">
-                        <input class="col-span-2 appearance-none block w-full text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-gray-100 focus:border-gray-600" id="tel" type="text">
-                        <a href="/cart" class="flex justify-center w-full shadow bg-teal-400 hover:bg-teal-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button"><?php print $GLOBALS['t']['add'] ?></a>
-                        >>>>>>> ff7905cc9383af414183299d9fb6dcd455fec711
                     </div>
-                </div>
-                <div class="lg:px-2 lg:w-1/2">
-                    <div class="p-2">
-                        <h1 class="ml-2 font-bold uppercase"><?php print $GLOBALS['t']['order-details'] ?></h1>
+                    <div id="discount-add-container" class="p-4 grid grid-cols-3 gap-4 items-center hidden">
+                        <span id="discount-code" class="col-span-2"></span>
+                        <a id="remove-discount" class="flex justify-center items-center w-full shadow bg-red-400 hover:bg-red-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">Verwijderen</a>
                     </div>
-                    <div class="p-4">
-                        <div id="discount-container" class="flex justify-between pt-4 border-b hidden">
-                            <div class="lg:px-4 lg:py-2 m-2 text-md lg:text-s font-bold text-center text-gray-800">
-                                <?php print $GLOBALS['t']['discount'] ?>
-                            </div>
-                            <div id="discount-ammount" class="lg:px-4 lg:py-2 m-2 lg:text-s font-bold text-center text-gray-900"></div>
+                    <div class="lg:px-2 lg:w-1/2">
+                        <div class="p-2">
+                            <h1 class="ml-2 font-bold uppercase"><?php print $GLOBALS['t']['order-details'] ?></h1>
                         </div>
-                        <div class="flex justify-between pt-4 border-b">
-                            <div class="lg:px-4 lg:py-2 m-2 text-md lg:text-s font-bold text-center text-gray-800">
-                                <?php print $GLOBALS['t']['shipping-cost'] ?>
+                        <div class="p-4">
+                            <div id="discount-container" class="flex justify-between pt-4 border-b hidden">
+                                <div class="lg:px-4 lg:py-2 m-2 text-md lg:text-s font-bold text-center text-gray-800">
+                                    <?php print $GLOBALS['t']['discount'] ?>
+                                </div>
+                                <div id="discount-ammount" class="lg:px-4 lg:py-2 m-2 lg:text-s font-bold text-center text-gray-900"></div>
                             </div>
-                            <div id="shipping-cost" class="lg:px-4 lg:py-2 m-2 lg:text-s font-bold text-center text-gray-900">
-                                € 6.75
+                            <div class="flex justify-between pt-4 border-b">
+                                <div class="lg:px-4 lg:py-2 m-2 text-md lg:text-s font-bold text-center text-gray-800">
+                                    <?php print $GLOBALS['t']['shipping-cost'] ?>
+                                </div>
+                                <div id="shipping-cost" class="lg:px-4 lg:py-2 m-2 lg:text-s font-bold text-center text-gray-900">
+                                    € 6.75
+                                </div>
                             </div>
+                            <div class="flex justify-between pt-4 border-b">
+                                <div class="lg:px-4 lg:py-2 m-2 text-md lg:text-s font-bold text-center text-gray-800">
+                                    <?php print $GLOBALS['t']['total-price'] ?>
+                                </div>
+                                <div id="total-price" class="lg:px-4 lg:py-2 m-2 lg:text-s font-bold text-center text-gray-900">
+                                </div>
+                            </div>
+                            <a href="/checkout/login">
+                                <button class="flex justify-center w-full px-10 py-3 mt-6 font-medium text-white uppercase bg-green-400 rounded-full shadow item-center hover:bg-green-500 focus:shadow-outline focus:outline-none font-bold">
+                                    <span class="ml-2 mt-5px"><?php print $GLOBALS['t']['payment'] ?></span>
+                                </button>
+                            </a>
                         </div>
-                        <div class="flex justify-between pt-4 border-b">
-                            <div class="lg:px-4 lg:py-2 m-2 text-md lg:text-s font-bold text-center text-gray-800">
-                                <?php print $GLOBALS['t']['total-price'] ?>
-                            </div>
-                            <div id="total-price" class="lg:px-4 lg:py-2 m-2 lg:text-s font-bold text-center text-gray-900">
-                            </div>
-                        </div>
-                        <a href="/checkout/login">
-                            <button class="flex justify-center w-full px-10 py-3 mt-6 font-medium text-white uppercase bg-green-400 rounded-full shadow item-center hover:bg-green-500 focus:shadow-outline focus:outline-none font-bold">
-                                <span class="ml-2 mt-5px"><?php print $GLOBALS['t']['payment'] ?></span>
-                            </button>
-                        </a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
 
-<script>
-    document.addEventListener('DOMContentLoaded', () => getDiscount());
+    <script>
+        document.addEventListener('DOMContentLoaded', () => getDiscount());
 
-    const freeText = <?php print($GLOBALS['t']['free']); ?>
+        const freeText = <?php print($GLOBALS['t']['free']); ?>
 
-    const addDiscountBtn = document.querySelector('#add-discount')
-    const removeDiscountBtn = document.querySelector('#remove-discount')
-    const discountAddContainer = document.querySelector('#discount-add-container')
-    const discountCodeAddContainer = document.querySelector('#discount-code-add-container')
+        const addDiscountBtn = document.querySelector('#add-discount')
+        const removeDiscountBtn = document.querySelector('#remove-discount')
+        const discountAddContainer = document.querySelector('#discount-add-container')
+        const discountCodeAddContainer = document.querySelector('#discount-code-add-container')
 
-    const discountCode = document.querySelector('#discount-code')
-    const discountInput = document.querySelector('#discount-input')
+        const discountCode = document.querySelector('#discount-code')
+        const discountInput = document.querySelector('#discount-input')
 
-    const discountContainer = document.querySelector('#discount-container')
-    const discountAmmount = document.querySelector('#discount-ammount')
+        const discountContainer = document.querySelector('#discount-container')
+        const discountAmmount = document.querySelector('#discount-ammount')
 
-    let discount = 0
+        let discount = 0
 
-    addDiscountBtn.addEventListener('click', addDiscount)
-    removeDiscountBtn.addEventListener('click', removeDiscount)
+        addDiscountBtn.addEventListener('click', addDiscount)
+        removeDiscountBtn.addEventListener('click', removeDiscount)
 
 
-    function getDiscount() {
-        request('/cart/discount', 'POST', {}).then((result) => {
-            if (result['discount']) {
-                discountCode.innerHTML = `${result['discount'].discount} %`
-                discountAddContainer.classList.remove('hidden')
-                discountCodeAddContainer.classList.add('hidden')
-                discount = result['discount'].discount * 0.01
-            }
+        function getDiscount() {
+            request('/cart/discount', 'POST', {}).then((result) => {
+                if (result['discount']) {
+                    discountCode.innerHTML = `${result['discount'].discount} %`
+                    discountAddContainer.classList.remove('hidden')
+                    discountCodeAddContainer.classList.add('hidden')
+                    discount = result['discount'].discount * 0.01
+                }
 
-            calculatePrice()
-        })
-    }
+                calculatePrice()
+            })
+        }
 
-    function addDiscount() {
-        request('/cart/discount/add', 'POST', {
-            'value': discountInput.value,
-        }).then((result) => {
-            if (result['discount']) {
-                discountCode.innerHTML = `${result['discount'].discount} %`
-                discountAddContainer.classList.remove('hidden')
-                discountCodeAddContainer.classList.add('hidden')
-                discount = result['discount'].discount * 0.01
+        function addDiscount() {
+            request('/cart/discount/add', 'POST', {
+                'value': discountInput.value,
+            }).then((result) => {
+                if (result['discount']) {
+                    discountCode.innerHTML = `${result['discount'].discount} %`
+                    discountAddContainer.classList.remove('hidden')
+                    discountCodeAddContainer.classList.add('hidden')
+                    discount = result['discount'].discount * 0.01
+                } else {
+                    new Alert({
+                        title: result.title,
+                        message: result.message,
+                        time: 2000
+                    })
+                }
+
+                if (result.alert) {
+                    new Alert({
+                        title: result.alert.title,
+                        message: result.alert.message,
+                        time: 2000
+                    })
+                }
+
+                calculatePrice()
+            })
+        }
+
+        function removeDiscount(e) {
+            request('/cart/discount/remove', 'DELETE', {}).then((result) => {
+                discountAddContainer.classList.add('hidden')
+                discountCodeAddContainer.classList.remove('hidden')
+                discount = 0
+
+                if (result.alert) {
+                    new Alert({
+                        title: result.alert.title,
+                        message: result.alert.message,
+                        time: 2000
+                    })
+                }
+                calculatePrice()
+            })
+        }
+
+
+        calculatePrice()
+
+        function calculatePrice() {
+            const items = document.querySelectorAll('.cart-items')
+            const shippingCost = document.querySelector('#shipping-cost')
+
+            let totalPrice = 0
+
+            items.forEach(item => {
+                const id = item.id.split('-')[1]
+                const qty = document.querySelector(`#qty-${id}`).value
+                const price = document.querySelector(`#price-${id}`).innerHTML
+                totalPrice += price * qty
+
+                document.querySelector(`#total-price-${id}`).innerHTML = `€ ${(price * qty).toFixed(2)}`
+            })
+
+            if (discount > 0) {
+                discountContainer.classList.remove('hidden')
+
+                discountAmmount.innerHTML = `€ ${(totalPrice * discount).toFixed(2)}`
+
+                totalPrice -= totalPrice * discount
             } else {
-                new Alert({
-                    title: result.title,
-                    message: result.message,
-                    time: 2000
-                })
+                discountContainer.classList.add('hidden')
             }
 
-            if (result.alert) {
-                new Alert({
-                    title: result.alert.title,
-                    message: result.alert.message,
-                    time: 2000
-                })
+            if (totalPrice === 0 || totalPrice >= 50) {
+                shippingCost.innerHTML = freeText
+            } else {
+                totalPrice += 6.75
+                shippingCost.innerHTML = '6.75'
             }
 
-            calculatePrice()
-        })
-    }
-
-    function removeDiscount(e) {
-        request('/cart/discount/remove', 'DELETE', {}).then((result) => {
-            discountAddContainer.classList.add('hidden')
-            discountCodeAddContainer.classList.remove('hidden')
-            discount = 0
-
-            if (result.alert) {
-                new Alert({
-                    title: result.alert.title,
-                    message: result.alert.message,
-                    time: 2000
-                })
-            }
-            calculatePrice()
-        })
-    }
-
-
-    calculatePrice()
-
-    function calculatePrice() {
-        const items = document.querySelectorAll('.cart-items')
-        const shippingCost = document.querySelector('#shipping-cost')
-
-        let totalPrice = 0
-
-        items.forEach(item => {
-            const id = item.id.split('-')[1]
-            const qty = document.querySelector(`#qty-${id}`).value
-            const price = document.querySelector(`#price-${id}`).innerHTML
-            totalPrice += price * qty
-
-            document.querySelector(`#total-price-${id}`).innerHTML = `€ ${(price * qty).toFixed(2)}`
-        })
-
-        if (discount > 0) {
-            discountContainer.classList.remove('hidden')
-
-            discountAmmount.innerHTML = `€ ${(totalPrice * discount).toFixed(2)}`
-
-            totalPrice -= totalPrice * discount
-        } else {
-            discountContainer.classList.add('hidden')
+            document.querySelector('#total-price').innerHTML = `€ ${totalPrice.toFixed(2)}`
         }
 
-        if (totalPrice === 0 || totalPrice >= 50) {
-            shippingCost.innerHTML = freeText
-        } else {
-            totalPrice += 6.75
-            shippingCost.innerHTML = '6.75'
+        const decrementButtons = document.querySelectorAll('button[data-action="decrement"]')
+        const incrementButtons = document.querySelectorAll('button[data-action="increment"]')
+
+        decrementButtons.forEach(btn => btn.addEventListener('click', (e) => change(e, -1)))
+        incrementButtons.forEach(btn => btn.addEventListener('click', (e) => change(e, +1)))
+
+        function change(e, change) {
+            const b = e.target.parentNode.parentElement.querySelector('button[data-action="decrement"]')
+            const t = b.nextElementSibling
+            let val = Number(t.value)
+
+            if (val <= 0 && change <= 0) return
+
+            t.value = val += change
+            calculatePrice()
+            request('/cart/change-product-amount', 'PUT', {
+                'id': b.value,
+                'amount': t.value,
+            }).then((result) => {
+                setCounter(result.amount);
+            })
         }
 
-        document.querySelector('#total-price').innerHTML = `€ ${totalPrice.toFixed(2)}`
-    }
+        function remove(id) {
+            request('/cart/remove', 'DELETE', {
+                'id': id,
+            }).then((result) => {
+                setCounter(result.amount);
+            })
 
-    const decrementButtons = document.querySelectorAll('button[data-action="decrement"]')
-    const incrementButtons = document.querySelectorAll('button[data-action="increment"]')
-
-    decrementButtons.forEach(btn => btn.addEventListener('click', (e) => change(e, -1)))
-    incrementButtons.forEach(btn => btn.addEventListener('click', (e) => change(e, +1)))
-
-    function change(e, change) {
-        const b = e.target.parentNode.parentElement.querySelector('button[data-action="decrement"]')
-        const t = b.nextElementSibling
-        let val = Number(t.value)
-
-        if (val <= 0 && change <= 0) return
-
-        t.value = val += change
-        calculatePrice()
-        request('/cart/change-product-amount', 'PUT', {
-            'id': b.value,
-            'amount': t.value,
-        }).then((result) => {
-            setCounter(result.amount);
-        })
-    }
-
-    function remove(id) {
-        request('/cart/remove', 'DELETE', {
-            'id': id,
-        }).then((result) => {
-            setCounter(result.amount);
-        })
-
-        document.querySelector(`#row-${id}`).remove()
-        calculatePrice()
-    }
-</script>
+            document.querySelector(`#row-${id}`).remove()
+            calculatePrice()
+        }
+    </script>
