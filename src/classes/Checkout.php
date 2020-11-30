@@ -171,7 +171,8 @@ class Checkout
         $totalitems = array_sum($_SESSION['cart']);
         $totalchilleritems = 0;
 
-        $dateToday = date("d/m/Y") . " " .date("h:i:sa");
+        $dateToday = date("d/m/Y") . " " . date("h:i:sa");
+        $datetodayonly = date("d/m/Y");
         $deliveryInstructions = $form['postcode'] . " " . $form['housenmr'];
 
         //check new orderID
@@ -180,7 +181,7 @@ class Checkout
         // create new invoice id
         $invoiceIDMAX = DB::execute('SELECT MAX(InvoiceID)+1 FROM Invoices'); //Creer hoogste invoice ID
 
- 
+
 
 
         //get info and send info of each product in cart
@@ -214,10 +215,10 @@ class Checkout
 
         //set varaibles
         $totaldryitems = $totalitems - $totalchilleritems;
-
+        $setInvoiceDetails = DB::execute($GLOBALS['q']['set-invoice-details'], [$invoiceIDMAX, $id, $id, $orderIDMax, $delivery,$datetodayonly ,$totaldryitems,$totalchilleritems ,$dateToday]);
         $setPeopleInfo = DB::execute($GLOBALS['q']['set-people-info'], [$fullname, $email, $phonenumber, $dateToday]);
         $setPeopleAddress = DB::execute($GLOBALS['q']['set-people-address'], [$id, $deliveryInstructions]);
-        $setOrderInfo = DB::execute($GLOBALS['q']['set-order-info'], [$orderIDMax, $id, $dateToday, $dateToday]);
+        $setOrderInfo = DB::execute($GLOBALS['q']['set-order-info'], [$orderIDMax, $id, $dateToday, $datetodayonly]);
 
         //add user to db
         $user = DB::execute('SELECT * FROM people WHERE EmailAddress = "?"', [$email]);
