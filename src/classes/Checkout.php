@@ -194,6 +194,9 @@ class Checkout
        $orderIDMax= DB::execute('SELECT MAX(OrderID)+1 FROM Orders', [$key]); //Creer hoogste order ID
        $checkOrderID = DB::execute('SELECT MAX(OrderID) FROM Orders ', [$key]); //Haalt de orderID op van de nety geplaatste bestelling
 
+       // create new invoice id
+       $invoiceIDMAX = DB::execute('SELECT MAX(InvoiceID)+1 FROM Invoices', [$key]); //Creer hoogste invoice ID
+
 
         //set varaibles
         $totaldryitems = $totalitems - $totalchilleritems;
