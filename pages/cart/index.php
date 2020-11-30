@@ -91,7 +91,7 @@
                     </div>
                     <div class="p-4 grid grid-cols-3 gap-4">
                         <input class="col-span-2 appearance-none block w-full text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-gray-100 focus:border-gray-600" id="tel" type="text">
-                        <a href="/cart" class="flex justify-center w-full shadow bg-teal-400 hover:bg-teal-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button"><?php print $GLOBALS['t']['add'] ?></a>
+                        <a href="/cart" class="flex justify-center items-center w-full shadow bg-teal-400 hover:bg-teal-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button"><?php print $GLOBALS['t']['add'] ?></a>
                     </div>
                 </div>
                 <div class="lg:px-2 lg:w-1/2">
@@ -103,7 +103,7 @@
                             <div class="lg:px-4 lg:py-2 m-2 text-md lg:text-s font-bold text-center text-gray-800">
                                 <?php print $GLOBALS['t']['shipping-costs'] ?>
                             </div>
-                            <div class="lg:px-4 lg:py-2 m-2 lg:text-s font-bold text-center text-gray-900">
+                            <div id="shipping-costs" class="lg:px-4 lg:py-2 m-2 lg:text-s font-bold text-center text-gray-900">
                                 € 6.75
                             </div>
                         </div>
@@ -115,7 +115,7 @@
                             </div>
                         </div>
                         <a href="/checkout/login">
-                            <button class="flex justify-center w-full px-10 py-3 mt-6 font-medium text-white uppercase bg-green-400 rounded-full shadow item-center hover:bg-green-500 focus:shadow-outline focus:outline-none">
+                            <button class="flex justify-center w-full px-10 py-3 mt-6 font-medium text-white uppercase bg-green-400 rounded-full shadow item-center hover:bg-green-500 focus:shadow-outline focus:outline-none font-bold">
                                 <span class="ml-2 mt-5px"><?php print $GLOBALS['t']['payment'] ?></span>
                             </button>
                         </a>
@@ -131,8 +131,9 @@
 
     function calculatePrice() {
         const items = document.querySelectorAll('.cart-items')
+        const shippingCosts = document.querySelector('#shipping-costs')
+
         let totalPrice = 0
-        totalPrice += 6.75
 
         items.forEach(item => {
             const id = item.id.split('-')[1]
@@ -142,6 +143,16 @@
 
             document.querySelector(`#total-price-${id}`).innerHTML = `€ ${(price * qty).toFixed(2)}`
         })
+
+        if (totalPrice > 50) {
+            totalPrice += 6.75
+
+            shippingCosts.innerHTML = '6.75'
+        } else {
+            shippingCosts.innerHTML = '0.-'
+
+        }
+
 
         document.querySelector('#total-price').innerHTML = `€ ${totalPrice.toFixed(2)}`
     }
