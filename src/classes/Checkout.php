@@ -148,6 +148,7 @@ class Checkout
 
     public static function sendData()
     {
+        //set variables
         $form = $_SESSION['form'];
         $email = $form['email'];
         $fullname = $form['firstname'] . " " . $form['lastname'];
@@ -160,6 +161,7 @@ class Checkout
         $totalitems = array_sum($_SESSION['cart']);
         $totalchilleritems = 0;
 
+        //get info and send info of each product in cart
         foreach($_SESSION['Cart'] AS $key => $value){
             $productInfo = DB::execute($GLOBALS['q']['get-product-info'], [$key]);
             $itemname = $productInfo['Stockitemname'];
@@ -175,6 +177,7 @@ class Checkout
             }
         }
 
+        //set varaibles
         $totaldryitems = $totalitems - $totalchilleritems;
 
         $setPeopleInfo = DB::execute($GLOBALS['q']['set-people-info'], [$key]);
@@ -182,6 +185,7 @@ class Checkout
         $setDeliveryMethod = DB::execute($GLOBALS['q']['set-delivery-method'], [$key]);
         $setOrderInfo= DB::execute($GLOBALS['q']['set-order-info'], [$key]);
 
+        //add user to db
         $user = DB::execute('SELECT * FROM people WHERE EmailAddress = "?"', [$email]);
         if (empty($user)) {
             //send account informatie naar people tabel
@@ -189,6 +193,7 @@ class Checkout
             $id = $user['peopleId'];
         }
         
+        //add address to db
         $checkaddress = DB::execute('SELECT * FROM peopleaddress WHERE peopleid = ? AND zipcode = "?" AND housenmr = ?', [$id, $zipcode, $housenmr]);
         if (empty($checkaddress)) {
             //send address informatie naar peopleaddres table
