@@ -349,17 +349,17 @@ $GLOBALS['q'] = [
 
 //Querys voor dataopslaan kopen producten.
 
-    'get-product-info' => "SELECT Stockitemname, UnitpackageID, SearchDetails, Taxrate, RecommendedretailPrice FROM stockitems WHERE StockItemID = ? ",
+    'get-product-info' => "SELECT Stockitemname, UnitpackageID, SearchDetails, Taxrate, RecommendedRetailPrice FROM stockitems WHERE StockItemID = ? ",
     
     
-    'set-product-info' => "INSERT INTO Orderlines (Orderid, Stockitemid, Discription, Packagetypeid, Quantity, Unitprice, Taxrate, lasteditedwhen)
+    'set-product-info' => "INSERT INTO Orderlines (Orderid, Stockitemid, Discription, Packagetypeid, Quantity, Unitprice, Taxrate, lastEditedWhen)
     VALUES (23890, 1, 'Mug', 7, 2, 25, 6,'25-11-2020 12:00:00')",
     
     
-    'set-people-info' => "INSERT INTO People(peopleid, Fullname, email, Phonenumber, Validfrom , ValidTo)
+    'set-people-info' => "INSERT INTO People(PeopleID, Fullname, Email, Phonenumber, Validfrom , ValidTo)
     VALUES (2873, 'Kahn Aksu', 'kahnaksu@hotmail.com', '0640259250', '9999-12-31 23:59:59', '2020-01-01 23:59:59')",
 
-    'set-people-address' => "INSERT INTO Peopleaddress (addressid, Peopleid, address)
+    'set-people-address' => "INSERT INTO Peopleaddress (AddressID, PeopleID, Address)
     VALUES (237, 2873, 'Willem dreeslaan 27')",
 
     'set-delivery-method' => "INSERT INTO invoices (DeliveryMethodID, Comments)
