@@ -344,5 +344,13 @@ $GLOBALS['q'] = [
         SELECT SS.StockGroupID 
         from stockitemstockgroups SS 
         WHERE SS.StockItemID = SI.StockItemID
-    )"
+    )",
+
+    'get-product-info' => "SELECT Stockitemname, UnitpackageID, SearchDetails, Taxrate, RecommendedretailPrice FROM stockitems WHERE StockItemID = ? ",
+    'send-product-info' => "INSERT INTO Orderlines (Orderid, Stockitemid, Discription, Packagetypeid, Quantity, Unitprice, Taxrate, lasteditedwhen)
+    VALUES (23890, 1, 'Mug', 7, 2, 25, 6,'25-11-2020 12:00:00')"
+
+
+
+
 ];
