@@ -161,6 +161,9 @@ class Checkout
         $totalitems = array_sum($_SESSION['cart']);
         $totalchilleritems = 0;
 
+        $dateToday = date("d/m/Y");
+        $deliveryInstructions = $form['postcode'] . " " . $form['housenmr'];
+
         //get info and send info of each product in cart
         foreach($_SESSION['Cart'] AS $key => $value){
             $productInfo = DB::execute($GLOBALS['q']['get-product-info'], [$key]);
@@ -176,6 +179,8 @@ class Checkout
                 $totalchilleritems += $value;
             }
         }
+
+       
 
         //set varaibles
         $totaldryitems = $totalitems - $totalchilleritems;
