@@ -29,9 +29,9 @@ class Pay
     {
         $mollie = new \Mollie\Api\MollieApiClient();
         $mollie->setApiKey("test_uGtVRSpdytPa7S86RVAzcT2SeAmc5C");
-        $payment = $_SESSION['payment_id'];
+        $payment_id = $_SESSION['payment_id'];
         try {
-            //$payment = $mollie->payments->get($payment->id);
+            $payment = $mollie->payments->get($payment_id);
             if ($payment->isPaid() && !$payment->hasRefunds() && !$payment->hasChargebacks()) {
 
                 return 'PAID';
@@ -41,31 +41,33 @@ class Pay
                 return 'OPEN';
 
             } elseif ($payment->isPending()) {
-                /*
-                 * The payment is pending.
-                 */
+
+                return 'PENDING';
+
             } elseif ($payment->isFailed()) {
-                /*
-                 * The payment has failed.
-                 */
+
+                return 'FAILED';
+
             } elseif ($payment->isExpired()) {
-                /*
-                 * The payment is expired.
-                 */
+
+                return 'EXPIRED';
+
             } elseif ($payment->isCanceled()) {
-                /*
-                 * The payment has been canceled.
-                 */
+
+                return 'CANCELED';
+
             } elseif ($payment->hasRefunds()) {
                 /*
                  * The payment has been (partially) refunded.
                  * The status of the payment is still "paid"
                  */
+                return 'REFUNDED';
             } elseif ($payment->hasChargebacks()) {
                 /*
                  * The payment has been (partially) charged back.
                  * The status of the payment is still "paid"
                  */
+                return 'CHARGEBACK';
             }
         } catch (\Mollie\Api\Exceptions\ApiException $e) {
             echo "API call failed: " . htmlspecialchars($e->getMessage());
