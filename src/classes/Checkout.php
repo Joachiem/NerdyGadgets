@@ -177,10 +177,10 @@ class Checkout
         $deliveryInstructions = $form['postcode'] . " " . $form['housenmr'];
 
         //check new orderID
-        $orderIDMax = DB::execute('SELECT MAX(OrderID)+1 FROM Orders'); //Creer hoogste order ID
+        $orderIDMax = DB::execute('SELECT MAX(OrderID)+1 AS orderid FROM Orders')[0]->orderid; //Creer hoogste order ID
 
         // create new invoice id
-        $invoiceIDMAX = DB::execute('SELECT MAX(InvoiceID)+1 FROM Invoices'); //Creer hoogste invoice ID
+        $invoiceIDMax = DB::execute('SELECT MAX(InvoiceID)+1 AS invoiceid FROM Invoices')[0]->invoiceid; //Creer hoogste invoice ID
         
         //add user to db
         $user = DB::execute('SELECT * FROM people WHERE EmailAddress = ?', [$email])[0];
@@ -201,37 +201,36 @@ class Checkout
         }
         //get info and send info of each product in cart
         foreach ($_SESSION['cart'] as $key => $value) {
-            $productInfo = DB::execute($GLOBALS['q']['get-product-info'], [$key]);
-            print_r($productInfo);
+            $productInfo = DB::execute($GLOBALS['q']['get-product-info'], [$key])[0];
             $itemname = $productInfo->Stockitemname;
-            $package = $productInfo->UnitPackageID;
-            $discription = $productInfo->SearchDetails;
-            $taxrate = $productInfo->TaxRate;
+            $package = $productInfo->UnitpackageID;
+            $description = $productInfo->SearchDetails;
+            $taxrate = $productInfo->Taxrate;
             $recommendedprice = $productInfo->RecommendedRetailPrice;
 
             //Total amount excluding tax
-            $totalpriceexcl = 'Quantity' * 'Unitprice';
+            $totalpriceexcl = $value * $recommendedprice;
 
             //Tax amount
-            $taxamount = ($totalpriceexcl * 'Taxrate') / 100;
+            $taxamount = ($totalpriceexcl * $taxrate) / 100;
 
             //Total amount including tax
             $totalpriceincl = $totalpriceexcl + $taxamount;
 
-            if ($productInfo['IsChillerStock'] === 1) {
+            if ($productInfo->IsChillerStock === 1) {
                 $totalchilleritems += $value;
             }
             
             //send order information to orderlines table
-            $setProductInfo = DB::execute($GLOBALS['q']['set-product-info'], [$orderIDMax, $key, $discription, $package, $value, $recommendedprice, $taxrate, $dateToday]);
+            $setProductInfo = DB::execute($GLOBALS['q']['set-product-info'], [$orderIDMax, $key, $description, $package, $value, $recommendedprice, $taxrate, $dateToday]);
 
             //send order information to invoicelines table
-            $setProductInfo = DB::execute($GLOBALS['q']['set-invoicelines-details'], [$invoiceIDMAX, $key, $discription, $package, $value, $recommendedprice, $taxrate, $taxamount, $totalpriceincl, $dateToday]);
+            $setProductInfo = DB::execute($GLOBALS['q']['set-invoicelines-details'], [$invoiceIDMax, $key, $description, $package, $value, $recommendedprice, $taxrate, $taxamount, $totalpriceincl, $dateToday]);
         }
 
         $totaldryitems = $totalitems - $totalchilleritems;
 
-        $setInvoiceDetails = DB::execute($GLOBALS['q']['set-invoice-details'], [$invoiceIDMAX, $id, $id, $orderIDMax, $delivery,$datetodayonly ,$totaldryitems,$totalchilleritems ,$dateToday]);
+        $setInvoiceDetails = DB::execute($GLOBALS['q']['set-invoice-details'], [$invoiceIDMax, $id, $id, $orderIDMax, $delivery,$datetodayonly ,$totaldryitems,$totalchilleritems ,$dateToday]);
         $setOrderInfo = DB::execute($GLOBALS['q']['set-order-info'], [$orderIDMax, $id, $dateToday, $datetodayonly]);
     }
 }
