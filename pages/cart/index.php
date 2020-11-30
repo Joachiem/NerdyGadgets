@@ -140,7 +140,7 @@
 <script>
     document.addEventListener('DOMContentLoaded', () => getDiscount());
 
-    const freeText = <?php print($GLOBALS['t']['free']); ?>
+    const freeText = '<?php print($GLOBALS['t']['free']); ?>'
 
     const addDiscountBtn = document.querySelector('#add-discount')
     const removeDiscountBtn = document.querySelector('#remove-discount')
@@ -250,7 +250,7 @@
             shippingCost.innerHTML = freeText
         } else {
             totalPrice += 6.75
-            shippingCost.innerHTML = '6.75'
+            shippingCost.innerHTML = '€ 6.75'
         }
 
         document.querySelector('#total-price').innerHTML = `€ ${totalPrice.toFixed(2)}`
