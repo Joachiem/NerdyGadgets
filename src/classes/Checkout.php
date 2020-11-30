@@ -9,8 +9,10 @@ class Checkout
 
     public static function storeUserInfo()
     {
+        //check if submit button has been pressed
         if (!isset($_POST["submit"])) return;
 
+        //save old data and merge new data
         $data = $_POST;
         unset($data['submit']);
         if (empty($_SESSION['form'])) {
@@ -19,6 +21,7 @@ class Checkout
             $_SESSION['form'] = array_merge($_SESSION['form'], $data);
         }
 
+        //generate error messages
         unset($_SESSION['form']['error_messages']);
         $error_messages = [];
         $form_fields = [
@@ -40,6 +43,7 @@ class Checkout
             Route::redirect('/checkout/account', '/checkout/account');
         }
 
+        //delete old error messages
         unset($_SESSION['form']['error_messages']);
 
         Route::redirect('/checkout/account', '/checkout/address');
@@ -48,12 +52,15 @@ class Checkout
 
     public static function storeShippingInfo()
     {
+        //check if submit button has been pressed
         if (!isset($_POST["submit"])) return;
 
+        //save old data and merge new data
         $data = $_POST;
         unset($data['submit']);
         $_SESSION['form'] = array_merge($_SESSION['form'], $data);
 
+        //generate error messages
         unset($_SESSION['form']['error_messages']);
         $error_messages = [];
         $form_fields = [
@@ -69,14 +76,14 @@ class Checkout
                     $error_messages[$form_field] = $error;
                 }
             }
-
             $_SESSION['form']['error_messages'] = $error_messages;
-
+            
             Route::redirect('/checkout/address', '/checkout/address');
         } else {
             print_r($_SESSION['form']);
         }
 
+        //delete old error messages
         unset($_SESSION['form']['error_messages']);
 
         Route::redirect('/checkout/address', '/checkout/pay');
@@ -84,7 +91,8 @@ class Checkout
 
 
     public static function checkAccountInfo()
-    {
+    {   
+        //check if info is not empty
         $form = $_SESSION['form'];
         if (isset($form)) {
 
@@ -98,6 +106,7 @@ class Checkout
 
     public static function checkaddressInfo()
     {
+        //check if info is not empty
         $form = $_SESSION['form'];
         if (isset($form)) {
 
@@ -112,6 +121,7 @@ class Checkout
 
     public static function noItemsInCart()
     {   
+        //test if there are items in cart and redirect if necessery 
         if (!isset($_SESSION['cart']) || empty($_SESSION['cart']) || array_sum($_SESSION['cart']) < 1) {
             Route::redirect('/checkout/address', '/cart');
             Route::redirect('/checkout/account', '/cart');
