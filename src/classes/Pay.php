@@ -18,7 +18,7 @@ class Pay
                     "order_id" => $ordernr,
                 ],
             ]);
-            
+            $_SESSION['payment_id'] = $payment->id;
             header("Location: " . $payment->getCheckoutUrl(), true, 303);
         } catch (\Mollie\Api\Exceptions\ApiException $e) {
             return "API call failed: " . htmlspecialchars($e->getMessage());
@@ -27,17 +27,19 @@ class Pay
 
     public static function checkPayment()
     {
+        $mollie = new \Mollie\Api\MollieApiClient();
+        $mollie->setApiKey("test_uGtVRSpdytPa7S86RVAzcT2SeAmc5C");
+        $payment = $_SESSION['payment_id'];
         try {
-            $payment = $mollie->payments->get($payment->id);
+            //$payment = $mollie->payments->get($payment->id);
             if ($payment->isPaid() && !$payment->hasRefunds() && !$payment->hasChargebacks()) {
-                /*
-                 * The payment is paid and isn't refunded or charged back.
-                 * At this point you'd probably want to start the process of delivering the product to the customer.
-                 */
+
+                return 'PAID';
+
             } elseif ($payment->isOpen()) {
-                /*
-                 * The payment is open.
-                 */
+
+                return 'OPEN';
+
             } elseif ($payment->isPending()) {
                 /*
                  * The payment is pending.
