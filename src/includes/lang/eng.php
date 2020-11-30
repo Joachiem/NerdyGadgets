@@ -15,6 +15,12 @@ $GLOBALS['t'] = [
     'cookie-alert-message' => 'Learn more about privacy on our privacy page',
     'add-alert-title' => 'Product Added',
     'add-alert-message' => 'The product has been added to the shoppingcart',
+    'discount-error-alert-title' => 'Not valid',
+    'discount-error-alert-message' => 'This code is not valid or does not exist',
+    'discount-ok-alert-title' => 'Code added',
+    'discount-ok-alert-message' => 'This code hass been added to your shoppingcard',
+    'discount-remove-alert-title' => 'Code removed',
+    'discount-remove-alert-message' => 'This code has been removed',
 
     //Frontpage
     'salepoint-1' => 'Reliable and Fast',
@@ -68,7 +74,7 @@ $GLOBALS['t'] = [
     '' => '',
 
     // cart
-    'shipping-costs' => 'Shipping costs',
+    'shipping-cost' => 'Shipping costs',
     'order-details' => 'Order details',
     'total-price' => 'Total price',
     'payment' => 'Payment',
@@ -76,6 +82,7 @@ $GLOBALS['t'] = [
     'no-products' => 'There are no items in your shopping cart yet :(',
     'ppp' => 'Price per piece',
     'amount' => 'Amount',
+    'discount' => 'Discount',
     'free' => 'Free',
     '' => '',
 
@@ -120,6 +127,11 @@ $GLOBALS['t'] = [
     'continue-guest' => 'Continue as a guest',
     'password' => 'Password',
     'no-account' => 'I dont have an account',
+
+
+
+
+
     'pay' => 'Pay',
     'mollie' => 'All our payments take place at Mollie, after payment you will be automatically returned to this site.',
 

@@ -15,6 +15,12 @@ $GLOBALS['t'] = [
     'cookie-alert-message' => 'Leer meer over de privacy op onze privacy pagina',
     'add-alert-title' => 'Product Toegevoegd',
     'add-alert-message' => 'Het product is toegevoegd aan het winkelmandje',
+    'discount-error-alert-title' => 'Niet geldig',
+    'discount-error-alert-message' => 'Deze code is niet geldig of bestaat niet',
+    'discount-ok-alert-title' => 'Code toegevoegd',
+    'discount-ok-alert-message' => 'Deze code is toegevoegd aan uw winkelmandje',
+    'discount-remove-alert-title' => 'Code verwijderd',
+    'discount-remove-alert-message' => 'Deze code is verwijderd',
 
     //Frontpage
     'salepoint-1' => 'Betrouwbaar en Snel',
@@ -68,7 +74,7 @@ $GLOBALS['t'] = [
     '' => '',
 
     // cart
-    'shipping-costs' => 'Verzendkosten',
+    'shipping-cost' => 'Verzendkosten',
     'order-details' => 'Bestelgegevens',
     'total-price' => 'Totaalprijs',
     'payment' => 'Afrekenen',
@@ -76,6 +82,7 @@ $GLOBALS['t'] = [
     'no-products' => 'Er staan nog geen artikelen in je winkelmandje :(',
     'ppp' => 'Prijs per stuk',
     'amount' => 'Aantal',
+    'discount' => 'Korting',
     'free' => 'Gratis',
     '' => '',
 
