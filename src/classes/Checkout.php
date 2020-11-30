@@ -171,7 +171,7 @@ class Checkout
         $totalitems = array_sum($_SESSION['cart']);
         $totalchilleritems = 0;
 
-        $dateToday = date("d/m/Y");
+        $dateToday = date("d/m/Y") . " " .date("h:i:sa");
         $deliveryInstructions = $form['postcode'] . " " . $form['housenmr'];
 
         //check new orderID
@@ -179,6 +179,9 @@ class Checkout
 
         // create new invoice id
         $invoiceIDMAX = DB::execute('SELECT MAX(InvoiceID)+1 FROM Invoices'); //Creer hoogste invoice ID
+
+ 
+
 
         //get info and send info of each product in cart
         foreach ($_SESSION['Cart'] as $key => $value) {
@@ -203,19 +206,18 @@ class Checkout
             }
 
             //send order information to orderlines table
-            $setProductInfo = DB::execute($GLOBALS['q']['set-product-info'], [$key]);
+            $setProductInfo = DB::execute($GLOBALS['q']['set-product-info'], [$orderIDMax, $key, $discription, $package, $value, $recommendedprice, $taxrate, $dateToday]);
 
             //send order information to invoicelines table
-            $setProductInfo = DB::execute($GLOBALS['q']['set-invoicelines-details'], [$key]);
+            $setProductInfo = DB::execute($GLOBALS['q']['set-invoicelines-details'], [$invoiceIDMAX, $key, $discription, $package, $value, $recommendedprice, $taxrate, $taxamount, $totalpriceincl, $dateToday]);
         }
 
         //set varaibles
         $totaldryitems = $totalitems - $totalchilleritems;
 
-        $setPeopleInfo = DB::execute($GLOBALS['q']['set-people-info'], [$key]);
-        $setPeopleAddress = DB::execute($GLOBALS['q']['set-people-address'], [$key]);
-        $setDeliveryMethod = DB::execute($GLOBALS['q']['set-delivery-method'], [$key]);
-        $setOrderInfo = DB::execute($GLOBALS['q']['set-order-info'], [$key]);
+        $setPeopleInfo = DB::execute($GLOBALS['q']['set-people-info'], [$fullname, $email, $phonenumber, $dateToday]);
+        $setPeopleAddress = DB::execute($GLOBALS['q']['set-people-address'], [$id, $deliveryInstructions]);
+        $setOrderInfo = DB::execute($GLOBALS['q']['set-order-info'], [$orderIDMax, $id, $dateToday, $dateToday]);
 
         //add user to db
         $user = DB::execute('SELECT * FROM people WHERE EmailAddress = "?"', [$email]);
