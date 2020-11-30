@@ -17,12 +17,12 @@ $GLOBALS['t'] = [
     'add-alert-message' => 'The product has been added to the shoppingcart',
 
     //Frontpage
-    'salepoint-1' => 'Reliable en Fast',
+    'salepoint-1' => 'Reliable and Fast',
     'salepoint-2' => 'Free shipping above 50 euro',
     'salepoint-3' => 'Order today = Recieve tomorrow',
     'salepoint-4' => 'Free returns',
     'populair' => 'Populair',
-    'catogories' => 'Catagories',
+    'catogories' => 'Categories',
     'products' => 'Products',
 
     //Navbar
@@ -117,7 +117,7 @@ $GLOBALS['t'] = [
     'payment-done' => 'Your purchase is complete!',
     'quantity' => 'Quantity',
     'price' => 'Price',
-    'continue-guest' => 'Continue as guest',
+    'continue-guest' => 'Continue as a guest',
     'password' => 'Password',
     'no-account' => 'I dont have an account',
     'pay' => 'Pay',
