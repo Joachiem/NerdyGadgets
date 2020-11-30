@@ -91,6 +91,9 @@ Route::put('/cart/decrement', function () {
 Route::put('/cart/change-product-amount', function () {
     Cart::changeProductAmount();
 });
+Route::post('/cart/discount', function () {
+    Cart::getDiscount();
+});
 Route::post('/cart/discount/add', function () {
     Cart::addDiscount();
 });

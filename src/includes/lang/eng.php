@@ -14,6 +14,12 @@ $GLOBALS['t'] = [
     'cookie-alert-message' => 'Learn more about privacy on our privacy page',
     'add-alert-title' => 'Product Added',
     'add-alert-message' => 'The product has been added to the shoppingcart',
+    'discount-error-alert-title' => 'Not valid',
+    'discount-error-alert-message' => 'This code is not valid or does not exist',
+    'discount-ok-alert-title' => 'Code added',
+    'discount-ok-alert-message' => 'This code hass been added to your shoppingcard',
+    'discount-remove-alert-title' => 'Code removed',
+    'discount-remove-alert-message' => 'This code has been removed',
 
     //Frontpage
     'salepoint-1' => 'Reliable en Fast',
@@ -75,7 +81,7 @@ $GLOBALS['t'] = [
     'no-products' => 'There are no items in your shopping cart yet :(',
     'ppp' => 'Price per piece',
     'amount' => 'Amount',
-    '' => '',
+    'discount' => 'Discount',
 
     // categorys
     'Novelty Items' => 'Novelty Items',
@@ -119,7 +125,7 @@ $GLOBALS['t'] = [
     'password' => 'Password',
     'no-account' => 'I dont have an account',
 
-    
+
 
 
 
