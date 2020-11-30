@@ -90,8 +90,12 @@
                         <h1 class="ml-2 font-bold uppercase"><?php print $GLOBALS['t']['discount-code'] ?></h1>
                     </div>
                     <div class="p-4 grid grid-cols-3 gap-4">
-                        <input class="col-span-2 appearance-none block w-full text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-gray-100 focus:border-gray-600" id="tel" type="text">
-                        <a href="/cart" class="flex justify-center items-center w-full shadow bg-teal-400 hover:bg-teal-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button"><?php print $GLOBALS['t']['add'] ?></a>
+                        <input id="discount-input" class="col-span-2 appearance-none block w-full text-gray-700 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-gray-100 focus:border-gray-600" id="tel" type="text">
+                        <a id="add-discount" class="flex justify-center items-center w-full shadow bg-teal-400 hover:bg-teal-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button"><?php print $GLOBALS['t']['add'] ?></a>
+                    </div>
+                    <div id="discount-container" class="p-4 grid grid-cols-3 gap-4 items-center hidden">
+                        <span id="discount-code" class="col-span-2"></span>
+                        <a id="remove-discount" class="flex justify-center items-center w-full shadow bg-red-400 hover:bg-red-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button">Verwijderen</a>
                     </div>
                 </div>
                 <div class="lg:px-2 lg:w-1/2">
@@ -127,6 +131,34 @@
 </div>
 
 <script>
+    const addDiscountBtn = document.querySelector('#add-discount')
+    const removeDiscountBtn = document.querySelector('#remove-discount')
+    const discountCode = document.querySelector('#discount-code')
+    const discountContainer = document.querySelector('#discount-container')
+    const discountInput = document.querySelector('#discount-input')
+
+    addDiscountBtn.addEventListener('click', addDiscount)
+    removeDiscountBtn.addEventListener('click', removeDiscount)
+
+    function addDiscount() {
+        request('/cart/discount/add', 'POST', {
+            'value': discountInput.value,
+        }).then((result) => {
+            discountCode.innerHTML = result.code
+            console.log(discountContainer)
+            discountContainer.classList.remove('hidden')
+        })
+    }
+
+    function removeDiscount(e) {
+        request('/cart/discount/remove', 'DELETE', {}).then((result) => {
+            discountContainer.classList.add('hidden')
+        })
+    }
+
+
+
+
     calculatePrice()
 
     function calculatePrice() {
@@ -144,15 +176,12 @@
             document.querySelector(`#total-price-${id}`).innerHTML = `€ ${(price * qty).toFixed(2)}`
         })
 
-        if (totalPrice > 50) {
-            totalPrice += 6.75
-
-            shippingCosts.innerHTML = '6.75'
-        } else {
+        if (totalPrice === 0 || totalPrice >= 50) {
             shippingCosts.innerHTML = '0.-'
-
+        } else {
+            totalPrice += 6.75
+            shippingCosts.innerHTML = '6.75'
         }
-
 
         document.querySelector('#total-price').innerHTML = `€ ${totalPrice.toFixed(2)}`
     }

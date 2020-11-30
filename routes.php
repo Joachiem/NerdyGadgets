@@ -91,6 +91,14 @@ Route::put('/cart/decrement', function () {
 Route::put('/cart/change-product-amount', function () {
     Cart::changeProductAmount();
 });
+Route::post('/cart/discount/add', function () {
+    Cart::addDiscount();
+});
+Route::delete('/cart/discount/remove', function () {
+    Cart::removeDiscount();
+});
+
+
 
 
 //contact tos privacy
