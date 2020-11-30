@@ -135,157 +135,158 @@
             </div>
         </div>
     </div>
+</div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', () => getDiscount());
+<script>
+    document.addEventListener('DOMContentLoaded', () => getDiscount());
 
-        const freeText = <?php print($GLOBALS['t']['free']); ?>
+    const freeText = <?php print($GLOBALS['t']['free']); ?>
 
-        const addDiscountBtn = document.querySelector('#add-discount')
-        const removeDiscountBtn = document.querySelector('#remove-discount')
-        const discountAddContainer = document.querySelector('#discount-add-container')
-        const discountCodeAddContainer = document.querySelector('#discount-code-add-container')
+    const addDiscountBtn = document.querySelector('#add-discount')
+    const removeDiscountBtn = document.querySelector('#remove-discount')
+    const discountAddContainer = document.querySelector('#discount-add-container')
+    const discountCodeAddContainer = document.querySelector('#discount-code-add-container')
 
-        const discountCode = document.querySelector('#discount-code')
-        const discountInput = document.querySelector('#discount-input')
+    const discountCode = document.querySelector('#discount-code')
+    const discountInput = document.querySelector('#discount-input')
 
-        const discountContainer = document.querySelector('#discount-container')
-        const discountAmmount = document.querySelector('#discount-ammount')
+    const discountContainer = document.querySelector('#discount-container')
+    const discountAmmount = document.querySelector('#discount-ammount')
 
-        let discount = 0
+    let discount = 0
 
-        addDiscountBtn.addEventListener('click', addDiscount)
-        removeDiscountBtn.addEventListener('click', removeDiscount)
+    addDiscountBtn.addEventListener('click', addDiscount)
+    removeDiscountBtn.addEventListener('click', removeDiscount)
 
 
-        function getDiscount() {
-            request('/cart/discount', 'POST', {}).then((result) => {
-                if (result['discount']) {
-                    discountCode.innerHTML = `${result['discount'].discount} %`
-                    discountAddContainer.classList.remove('hidden')
-                    discountCodeAddContainer.classList.add('hidden')
-                    discount = result['discount'].discount * 0.01
-                }
+    function getDiscount() {
+        request('/cart/discount', 'POST', {}).then((result) => {
+            if (result['discount']) {
+                discountCode.innerHTML = `${result['discount'].discount} %`
+                discountAddContainer.classList.remove('hidden')
+                discountCodeAddContainer.classList.add('hidden')
+                discount = result['discount'].discount * 0.01
+            }
 
-                calculatePrice()
-            })
+            calculatePrice()
+        })
+    }
+
+    function addDiscount() {
+        request('/cart/discount/add', 'POST', {
+            'value': discountInput.value,
+        }).then((result) => {
+            if (result['discount']) {
+                discountCode.innerHTML = `${result['discount'].discount} %`
+                discountAddContainer.classList.remove('hidden')
+                discountCodeAddContainer.classList.add('hidden')
+                discount = result['discount'].discount * 0.01
+            } else {
+                new Alert({
+                    title: result.title,
+                    message: result.message,
+                    time: 2000
+                })
+            }
+
+            if (result.alert) {
+                new Alert({
+                    title: result.alert.title,
+                    message: result.alert.message,
+                    time: 2000
+                })
+            }
+
+            calculatePrice()
+        })
+    }
+
+    function removeDiscount(e) {
+        request('/cart/discount/remove', 'DELETE', {}).then((result) => {
+            discountAddContainer.classList.add('hidden')
+            discountCodeAddContainer.classList.remove('hidden')
+            discount = 0
+
+            if (result.alert) {
+                new Alert({
+                    title: result.alert.title,
+                    message: result.alert.message,
+                    time: 2000
+                })
+            }
+            calculatePrice()
+        })
+    }
+
+
+    calculatePrice()
+
+    function calculatePrice() {
+        const items = document.querySelectorAll('.cart-items')
+        const shippingCost = document.querySelector('#shipping-cost')
+
+        let totalPrice = 0
+
+        items.forEach(item => {
+            const id = item.id.split('-')[1]
+            const qty = document.querySelector(`#qty-${id}`).value
+            const price = document.querySelector(`#price-${id}`).innerHTML
+            totalPrice += price * qty
+
+            document.querySelector(`#total-price-${id}`).innerHTML = `€ ${(price * qty).toFixed(2)}`
+        })
+
+        if (discount > 0) {
+            discountContainer.classList.remove('hidden')
+
+            discountAmmount.innerHTML = `€ ${(totalPrice * discount).toFixed(2)}`
+
+            totalPrice -= totalPrice * discount
+        } else {
+            discountContainer.classList.add('hidden')
         }
 
-        function addDiscount() {
-            request('/cart/discount/add', 'POST', {
-                'value': discountInput.value,
-            }).then((result) => {
-                if (result['discount']) {
-                    discountCode.innerHTML = `${result['discount'].discount} %`
-                    discountAddContainer.classList.remove('hidden')
-                    discountCodeAddContainer.classList.add('hidden')
-                    discount = result['discount'].discount * 0.01
-                } else {
-                    new Alert({
-                        title: result.title,
-                        message: result.message,
-                        time: 2000
-                    })
-                }
-
-                if (result.alert) {
-                    new Alert({
-                        title: result.alert.title,
-                        message: result.alert.message,
-                        time: 2000
-                    })
-                }
-
-                calculatePrice()
-            })
+        if (totalPrice === 0 || totalPrice >= 50) {
+            shippingCost.innerHTML = freeText
+        } else {
+            totalPrice += 6.75
+            shippingCost.innerHTML = '6.75'
         }
 
-        function removeDiscount(e) {
-            request('/cart/discount/remove', 'DELETE', {}).then((result) => {
-                discountAddContainer.classList.add('hidden')
-                discountCodeAddContainer.classList.remove('hidden')
-                discount = 0
+        document.querySelector('#total-price').innerHTML = `€ ${totalPrice.toFixed(2)}`
+    }
 
-                if (result.alert) {
-                    new Alert({
-                        title: result.alert.title,
-                        message: result.alert.message,
-                        time: 2000
-                    })
-                }
-                calculatePrice()
-            })
-        }
+    const decrementButtons = document.querySelectorAll('button[data-action="decrement"]')
+    const incrementButtons = document.querySelectorAll('button[data-action="increment"]')
 
+    decrementButtons.forEach(btn => btn.addEventListener('click', (e) => change(e, -1)))
+    incrementButtons.forEach(btn => btn.addEventListener('click', (e) => change(e, +1)))
 
+    function change(e, change) {
+        const b = e.target.parentNode.parentElement.querySelector('button[data-action="decrement"]')
+        const t = b.nextElementSibling
+        let val = Number(t.value)
+
+        if (val <= 0 && change <= 0) return
+
+        t.value = val += change
         calculatePrice()
+        request('/cart/change-product-amount', 'PUT', {
+            'id': b.value,
+            'amount': t.value,
+        }).then((result) => {
+            setCounter(result.amount);
+        })
+    }
 
-        function calculatePrice() {
-            const items = document.querySelectorAll('.cart-items')
-            const shippingCost = document.querySelector('#shipping-cost')
+    function remove(id) {
+        request('/cart/remove', 'DELETE', {
+            'id': id,
+        }).then((result) => {
+            setCounter(result.amount);
+        })
 
-            let totalPrice = 0
-
-            items.forEach(item => {
-                const id = item.id.split('-')[1]
-                const qty = document.querySelector(`#qty-${id}`).value
-                const price = document.querySelector(`#price-${id}`).innerHTML
-                totalPrice += price * qty
-
-                document.querySelector(`#total-price-${id}`).innerHTML = `€ ${(price * qty).toFixed(2)}`
-            })
-
-            if (discount > 0) {
-                discountContainer.classList.remove('hidden')
-
-                discountAmmount.innerHTML = `€ ${(totalPrice * discount).toFixed(2)}`
-
-                totalPrice -= totalPrice * discount
-            } else {
-                discountContainer.classList.add('hidden')
-            }
-
-            if (totalPrice === 0 || totalPrice >= 50) {
-                shippingCost.innerHTML = freeText
-            } else {
-                totalPrice += 6.75
-                shippingCost.innerHTML = '6.75'
-            }
-
-            document.querySelector('#total-price').innerHTML = `€ ${totalPrice.toFixed(2)}`
-        }
-
-        const decrementButtons = document.querySelectorAll('button[data-action="decrement"]')
-        const incrementButtons = document.querySelectorAll('button[data-action="increment"]')
-
-        decrementButtons.forEach(btn => btn.addEventListener('click', (e) => change(e, -1)))
-        incrementButtons.forEach(btn => btn.addEventListener('click', (e) => change(e, +1)))
-
-        function change(e, change) {
-            const b = e.target.parentNode.parentElement.querySelector('button[data-action="decrement"]')
-            const t = b.nextElementSibling
-            let val = Number(t.value)
-
-            if (val <= 0 && change <= 0) return
-
-            t.value = val += change
-            calculatePrice()
-            request('/cart/change-product-amount', 'PUT', {
-                'id': b.value,
-                'amount': t.value,
-            }).then((result) => {
-                setCounter(result.amount);
-            })
-        }
-
-        function remove(id) {
-            request('/cart/remove', 'DELETE', {
-                'id': id,
-            }).then((result) => {
-                setCounter(result.amount);
-            })
-
-            document.querySelector(`#row-${id}`).remove()
-            calculatePrice()
-        }
-    </script>
+        document.querySelector(`#row-${id}`).remove()
+        calculatePrice()
+    }
+</script>
