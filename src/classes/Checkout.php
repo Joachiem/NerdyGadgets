@@ -186,7 +186,6 @@ class Checkout
 
         //check new orderID
         $orderIDMax = DB::execute('SELECT MAX(OrderID)+1 FROM Orders', [$key]); //Creer hoogste order ID
-        $checkOrderID = DB::execute('SELECT MAX(OrderID) FROM Orders ', [$key]); //Haalt de orderID op van de nety geplaatste bestelling
 
         // create new invoice id
         $invoiceIDMAX = DB::execute('SELECT MAX(InvoiceID)+1 FROM Invoices', [$key]); //Creer hoogste invoice ID
@@ -200,11 +199,14 @@ class Checkout
             $taxrate = $productInfo['Taxrate'];
             $recommendedprice = $productInfo['RecommendedretailPrice'];
 
-            $setProductInfo = DB::execute($GLOBALS['q']['set-product-info'], [$key]);
-
             if ($productInfo['IsChillerStock'] === 1) {
                 $totalchilleritems += $value;
             }
+
+            //send order information to orderlines table
+            $setProductInfo = DB::execute($GLOBALS['q']['set-product-info'], [$key]);
+
+            //send order information to invoicelines table
         }
 
 
@@ -219,7 +221,7 @@ class Checkout
         //add user to db
         $user = DB::execute('SELECT * FROM people WHERE EmailAddress = "?"', [$email]);
         if (empty($user)) {
-            //send account informatie naar people tabel
+            //send account information to people table
         } else {
             $id = $user['peopleId'];
         }
@@ -227,7 +229,7 @@ class Checkout
         //add address to db
         $checkaddress = DB::execute('SELECT * FROM peopleaddress WHERE peopleid = ? AND zipcode = "?" AND housenmr = ?', [$id, $zipcode, $housenmr]);
         if (empty($checkaddress)) {
-            //send address informatie naar peopleaddres table
+            //send address information to peopleaddres table
         }
     }
 }
