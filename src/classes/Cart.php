@@ -24,6 +24,30 @@ class Cart
         View::show('cart/index', $products);
     }
 
+    public static function totalPrice()
+    {
+        if (isset($_SESSION['cart'])) {
+            $cart_products = $_SESSION['cart'];
+
+            $ids = implode(', ', array_keys($cart_products));
+        }
+
+        if (empty($ids)) return View::show('cart/index');
+
+        $products = DB::execute($GLOBALS['q']['products'], [], [$ids]);
+
+        $amount = 0;
+        foreach ($products as $product) {
+            $product->qty = $cart_products[$product->StockItemID];
+            $amount = $amount + (sprintf("%.2f", $product->SellPrice) * $product->qty);
+        }
+
+        // Als bedrag onder €50, dan vereken ook verzendkosten!
+        if ($amount < 50) {
+            $amount = $amount + 6.75;
+        }
+        return $amount;
+    }
 
     /**
      * increment cart item
