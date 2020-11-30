@@ -191,8 +191,8 @@ class Checkout
         }
 
        //check new orderID
-       $orderIDMax= DB::execute('SELECT MAX(OrderID)+1 FROM Orders', [$key]);
-       $checkOrderID = DB::execute('SELECT MAX(OrderID) FROM Orders ', [$key]);
+       $orderIDMax= DB::execute('SELECT MAX(OrderID)+1 FROM Orders', [$key]); //Creer hoogste order ID
+       $checkOrderID = DB::execute('SELECT MAX(OrderID) FROM Orders ', [$key]); //Haalt de orderID op van de nety geplaatste bestelling
 
 
         //set varaibles
