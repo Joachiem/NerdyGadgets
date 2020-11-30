@@ -30,6 +30,13 @@
                         </label>
                         <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
                                name="password" id="password" type="password" placeholder="******************">
+
+                        <?php if (isset($_SESSION["registerfail"]) === TRUE) { ?>
+
+                            <p class="text-red-500 text-xs italic"></p>
+
+                        <?php } ?>
+
                     </div>
                     <div class="flex md:items-center justify-between">
                         <input class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"

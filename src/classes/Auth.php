@@ -49,6 +49,8 @@ class Auth
             $_SESSION["loginfail"] = false;
             $_SESSION['user'] = array('id' => $result->PersonID, 'naam' => $result->FullName);
             Route::redirect('/profile');
-        }
-    }
+        } 
+    } 
 }
+
+

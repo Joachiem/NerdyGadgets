@@ -1,7 +1,7 @@
 <?php
 
 $GLOBALS['t'] = [
-    'username' => 'username',
+    'username' => 'Username',
     'lastname' => 'Lastname',
     'firstname' => 'Firstname',
     'quantity-on-hand' => 'Stock',
