@@ -127,6 +127,7 @@ $GLOBALS['t'] = [
     'repeatpassword' => 'Repeat password',
     'register' => 'Register',
     'emailorpasswordwrong' => 'E-mail or password are wrong!',
+    'nameoremailorpasswordwrong' => 'Username or E-mail or password are wrong!',
     'forgotpassword' => 'Forgot password?',
     'signin' => 'Sign in',
     'toggle-visibility' => 'Toggle password visibility',

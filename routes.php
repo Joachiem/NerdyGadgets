@@ -31,7 +31,7 @@ Route::get('/profile', function () {
     View::show('user/profile');
 });
 Route::post('/register', function () {
-    View::show('user/profile');
+    Auth::register();
 });
 
 

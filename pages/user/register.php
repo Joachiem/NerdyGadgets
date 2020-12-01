@@ -25,6 +25,15 @@
                             <?php print $GLOBALS['t']['toggle-visibility'] ?>
                         </button>
                     </div>
+                    <div class="mb-6">
+
+                        <?php if (isset($_SESSION['register']["loginfail"]) === TRUE) { ?>
+
+                            <p class="text-red-500 text-xs italic"><?php print $GLOBALS['t']['nameoremailorpasswordwrong'] ?></p>
+
+                        <?php } ?>
+
+                    </div>
                     <div class="flex md:items-center justify-between">
                         <input class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" name="submit" type="submit" value=<?php print $GLOBALS['t']['register'] ?>>
                     </div>

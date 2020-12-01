@@ -344,5 +344,35 @@ $GLOBALS['q'] = [
         SELECT SS.StockGroupID 
         from stockitemstockgroups SS 
         WHERE SS.StockItemID = SI.StockItemID
+    )",
+
+
+
+    'register' => "INSERT INTO people 
+
+    (
+        FullName,
+        EmailAddress,
+        HashedPassword,
+        PreferredName,
+        SearchName,
+        IsExternalLogonProvider,
+        IsPermittedToLogon,
+        IsSystemUser,
+        IsEmployee,
+        IsSalesperson,
+        LastEditedBy,
+        ValidFrom,
+        ValidTo
+    )
+           
+    VALUES 
+    (
+        ?, ?, ?, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, ?
     )"
+
+
+
+
+
 ];

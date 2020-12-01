@@ -127,6 +127,7 @@ $GLOBALS['t'] = [
     'repeatpassword' => 'Wachtwoord herhalen',
     'register' => 'Registreren',
     'emailorpasswordwrong' => 'E-mail of wachtwoord zijn verkeerd!',
+    'nameoremailorpasswordwrong' => 'Gebruikersnaam of E-mail of wachtwoord zijn verkeerd!',
     'forgotpassword' => 'Wachtwoord vergeten?',
     'signin' => 'Inloggen',
     'toggle-visibility' => 'Wachtwoord verbergen/tonen',
