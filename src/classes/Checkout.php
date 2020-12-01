@@ -112,7 +112,7 @@ class Checkout
 
     public static function noItemsInCart()
     {
-        if (!isset($_SESSION['cart'])) {
+        if (!isset($_SESSION['cart']['products'])) {
             Route::redirect('/checkout/address', '/cart');
             Route::redirect('/checkout/account', '/cart');
             Route::redirect('/checkout/loginorguest', '/cart');
@@ -124,8 +124,8 @@ class Checkout
         $arg = [];
         $images = '';
 
-        if (isset($_SESSION['cart'])) {
-            $products = $_SESSION['cart'];
+        if (isset($_SESSION['cart']['products'])) {
+            $products = $_SESSION['cart']['products'];
 
             $arg = [];
 

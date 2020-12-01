@@ -348,29 +348,28 @@ $GLOBALS['q'] = [
 
 
 
-    'register' => "INSERT INTO people 
-
+    'register' => "INSERT INTO People
     (
         FullName,
-        EmailAddress,
-        HashedPassword,
         PreferredName,
         SearchName,
-        IsExternalLogonProvider,
+        HashedPassword,
         IsPermittedToLogon,
+        IsExternalLogonProvider,
         IsSystemUser,
         IsEmployee,
-        IsSalesperson,
+        IsSalesPerson,
+        EmailAddress,
+
         LastEditedBy,
         ValidFrom,
         ValidTo
     )
-           
+
     VALUES 
     (
-        ?, ?, ?, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, ?
-    )"
-
+        ?, ?, ?, ?, 1, 1, 1, 0, 0, ?, 1, ?, '9999-12-31 23:59:59'
+    )",
 
 
 
