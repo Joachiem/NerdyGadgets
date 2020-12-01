@@ -68,19 +68,16 @@
     </div>
 </div>
 
-<!-- 
-<div class= "flex justify-center" >
-   </div> -->
 
 <div class="flex justify-center">
-    <div class="overflow-hidden rounded-lg shadow-lg mb-8 max-w-xl">
-
+    <div class="overflow-hidden rounded-lg shadow-lg mb-8 max-w-4xl">
         <div class="leading-tight p-2 md:p-4 bg-white">
-            <form class="w-full max-w-lg">
-                <div class="flex justify-center pb-4">
-                    <img class="rounded object-cover" id="logo" draggable="false" src="/public/img/logo.svg" />
+            <form class="w-full max-w-4xl">
+                <div class="flex justify-center p-4">
+                    <img class=" img rounded p-2 object-cover" id="logo" draggable="false" src="/public/img/logo.svg" />
+
                 </div>
-                <div class="justify-around text-xl flex w-full flex-wrap mb-6">
+                <div class="justify-around text-2xl pd-4 font-bold flex w-full flex-wrap mb-6">
                     <h2><?php print $GLOBALS['t']['payment-done'] ?></h2>
                 </div>
                 <div>
@@ -88,8 +85,8 @@
                         <thead>
                             <tr class="h-12 uppercase">
                                 <th class=" md:table-cell"></th>
-                                <th class="text-left"><?php print $GLOBALS['t']['products'] ?></th>
-                                <th class="text-left pl-5 lg:pl-0">
+                                <th class="text-right"><?php print $GLOBALS['t']['products'] ?></th>
+                                <th class="text-right pl-5 lg:pl-0">
                                     <span class="lg:hidden" title="Quantity">Ant.</span>
                                     <span class="hidden lg:inline"><?php print $GLOBALS['t']['quantity'] ?></span>
                                 </th>
@@ -104,14 +101,14 @@
 
                                 <tr class="cart-items" id="row-<?php print $id; ?>">
                                     <td class="pb-4 md:table-cell">
-                                        <img src="/public/StockItemIMG/<?php print $Images[0]->ImagePath; ?>" class="w-20 p-1 rounded" alt="Thumbnail">
+                                        <img src="/public/StockItemIMG/<?php print $Images[0]->ImagePath; ?>" class="w-20 rounded" alt="Thumbnail">
                                     </td>
-                                    <td class= "text-center">
+                                    <td class="pb-4 md:table-cell text-right">
                                         <a href="/products/view?id=<?php print $id; ?>">
-                                            <p class="mb-2 md:ml-4"><?php print $Result[0]->StockItemName; ?></p>
+                                            <p class="mb-2 text-right md:ml-4"><?php print $Result[0]->StockItemName; ?></p>
                                         </a>
                                     </td>
-                                    <td class=" pb-4 md:table-cell"><?php print($product_obj['qty']) ?></td>
+                                    <td class=" pb-4 text-right md:table-cell"><?php print($product_obj['qty']) ?></td>
                                     <td class=" text-right md:table-cell">
                                         <span class="text-sm lg:text-base font-medium"> €
                                             <span id="price-<?php print($id) ?>">
@@ -120,7 +117,19 @@
                                         </span>
                                     </td>
                                 </tr>
-                            <?php } ?>
+                                <?php } ?>`
+                                <tr>
+                                    <td></td>
+                                    <td></td>
+                                    <td class="pb-4 text-right h-12 uppercase font-bold text-color-green md:table-cell "> <?php print $GLOBALS['t']['total-price'] ?></td>
+                                    <td class=" text-right md:table-cell"> 
+                                        <span class="text-sm lg:text-base font-medium"> €
+                                            <span id="price-<?php print($id) ?>">
+                                                <?php print sprintf("%.2f", $Result[0]->SellPrice); ?>
+                                            </span>
+                                        </span>
+                                    </td>
+                                </tr>
                         </tbody>
                     </table>
                 </div>
@@ -131,3 +140,9 @@
         </div>
     </div>
 </div>
+
+<style>
+    .img {
+        background-color: #1E0253;
+    }
+</style>
