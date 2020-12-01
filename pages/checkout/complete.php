@@ -94,8 +94,10 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <?php $totaalprijs = 0; ?>
                             <?php foreach ($arg as $id => $product_obj) { ?>
 
+                            
                                 <?php $Images = $product_obj['images'] ?>
                                 <?php $Result = $product_obj['product'] ?>
 
@@ -112,20 +114,21 @@
                                     <td class=" text-right md:table-cell">
                                         <span class="text-sm lg:text-base font-medium"> €
                                             <span id="price-<?php print($id) ?>">
-                                                <?php print sprintf("%.2f", $Result[0]->SellPrice); ?>
+                                                <?php print sprintf("%.2f", ($Result[0]->SellPrice*$product_obj['qty'])); ?>
+                                                <?php $totaalprijs+= ($Result[0]->SellPrice*$product_obj['qty']);?>
                                             </span>
                                         </span>
                                     </td>
                                 </tr>
                                 <?php } ?>`
-                                <tr>
+                                <tr class= "">
                                     <td></td>
                                     <td></td>
-                                    <td class="pb-4 text-right h-12 uppercase font-bold text-color-green md:table-cell "> <?php print $GLOBALS['t']['total-price'] ?></td>
-                                    <td class=" text-right md:table-cell"> 
+                                    <td class=" align-text-center text-right h-12 uppercase font-bold md:table-cell "> <?php print $GLOBALS['t']['total-price'] ?></td>
+                                    <td class=" text-right align-text-center md:table-cell"> 
                                         <span class="text-sm lg:text-base font-medium"> €
                                             <span id="price-<?php print($id) ?>">
-                                                <?php print sprintf("%.2f", $Result[0]->SellPrice); ?>
+                                                <?php print round($totaalprijs,2) ?>
                                             </span>
                                         </span>
                                     </td>
@@ -133,7 +136,7 @@
                         </tbody>
                     </table>
                 </div>
-                <div class="flex md:items-center justify-around">
+                <div class="flex pt-10 md:items-center justify-around">
                     <a href="/" class="shadow bg-teal-400 hover:bg-teal-500 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="button"><?php print $GLOBALS['t']['continue'] ?></a>
                 </div>
             </form>
