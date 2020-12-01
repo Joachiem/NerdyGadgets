@@ -1,6 +1,7 @@
 <?php
 
 $GLOBALS['t'] = [
+    'username' => 'username',
     'lastname' => 'Lastname',
     'firstname' => 'Firstname',
     'quantity-on-hand' => 'Stock',
@@ -13,15 +14,21 @@ $GLOBALS['t'] = [
     'cookie-alert-title' => 'We use functional cookies',
     'cookie-alert-message' => 'Learn more about privacy on our privacy page',
     'add-alert-title' => 'Product Added',
-    'add-alert-message' => 'The product has been added to the shoppingcart',
+    'add-alert-message' => 'The product has been added to the shopping cart',
+    'discount-error-alert-title' => 'Not valid',
+    'discount-error-alert-message' => 'This code is not valid or does not exist',
+    'discount-ok-alert-title' => 'Code added',
+    'discount-ok-alert-message' => 'This code has been added to your shopping cart',
+    'discount-remove-alert-title' => 'Code removed',
+    'discount-remove-alert-message' => 'This code has been removed',
 
     //Frontpage
-    'salepoint-1' => 'Reliable en Fast',
+    'salepoint-1' => 'Reliable and Fast',
     'salepoint-2' => 'Free shipping above 50 euro',
     'salepoint-3' => 'Order today = Recieve tomorrow',
     'salepoint-4' => 'Free returns',
     'populair' => 'Populair',
-    'catogories' => 'Catagories',
+    'catogories' => 'Categories',
     'products' => 'Products',
 
     //Navbar
@@ -67,7 +74,7 @@ $GLOBALS['t'] = [
     '' => '',
 
     // cart
-    'shipping-costs' => 'Shipping costs',
+    'shipping-cost' => 'Shipping costs',
     'order-details' => 'Order details',
     'total-price' => 'Total price',
     'payment' => 'Payment',
@@ -75,6 +82,8 @@ $GLOBALS['t'] = [
     'no-products' => 'There are no items in your shopping cart yet :(',
     'ppp' => 'Price per piece',
     'amount' => 'Amount',
+    'discount' => 'Discount',
+    'free' => 'Free',
     '' => '',
 
     // categorys
@@ -104,8 +113,8 @@ $GLOBALS['t'] = [
     'information' => 'Information',
     'payment' => 'Payment',
     'overview' => 'Overview',
-    'email' => 'E-mailaddress',
-    'phonenumber' => 'Phonenumber',
+    'email' => 'E-mail address',
+    'phonenumber' => 'Phone number',
     'back' => 'Back',
     'continue' => 'Continue',
     'zip' => 'Zipcode',
@@ -115,12 +124,21 @@ $GLOBALS['t'] = [
     'payment-done' => 'Your purchase is complete!',
     'quantity' => 'Quantity',
     'price' => 'Price',
-    'continue-guest' => 'Continue as guest',
+    'continue-guest' => 'Continue as a guest',
     'password' => 'Password',
     'no-account' => 'I dont have an account',
 
-    
 
 
 
+
+    'pay' => 'Pay',
+    'mollie' => 'All our payments take place at Mollie, after payment you will be automatically returned to this site.',
+
+    //Register
+    'repeatpassword' => 'Repeat password',
+    'register' => 'Register',
+    'emailorpasswordwrong' => 'E-mail or password are wrong!',
+    'forgotpassword' => 'Forgot password?',
+    'signin' => 'Sign in',
 ];

@@ -6,6 +6,8 @@
  */
 session_start();
 
+require_once 'vendor/autoload.php';
+
 
 /**
  * load all classes from src/classes/
