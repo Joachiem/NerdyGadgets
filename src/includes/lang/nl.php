@@ -38,7 +38,7 @@ $GLOBALS['t'] = [
     'navbar-language-title' => 'English',
     'navbar-log-in' => 'Inloggen',
     'navbar-search' => 'Zoeken!',
-    '' => '',
+    'navbar-profile' => 'Account',
 
     //product-index
     'product-index-num-product' => 'Producten per pagina',
