@@ -1,4 +1,3 @@
 <?php
-print($_SESSION['test']);
-print("hi");
+print("Welcome to your profile");
 ?>
