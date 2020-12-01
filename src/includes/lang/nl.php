@@ -84,6 +84,7 @@ $GLOBALS['t'] = [
     'amount' => 'Aantal',
     'discount' => 'Korting',
     'free' => 'Gratis',
+    'product-delete' => 'Verwijder product',
     '' => '',
 
     // categorys

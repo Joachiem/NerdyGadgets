@@ -37,7 +37,7 @@
             <?php if (isset($product->DiscountPrice)) {?>
 
                 <div class="w-full bg-red-600 text-center">
-                    <h5 class="text-white font-bold">Christmass Sale</h5>
+                    <h5 class="text-white font-bold">Christmas Sale</h5>
                 </div>
 
             <?php } ?>
