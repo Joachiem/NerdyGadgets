@@ -62,27 +62,22 @@ class Auth
      */
     public static function register()
     {
-        if (empty($_POST["username"]) || empty($_POST["email"]) || empty($_POST["password"])) {
-            $_SESSION['register']["loginfail"] = true;
+        $_SESSION['register']["loginfail"] = true;
 
-            return Route::redirect('/register');
-        }
-
+        if (empty($_POST["username"]) || empty($_POST["email"]) || empty($_POST["password"])) return Route::redirect('/register');
 
         //hashing password
         $hashed_password = hash("sha256", $_POST["password"] . 'y80HoN9I');
 
-        $result = DB::execute($GLOBALS['q']['register'], [$_POST['username'], $_POST['email'], $hashed_password, date("d/m/Y") . " " . date("h:i:sa")]);
+        $u = $_POST['username'];
+        $result = DB::execute('select PersonId from People where EmailAddress = ?', [$_POST['email']]);
 
-        return print_r($result);
-        //check if email and password are correct
-        if (empty($result)) {
-            $_SESSION["registerfail"] = true;
-            Route::redirect('/register');
-        } else {
-            $_SESSION["registerfail"] = false;
-            $_SESSION['user'] = array('naam' => $result->FullName, 'email' => $result->EmailAddress);
-            Route::redirect('/profile');
-        }
+        if (isset($result[0]->PersonId)) return Route::redirect('/register');
+
+        DB::execute($GLOBALS['q']['register'], [$u, $u, $u, $hashed_password, $_POST['email'], date("d/m/Y h:i:sa")]);
+
+        unset($_SESSION['register']["loginfail"]);
+
+        return Route::redirect('/profile');
     }
 }
