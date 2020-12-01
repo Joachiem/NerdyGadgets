@@ -1,7 +1,7 @@
 <?php
 
 $GLOBALS['t'] = [
-    'username' => 'gebruikersnaam',
+    'username' => 'Gebruikersnaam',
     'lastname' => 'Achternaam',
     'firstname' => 'Voornaam',
     'quantity-on-hand' => 'Voorraad',
@@ -12,15 +12,21 @@ $GLOBALS['t'] = [
 
     // alerts
     'cookie-alert-title' => 'Wij gebruiken functionele cookies',
-    'cookie-alert-message' => 'Leer meer over de privacy op onze privacy pagina',
+    'cookie-alert-message' => 'Leer meer over jouw privacy op onze privacy pagina',
     'add-alert-title' => 'Product Toegevoegd',
     'add-alert-message' => 'Het product is toegevoegd aan het winkelmandje',
+    'discount-error-alert-title' => 'Niet geldig',
+    'discount-error-alert-message' => 'Deze code is niet geldig of bestaat niet',
+    'discount-ok-alert-title' => 'Code toegevoegd',
+    'discount-ok-alert-message' => 'Deze code is toegevoegd aan uw winkelmandje',
+    'discount-remove-alert-title' => 'Code verwijderd',
+    'discount-remove-alert-message' => 'Deze code is verwijderd',
 
     //Frontpage
     'salepoint-1' => 'Betrouwbaar en Snel',
     'salepoint-2' => 'Gratis levering boven de 50 euro',
     'salepoint-3' => 'Vandaag besteld = Morgen in huis',
-    'salepoint-4' => 'Gratis retouneren',
+    'salepoint-4' => 'Gratis retourneren',
     'populair' => 'Populair',
     'catogories' => 'Categorieën',
     'products' => 'Producten',
@@ -68,7 +74,7 @@ $GLOBALS['t'] = [
     '' => '',
 
     // cart
-    'shipping-costs' => 'Verzendkosten',
+    'shipping-cost' => 'Verzendkosten',
     'order-details' => 'Bestelgegevens',
     'total-price' => 'Totaalprijs',
     'payment' => 'Afrekenen',
@@ -76,6 +82,7 @@ $GLOBALS['t'] = [
     'no-products' => 'Er staan nog geen artikelen in je winkelmandje :(',
     'ppp' => 'Prijs per stuk',
     'amount' => 'Aantal',
+    'discount' => 'Korting',
     'free' => 'Gratis',
     '' => '',
 
@@ -126,7 +133,7 @@ $GLOBALS['t'] = [
     //Register
     'repeatpassword' => 'Wachtwoord herhalen',
     'register' => 'Registreren',
-    'emailorpasswordwrong' => 'E-mail of wachtwoord zijn verkeerd!',
+    'emailorpasswordwrong' => 'E-mail en/of wachtwoord zijn onjuist!',
     'forgotpassword' => 'Wachtwoord vergeten?',
     'signin' => 'Inloggen',
 ];

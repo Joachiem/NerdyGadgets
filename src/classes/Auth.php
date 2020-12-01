@@ -36,6 +36,7 @@ class Auth
         unset($_SESSION['login']['error_messages']);
 
         //hashing password
+        
         $password = $_POST["password"] . "y80HoN9I";
         $hash = hash("sha256", $password);
         $email = $_POST["email"];

@@ -1,7 +1,7 @@
 <script>
     document.addEventListener('DOMContentLoaded', () => setCounter());
 
-    function setCounter(ammout = <?php print isset($_SESSION['cart']) ? array_sum($_SESSION['cart']) : 0 ?>) {
+    function setCounter(ammout = <?php print isset($_SESSION['cart']['products']) ? array_sum($_SESSION['cart']['products']) : 0 ?>) {
         let cartCounter = document.querySelector('#cart-counter')
 
         if (ammout > 0) {
