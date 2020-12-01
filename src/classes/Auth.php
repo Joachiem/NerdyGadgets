@@ -40,11 +40,11 @@ class Auth
         unset($_SESSION['login']['error_messages']);
 
         //hashing password
-        
+
         $password = $_POST["password"] . "y80HoN9I";
         $hash = hash("sha256", $password);
         $email = $_POST["email"];
-        $result = DB::execute('select PersonID, FullName, EmailAddress, HashedPassword from people where EmailAddress = "?" AND HashedPassword = "?"', [$email, $hash]);
+        $result = DB::execute('select PersonID, FullName, EmailAddress, HashedPassword from people where EmailAddress = ? AND HashedPassword = ?', [$email, $hash]);
 
         //check if email and password are correct
         if (empty($result)) {
@@ -52,7 +52,7 @@ class Auth
             Route::redirect('/login');
         } else {
             $_SESSION["loginfail"] = false;
-            $_SESSION['user'] = array('id' => $result->PersonID, 'naam' => $result->FullName);
+            $_SESSION['user'] = array('id' => $result[0]->PersonID, 'naam' => $result[0]->FullName);
             Route::redirect('/profile');
         }
     }
@@ -68,7 +68,9 @@ class Auth
         if (empty($_POST["username"]) || empty($_POST["email"]) || empty($_POST["password"])) return Route::redirect('/register');
 
         //hashing password
-        $hashed_password = hash("sha256", $_POST["password"] . 'y80HoN9I');
+        $password = $_POST["password"] . "y80HoN9I";
+
+        $hashed_password = hash("sha256", $password);
 
         $u = $_POST['username'];
         $result = DB::execute('select PersonId from People where EmailAddress = ?', [$_POST['email']]);
@@ -79,6 +81,19 @@ class Auth
 
         unset($_SESSION['register']["loginfail"]);
 
+        self::login();
+
         return Route::redirect('/profile');
+    }
+
+
+    /**
+     * register
+     */
+    public static function logout()
+    {
+        $_SESSION['user'] = [];
+
+        return Route::redirect('/');
     }
 }

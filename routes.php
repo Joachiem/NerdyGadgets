@@ -33,7 +33,9 @@ Route::get('/profile', function () {
 Route::post('/register', function () {
     Auth::register();
 });
-
+Route::post('/logout', function () {
+    Auth::logout();
+});
 
 // language
 Route::get('/dutch', function () {
