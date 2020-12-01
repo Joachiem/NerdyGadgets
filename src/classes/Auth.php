@@ -44,7 +44,7 @@ class Auth
         $password = $_POST["password"] . "y80HoN9I";
         $hash = hash("sha256", $password);
         $email = $_POST["email"];
-        $result = DB::execute('select PersonID, FullName, EmailAddress, HashedPassword from people where EmailAddress = ? AND HashedPassword = ?', [$email, $hash]);
+        $result = DB::execute('select PersonID, FullName, EmailAddress from people where EmailAddress = ? AND HashedPassword = ?', [$email, $hash]);
 
         //check if email and password are correct
         if (empty($result)) {
@@ -52,7 +52,7 @@ class Auth
             Route::redirect('/login');
         } else {
             $_SESSION["loginfail"] = false;
-            $_SESSION['user'] = array('id' => $result[0]->PersonID, 'naam' => $result[0]->FullName);
+            $_SESSION['user'] = $result[0];
             Route::redirect('/profile');
         }
     }
