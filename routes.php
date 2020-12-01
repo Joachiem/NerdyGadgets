@@ -23,6 +23,10 @@ Route::get('/login', function () {
     View::show('user/login');
 });
 
+//user
+Route::get('/user/history', function () {
+    User::history();
+});
 
 // language
 Route::get('/dutch', function () {
