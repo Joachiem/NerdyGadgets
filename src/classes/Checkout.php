@@ -157,6 +157,7 @@ class Checkout
 
     public static function sendData()
     {
+        echo "<pre>";
         //set variables
         $form = $_SESSION['form'];
         $email = $form['email'];
@@ -187,6 +188,7 @@ class Checkout
             $setPeopleInfo = DB::execute($GLOBALS['q']['set-people-info'], [$fullname, $email, $phonenumber, $dateToday]);
             $user = DB::execute('SELECT PersonID FROM people WHERE EmailAddress = ?', [$email])[0];
             $id = $user->PersonID;
+            $setCustomerInfo = DB::execute($GLOBALS['q']['set-customer-info'], [$id, $fullname, $id, $id, $datetodayonly, $phonenumber, $deliveryInstructions, $zipcode, $deliveryInstructions, $zipcode, $dateToday]);
         } else {
             $id = $user->PersonID;
         }
@@ -197,8 +199,23 @@ class Checkout
             //send address information to peopleaddres table
             $setPeopleAddress = DB::execute($GLOBALS['q']['set-people-address'], [$id, $zipcode, $housenmr]);
         }
+        
+        //get chiller items
+        foreach ($_SESSION['cart']['products'] as $key => $value) {
+            $productInfo = DB::execute($GLOBALS['q']['get-product-info'], [$key])[0];
+
+            if ($productInfo->IsChillerStock === 1) {
+                $totalchilleritems += $value;
+            }
+        }
+        
+        $totaldryitems = $totalitems - $totalchilleritems;
+
+        $setOrderInfo = DB::execute($GLOBALS['q']['set-order-info'], [$orderIDMax, $id, $dateToday, $datetodayonly]);
+        $setInvoiceDetails = DB::execute($GLOBALS['q']['set-invoice-details'], [$invoiceIDMax, $id, $id, $orderIDMax, $datetodayonly ,$totaldryitems, $deliveryInstructions, $totalchilleritems, $dateToday]);
+
         //get info and send info of each product in cart
-        foreach ($_SESSION['cart'] as $key => $value) {
+        foreach ($_SESSION['cart']['products'] as $key => $value) {
             $productInfo = DB::execute($GLOBALS['q']['get-product-info'], [$key])[0];
             $itemname = $productInfo->Stockitemname;
             $package = $productInfo->UnitpackageID;
@@ -214,10 +231,6 @@ class Checkout
 
             //Total amount including tax
             $totalpriceincl = $totalpriceexcl + $taxamount;
-
-            if ($productInfo->IsChillerStock === 1) {
-                $totalchilleritems += $value;
-            }
             
             //send order information to orderlines table
             $setProductInfo = DB::execute($GLOBALS['q']['set-product-info'], [$orderIDMax, $key, $description, $package, $value, $recommendedprice, $taxrate, $dateToday]);
@@ -225,10 +238,5 @@ class Checkout
             //send order information to invoicelines table
             $setProductInfo = DB::execute($GLOBALS['q']['set-invoicelines-details'], [$invoiceIDMax, $key, $description, $package, $value, $recommendedprice, $taxrate, $taxamount, $totalpriceincl, $dateToday]);
         }
-
-        $totaldryitems = $totalitems - $totalchilleritems;
-
-        $setInvoiceDetails = DB::execute($GLOBALS['q']['set-invoice-details'], [$invoiceIDMax, $id, $id, $orderIDMax, $delivery,$datetodayonly ,$totaldryitems,$totalchilleritems ,$dateToday]);
-        $setOrderInfo = DB::execute($GLOBALS['q']['set-order-info'], [$orderIDMax, $id, $dateToday, $datetodayonly]);
     }
 }

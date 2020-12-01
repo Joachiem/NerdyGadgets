@@ -352,9 +352,12 @@ $GLOBALS['q'] = [
     'get-product-info' => "SELECT Stockitemname, UnitpackageID, SearchDetails, Taxrate, RecommendedRetailPrice, IsChillerStock FROM stockitems WHERE StockItemID = ? ",
     
     
-    'set-product-info' => "INSERT INTO Orderlines (OrderID, StockItemID, Description, PackageTypeID, Quantity, UnitPrice, TaxRate, PickedQuantity, LastEditedBy, LastEditedWhen)
-    VALUES (?, ?, ?, ?, ?, ?, 5, ?, 1, ?)",
+    'set-product-info' => "INSERT INTO Orderlines (OrderID, StockItemID, Description, PackageTypeID, Quantity, UnitPrice, TaxRate, PickedQuantity, PickingCompletedWhen, LastEditedBy, LastEditedWhen)
+    VALUES (?, ?, ?, ?, ?, ?, 5, ?, '', 1, ?)",
     
+    'set-customer-info' => "INSERT INTO Customers(CustomerID, CustomerName, BillToCustomerID, CustomerCategoryID, PrimaryContactPersonID, DeliveryMethodID, DeliveryCityID, PostalCityID, AccountOpenedDate, StandardDiscountPercentage, 
+    IsStatementSent, IsOnCreditHold, PaymentDays, PhoneNumber, FaxNumber, WebsiteURL, DeliveryAddressLine1, DeliveryPostalCode, PostalAddressLine1, PostalPostalCode, LastEditedBy, ValidFrom, ValidTo)
+    VALUES (?, ?, ?, 5, ?, 1, 1, 1, ?, 0, 1, 0, 0, ?, 0, '1', ?, ?, ?, ?, 1, ?, '9999-12-31 23:59:59')",
     
     'set-people-info' => "INSERT INTO People(FullName, PreferredName, SearchName, IsPermittedToLogon, IsExternalLogonProvider, IsSystemUser, IsEmployee, IsSalesPerson, EmailAddress, PhoneNumber, LastEditedBy, ValidFrom , ValidTo)
     VALUES (?, 'Rick', 'Roll', 1, 1, 1, 0, 0, ?, ?, 1, ?, '9999-12-31 23:59:59')",
@@ -362,11 +365,11 @@ $GLOBALS['q'] = [
     'set-people-address' => "INSERT INTO Peopleaddress (peopleid, zipcode, housenmr)
     VALUES (?, ?, ?)",
 
-    'set-order-info' => "INSERT INTO Orders (OrderID, CustomeriD, SalespersonPersonID, ContactPersonID, OrderDate, ExpectedDeliveryDate, IsUndersupplyBackordered, LastEditedBy, LastEditedWhen)
+    'set-order-info' => "INSERT INTO Orders (OrderID, CustomerID, SalespersonPersonID, ContactPersonID, OrderDate, ExpectedDeliveryDate, IsUndersupplyBackordered, LastEditedBy, LastEditedWhen)
     VALUES (?, ?, 5, 5, ?, '9999-12-31', 0, 5, ?)",
 
-    'set-invoice-details' => "INSERT INTO Invoices(InvoiceID, CustomerID, BillToCustomerID, OrderID, DeliveryMethodID, ContactPersonID, AccountsPersonID, SalespersonPersonID, PackedByPersonID, InvoiceDate, CustomerPurchaseOrderNumber, IsCreditNote, DeliveryInstructions, TotalDryItems, TotalChillerItems, LastEditedWhen, PaymentStatus)
-    VALUES (?, ?, ?, ?, ?, 5, 5, 5, 5,?, 0,?, ?, ?,?, 'Paid')",
+    'set-invoice-details' => "INSERT INTO Invoices(InvoiceID, CustomerID, BillToCustomerID, OrderID, DeliveryMethodID, ContactPersonID, AccountsPersonID, SalespersonPersonID, PackedByPersonID, InvoiceDate, CustomerPurchaseOrderNumber, IsCreditNote, DeliveryInstructions, TotalDryItems, TotalChillerItems, LastEditedBy, LastEditedWhen)
+    VALUES (?, ?, ?, ?, 1, 5, 5, 5, 5,?, 0, 0, ?, ?, ?, 1, ?)",
 
     'set-invoicelines-details' => "INSERT INTO invoicelines(InvoiceID, StockItemID, Description, PackageTypeID, Quantity, UnitPrice, TaxRate, TaxAmount, LineProfit, ExtendedPrice, LastEditedBy, LastEditedWhen)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, 555.55 , ?, 7 ,?)",
