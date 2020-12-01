@@ -41,7 +41,7 @@
                             <td>
                                 <div class="flex flex-col items-start">
                                     <a class="mb-1 font-semibold md:ml-4 " href="/products/view?id=<?php print $product->StockItemID ?>"><?php print $product->StockItemName ?></a>
-                                    <button class="text-red-400 text-sm md:ml-4" onclick="remove(<?php print($product->StockItemID) ?>)">Verwijder product
+                                    <button class="text-red-400 text-sm md:ml-4" onclick="remove(<?php print($product->StockItemID) ?>)"><?php print $GLOBALS['t']['product-delete'] ?>
                                     </button>
                                     <span class="text-gray-600 text-xs md:ml-4"><?php print $GLOBALS['t']['quantity-on-hand'] . ': ' . $product->QuantityOnHand ?></span>
                                 </div>
