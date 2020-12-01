@@ -129,4 +129,5 @@ $GLOBALS['t'] = [
     'emailorpasswordwrong' => 'E-mail or password are wrong!',
     'forgotpassword' => 'Forgot password?',
     'signin' => 'Sign in',
+    'toggle-visibility' => 'Toggle password visibility',
 ];

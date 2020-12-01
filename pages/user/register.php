@@ -20,9 +20,10 @@
                             <?php print $GLOBALS['t']['password'] ?>
                         </label>
                         <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline" name="password" id="password" type="password" placeholder="******************">
-                    </div>
-                    <div class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" onclick="toggleVisibility()">
-                        toggleVisibility
+
+                        <button type="button" class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" onclick="toggleVisibility()">
+                            <?php print $GLOBALS['t']['toggle-visibility'] ?>
+                        </button>
                     </div>
                     <div class="flex md:items-center justify-between">
                         <input class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" name="submit" type="submit" value=<?php print $GLOBALS['t']['register'] ?>>

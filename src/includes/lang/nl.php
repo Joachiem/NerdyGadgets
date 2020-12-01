@@ -129,4 +129,5 @@ $GLOBALS['t'] = [
     'emailorpasswordwrong' => 'E-mail of wachtwoord zijn verkeerd!',
     'forgotpassword' => 'Wachtwoord vergeten?',
     'signin' => 'Inloggen',
+    'toggle-visibility' => 'Wachtwoord verbergen/tonen',
 ];
