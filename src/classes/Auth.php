@@ -2,54 +2,73 @@
 
 class Auth
 {
+
+    /**
+     * login a user
+     * @return Route::redirect()
+     */
     public static function login()
     {
-        //old email gets saved/merged whith new email
-        $data = $_POST;
-        unset($data['submit']);
-        if (empty($_SESSION['login'])) {
-            $_SESSION['login'] = $data;
-        } else {
-            $_SESSION['login'] = array_merge($_SESSION['login'], $data);
-        }
+        $email = filter_var($_POST['email'], FILTER_SANITIZE_STRING);
+        $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
 
-        //generate errormessages when fields are empty
-        unset($_SESSION['login']['error_messages']);
-        $error_messages = [];
-        $login_fields = [
-            'email' => 'Email invullen',
-            'password' => 'Wachtwoord invullen'
-        ];
+        $_SESSION['login']['loginfail'] = true;
 
-        if (empty($_POST["email"]) || empty($_POST["password"])) {
-            foreach ($login_fields as $login_field => $error) {
-                if (empty($_POST[$login_field])) {
-                    $error_messages[$login_field] = $error;
-                }
-            }
-
-            $_SESSION['login']['error_messages'] = $error_messages;
-
-            Route::redirect('/login');
-        }
-        
-        unset($_SESSION['login']['error_messages']);
+        // check if email and password are filled
+        if (empty($email) || empty($password)) return Route::redirect('/login');
 
         //hashing password
-        
-        $password = $_POST["password"] . "y80HoN9I";
-        $hash = hash("sha256", $password);
-        $email = $_POST["email"];
-        $result = DB::execute('select PersonID, FullName, EmailAddress, HashedPassword from people where EmailAddress = "?" AND HashedPassword = "?"', [$email, $hash]);
+        $hashed_password = hash('sha256', $password . 'y80HoN9I');
+        $result = DB::execute('select PersonID, FullName, EmailAddress from people where EmailAddress = ? AND HashedPassword = ?', [$email, $hashed_password]);
 
         //check if email and password are correct
-        if (empty($result)) {
-            $_SESSION["loginfail"] = true;
-            Route::redirect('/login');
-        } else {
-            $_SESSION["loginfail"] = false;
-            $_SESSION['user'] = array('id' => $result->PersonID, 'naam' => $result->FullName);
-            Route::redirect('/profile');
-        }
+        if (empty($result)) return Route::redirect('/login');
+
+        unset($_SESSION['login']['loginfail']);
+        $_SESSION['user'] = $result[0];
+
+        return Route::redirect('/profile');
+    }
+
+
+    /**
+     * register a user and login the user
+     * @return Route::redirect()
+     */
+    public static function register()
+    {
+        $username = filter_var($_POST['username'], FILTER_SANITIZE_STRING);
+        $email = filter_var($_POST['email'], FILTER_SANITIZE_STRING);
+        $password = filter_var($_POST['password'], FILTER_SANITIZE_STRING);
+
+        $_SESSION['register']['loginfail'] = true;
+
+        if (empty($username) || empty($email) || empty($password)) return Route::redirect('/register');
+
+        //hashing password
+        $hashed_password = hash('sha256', $password . 'y80HoN9I');
+
+        // check if the email is alrady taken
+        $result = DB::execute('select PersonId from People where EmailAddress = ?', [$email]);
+        if (isset($result[0]->PersonId)) return Route::redirect('/register');
+
+        // add the person to the database
+        DB::execute($GLOBALS['q']['register'], [$username, $username, $username, $hashed_password, $email, date('d/m/Y h:i:sa')]);
+
+        unset($_SESSION['register']['loginfail']);
+
+        self::login();
+
+        return Route::redirect('/profile');
+    }
+
+
+    /**
+     * register
+     */
+    public static function logout()
+    {
+        unset($_SESSION['user']);
+        return Route::redirect('/');
     }
 }

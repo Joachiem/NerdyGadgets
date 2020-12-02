@@ -1,7 +1,7 @@
 <?php
 
 $GLOBALS['t'] = [
-    'username' => 'username',
+    'username' => 'Username',
     'lastname' => 'Lastname',
     'firstname' => 'Firstname',
     'quantity-on-hand' => 'Stock',
@@ -38,7 +38,7 @@ $GLOBALS['t'] = [
     'navbar-language-title' => 'Nederlands',
     'navbar-log-in' => 'Sign in',
     'navbar-search' => 'Search!',
-    '' => '',
+    'navbar-profile' => 'Profile',
 
     //product-index
     'product-index-num-product' => ' Products per page',
@@ -140,6 +140,8 @@ $GLOBALS['t'] = [
     'repeatpassword' => 'Repeat password',
     'register' => 'Register',
     'emailorpasswordwrong' => 'E-mail or password are wrong!',
+    'nameoremailorpasswordwrong' => 'Username or E-mail or password are wrong!',
     'forgotpassword' => 'Forgot password?',
     'signin' => 'Sign in',
+    'toggle-visibility' => 'Toggle password visibility',
 ];
