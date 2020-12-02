@@ -4,7 +4,6 @@ class Checkout
 {
     public static function paying()
     {
-        self::sendData();
         Pay::mollieCreate(Cart::totalPrice(), 1111);
     }
 
@@ -130,6 +129,17 @@ class Checkout
 
     public static function complete()
     {
+        $payment_id = $_SESSION['payment_id'];
+
+        try {
+            $payment = $mollie->payments->get($payment_id);
+            if ($payment->isPaid()) {
+                self::sendData();
+            }
+        } catch (\Mollie\Api\Exceptions\ApiException $e) {
+            echo "API call failed: " . htmlspecialchars($e->getMessage());
+        }
+
         $arg = [];
         $images = '';
 
