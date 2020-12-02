@@ -371,9 +371,7 @@ $GLOBALS['q'] = [
     'set-invoice-details' => "INSERT INTO Invoices(InvoiceID, CustomerID, BillToCustomerID, OrderID, DeliveryMethodID, ContactPersonID, AccountsPersonID, SalespersonPersonID, PackedByPersonID, InvoiceDate, CustomerPurchaseOrderNumber, IsCreditNote, DeliveryInstructions, TotalDryItems, TotalChillerItems, LastEditedBy, LastEditedWhen)
     VALUES (?, ?, ?, ?, 1, 5, 5, 5, 5, ?, 0, 0, ?, ?, ?, 1, ?)",
 
-    'set-invoicelines-details' => "INSERT INTO invoicelines(InvoiceID, StockItemID, Description, PackageTypeID, Quantity, UnitPrice, TaxRate, TaxAmount, LineProfit, ExtendedPrice, LastEditedBy, LastEditedWhen)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, 5, ?, 7 ,?)",
+    'set-invoicelines-details' => "INSERT INTO invoicelines(InvoiceLineID, InvoiceID, StockItemID, Description, PackageTypeID, Quantity, UnitPrice, TaxRate, TaxAmount, LineProfit, ExtendedPrice, LastEditedBy, LastEditedWhen)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 5, ?, 7 ,?)",
 
-
-    
 ];

@@ -210,9 +210,10 @@ class Checkout
         }
         
         $totaldryitems = $totalitems - $totalchilleritems;
+        echo $totaldryitems;
 
         $setOrderInfo = DB::execute($GLOBALS['q']['set-order-info'], [$orderIDMax, $id, $dateToday, $datetodayonly]);
-        $setInvoiceDetails = DB::execute($GLOBALS['q']['set-invoice-details'], [$invoiceIDMax, $id, $id, $orderIDMax, $datetodayonly ,$totaldryitems, $deliveryInstructions, $totalchilleritems, $dateToday]);
+        $setInvoiceDetails = DB::execute($GLOBALS['q']['set-invoice-details'], [$invoiceIDMax, $id, $id, $orderIDMax, $datetodayonly, $deliveryInstructions, $totaldryitems, $totalchilleritems, $dateToday]);
 
         //get info and send info of each product in cart
         foreach ($_SESSION['cart']['products'] as $key => $value) {
@@ -236,7 +237,8 @@ class Checkout
             $setProductInfo = DB::execute($GLOBALS['q']['set-product-info'], [$orderIDMax, $key, $description, $package, $value, $recommendedprice, $taxrate, $dateToday]);
 
             //send order information to invoicelines table
-            $setProductInfo = DB::execute($GLOBALS['q']['set-invoicelines-details'], [$invoiceIDMax, $key, $description, $package, $value, $recommendedprice, $taxrate, $taxamount, $totalpriceincl, $dateToday]);
+            $InvoiceLineIDMax = DB::execute('SELECT MAX(InvoiceLineID)+1 AS invoicelineid FROM invoicelines')[0]->invoicelineid; //Creer hoogste invoiceline ID
+            $setInvoiceInfo = DB::execute($GLOBALS['q']['set-invoicelines-details'], [$InvoiceLineIDMax, $invoiceIDMax, $key, $description, $package, $value, $recommendedprice, $taxrate, $taxamount, $totalpriceincl, $dateToday]);
         }
     }
 }
