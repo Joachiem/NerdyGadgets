@@ -180,7 +180,7 @@ class Checkout
 
         // create new invoice id
         $invoiceIDMax = DB::execute('SELECT MAX(InvoiceID)+1 AS invoiceid FROM Invoices')[0]->invoiceid; //Creer hoogste invoice ID
-        
+        echo $invoiceIDMax;
         //add user to db
         $user = DB::execute('SELECT * FROM people WHERE EmailAddress = ?', [$email])[0];
         if (empty($user)) {

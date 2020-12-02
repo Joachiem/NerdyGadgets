@@ -369,10 +369,10 @@ $GLOBALS['q'] = [
     VALUES (?, ?, 5, 5, ?, '9999-12-31', 0, 5, ?)",
 
     'set-invoice-details' => "INSERT INTO Invoices(InvoiceID, CustomerID, BillToCustomerID, OrderID, DeliveryMethodID, ContactPersonID, AccountsPersonID, SalespersonPersonID, PackedByPersonID, InvoiceDate, CustomerPurchaseOrderNumber, IsCreditNote, DeliveryInstructions, TotalDryItems, TotalChillerItems, LastEditedBy, LastEditedWhen)
-    VALUES (?, ?, ?, ?, 1, 5, 5, 5, 5,?, 0, 0, ?, ?, ?, 1, ?)",
+    VALUES (?, ?, ?, ?, 1, 5, 5, 5, 5, ?, 0, 0, ?, ?, ?, 1, ?)",
 
     'set-invoicelines-details' => "INSERT INTO invoicelines(InvoiceID, StockItemID, Description, PackageTypeID, Quantity, UnitPrice, TaxRate, TaxAmount, LineProfit, ExtendedPrice, LastEditedBy, LastEditedWhen)
-    VALUES (?, ?, ?, ?, ?, ?, ?, ?, 555.55 , ?, 7 ,?)",
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, 5, ?, 7 ,?)",
 
 
     
