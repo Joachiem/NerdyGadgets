@@ -374,4 +374,30 @@ $GLOBALS['q'] = [
     'set-invoicelines-details' => "INSERT INTO invoicelines(InvoiceLineID, InvoiceID, StockItemID, Description, PackageTypeID, Quantity, UnitPrice, TaxRate, TaxAmount, LineProfit, ExtendedPrice, LastEditedBy, LastEditedWhen)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 5, ?, 7 ,?)",
 
+    'register' => "INSERT INTO People
+    (
+        FullName,
+        PreferredName,
+        SearchName,
+        HashedPassword,
+        IsPermittedToLogon,
+        IsExternalLogonProvider,
+        IsSystemUser,
+        IsEmployee,
+        IsSalesPerson,
+        EmailAddress,
+
+        LastEditedBy,
+        ValidFrom,
+        ValidTo
+    )
+
+    VALUES 
+    (
+        ?, ?, ?, ?, 1, 1, 1, 0, 0, ?, 1, ?, '9999-12-31 23:59:59'
+    )",
+
+
+
+
 ];

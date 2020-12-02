@@ -38,7 +38,7 @@ $GLOBALS['t'] = [
     'navbar-language-title' => 'English',
     'navbar-log-in' => 'Inloggen',
     'navbar-search' => 'Zoeken!',
-    '' => '',
+    'navbar-profile' => 'Account',
 
     //product-index
     'product-index-num-product' => 'Producten per pagina',
@@ -84,6 +84,7 @@ $GLOBALS['t'] = [
     'amount' => 'Aantal',
     'discount' => 'Korting',
     'free' => 'Gratis',
+    'product-delete' => 'Verwijder product',
     '' => '',
 
     // categorys
@@ -134,6 +135,8 @@ $GLOBALS['t'] = [
     'repeatpassword' => 'Wachtwoord herhalen',
     'register' => 'Registreren',
     'emailorpasswordwrong' => 'E-mail en/of wachtwoord zijn onjuist!',
+    'nameoremailorpasswordwrong' => 'Gebruikersnaam of E-mail of wachtwoord zijn verkeerd!',
     'forgotpassword' => 'Wachtwoord vergeten?',
     'signin' => 'Inloggen',
+    'toggle-visibility' => 'Wachtwoord verbergen/tonen',
 ];

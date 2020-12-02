@@ -30,7 +30,12 @@ Route::post('/login', function () {
 Route::get('/profile', function () {
     View::show('user/profile');
 });
-
+Route::post('/register', function () {
+    Auth::register();
+});
+Route::post('/logout', function () {
+    Auth::logout();
+});
 
 // language
 Route::get('/dutch', function () {
