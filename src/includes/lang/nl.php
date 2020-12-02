@@ -139,4 +139,11 @@ $GLOBALS['t'] = [
     'forgotpassword' => 'Wachtwoord vergeten?',
     'signin' => 'Inloggen',
     'toggle-visibility' => 'Wachtwoord verbergen/tonen',
+
+    //Profile
+    'welcome' => 'Welkom',
+    'youremailis' => 'Jouw E-mail is',
+    'history' => 'Geschiedenis',
+    'logout' => 'Uitloggen',
+
 ];

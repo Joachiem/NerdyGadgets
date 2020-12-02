@@ -144,4 +144,10 @@ $GLOBALS['t'] = [
     'forgotpassword' => 'Forgot password?',
     'signin' => 'Sign in',
     'toggle-visibility' => 'Toggle password visibility',
+
+    //Profile
+    'welcome' => 'Welcome',
+    'youremailis' => 'Your E-mail is',
+    'history' => 'History',
+    'logout' => 'Logout',
 ];
