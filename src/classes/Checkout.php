@@ -185,7 +185,7 @@ class Checkout
         $user = DB::execute('SELECT * FROM people WHERE EmailAddress = ?', [$email])[0];
         if (empty($user)) {
             //send account information to people table
-            $setPeopleInfo = DB::execute($GLOBALS['q']['set-people-info'], [$fullname, $email, $phonenumber, $dateToday]);
+            $setPeopleInfo = DB::execute($GLOBALS['q']['set-people-info'], [$fullname, $fullname, $fullname, $email, $phonenumber, $dateToday]);
             $user = DB::execute('SELECT PersonID FROM people WHERE EmailAddress = ?', [$email])[0];
             $id = $user->PersonID;
             $setCustomerInfo = DB::execute($GLOBALS['q']['set-customer-info'], [$id, $fullname, $id, $id, $datetodayonly, $phonenumber, $deliveryInstructions, $zipcode, $deliveryInstructions, $zipcode, $dateToday]);
@@ -210,7 +210,7 @@ class Checkout
         }
         
         $totaldryitems = $totalitems - $totalchilleritems;
-
+        echo $id;
         $setOrderInfo = DB::execute($GLOBALS['q']['set-order-info'], [$orderIDMax, $id, $dateToday, $datetodayonly]);
         $setInvoiceDetails = DB::execute($GLOBALS['q']['set-invoice-details'], [$invoiceIDMax, $id, $id, $orderIDMax, $datetodayonly, $deliveryInstructions, $totaldryitems, $totalchilleritems, $dateToday]);
 

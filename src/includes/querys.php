@@ -360,7 +360,7 @@ $GLOBALS['q'] = [
     VALUES (?, ?, ?, 5, ?, 1, 1, 1, ?, 0, 1, 0, 0, ?, 0, '1', ?, ?, ?, ?, 1, ?, '9999-12-31 23:59:59')",
     
     'set-people-info' => "INSERT INTO People(FullName, PreferredName, SearchName, IsPermittedToLogon, IsExternalLogonProvider, IsSystemUser, IsEmployee, IsSalesPerson, EmailAddress, PhoneNumber, LastEditedBy, ValidFrom , ValidTo)
-    VALUES (?, 'Rick', 'Roll', 1, 1, 1, 0, 0, ?, ?, 1, ?, '9999-12-31 23:59:59')",
+    VALUES (?, ?, ?, 1, 1, 1, 0, 0, ?, ?, 1, ?, '9999-12-31 23:59:59')",
 
     'set-people-address' => "INSERT INTO Peopleaddress (peopleid, zipcode, housenmr)
     VALUES (?, ?, ?)",
