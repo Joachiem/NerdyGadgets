@@ -180,7 +180,7 @@ class Checkout
 
         // create new invoice id
         $invoiceIDMax = DB::execute('SELECT MAX(InvoiceID)+1 AS invoiceid FROM Invoices')[0]->invoiceid; //Creer hoogste invoice ID
-        echo $invoiceIDMax;
+
         //add user to db
         $user = DB::execute('SELECT * FROM people WHERE EmailAddress = ?', [$email])[0];
         if (empty($user)) {
@@ -210,7 +210,6 @@ class Checkout
         }
         
         $totaldryitems = $totalitems - $totalchilleritems;
-        echo $totaldryitems;
 
         $setOrderInfo = DB::execute($GLOBALS['q']['set-order-info'], [$orderIDMax, $id, $dateToday, $datetodayonly]);
         $setInvoiceDetails = DB::execute($GLOBALS['q']['set-invoice-details'], [$invoiceIDMax, $id, $id, $orderIDMax, $datetodayonly, $deliveryInstructions, $totaldryitems, $totalchilleritems, $dateToday]);
