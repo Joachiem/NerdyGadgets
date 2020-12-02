@@ -168,7 +168,7 @@ class Checkout
         $shipping = $form['shipping'];
         $delivery = $form['delivery'];
 
-        $totalitems = array_sum($_SESSION['cart']);
+        $totalitems = array_sum($_SESSION['cart']['products']);
         $totalchilleritems = 0;
 
         $dateToday = date("d/m/Y") . " " . date("h:i:sa");
