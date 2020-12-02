@@ -56,11 +56,13 @@ class Cart
         $data = json_decode(file_get_contents('php://input'));
         if (!$data) return;
 
+        if (empty($data->id)) return;
+
         if (isset($_SESSION['cart']['products'][$data->id])) $_SESSION['cart']['products'][$data->id] += 1;
         else $_SESSION['cart']['products'][$data->id] = 1;
 
         http_response_code(201);
-        return print json_encode(['title' => $GLOBALS['t']['add-alert-title'], 'message' => $GLOBALS['t']['add-alert-message']]);
+        return print json_encode(['title' => $GLOBALS['t']['add-alert-title'], 'message' => $GLOBALS['t']['add-alert-message'], 'id' => $data->id]);
     }
 
 
