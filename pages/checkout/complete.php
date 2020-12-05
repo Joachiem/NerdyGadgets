@@ -120,7 +120,7 @@
                                         </span>
                                     </td>
                                 </tr>
-                                <?php } ?>`
+                                <?php } ?>
                                 <tr class= "">
                                     <td></td>
                                     <td></td>
