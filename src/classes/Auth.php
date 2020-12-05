@@ -14,12 +14,12 @@ class Auth
 
         $form_fields = [
             'email' => [
-                'email invullen' => function ($f) {
+                $GLOBALS['t']['fill-email'] => function ($f) {
                     return empty($f);
                 },
             ],
             'password' => [
-                'password invullen' => function ($f) {
+                $GLOBALS['t']['fill-password'] => function ($f) {
                     return empty($f);
                 },
             ],
@@ -47,9 +47,11 @@ class Auth
 
         //check if email and password are correct
         if (empty($result)) {
-            $_SESSION['login']['error_messages']['password'] = 'inlog wrong';
+            $_SESSION['login']['error_messages']['password'] = $GLOBALS['t']['emailorpasswordwrong'];
             return Route::redirect('/login');
         }
+
+        unset($_SESSION['login']['form']);
 
         $_SESSION['user'] = $result[0];
 
@@ -117,12 +119,14 @@ class Auth
         // check if the email is alrady taken
         $result = DB::execute('select PersonId from People where EmailAddress = ?', [$_POST['email']]);
         if (isset($result[0]->PersonId)) {
-            $_SESSION['register']['error_messages']['email'] = 'this email is taken';
+            $_SESSION['register']['error_messages']['email'] = $GLOBALS['t']['email-taken'];
             return Route::redirect('/register');
         }
 
         // add the person to the database
         DB::execute($GLOBALS['q']['register'], [$u, $u, $u, $hashed_password, $_POST['email'], date('d/m/Y h:i:sa')]);
+
+        unset($_SESSION['register']['form']);
 
         self::login();
 
