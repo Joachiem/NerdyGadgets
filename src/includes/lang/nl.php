@@ -132,10 +132,15 @@ $GLOBALS['t'] = [
     'mollie' => 'Al onze betalingen vinden plaats bij Mollie, na betaling word je automatisch teruggestuurd naar deze site.',
 
     //Register
-    'repeatpassword' => 'Wachtwoord herhalen',
-    'register' => 'Registreren',
+    'fill-username' => 'Gebruikersnaam verplicht',
+    'fill-email' => 'Email verplicht',
+    'fill-password' => 'Wachtwoord verplicht',
+    'format-email' => 'Niet gedige email',
+    'password-length' => 'Het wachtwoord moet minimaal 8 karakters lang zijn',
     'emailorpasswordwrong' => 'E-mail en/of wachtwoord zijn onjuist!',
-    'nameoremailorpasswordwrong' => 'Gebruikersnaam of E-mail of wachtwoord zijn verkeerd!',
+    'email-taken' => 'Deze email is bezet',
+
+    'register' => 'Registreren',
     'forgotpassword' => 'Wachtwoord vergeten?',
     'signin' => 'Inloggen',
     'toggle-visibility' => 'Wachtwoord verbergen/tonen',
