@@ -142,6 +142,7 @@ $GLOBALS['t'] = [
     'fill-password' => 'Password mandatory',
     'format-email' => 'Niet gedige email',
     'password-length' => 'The password needs to be an minimum of 8 caracters',
+    'username-length' => 'The username needs to be an minimum of 8 caracters',
     'emailorpasswordwrong' => 'E-mail or password are wrong!',
     'email-taken' => 'This email is taken',
 
