@@ -137,10 +137,16 @@ $GLOBALS['t'] = [
     'mollie' => 'All our payments take place at Mollie, after payment you will be automatically returned to this site.',
 
     //Register
-    'repeatpassword' => 'Repeat password',
-    'register' => 'Register',
+    'fill-username' => 'Username mandatory',
+    'fill-email' => 'Email mandatory',
+    'fill-password' => 'Password mandatory',
+    'format-email' => 'Niet gedige email',
+    'password-length' => 'The password needs to be an minimum of 8 caracters',
+    'username-length' => 'The username needs to be an minimum of 8 caracters',
     'emailorpasswordwrong' => 'E-mail or password are wrong!',
-    'nameoremailorpasswordwrong' => 'Username or E-mail or password are wrong!',
+    'email-taken' => 'This email is taken',
+
+    'register' => 'Register',
     'forgotpassword' => 'Forgot password?',
     'signin' => 'Sign in',
     'toggle-visibility' => 'Toggle password visibility',
