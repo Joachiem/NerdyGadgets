@@ -16,7 +16,7 @@
                 </div>
             </div>
             <div>
-                <form action method="POST">
+                <form action method="POST" class="flex flex-col justify-between">
                     <h1 class="mb-2">Login</h1>
                     <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name"> Email </label>
                     <input type="email" class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white <?php print isset($error_messages->firstname) ? 'border-red-500' : 'border-gray-200' ?>"
@@ -42,9 +42,9 @@
                 
                 <a href="/register" class="underline text-xs text-blue-700"><?php print $GLOBALS['t']['no-account'] ?></a>
 
-                <a href="/checkout/account">
-                    <button class="flex justify-center w-full px-10 py-3 mt-6 font-medium text-white uppercase bg-green-400 rounded-full shadow item-center hover:bg-green-500 focus:shadow-outline focus:outline-none">
-                        <span class="ml-2 mt-5px">Login</span>
+                <a href="/checkout/account" class="inset-y-0 right-0">
+                    <button class="mt-4 shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded block">
+                        <span class="mt-5px">Login</span>
                     </button>
                 </a>
                 </form>

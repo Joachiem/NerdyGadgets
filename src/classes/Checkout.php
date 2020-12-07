@@ -129,8 +129,9 @@ class Checkout
 
     public static function complete()
     {
+        $mollie = new \Mollie\Api\MollieApiClient();
+        $mollie->setApiKey("test_uGtVRSpdytPa7S86RVAzcT2SeAmc5C");
         $payment_id = $_SESSION['payment_id'];
-
         try {
             $payment = $mollie->payments->get($payment_id);
             if ($payment->isPaid()) {
@@ -167,7 +168,6 @@ class Checkout
 
     public static function sendData()
     {
-        echo "<pre>";
         //set variables
         $form = $_SESSION['form'];
         $email = $form['email'];
@@ -220,7 +220,6 @@ class Checkout
         }
         
         $totaldryitems = $totalitems - $totalchilleritems;
-        echo $id;
         $setOrderInfo = DB::execute($GLOBALS['q']['set-order-info'], [$orderIDMax, $id, $dateToday, $datetodayonly]);
         $setInvoiceDetails = DB::execute($GLOBALS['q']['set-invoice-details'], [$invoiceIDMax, $id, $id, $orderIDMax, $datetodayonly, $deliveryInstructions, $totaldryitems, $totalchilleritems, $dateToday]);
 
@@ -248,6 +247,9 @@ class Checkout
             //send order information to invoicelines table
             $InvoiceLineIDMax = DB::execute('SELECT MAX(InvoiceLineID)+1 AS invoicelineid FROM invoicelines')[0]->invoicelineid; //Creer hoogste invoiceline ID
             $setInvoiceInfo = DB::execute($GLOBALS['q']['set-invoicelines-details'], [$InvoiceLineIDMax, $invoiceIDMax, $key, $description, $package, $value, $recommendedprice, $taxrate, $taxamount, $totalpriceincl, $dateToday]);
+            
+            //update product stock
+            $setNewStock = DB:: execute($GLOBALS['q']['set-new-stock'], [$value, $key, $key]);
         }
     }
 }

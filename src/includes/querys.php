@@ -374,6 +374,10 @@ $GLOBALS['q'] = [
     'set-invoicelines-details' => "INSERT INTO invoicelines(InvoiceLineID, InvoiceID, StockItemID, Description, PackageTypeID, Quantity, UnitPrice, TaxRate, TaxAmount, LineProfit, ExtendedPrice, LastEditedBy, LastEditedWhen)
     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 5, ?, 7 ,?)",
 
+    'set-new-stock' => "UPDATE stockitemholdings
+    SET QuantityOnHand = (SELECT (QuantityOnHand - ?) WHERE StockItemID = ?)
+    WHERE StockItemID = ?",
+
     'register' => "INSERT INTO People
     (
         FullName,
