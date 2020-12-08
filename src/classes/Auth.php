@@ -55,7 +55,7 @@ class Auth
 
         $_SESSION['user'] = $result[0];
 
-        return Route::redirect('/profile');
+        return Route::redirect('/account');
     }
 
 
@@ -126,10 +126,10 @@ class Auth
             unset($_SESSION['register']['form']);
 
             $_POST['password'] = $hashed_password;
-            
+
             self::login();
 
-            return Route::redirect('/profile');
+            return Route::redirect('/account');
         }
 
         $user = DB::execute('select PersonId from People where EmailAddress = ?', [$_POST['email']]);
@@ -145,7 +145,7 @@ class Auth
 
         self::login();
 
-        return Route::redirect('/profile');
+        return Route::redirect('/account');
     }
 
 
