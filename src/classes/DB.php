@@ -42,7 +42,12 @@ class DB
     {
         if ($partial_queries) $query = static::preparePartialQueries($query, $partial_queries);
 
-        $handle = self::$conn->prepare($query);
+        try {
+            $handle = self::$conn->prepare($query);
+        } catch (\PDOException $e) {
+            print_r($query);
+            throw new \PDOException($e->getMessage(), (int)$e->getCode());
+        }
 
         if ($values) $handle = static::prepareValues($handle, $values);
 
