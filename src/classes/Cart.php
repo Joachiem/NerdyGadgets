@@ -54,7 +54,7 @@ class Cart
     public static function increment()
     {
         $data = json_decode(file_get_contents('php://input'));
-        if (!$data) return;
+        if (!$data || empty($data->id)) return;
 
         if (empty($data->id)) return;
 

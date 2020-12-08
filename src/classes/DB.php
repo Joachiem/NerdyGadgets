@@ -79,6 +79,8 @@ class DB
     private static function prepareValues($handle, $values)
     {
         foreach ($values as $i => $value) {
+            $value = filter_var($value, FILTER_SANITIZE_STRING);
+
             $handle->bindValue($i + 1, $value);
         }
 

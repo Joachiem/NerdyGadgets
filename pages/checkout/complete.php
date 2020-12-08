@@ -68,7 +68,6 @@
     </div>
 </div>
 
-
 <div class="flex justify-center">
     <div class="overflow-hidden rounded-lg shadow-lg mb-8 max-w-4xl">
         <div class="leading-tight p-2 md:p-4 bg-white">
@@ -97,7 +96,7 @@
                             <?php $totaalprijs = 0; ?>
                             <?php foreach ($arg as $id => $product_obj) { ?>
 
-                            
+
                                 <?php $Images = $product_obj['images'] ?>
                                 <?php $Result = $product_obj['product'] ?>
 
@@ -114,25 +113,27 @@
                                     <td class=" text-right md:table-cell">
                                         <span class="text-sm lg:text-base font-medium"> €
                                             <span id="price-<?php print($id) ?>">
-                                                <?php print sprintf("%.2f", ($Result[0]->SellPrice*$product_obj['qty'])); ?>
-                                                <?php $totaalprijs+= ($Result[0]->SellPrice*$product_obj['qty']);?>
+                                                <?php print sprintf("%.2f", ($Result[0]->SellPrice * $product_obj['qty'])); ?>
+                                                <?php $totaalprijs += ($Result[0]->SellPrice * $product_obj['qty']); ?>
                                             </span>
                                         </span>
                                     </td>
                                 </tr>
-                                <?php } ?>`
-                                <tr class= "">
-                                    <td></td>
-                                    <td></td>
-                                    <td class=" align-text-center text-right h-12 uppercase font-bold md:table-cell "> <?php print $GLOBALS['t']['total-price'] ?></td>
-                                    <td class=" text-right align-text-center md:table-cell"> 
-                                        <span class="text-sm lg:text-base font-medium"> €
-                                            <span id="price-<?php print($id) ?>">
-                                                <?php print round($totaalprijs,2) ?>
-                                            </span>
+
+                            <?php } ?>
+
+                            <tr class="">
+                                <td></td>
+                                <td></td>
+                                <td class=" align-text-center text-right h-12 uppercase font-bold md:table-cell "> <?php print $GLOBALS['t']['total-price'] ?></td>
+                                <td class=" text-right align-text-center md:table-cell">
+                                    <span class="text-sm lg:text-base font-medium"> €
+                                        <span id="price-<?php print($id) ?>">
+                                            <?php print round($totaalprijs, 2) ?>
                                         </span>
-                                    </td>
-                                </tr>
+                                    </span>
+                                </td>
+                            </tr>
                         </tbody>
                     </table>
                 </div>
