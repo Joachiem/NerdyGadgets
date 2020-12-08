@@ -41,6 +41,8 @@ class Cart
             $amount = $amount + (sprintf("%.2f", $product->SellPrice) * $product->qty);
         }
 
+        $amount = $amount * Pay::getCartDiscount();
+
         if ($amount < 50) {
             $amount = $amount + 6.75;
         }
