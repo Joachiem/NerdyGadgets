@@ -40,6 +40,14 @@ $GLOBALS['q'] = [
     )
     AS SendCosts, MarketingComments, CustomFields, SI.Video,
     (
+        RecommendedRetailPrice * ( 1 + (( TaxRate / 100))) * (1 - (SD.DiscountPercentage / 100))
+    )
+    AS DiscountPrice, 
+    (
+        RecommendedRetailPrice * (1 - (SD.DiscountPercentage / 100))
+    )
+    AS DiscountPriceNoVat, SD.DiscountPercentage,
+    (
         SELECT ImagePath
         FROM stockgroups
         JOIN stockitemstockgroups USING(StockGroupID)
@@ -52,6 +60,7 @@ $GLOBALS['q'] = [
     JOIN stockitemstockgroups
     ON SI.StockItemID = stockitemstockgroups.StockItemID
     JOIN stockgroups AS SG USING(StockGroupID)
+    LEFT JOIN specialdeals SD ON SI.StockItemID = SD.StockItemID
     WHERE SI.stockitemid = ?
     GROUP BY StockItemID",
 
@@ -82,8 +91,15 @@ $GLOBALS['q'] = [
         LIMIT 1
     ) 
     AS BackupImagePath, 
-
-     (
+    (
+        RecommendedRetailPrice * ( 1 + (( TaxRate / 100))) * (1 - (SD.DiscountPercentage / 100))
+    )
+    AS DiscountPrice, 
+    (
+        RecommendedRetailPrice * (1 - (SD.DiscountPercentage / 100))
+    )
+    AS DiscountPriceNoVat, SD.DiscountPercentage,
+    (
         SELECT ImagePath
         FROM stockitemimages
         WHERE StockItemID = SI.StockItemID
@@ -95,6 +111,7 @@ $GLOBALS['q'] = [
     JOIN stockitemstockgroups 
     ON SI.StockItemID = stockitemstockgroups.StockItemID
     JOIN stockgroups USING(StockGroupID)
+    LEFT JOIN specialdeals SD ON SI.StockItemID = SD.StockItemID
     WHERE SI.StockItemID NOT IN
         (SELECT SI.StockItemID
         FROM stockitems SI 
@@ -206,7 +223,14 @@ $GLOBALS['q'] = [
         WHERE StockItemID = SI.StockItemID
         LIMIT 1
     ) AS BackupImagePath,
-
+    (
+        RecommendedRetailPrice * ( 1 + (( TaxRate / 100))) * (1 - (SD.DiscountPercentage / 100))
+    )
+    AS DiscountPrice, 
+    (
+        RecommendedRetailPrice * (1 - (SD.DiscountPercentage / 100))
+    )
+    AS DiscountPriceNoVat, SD.DiscountPercentage,
     (
         SELECT ImagePath
         FROM stockitemimages
@@ -219,6 +243,7 @@ $GLOBALS['q'] = [
     JOIN stockitemstockgroups 
     ON SI.StockItemID = stockitemstockgroups.StockItemID
     JOIN stockgroups USING(StockGroupID)
+    LEFT JOIN specialdeals SD ON SI.StockItemID = SD.StockItemID
     WHERE SI.stockitemid in ($1)
     GROUP BY StockItemID",
 
