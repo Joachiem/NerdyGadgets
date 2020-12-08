@@ -42,7 +42,12 @@ class DB
     {
         if ($partial_queries) $query = static::preparePartialQueries($query, $partial_queries);
 
-        $handle = self::$conn->prepare($query);
+        try {
+            $handle = self::$conn->prepare($query);
+        } catch (\PDOException $e) {
+            print_r($query);
+            throw new \PDOException($e->getMessage(), (int)$e->getCode());
+        }
 
         if ($values) $handle = static::prepareValues($handle, $values);
 
@@ -79,6 +84,8 @@ class DB
     private static function prepareValues($handle, $values)
     {
         foreach ($values as $i => $value) {
+            $value = filter_var($value, FILTER_SANITIZE_STRING);
+
             $handle->bindValue($i + 1, $value);
         }
 
