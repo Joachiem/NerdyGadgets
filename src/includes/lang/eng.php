@@ -156,4 +156,5 @@ $GLOBALS['t'] = [
     'youremailis' => 'Your E-mail is',
     'history' => 'History',
     'logout' => 'Logout',
+    'deleteaccount'=> 'Delete account'
 ];

@@ -36,6 +36,9 @@ Route::post('/register', function () {
 Route::post('/logout', function () {
     Auth::logout();
 });
+Route::post('/delete_account', function () {
+    View::show('user/delete_account');
+});
 
 // language
 Route::get('/dutch', function () {
