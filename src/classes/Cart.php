@@ -46,6 +46,7 @@ class Cart
         if ($amount < 50) {
             $amount = $amount + 6.75;
         }
+        $amount = sprintf("%.2f", $amount);
         return $amount;
     }
 
