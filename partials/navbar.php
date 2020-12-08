@@ -34,8 +34,8 @@
 
             <?php if (isset($_SESSION['user'])) { ?>
 
-                <a href="/profile">
-                    <div class="p-2 pr-4 text-gray-200"><?php print $GLOBALS['t']['navbar-profile'] ?></div>
+                <a href="/account">
+                    <div class="p-2 pr-4 text-gray-200"><?php print $GLOBALS['t']['navbar-account'] ?></div>
                 </a>
 
             <?php } else { ?>
