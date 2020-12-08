@@ -9,8 +9,8 @@
                 <h1 class="mb-2"><?php print $GLOBALS['t']['continue-guest'] ?></h1>
                 <div class="inset-x-0 bottom-0">
                     <a href="/checkout/account">
-                        <button class="flex justify-center w-64 px-10 py-3 mt-6 font-medium text-white uppercase bg-green-400 rounded-full shadow item-center hover:bg-green-500 focus:shadow-outline focus:outline-none">
-                            <span class="ml-2 mt-5px"><?php print $GLOBALS['t']['continue'] ?></span>
+                        <button class="mt-4 shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded block">
+                            <span class="mt-5px"><?php print $GLOBALS['t']['continue'] ?></span>
                         </button>
                     </a>
                 </div>
@@ -43,8 +43,8 @@
                 <a href="/register" class="underline text-xs text-blue-700"><?php print $GLOBALS['t']['no-account'] ?></a>
 
                 <a href="/checkout/account">
-                    <button class="flex justify-center w-full px-10 py-3 mt-6 font-medium text-white uppercase bg-green-400 rounded-full shadow item-center hover:bg-green-500 focus:shadow-outline focus:outline-none">
-                        <span class="ml-2 mt-5px">Login</span>
+                    <button class="mt-4 shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded block">
+                        <span class="mt-5px">Login</span>
                     </button>
                 </a>
                 </form>
