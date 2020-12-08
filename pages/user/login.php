@@ -14,7 +14,7 @@
 
                         <?php if (isset($error_messages->email)) { ?>
 
-                            <p class="text-red-500 text-xs italic"><?php print $error_messages->email ?></p>
+                            <p class="text-red-500 text-xs italic"><?php print $GLOBALS['t'][$error_messages->email] ?></p>
 
                         <?php } ?>
 
@@ -27,7 +27,7 @@
 
                         <?php if (isset($error_messages->password)) { ?>
 
-                            <p class="text-red-500 text-xs italic"><?php print $error_messages->password ?></p>
+                            <p class="text-red-500 text-xs italic"><?php print $GLOBALS['t'][$error_messages->password] ?></p>
 
                         <?php } ?>
 
