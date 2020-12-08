@@ -7,7 +7,7 @@ class User
      */
     public static function history()
     {
-        $_SESSION['user']['id'] = 1059;
+        //$_SESSION['user']['id'] = 1059;
         $arg = new stdClass();
 
         if (empty($_SESSION['user']['id'])) return    Route::redirect('/login');
