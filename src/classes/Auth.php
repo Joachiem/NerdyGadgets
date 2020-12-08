@@ -116,9 +116,24 @@ class Auth
         //hashing password
         $hashed_password = hash('sha256', $_POST['password'] . 'y80HoN9I');
 
-        // check if the email is alrady taken
-        $result = DB::execute('select PersonId from People where EmailAddress = ?', [$_POST['email']]);
-        if (isset($result[0]->PersonId)) {
+        // check if the email is alrady taken and password is null
+        $guest = DB::execute('select PersonId from People where EmailAddress = ? and HashedPassword IS NULL', [$_POST['email']]);
+        if (isset($guest[0]->PersonId)) {
+
+            // edit the person to the database
+            DB::execute('UPDATE People SET HashedPassword = ? WHERE PersonId = ?', [$hashed_password, $guest[0]->PersonId]);
+
+            unset($_SESSION['register']['form']);
+
+            $_POST['password'] = $hashed_password;
+            
+            self::login();
+
+            return Route::redirect('/profile');
+        }
+
+        $user = DB::execute('select PersonId from People where EmailAddress = ?', [$_POST['email']]);
+        if (isset($user[0]->PersonId)) {
             $_SESSION['register']['error_messages']['email'] = $GLOBALS['t']['email-taken'];
             return Route::redirect('/register');
         }
