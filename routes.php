@@ -39,6 +39,10 @@ Route::post('/logout', function () {
 Route::post('/delete_account', function () {
     View::show('user/delete_account');
 });
+Route::get('/deleted', function () {
+    View::show('user/deleted');
+});
+
 
 // language
 Route::get('/dutch', function () {

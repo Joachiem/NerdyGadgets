@@ -43,6 +43,7 @@
                                 <p> <?php print $GLOBALS['t']['register'] ?></p>
                             </a>
                         </div>
+                    </div>
                 </form>
             </div>
         </div>

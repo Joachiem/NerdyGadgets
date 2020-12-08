@@ -141,5 +141,5 @@ class Auth
     {
         unset($_SESSION['user']);
         return Route::redirect('/');
-    }
-}
+    } 
+} 
