@@ -141,6 +141,10 @@ class Auth
         // add the person to the database
         DB::execute($GLOBALS['q']['register'], [$u, $u, $u, $hashed_password, $_POST['email'], date('d/m/Y h:i:sa')]);
 
+        $id = DB::execute('SELECT PersonID FROM people WHERE EmailAddress = ?', [$_POST['email']])[0]->PersonID;
+        // add customer
+        DB::execute($GLOBALS['q']['set-customer-info'], [$id, $u, $id, $id, date('d/m/Y'), '', '', '', '', '', date('d/m/Y h:i:sa')]);
+
         unset($_SESSION['register']['form']);
 
         self::login();
