@@ -92,7 +92,7 @@
 
                         <?php if (isset($error_messages->firstname)) { ?>
 
-                            <p class="text-red-500 text-xs italic"><?php print $error_messages->firstname ?></p>
+                            <p class="text-red-500 text-xs italic"><?php print $GLOBALS['t'][$error_messages->firstname] ?></p>
 
                         <?php } ?>
 
@@ -108,7 +108,7 @@
 
                         <?php if (isset($error_messages->lastname)) { ?>
 
-                            <p class="text-red-500 text-xs italic"><?php print $error_messages->lastname ?></p>
+                            <p class="text-red-500 text-xs italic"><?php print $GLOBALS['t'][$error_messages->lastname]; ?></p>
 
                         <?php } ?>
 
@@ -126,7 +126,7 @@
 
                         <?php if (isset($error_messages->email)) { ?>
 
-                            <p class="text-red-500 text-xs italic"><?php print $error_messages->email ?></p>
+                            <p class="text-red-500 text-xs italic"><?php print $GLOBALS['t'][$error_messages->email]; ?></p>
 
                         <?php } ?>
 
@@ -145,7 +145,7 @@
 
                         <?php if (isset($error_messages->phonenumber)) { ?>
 
-                            <p class="text-red-500 text-xs italic"><?php print $error_messages->phonenumber ?></p>
+                            <p class="text-red-500 text-xs italic"><?php print $GLOBALS['t'][$error_messages->phonenumber]; ?></p>
 
                         <?php } ?>
 
