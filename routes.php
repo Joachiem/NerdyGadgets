@@ -66,6 +66,9 @@ Route::get('/categories', function () {
 Route::get('/checkout/login', function () {
     View::show('checkout/login');
 });
+Route::post('/checkout/login', function () {
+    Auth::login();
+});
 Route::get('/checkout/account', function () {
     View::show('checkout/account');
 });
