@@ -172,12 +172,13 @@ class Checkout
 
     public static function login()
     {
-        if (!isset($_SESSION['user']) && !empty($_SESSION['user'])) {
-            $user = DB::execute('SELECT PhoneNumber FROM people WHERE PersonID = ?', [$_SESSION['user']['id']])[0];
+        if (isset($_SESSION['user']) && !empty($_SESSION['user'])) {
+            $userinfo = $_SESSION['user'];
+            $user = DB::execute('SELECT PhoneNumber FROM people WHERE PersonID = ?', [$userinfo->PersonID])[0];
             if (empty($user->PhoneNumber)) {
-                View::show('checkout/account', $arg);
+                Route::redirect('/checkout/account');
             } else {
-                View::show('checkout/address', $arg);
+                Route::redirect('/checkout/address');
             }
         }
     }
