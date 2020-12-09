@@ -1,5 +1,4 @@
 <?php $error_messages = isset($_SESSION['form']['error_messages']) ? (object)$_SESSION['form']['error_messages'] : [] ?>
-<?php Checkout::noItemsInCart(); ?>
 
 <div class="w-full py-6">
     <div class="flex">
@@ -92,7 +91,7 @@
 
                         <?php if (isset($error_messages->firstname)) { ?>
 
-                            <p class="text-red-500 text-xs italic"><?php print $error_messages->firstname ?></p>
+                            <p class="text-red-500 text-xs italic"><?php print $GLOBALS['t'][$error_messages->firstname] ?></p>
 
                         <?php } ?>
 
@@ -108,7 +107,7 @@
 
                         <?php if (isset($error_messages->lastname)) { ?>
 
-                            <p class="text-red-500 text-xs italic"><?php print $error_messages->lastname ?></p>
+                            <p class="text-red-500 text-xs italic"><?php print $GLOBALS['t'][$error_messages->lastname]; ?></p>
 
                         <?php } ?>
 
@@ -126,7 +125,7 @@
 
                         <?php if (isset($error_messages->email)) { ?>
 
-                            <p class="text-red-500 text-xs italic"><?php print $error_messages->email ?></p>
+                            <p class="text-red-500 text-xs italic"><?php print $GLOBALS['t'][$error_messages->email]; ?></p>
 
                         <?php } ?>
 
@@ -141,12 +140,11 @@
                         </label>
                         <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white <?php print isset($error_messages->phonenumber) ? 'border-red-500' : 'border-gray-200' ?>"
                                name="phonenumber" placeholder="06-12345678" id="grid-phonenumber" type="tel"
-                               pattern="[06]{2}-[0-9]{8}"
                                value="<?php isset($_SESSION['form']["phonenumber"]) ? print($_SESSION['form']["phonenumber"]) : '' ?>">
 
                         <?php if (isset($error_messages->phonenumber)) { ?>
 
-                            <p class="text-red-500 text-xs italic"><?php print $error_messages->phonenumber ?></p>
+                            <p class="text-red-500 text-xs italic"><?php print $GLOBALS['t'][$error_messages->phonenumber]; ?></p>
 
                         <?php } ?>
 

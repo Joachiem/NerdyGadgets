@@ -64,16 +64,19 @@ Route::get('/categories', function () {
 
 // checkout
 Route::get('/checkout/login', function () {
-    View::show('checkout/login');
+    Checkout::login();
+});
+Route::post('/checkout/login', function () {
+    Auth::login();
 });
 Route::get('/checkout/account', function () {
-    View::show('checkout/account');
+    Checkout::account();
 });
 Route::get('/checkout/address', function () {
-    View::show('checkout/address');
+    Checkout::address();
 });
 Route::get('/checkout/pay', function () {
-    View::show('checkout/pay');
+    Checkout::pay();
 });
 Route::get('/checkout/complete', function () {
     Checkout::complete();
