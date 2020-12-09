@@ -270,7 +270,7 @@ class Checkout
             $setCustomerInfo = DB::execute($GLOBALS['q']['set-customer-info'], [$id, $fullname, $id, $id, $datetodayonly, $phonenumber, $deliveryInstructions, $zipcode, $deliveryInstructions, $zipcode, $dateToday]);
         } else {
             if (empty($user->PhoneNumber)) {
-                DB::execute('UPDATE people SET PhoneNumber = ? WHERE EmailAddress = ?', [$phonenumber, $email])[0];
+                DB::execute('UPDATE people SET FullName = ?, PhoneNumber = ? WHERE EmailAddress = ?', [$fullname, $phonenumber, $email])[0];
             } else {
                 $id = $user->PersonID;
             }
