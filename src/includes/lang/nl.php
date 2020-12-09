@@ -153,6 +153,7 @@ $GLOBALS['t'] = [
     'logout' => 'Uitloggen',
     'deleteaccount'=> 'Verwijderen account',
     'areyousure' => 'Weet u zeker dat u uw account wilt verwijderen?',
+    'home' => 'Startpagina',
     'goback' => 'Ga terug',
     'accountdeletedsuccessfull' => 'Uw account is succesvol verwijderd',
 ];

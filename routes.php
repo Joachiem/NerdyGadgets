@@ -42,7 +42,9 @@ Route::post('/delete_account', function () {
 Route::get('/deleted', function () {
     View::show('user/deleted');
 });
-
+Route::get('/account_deleted_succesfully', function () {
+    View::show('user/account_deleted_succesfully');
+});
 
 // language
 Route::get('/dutch', function () {

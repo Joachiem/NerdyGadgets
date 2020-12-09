@@ -158,6 +158,7 @@ $GLOBALS['t'] = [
     'logout' => 'Logout',
     'deleteaccount'=> 'Delete account',
     'areyousure' => 'Are you sure that you want to delete your account?',
+    'home' => 'Home page',
     'goback' => 'Go back',
     'accountdeletedsuccessfull' => 'Your account has been deleted succesfully',
 ];
