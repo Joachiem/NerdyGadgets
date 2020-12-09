@@ -25,8 +25,16 @@ class Checkout
         unset($_SESSION['form']['error_messages']);
         $error_messages = [];
         $form_fields = [
-            'firstname' => 'Firstname invullen',
-            'lastname' => 'Lastname invullen',
+            'firstname' => [
+                'fill-firstname' => function ($f) {
+                    return empty($f);
+                },
+            ],
+            'lastname' => [
+                'fill-lastname' => function ($f) {
+                    return empty($f);
+                },
+            ],
             'email' => [
                 'format-email' => function ($f) {
                     $email_pattern = '/^(?!(?:(?:\x22?\x5C[\x00-\x7E]\x22?)|(?:\x22?[^\x5C\x22]\x22?)){255,})(?!(?:(?:\x22?\x5C[\x00-\x7E]\x22?)|(?:\x22?[^\x5C\x22]\x22?)){65,}@)(?:(?:[\x21\x23-\x27\x2A\x2B\x2D\x2F-\x39\x3D\x3F\x5E-\x7E]+)|(?:\x22(?:[\x01-\x08\x0B\x0C\x0E-\x1F\x21\x23-\x5B\x5D-\x7F]|(?:\x5C[\x00-\x7F]))*\x22))(?:\.(?:(?:[\x21\x23-\x27\x2A\x2B\x2D\x2F-\x39\x3D\x3F\x5E-\x7E]+)|(?:\x22(?:[\x01-\x08\x0B\x0C\x0E-\x1F\x21\x23-\x5B\x5D-\x7F]|(?:\x5C[\x00-\x7F]))*\x22)))*@(?:(?:(?!.*[^.]{64,})(?:(?:(?:xn--)?[a-z0-9]+(?:-[a-z0-9]+)*\.){1,126}){1,}(?:(?:[a-z][a-z0-9]*)|(?:(?:xn--)[a-z0-9]+))(?:-[a-z0-9]+)*)|(?:\[(?:(?:IPv6:(?:(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){7})|(?:(?!(?:.*[a-f0-9][:\]]){7,})(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){0,5})?::(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){0,5})?)))|(?:(?:IPv6:(?:(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){5}:)|(?:(?!(?:.*[a-f0-9]:){5,})(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){0,3})?::(?:[a-f0-9]{1,4}(?::[a-f0-9]{1,4}){0,3}:)?)))?(?:(?:25[0-5])|(?:2[0-4][0-9])|(?:1[0-9]{2})|(?:[1-9]?[0-9]))(?:\.(?:(?:25[0-5])|(?:2[0-4][0-9])|(?:1[0-9]{2})|(?:[1-9]?[0-9]))){3}))\]))$/iD';
@@ -38,30 +46,25 @@ class Checkout
                 },
             ],
             'phonenumber' => [
-                'password-length' => function ($f) {
-                    return strlen($f) < 8;
+                'phonenumber-length' => function ($f) {
+                    return strlen($f) < 10;
                 },
-                'fill-password' => function ($f) {
+                'fill-phonenumber' => function ($f) {
                     return empty($f);
                 },
             ],
-
-
-            'firstname' => 'Firstname invullen',
-            'lastname' => 'Lastname invullen',
-            'email' => 'Email invullen',
-            'phonenumber' => 'Phonenumber invullen'
         ];
 
-        if (empty($_POST["firstname"]) || empty($_POST["lastname"]) || empty($_POST["email"]) || empty($_POST["phonenumber"])) {
-            foreach ($form_fields as $form_field => $error) {
-                if (empty($_POST[$form_field])) {
+        foreach ($form_fields as $form_field => $validators) {
+            foreach ($validators as $error => $validator) {
+                if ($validator($_POST[$form_field])) {
                     $error_messages[$form_field] = $error;
                 }
             }
+        }
 
+        if (empty($_POST["firstname"]) || empty($_POST["lastname"]) || empty($_POST["email"]) || empty($_POST["phonenumber"])) {
             $_SESSION['form']['error_messages'] = $error_messages;
-
             Route::redirect('/checkout/account', '/checkout/account');
         }
 
@@ -86,20 +89,38 @@ class Checkout
         unset($_SESSION['form']['error_messages']);
         $error_messages = [];
         $form_fields = [
-            'postcode' => 'Postcode invullen',
-            'housenmr' => 'Huisnummer invullen',
-            'shipping' => 'Verzending invullen',
-            'delivery' => 'Bezorging invullen'
+            'postcode' => [
+                'fill-postcode' => function ($f) {
+                    return empty($f);
+                },
+            ],
+            'housenmr' => [
+                'fill-housenmr' => function ($f) {
+                    return empty($f);
+                },
+            ],
+            'shipping' => [
+                'fill-shipping' => function ($f) {
+                    return empty($f);
+                },
+            ],
+            'delivery' => [
+                'fill-delivery' => function ($f) {
+                    return empty($f);
+                },
+            ],
         ];
 
-        if (empty($_POST["postcode"]) || empty($_POST["housenmr"]) || empty($_POST["shipping"]) || empty($_POST["delivery"])) {
-            foreach ($form_fields as $form_field => $error) {
-                if (empty($_POST[$form_field])) {
+        foreach ($form_fields as $form_field => $validators) {
+            foreach ($validators as $error => $validator) {
+                if ($validator($_POST[$form_field])) {
                     $error_messages[$form_field] = $error;
                 }
             }
-            $_SESSION['form']['error_messages'] = $error_messages;
+        }
 
+        if (empty($_POST["postcode"]) || empty($_POST["housenmr"]) || empty($_POST["shipping"]) || empty($_POST["delivery"])) {
+            $_SESSION['form']['error_messages'] = $error_messages;
             Route::redirect('/checkout/address', '/checkout/address');
         } else {
             print_r($_SESSION['form']);

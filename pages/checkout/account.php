@@ -141,7 +141,6 @@
                         </label>
                         <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white <?php print isset($error_messages->phonenumber) ? 'border-red-500' : 'border-gray-200' ?>"
                                name="phonenumber" placeholder="06-12345678" id="grid-phonenumber" type="tel"
-                               pattern="[06]{2}-[0-9]{8}"
                                value="<?php isset($_SESSION['form']["phonenumber"]) ? print($_SESSION['form']["phonenumber"]) : '' ?>">
 
                         <?php if (isset($error_messages->phonenumber)) { ?>
