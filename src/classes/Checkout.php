@@ -229,6 +229,7 @@ class Checkout
                     'images' => $images
                 ];
             }
+            unset($_SESSION['cart']);
         }
 
         View::show('checkout/complete', $arg);
@@ -327,6 +328,5 @@ class Checkout
             //update product stock
             $setNewStock = DB:: execute($GLOBALS['q']['set-new-stock'], [$value, $key, $key]);
         }
-        unset($_SESSION['cart']);
     }
 }
