@@ -161,4 +161,12 @@ class Auth
         unset($_SESSION['user']);
         return Route::redirect('/');
     }
+
+    /**
+     * check if login
+     */
+    public static function isLogin()
+    {
+        if (empty($_SESSION['user']->PersonID)) return Route::redirect('/login');
+    }
 }
