@@ -1,7 +1,7 @@
 <?php
 
 $GLOBALS['t'] = [
-    'username' => 'username',
+    'username' => 'Username',
     'lastname' => 'Lastname',
     'firstname' => 'Firstname',
     'quantity-on-hand' => 'Stock',
@@ -38,7 +38,7 @@ $GLOBALS['t'] = [
     'navbar-language-title' => 'Nederlands',
     'navbar-log-in' => 'Sign in',
     'navbar-search' => 'Search!',
-    '' => '',
+    'navbar-account' => 'Account',
 
     //product-index
     'product-index-num-product' => ' Products per page',
@@ -84,6 +84,7 @@ $GLOBALS['t'] = [
     'amount' => 'Amount',
     'discount' => 'Discount',
     'free' => 'Free',
+    'product-delete' => 'Delete product',
     '' => '',
 
     // categorys
@@ -136,9 +137,17 @@ $GLOBALS['t'] = [
     'mollie' => 'All our payments take place at Mollie, after payment you will be automatically returned to this site.',
 
     //Register
-    'repeatpassword' => 'Repeat password',
-    'register' => 'Register',
+    'fill-username' => 'Username mandatory',
+    'fill-email' => 'Email mandatory',
+    'fill-password' => 'Password mandatory',
+    'format-email' => 'Niet gedige email',
+    'password-length' => 'The password needs to be an minimum of 8 caracters',
+    'username-length' => 'The username needs to be an minimum of 8 caracters',
     'emailorpasswordwrong' => 'E-mail or password are wrong!',
+    'email-taken' => 'This email is taken',
+
+    'register' => 'Register',
     'forgotpassword' => 'Forgot password?',
     'signin' => 'Sign in',
+    'toggle-visibility' => 'Toggle password visibility',
 ];

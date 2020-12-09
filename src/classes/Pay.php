@@ -2,6 +2,16 @@
 
 class Pay
 {
+    public static function getCartDiscount()
+    {
+        if (empty($_SESSION['cart']['discount'])) return 1;
+
+        $discount = $_SESSION['cart']['discount'];
+        $discount = $discount->discount;
+        $discount_percentage = $discount * 0.01;
+        return $discount_percentage;
+    }
+
     public static function mollieCreate($price, $ordernr)
     {
         $mollie = new \Mollie\Api\MollieApiClient();

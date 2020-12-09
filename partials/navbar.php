@@ -32,9 +32,19 @@
                 <div class="p-2 text-gray-200"><?php print $GLOBALS['t']['navbar-language-title'] ?></div>
             </a>
 
-            <a href="/login">
-                <div class="p-2 pr-4 text-gray-200"><?php print $GLOBALS['t']['navbar-log-in'] ?></div>
-            </a>
+            <?php if (isset($_SESSION['user'])) { ?>
+
+                <a href="/account">
+                    <div class="p-2 pr-4 text-gray-200"><?php print $GLOBALS['t']['navbar-account'] ?></div>
+                </a>
+
+            <?php } else { ?>
+
+                <a href="/login">
+                    <div class="p-2 pr-4 text-gray-200"><?php print $GLOBALS['t']['navbar-log-in'] ?></div>
+                </a>
+
+            <?php } ?>
 
             <a href="/cart">
                 <div class="relative p-2 text-gray-200 rounded bg-gray-900 card" style="height: 44px; width: 44px;">
