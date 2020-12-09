@@ -7,8 +7,24 @@ class Checkout
         Pay::mollieCreate(Cart::totalPrice(), 1111);
     }
 
+    public static function login()
+    {
+        self::noItemsInCart();
+        if (isset($_SESSION['user']) && !empty($_SESSION['user'])) {
+            $userinfo = $_SESSION['user'];
+            $user = DB::execute('SELECT PhoneNumber FROM people WHERE PersonID = ?', [$userinfo->PersonID])[0];
+            if (empty($user->PhoneNumber)) {
+                Route::redirect('/checkout/account');
+            } else {
+                Route::redirect('/checkout/address');
+            }
+        }
+        View::show('checkout/login');
+    }
+
     public static function account()
     {
+        self::noItemsInCart();
         if (isset($_SESSION['user']) && !empty($_SESSION['user'])) {
             $userinfo = $_SESSION['user'];
             $user = DB::execute('SELECT FullName, EmailAddress FROM people WHERE PersonID = ?', [$userinfo->PersonID])[0];
@@ -17,6 +33,20 @@ class Checkout
             $_SESSION['form']['firstname'] = $name[0];
             $_SESSION['form']['lastname'] = $name[1];
         }
+        View::show('checkout/account');
+    }
+
+    public static function address()
+    {
+        self::noItemsInCart();
+        self::checkAccountInfo();
+        View::show('checkout/address');
+    }
+
+    public static function pay()
+    {
+        Checkout::checkaddressInfo();
+        View::show('checkout/pay');
     }
 
     public static function storeUserInfo()
@@ -179,19 +209,6 @@ class Checkout
         //test if there are items in cart and redirect if necessery 
         if (!isset($_SESSION['cart']['products']) || empty($_SESSION['cart']['products']) || array_sum($_SESSION['cart']['products']) < 1) {
             Route::redirect('/cart');
-        }
-    }
-
-    public static function login()
-    {
-        if (isset($_SESSION['user']) && !empty($_SESSION['user'])) {
-            $userinfo = $_SESSION['user'];
-            $user = DB::execute('SELECT PhoneNumber FROM people WHERE PersonID = ?', [$userinfo->PersonID])[0];
-            if (empty($user->PhoneNumber)) {
-                Route::redirect('/checkout/account');
-            } else {
-                Route::redirect('/checkout/address');
-            }
         }
     }
 
