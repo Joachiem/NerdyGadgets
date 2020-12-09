@@ -8,7 +8,6 @@ class User
     public static function history()
     {
         Auth::isLogin();
-        //test gebruiker
         $arg = new stdClass();
 
         $arg->orders = DB::execute('SELECT OrderID, OrderDate, CustomerPurchaseOrderNumber FROM orders
