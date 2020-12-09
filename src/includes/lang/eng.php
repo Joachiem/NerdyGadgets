@@ -128,6 +128,16 @@ $GLOBALS['t'] = [
     'continue-guest' => 'Continue as a guest',
     'password' => 'Password',
     'no-account' => 'I dont have an account',
+    'fill-firstname' => 'Enter your firstname',
+    'fill-lastname' => 'Enter your lastname',
+    'format-email' => 'This email is invalid',
+    'fill-email' => 'Enter your email',
+    'format-phonenumber' => 'This phonenumber is invalid',
+    'fill-phonenumber' => 'Enter your phonenumber',
+    'fill-postcode' => 'Enter your zipcode',
+    'fill-housenmr' => 'Enter your housenmr',
+    'fill-shipping' => 'Select a valid shipping option',
+    'fill-delivery' => 'Select a valid delivery time',
 
 
 
