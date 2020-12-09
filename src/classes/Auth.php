@@ -47,7 +47,7 @@ class Auth
 
         //check if email and password are correct
         if (empty($result)) {
-            $_SESSION['login']['error_messages']['password'] = $GLOBALS['t']['emailorpasswordwrong'];
+            $_SESSION['login']['error_messages']['password'] = 'emailorpasswordwrong';
             return Route::redirect('/login');
         }
 
@@ -134,7 +134,7 @@ class Auth
 
         $user = DB::execute('select PersonId from People where EmailAddress = ?', [$_POST['email']]);
         if (isset($user[0]->PersonId)) {
-            $_SESSION['register']['error_messages']['email'] = $GLOBALS['t']['email-taken'];
+            $_SESSION['register']['error_messages']['email'] = 'email-taken';
             return Route::redirect('/register');
         }
 
