@@ -48,14 +48,23 @@ class Auth
         //check if email and password are correct
         if (empty($result)) {
             $_SESSION['login']['error_messages']['password'] = $GLOBALS['t']['emailorpasswordwrong'];
-            return Route::redirect('/login');
+            if (stripos($_SERVER['REQUEST_URI'], 'checkout/login')){
+                return Route::redirect('/checkout/login');
+            } else {
+                return Route::redirect('/login');
+            }
         }
 
         unset($_SESSION['login']['form']);
 
         $_SESSION['user'] = $result[0];
 
-        return Route::redirect('/account');
+        if (stripos($_SERVER['REQUEST_URI'], 'checkout/login')){
+            return Route::redirect('/checkout/account');
+        } else {
+            return Route::redirect('/account');
+        }
+        
     }
 
 
