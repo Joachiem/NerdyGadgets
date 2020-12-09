@@ -302,7 +302,7 @@ class Checkout
             $package = $productInfo->UnitpackageID;
             $description = $productInfo->SearchDetails;
             $taxrate = $productInfo->Taxrate;
-            if (isset($productInfo->DiscountPrice) && !empty($productInfo->DiscountPrice)) {
+            if (!empty($productInfo->DiscountPrice)) {
                 $recommendedprice = $productInfo->DiscountPrice;
             } else {
                 $recommendedprice = $productInfo->RecommendedRetailPrice;
@@ -327,5 +327,6 @@ class Checkout
             //update product stock
             $setNewStock = DB:: execute($GLOBALS['q']['set-new-stock'], [$value, $key, $key]);
         }
+        unset($_SESSION['cart']);
     }
 }
