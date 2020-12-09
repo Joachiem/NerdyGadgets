@@ -7,6 +7,18 @@ class Checkout
         Pay::mollieCreate(Cart::totalPrice(), 1111);
     }
 
+    public static function account()
+    {
+        if (isset($_SESSION['user']) && !empty($_SESSION['user'])) {
+            $userinfo = $_SESSION['user'];
+            $user = DB::execute('SELECT FullName, EmailAddress FROM people WHERE PersonID = ?', [$userinfo->PersonID])[0];
+            $_SESSION['form']['email'] = $user->EmailAddress;
+            $name = explode(' ', $user->FullName, 2);
+            $_SESSION['form']['firstname'] = $name[0];
+            $_SESSION['form']['lastname'] = $name[1];
+        }
+    }
+
     public static function storeUserInfo()
     {
         //check if submit button has been pressed
@@ -256,7 +268,11 @@ class Checkout
             $id = $user->PersonID;
             $setCustomerInfo = DB::execute($GLOBALS['q']['set-customer-info'], [$id, $fullname, $id, $id, $datetodayonly, $phonenumber, $deliveryInstructions, $zipcode, $deliveryInstructions, $zipcode, $dateToday]);
         } else {
-            $id = $user->PersonID;
+            if (empty($user->PhoneNumber)) {
+                DB::execute('UPDATE people SET PhoneNumber = ? WHERE EmailAddress = ?', [$phonenumber, $email])[0];
+            } else {
+                $id = $user->PersonID;
+            }
         }
 
         //add address to db
@@ -286,7 +302,11 @@ class Checkout
             $package = $productInfo->UnitpackageID;
             $description = $productInfo->SearchDetails;
             $taxrate = $productInfo->Taxrate;
-            $recommendedprice = $productInfo->RecommendedRetailPrice;
+            if (isset($productInfo->DiscountPrice) && !empty($productInfo->DiscountPrice)) {
+                $recommendedprice = $productInfo->DiscountPrice;
+            } else {
+                $recommendedprice = $productInfo->RecommendedRetailPrice;
+            }
 
             //Total amount excluding tax
             $totalpriceexcl = $value * $recommendedprice;

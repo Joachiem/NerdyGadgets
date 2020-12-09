@@ -374,7 +374,24 @@ $GLOBALS['q'] = [
 
 //Querys voor dataopslaan kopen producten.
 
-    'get-product-info' => "SELECT Stockitemname, UnitpackageID, SearchDetails, Taxrate, RecommendedRetailPrice, IsChillerStock FROM stockitems WHERE StockItemID = ? ",
+    'get-product-info' => "SELECT Stockitemname, 
+    SI.UnitpackageID, 
+    SI.SearchDetails, 
+    SI.Taxrate, 
+    SI.RecommendedRetailPrice, 
+    SI.IsChillerStock,
+    (
+        SI.RecommendedRetailPrice * ( 1 + (( SI.TaxRate / 100))) * (1 - (SD.DiscountPercentage / 100))
+    )
+    AS DiscountPrice, 
+    (
+        SI.RecommendedRetailPrice * (1 - (SD.DiscountPercentage / 100))
+    )
+    AS DiscountPriceNoVat,
+    SD.DiscountPercentage
+    FROM stockitems SI 
+    LEFT JOIN specialdeals SD ON SI.StockItemID = SD.StockItemID
+    WHERE SI.StockItemID = ? ",
     
     
     'set-product-info' => "INSERT INTO Orderlines (OrderID, StockItemID, Description, PackageTypeID, Quantity, UnitPrice, TaxRate, PickedQuantity, PickingCompletedWhen, LastEditedBy, LastEditedWhen)
