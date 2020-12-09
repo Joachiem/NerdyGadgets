@@ -170,6 +170,18 @@ class Checkout
         }
     }
 
+    public static function login()
+    {
+        if (!isset($_SESSION['user']) && !empty($_SESSION['user'])) {
+            $user = DB::execute('SELECT PhoneNumber FROM people WHERE PersonID = ?', [$_SESSION['user']['id']])[0];
+            if (empty($user->PhoneNumber)) {
+                View::show('checkout/account', $arg);
+            } else {
+                View::show('checkout/address', $arg);
+            }
+        }
+    }
+
     public static function complete()
     {
         $mollie = new \Mollie\Api\MollieApiClient();

@@ -1,5 +1,6 @@
 <?php $error_messages = isset($_SESSION['form']['error_messages']) ? (object)$_SESSION['form']['error_messages'] : [] ?>
 <?php Checkout::noItemsInCart(); ?>
+<?php Checkout::Login(); ?>
 
 <div class="flex justify-center">
     <div class="overflow-hidden rounded-lg shadow-lg mb-8">
