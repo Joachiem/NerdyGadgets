@@ -37,6 +37,11 @@ Route::post('/logout', function () {
     Auth::logout();
 });
 
+//user
+Route::get('/user/history', function () {
+    User::history();
+});
+
 // language
 Route::get('/dutch', function () {
     Lang::nl();
