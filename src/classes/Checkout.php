@@ -221,11 +221,17 @@ class Checkout
             $payment = $mollie->payments->get($payment_id);
             if ($payment->isPaid()) {
                 self::sendData();
+                Checkout::CompletePage();
+            } else {
+                Route::redirect('/index');
             }
         } catch (\Mollie\Api\Exceptions\ApiException $e) {
             echo "API call failed: " . htmlspecialchars($e->getMessage());
         }
+    }
 
+    public static function CompletePage()
+    {
         $arg = [];
         $images = '';
 
@@ -251,6 +257,7 @@ class Checkout
 
         View::show('checkout/complete', $arg);
     }
+
 
     public static function sendData()
     {
