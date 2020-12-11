@@ -8,15 +8,15 @@
                             <?php print $GLOBALS['t']['areyousure'] ?>
                         </label>
                     </div>
-                    <div class="flex grid grid-cols-4 gap-2 text-right">
+                    <div class="flex justify-between">
                         <a class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-8 rounded" href="profile">
                             <?php print $GLOBALS['t']['goback'] ?>
                         </a>
-                        <div class="text-right col-span-3">
-                            <a class="w-full inline-block text-right inset-y-0 right-0 font-bold text-sm text-red-600 hover:text-red-700" href="deleted">
-                                <?php print $GLOBALS['t']['deleteaccount'] ?>
-                            </a>
-                        </div>
+
+                        <a class="inline-block text-right inset-y-0 right-0 font-bold text-sm text-red-600 hover:text-red-700 p-2" href="deleted">
+                            <?php print $GLOBALS['t']['deleteaccount'] ?>
+                        </a>
+
                     </div>
                 </form>
             </div>
