@@ -285,7 +285,7 @@ class Checkout
         $invoiceIDMax = DB::execute('SELECT MAX(InvoiceID)+1 AS invoiceid FROM Invoices')[0]->invoiceid; //Creer hoogste invoice ID
 
         //add user to db
-        if (isset($_SESSION['user']) || !empty($_SESSION['user'])) {
+        if (isset($_SESSION['user']) && !empty($_SESSION['user'])) {
             $id = $_SESSION['user']->PersonID;
         } else {
             $user = DB::execute('SELECT * FROM people WHERE EmailAddress = ?', [$email])[0];
