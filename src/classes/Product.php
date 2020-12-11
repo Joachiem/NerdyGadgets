@@ -112,10 +112,10 @@ class Product
         $product = DB::execute($GLOBALS['q']['product'], [$id])[0];
 
         $images = DB::execute($GLOBALS['q']['product-images'], [$id]);
+        $temp = DB::execute('select Temperature from coldroomtemperatures where ColdRoomSensorNumber = 5');
 
-        if ($images) {
-            $product->images = $images;
-        }
+        if ($images) $product->images = $images;
+        if ($temp) $product->temp = $temp[0]->Temperature;
 
         View::show('product/view', $product);
     }
