@@ -11,13 +11,11 @@
 
                 <?php } elseif (isset($product->StockGroupImagePath) and !empty($product->StockGroupImagePath)) { ?>
 
-                    <img class="w-full rounded-t p-1"
-                         src="/public/StockGroupIMG/<?php print $product->StockGroupImagePath ?>">
+                    <img class="w-full rounded-t p-1" src="/public/StockGroupIMG/<?php print $product->StockGroupImagePath ?>">
 
                 <?php } else { ?>
 
-                    <img class="w-full rounded-t p-1"
-                         src="/public/StockGroupIMG/<?php print $product->BackupImagePath ?>">
+                    <img class="w-full rounded-t p-1" src="/public/StockGroupIMG/<?php print $product->BackupImagePath ?>">
 
                 <?php } ?>
 
@@ -34,7 +32,7 @@
 
         <div class=" py-2 inset-x-0 bottom-0">
 
-            <?php if (isset($product->DiscountPrice)) {?>
+            <?php if (isset($product->DiscountPrice)) { ?>
 
                 <div class="w-full bg-red-600 text-center">
                     <h5 class="text-white font-bold">Christmas Sale</h5>
@@ -48,12 +46,15 @@
 
             <div class="flex justify-between gap-0 px-2">
                 <div class="col-span-2 text-gray-700 text-sm">
-                    <?php if (isset($product->DiscountPrice)) {?>
+                    
+                    <?php if (isset($product->DiscountPrice)) { ?>
 
-                        <p class="inline line-through">€ <?php print round($product->SellPrice, 2) ?></p> <p class="text-lg inline text-green-600 font-bold font-bold">€ <?php printf("%.2f", $product->DiscountPrice, 2) ?></p>
-                        <p class="text-gray-500 text-xs ">€ <?php printf("%.2f", $product->DiscountPriceNoVat, 2); print($GLOBALS['t']['excl-vat']) ?></p>
+                        <p class="inline line-through">€ <?php print round($product->SellPrice, 2) ?></p>
+                        <p class="text-lg inline text-green-600 font-bold font-bold">€ <?php printf("%.2f", $product->DiscountPrice, 2) ?></p>
+                        <p class="text-gray-500 text-xs ">€ <?php printf("%.2f", $product->DiscountPriceNoVat, 2);
+                                                            print($GLOBALS['t']['excl-vat']) ?></p>
 
-                    <?php } else {?>
+                    <?php } else { ?>
 
                         <p>€ <?php print round($product->SellPrice, 2) ?></p>
                         <p class="text-gray-500 text-xs">€ <?php print round($product->RecommendedRetailPrice, 2) . $GLOBALS['t']['excl-vat'] ?></p>
@@ -63,10 +64,8 @@
 
                 </div>
                 <div class="flex items-end">
-                    <button id="cart-btn"
-                            class="cart-btn tracking-wider uppercase font-bold text-green-700 hover:bg-green-200 bg-green-100 rounded inline-block right-0 focus:outline-none">
-                        <ion-icon id="cart-btn-<?php print $product->StockItemID ?>" name="cart-outline"
-                                  class="pt-1 pr-2 pl-1" size="10px"></ion-icon>
+                    <button id="cart-btn" class="cart-btn tracking-wider uppercase font-bold text-green-700 hover:bg-green-200 bg-green-100 rounded inline-block right-0 focus:outline-none">
+                        <ion-icon id="cart-btn-<?php print $product->StockItemID ?>" name="cart-outline" class="pt-1 pr-2 pl-1" size="10px"></ion-icon>
                     </button>
                 </div>
 

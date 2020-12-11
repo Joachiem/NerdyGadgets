@@ -38,12 +38,18 @@ class Cart
         $amount = 0;
         foreach ($products as $product) {
             $product->qty = $cart_products[$product->StockItemID];
-            $amount = $amount + (sprintf("%.2f", $product->SellPrice) * $product->qty);
+            if (isset($product->DiscountPrice)) {
+                $amount = $amount + (sprintf("%.2f", $product->DiscountPrice) * $product->qty);
+            } else {
+                $amount = $amount + (sprintf("%.2f", $product->SellPrice) * $product->qty);
+            }
+            $amount = sprintf("%.2f", $amount);
         }
-
+        $amount = $amount * Pay::getCartDiscount();
         if ($amount < 50) {
             $amount = $amount + 6.75;
         }
+        $amount = sprintf("%.2f", $amount);
         return $amount;
     }
 

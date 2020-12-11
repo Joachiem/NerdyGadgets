@@ -40,18 +40,27 @@ $GLOBALS['q'] = [
     )
     AS SendCosts, MarketingComments, CustomFields, SI.Video,
     (
+        RecommendedRetailPrice * ( 1 + (( TaxRate / 100))) * (1 - (SD.DiscountPercentage / 100))
+    )
+    AS DiscountPrice, 
+    (
+        RecommendedRetailPrice * (1 - (SD.DiscountPercentage / 100))
+    )
+    AS DiscountPriceNoVat, SD.DiscountPercentage,
+    (
         SELECT ImagePath
         FROM stockgroups
         JOIN stockitemstockgroups USING(StockGroupID)
         WHERE StockItemID = SI.StockItemID
         LIMIT 1
     ) 
-    AS BackupImagePath   
+    AS BackupImagePath, IsChillerStock 
     FROM stockitems SI 
     JOIN stockitemholdings SIH USING(stockitemid)
     JOIN stockitemstockgroups
     ON SI.StockItemID = stockitemstockgroups.StockItemID
     JOIN stockgroups AS SG USING(StockGroupID)
+    LEFT JOIN specialdeals SD ON SI.StockItemID = SD.StockItemID
     WHERE SI.stockitemid = ?
     GROUP BY StockItemID",
 
@@ -82,8 +91,15 @@ $GLOBALS['q'] = [
         LIMIT 1
     ) 
     AS BackupImagePath, 
-
-     (
+    (
+        RecommendedRetailPrice * ( 1 + (( TaxRate / 100))) * (1 - (SD.DiscountPercentage / 100))
+    )
+    AS DiscountPrice, 
+    (
+        RecommendedRetailPrice * (1 - (SD.DiscountPercentage / 100))
+    )
+    AS DiscountPriceNoVat, SD.DiscountPercentage,
+    (
         SELECT ImagePath
         FROM stockitemimages
         WHERE StockItemID = SI.StockItemID
@@ -95,6 +111,7 @@ $GLOBALS['q'] = [
     JOIN stockitemstockgroups 
     ON SI.StockItemID = stockitemstockgroups.StockItemID
     JOIN stockgroups USING(StockGroupID)
+    LEFT JOIN specialdeals SD ON SI.StockItemID = SD.StockItemID
     WHERE SI.StockItemID NOT IN
         (SELECT SI.StockItemID
         FROM stockitems SI 
@@ -206,7 +223,14 @@ $GLOBALS['q'] = [
         WHERE StockItemID = SI.StockItemID
         LIMIT 1
     ) AS BackupImagePath,
-
+    (
+        RecommendedRetailPrice * ( 1 + (( TaxRate / 100))) * (1 - (SD.DiscountPercentage / 100))
+    )
+    AS DiscountPrice, 
+    (
+        RecommendedRetailPrice * (1 - (SD.DiscountPercentage / 100))
+    )
+    AS DiscountPriceNoVat, SD.DiscountPercentage,
     (
         SELECT ImagePath
         FROM stockitemimages
@@ -219,6 +243,7 @@ $GLOBALS['q'] = [
     JOIN stockitemstockgroups 
     ON SI.StockItemID = stockitemstockgroups.StockItemID
     JOIN stockgroups USING(StockGroupID)
+    LEFT JOIN specialdeals SD ON SI.StockItemID = SD.StockItemID
     WHERE SI.stockitemid in ($1)
     GROUP BY StockItemID",
 
@@ -347,6 +372,142 @@ $GLOBALS['q'] = [
     )",
 
 
+//Querys voor dataopslaan kopen producten.
+
+    'get-product-info' => "SELECT Stockitemname, 
+    SI.UnitpackageID, 
+    SI.SearchDetails, 
+    SI.Taxrate, 
+    SI.RecommendedRetailPrice, 
+    SI.IsChillerStock,
+    (
+        SI.RecommendedRetailPrice * ( 1 + (( SI.TaxRate / 100))) * (1 - (SD.DiscountPercentage / 100))
+    )
+    AS DiscountPrice, 
+    (
+        SI.RecommendedRetailPrice * (1 - (SD.DiscountPercentage / 100))
+    )
+    AS DiscountPriceNoVat,
+    SD.DiscountPercentage
+    FROM stockitems SI 
+    LEFT JOIN specialdeals SD ON SI.StockItemID = SD.StockItemID
+    WHERE SI.StockItemID = ? ",
+    
+    
+    'set-product-info' => "INSERT INTO Orderlines 
+    (OrderID, 
+    StockItemID, 
+    Description, 
+    PackageTypeID, 
+    Quantity, UnitPrice, 
+    TaxRate, 
+    PickedQuantity, 
+    PickingCompletedWhen, 
+    LastEditedBy, 
+    LastEditedWhen)
+    VALUES (?, ?, ?, ?, ?, ?, 5, ?, '', 1, ?)",
+    
+    'set-customer-info' => "INSERT INTO Customers
+    (CustomerID, 
+    CustomerName, 
+    BillToCustomerID, 
+    CustomerCategoryID, 
+    PrimaryContactPersonID, 
+    DeliveryMethodID, 
+    DeliveryCityID, 
+    PostalCityID, 
+    AccountOpenedDate, 
+    StandardDiscountPercentage, 
+    IsStatementSent, 
+    IsOnCreditHold, 
+    PaymentDays, 
+    PhoneNumber, 
+    FaxNumber, 
+    WebsiteURL, 
+    DeliveryAddressLine1, 
+    DeliveryPostalCode, 
+    PostalAddressLine1, 
+    PostalPostalCode, 
+    LastEditedBy, 
+    ValidFrom, 
+    ValidTo)
+    VALUES (?, ?, ?, 5, ?, 1, 1, 1, ?, 0, 1, 0, 0, ?, 0, '1', ?, ?, ?, ?, 1, ?, '9999-12-31 23:59:59')",
+    
+    'set-people-info' => "INSERT INTO People
+    (FullName, 
+    PreferredName, 
+    SearchName, 
+    IsPermittedToLogon, 
+    IsExternalLogonProvider, 
+    IsSystemUser, 
+    IsEmployee, 
+    IsSalesPerson, 
+    EmailAddress, 
+    PhoneNumber, 
+    LastEditedBy, 
+    ValidFrom, 
+    ValidTo)
+    VALUES (?, ?, ?, 1, 1, 1, 0, 0, ?, ?, 1, ?, '9999-12-31 23:59:59')",
+
+    'set-people-address' => "INSERT INTO Peopleaddress 
+    (peopleid, 
+    zipcode, 
+    housenmr)
+    VALUES (?, ?, ?)",
+
+    'set-order-info' => "INSERT INTO Orders 
+    (OrderID, 
+    CustomerID, 
+    SalespersonPersonID, 
+    ContactPersonID, 
+    OrderDate, 
+    ExpectedDeliveryDate, 
+    IsUndersupplyBackordered, 
+    LastEditedBy, 
+    LastEditedWhen)
+    VALUES (?, ?, 5, 5, ?, '9999-12-31', 0, 5, ?)",
+
+    'set-invoice-details' => "INSERT INTO Invoices
+    (InvoiceID, 
+    CustomerID, 
+    BillToCustomerID, 
+    OrderID, 
+    DeliveryMethodID, 
+    ContactPersonID, 
+    AccountsPersonID, 
+    SalespersonPersonID, 
+    PackedByPersonID, 
+    InvoiceDate, 
+    CustomerPurchaseOrderNumber, 
+    IsCreditNote, 
+    DeliveryInstructions, 
+    TotalDryItems, 
+    TotalChillerItems, 
+    LastEditedBy, 
+    LastEditedWhen)
+    VALUES (?, ?, ?, ?, 1, 5, 5, 5, 5, ?, 0, 0, ?, ?, ?, 1, ?)",
+
+    'set-invoicelines-details' => "INSERT INTO invoicelines
+    (InvoiceLineID, 
+    InvoiceID, 
+    StockItemID, 
+    Description, 
+    PackageTypeID, 
+    Quantity, 
+    UnitPrice, 
+    TaxRate, 
+    TaxAmount, 
+    LineProfit, 
+    ExtendedPrice, 
+    LastEditedBy, 
+    LastEditedWhen)
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 5, ?, 7 ,?)",
+
+    'set-new-stock' => "UPDATE stockitemholdings
+    SET QuantityOnHand = 
+        (SELECT (QuantityOnHand - ?) 
+        WHERE StockItemID = ?)
+    WHERE StockItemID = ?",
 
     'register' => "INSERT INTO People
     (

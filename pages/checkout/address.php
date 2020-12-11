@@ -1,6 +1,4 @@
 <?php $error_messages = isset($_SESSION['form']['error_messages']) ? (object)$_SESSION['form']['error_messages'] : []; ?>
-<?php Checkout::noItemsInCart(); ?>
-<?php Checkout::checkAccountInfo(); ?>
 <div class="w-full py-6">
     <div class="flex">
         <div class="w-1/4">
@@ -92,7 +90,7 @@
                                id="grid-first-name" type="text">
                         <?php if (isset($error_messages->postcode)) { ?>
 
-                            <p class="text-red-500 text-xs italic"><?php print $error_messages->postcode ?></p>
+                            <p class="text-red-500 text-xs italic"><?php print $GLOBALS['t'][$error_messages->postcode]; ?></p>
 
                         <?php } ?>
                     </div>
@@ -107,7 +105,7 @@
                                id="grid-last-name" type="text">
                         <?php if (isset($error_messages->housenmr)) { ?>
 
-                            <p class="text-red-500 text-xs italic"><?php print $error_messages->housenmr ?></p>
+                            <p class="text-red-500 text-xs italic"><?php print $GLOBALS['t'][$error_messages->housenmr]; ?></p>
                         <?php } ?>
 
                     </div>
@@ -132,7 +130,7 @@
 
                         <?php if (isset($error_messages->shipping)) { ?>
 
-                            <p class="text-red-500 text-xs italic"><?php print $error_messages->shipping ?></p>
+                            <p class="text-red-500 text-xs italic"><?php print $GLOBALS['t'][$error_messages->shipping]; ?></p>
 
                         <?php } ?>
 
@@ -158,7 +156,7 @@
 
                         <?php if (isset($error_messages->delivery)) { ?>
 
-                            <p class="text-red-500 text-xs italic"><?php print $error_messages->delivery ?></p>
+                            <p class="text-red-500 text-xs italic"><?php print $GLOBALS['t'][$error_messages->delivery]; ?></p>
 
                         <?php } ?>
 

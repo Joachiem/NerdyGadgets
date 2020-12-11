@@ -130,6 +130,16 @@ $GLOBALS['t'] = [
     'no-account' => 'Ik heb nog geen account',
     'pay' => 'Betalen',
     'mollie' => 'Al onze betalingen vinden plaats bij Mollie, na betaling word je automatisch teruggestuurd naar deze site.',
+    'fill-firstname' => 'Vul je voornaam in',
+    'fill-lastname' => 'Vul je achternaam in',
+    'format-email' => 'Dit is geen valide email',
+    'fill-email' => 'Vul je email in',
+    'format-phonenumber' => 'Dit is geen valide telefoonnummer',
+    'fill-phonenumber' => 'Vul je telefoonnummer in',
+    'fill-postcode' => 'Vul je postcode in',
+    'fill-housenmr' => 'Vul je huisnummer in',
+    'fill-shipping' => 'Selecteer een verzendings optie',
+    'fill-delivery' => 'Selecteer een bezorgmoment',
 
     //Register
     'fill-username' => 'Gebruikersnaam verplicht',

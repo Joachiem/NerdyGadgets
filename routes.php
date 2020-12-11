@@ -27,8 +27,8 @@ Route::get('/register', function () {
 Route::post('/login', function () {
     Auth::login();
 });
-Route::get('/profile', function () {
-    View::show('user/profile');
+Route::get('/account', function () {
+    View::show('user/account');
 });
 Route::post('/register', function () {
     Auth::register();
@@ -44,6 +44,11 @@ Route::get('/deleted', function () {
 });
 Route::get('/account_deleted_succesfully', function () {
     View::show('user/account_deleted_succesfully');
+});
+
+//user
+Route::get('/user/history', function () {
+    User::history();
 });
 
 // language
@@ -73,16 +78,19 @@ Route::get('/categories', function () {
 
 // checkout
 Route::get('/checkout/login', function () {
-    View::show('checkout/login');
+    Checkout::login();
+});
+Route::post('/checkout/login', function () {
+    Auth::login();
 });
 Route::get('/checkout/account', function () {
-    View::show('checkout/account');
+    Checkout::account();
 });
 Route::get('/checkout/address', function () {
-    View::show('checkout/address');
+    Checkout::address();
 });
 Route::get('/checkout/pay', function () {
-    View::show('checkout/pay');
+    Checkout::pay();
 });
 Route::get('/checkout/complete', function () {
     Checkout::complete();
