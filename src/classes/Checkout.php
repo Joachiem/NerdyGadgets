@@ -31,7 +31,7 @@ class Checkout
             $_SESSION['form']['email'] = $user->EmailAddress;
             $name = explode(' ', $user->FullName, 2);
             $_SESSION['form']['firstname'] = $name[0];
-            $_SESSION['form']['lastname'] = $name[1];
+            $_SESSION['form']['lastname'] = isset($name[1]);
         }
         View::show('checkout/account');
     }
@@ -285,18 +285,22 @@ class Checkout
         $invoiceIDMax = DB::execute('SELECT MAX(InvoiceID)+1 AS invoiceid FROM Invoices')[0]->invoiceid; //Creer hoogste invoice ID
 
         //add user to db
-        $user = DB::execute('SELECT * FROM people WHERE EmailAddress = ?', [$email])[0];
-        if (empty($user)) {
-            //send account information to people table
-            $setPeopleInfo = DB::execute($GLOBALS['q']['set-people-info'], [$fullname, $fullname, $fullname, $email, $phonenumber, $dateToday]);
-            $user = DB::execute('SELECT PersonID FROM people WHERE EmailAddress = ?', [$email])[0];
-            $id = $user->PersonID;
-            $setCustomerInfo = DB::execute($GLOBALS['q']['set-customer-info'], [$id, $fullname, $id, $id, $datetodayonly, $phonenumber, $deliveryInstructions, $zipcode, $deliveryInstructions, $zipcode, $dateToday]);
+        if (isset($_SESSION['user']) || !empty($_SESSION['user'])) {
+            $id = $_SESSION['user']->PersonID;
         } else {
-            if (empty($user->PhoneNumber)) {
-                DB::execute('UPDATE people SET FullName = ?, PhoneNumber = ? WHERE EmailAddress = ?', [$fullname, $phonenumber, $email])[0];
-            } else {
+            $user = DB::execute('SELECT * FROM people WHERE EmailAddress = ?', [$email])[0];
+            if (empty($user)) {
+                //send account information to people table
+                $setPeopleInfo = DB::execute($GLOBALS['q']['set-people-info'], [$fullname, $fullname, $fullname, $email, $phonenumber, $dateToday]);
+                $user = DB::execute('SELECT PersonID FROM people WHERE EmailAddress = ?', [$email])[0];
                 $id = $user->PersonID;
+                $setCustomerInfo = DB::execute($GLOBALS['q']['set-customer-info'], [$id, $fullname, $id, $id, $datetodayonly, $phonenumber, $deliveryInstructions, $zipcode, $deliveryInstructions, $zipcode, $dateToday]);
+            } else {
+                if (empty($user->PhoneNumber)) {
+                    DB::execute('UPDATE people SET FullName = ?, PhoneNumber = ? WHERE EmailAddress = ?', [$fullname, $phonenumber, $email])[0];
+                } else {
+                    $id = $user->PersonID;
+                }
             }
         }
 
