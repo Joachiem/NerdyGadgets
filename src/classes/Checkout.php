@@ -291,10 +291,10 @@ class Checkout
             $user = DB::execute('SELECT * FROM people WHERE EmailAddress = ?', [$email])[0];
             if (empty($user)) {
                 //send account information to people table
-                $setPeopleInfo = DB::execute($GLOBALS['q']['set-people-info'], [$fullname, $fullname, $fullname, $email, $phonenumber, $dateToday]);
+                DB::execute($GLOBALS['q']['set-people-info'], [$fullname, $fullname, $fullname, $email, $phonenumber, $dateToday]);
                 $user = DB::execute('SELECT PersonID FROM people WHERE EmailAddress = ?', [$email])[0];
                 $id = $user->PersonID;
-                $setCustomerInfo = DB::execute($GLOBALS['q']['set-customer-info'], [$id, $fullname, $id, $id, $datetodayonly, $phonenumber, $deliveryInstructions, $zipcode, $deliveryInstructions, $zipcode, $dateToday]);
+                DB::execute($GLOBALS['q']['set-customer-info'], [$id, $fullname, $id, $id, $datetodayonly, $phonenumber, $deliveryInstructions, $zipcode, $deliveryInstructions, $zipcode, $dateToday]);
             } else {
                 if (empty($user->PhoneNumber)) {
                     DB::execute('UPDATE people SET FullName = ?, PhoneNumber = ? WHERE EmailAddress = ?', [$fullname, $phonenumber, $email])[0];
@@ -308,7 +308,7 @@ class Checkout
         $checkaddress = DB::execute('SELECT * FROM peopleaddress WHERE peopleid = ? AND zipcode = ? AND housenmr = ?', [$id, $zipcode, $housenmr]);
         if (empty($checkaddress)) {
             //send address information to peopleaddres table
-            $setPeopleAddress = DB::execute($GLOBALS['q']['set-people-address'], [$id, $zipcode, $housenmr]);
+            DB::execute($GLOBALS['q']['set-people-address'], [$id, $zipcode, $housenmr]);
         }
         
         //get chiller items
@@ -347,14 +347,14 @@ class Checkout
             $totalpriceincl = $totalpriceexcl + $taxamount;
             
             //send order information to orderlines table
-            $setProductInfo = DB::execute($GLOBALS['q']['set-product-info'], [$orderIDMax, $key, $description, $package, $value, $recommendedprice, $taxrate, $dateToday]);
+            DB::execute($GLOBALS['q']['set-product-info'], [$orderIDMax, $key, $description, $package, $value, $recommendedprice, $taxrate, $dateToday]);
 
             //send order information to invoicelines table
             $InvoiceLineIDMax = DB::execute('SELECT MAX(InvoiceLineID)+1 AS invoicelineid FROM invoicelines')[0]->invoicelineid; //Creer hoogste invoiceline ID
-            $setInvoiceInfo = DB::execute($GLOBALS['q']['set-invoicelines-details'], [$InvoiceLineIDMax, $invoiceIDMax, $key, $description, $package, $value, $recommendedprice, $taxrate, $taxamount, $totalpriceincl, $dateToday]);
+            DB::execute($GLOBALS['q']['set-invoicelines-details'], [$InvoiceLineIDMax, $invoiceIDMax, $key, $description, $package, $value, $recommendedprice, $taxrate, $taxamount, $totalpriceincl, $dateToday]);
             
             //update product stock
-            $setNewStock = DB:: execute($GLOBALS['q']['set-new-stock'], [$value, $key, $key]);
+            DB:: execute($GLOBALS['q']['set-new-stock'], [$value, $key, $key]);
         }
     }
 }
