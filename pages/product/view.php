@@ -49,13 +49,34 @@
                 <h1 class="text-2xl"> <?php print $arg->StockItemName; ?> </h1>
             </div>
 
-            <div>
-                <p class="text-grey-darker text-2xl font-bold"><?php printf("€ %.2f", $arg->SellPrice) ?> </p>
-            </div>
+            <?php if (isset($arg->DiscountPrice)) { ?>
 
-            <div class="mb-4">
-                <p class="text-grey text-gray-800 text-md font-bold"><?php printf("€ %.2f", $arg->RecommendedRetailPrice) .  print ' ' . $GLOBALS['t']['excl-vat'] ?></p>
-            </div>
+                <div class="w-full bg-red-600 text-center mb-4 rounded">
+                    <h5 class="text-white font-bold p-1">Christmas Sale</h5>
+                </div>
+
+                <div>
+                    <p class="text-gray-700 text-xl font-bold line-through"><?php printf("€ %.2f", $arg->SellPrice) ?> </p>
+                    <p class="text-grey-darker text-2xl font-bold"><?php printf("€ %.2f", $arg->DiscountPrice) ?> </p>
+                </div>
+
+                <div class="mb-4">
+                    <p class="text-gray-800 text-md font-bold"><?php printf("€ %.2f", $arg->DiscountPriceNoVat) .  print ' ' . $GLOBALS['t']['excl-vat'] ?></p>
+                </div>
+
+            <?php } else { ?>
+
+                <div>
+                    <p class="text-grey-darker text-2xl font-bold"><?php printf("€ %.2f", $arg->SellPrice) ?> </p>
+                </div>
+
+                <div class="mb-4">
+                    <p class="text-grey text-gray-800 text-md font-bold"><?php printf("€ %.2f", $arg->RecommendedRetailPrice) .  print ' ' . $GLOBALS['t']['excl-vat'] ?></p>
+                </div>
+
+            <?php } ?>
+
+
 
             <div class="flex flex-col mb-2">
                 <p class="text-grey-darker text-xl font-bold"><?php print($GLOBALS['t']['quantity-on-hand'] . ': ' . $arg->QuantityOnHand) ?></p>
