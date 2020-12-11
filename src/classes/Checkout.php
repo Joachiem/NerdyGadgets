@@ -288,7 +288,7 @@ class Checkout
         if (isset($_SESSION['user']) && !empty($_SESSION['user'])) {
             $id = $_SESSION['user']->PersonID;
         } else {
-            $user = DB::execute('SELECT * FROM people WHERE EmailAddress = ?', [$email])[0];
+            $user = isset(DB::execute('SELECT * FROM people WHERE EmailAddress = ?', [$email])[0]);
             if (empty($user)) {
                 //send account information to people table
                 DB::execute($GLOBALS['q']['set-people-info'], [$fullname, $fullname, $fullname, $email, $phonenumber, $dateToday]);
