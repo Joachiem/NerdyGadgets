@@ -1,7 +1,7 @@
 <?php
 $invoice_ids = DB::execute('SELECT InvoiceID FROM invoices where CustomerID = ?', [$_SESSION['user']->PersonID]);
 
-$invoice_ids_array = array_filter($invoice_ids);
+$invoice_ids_array = array_filter((array)$invoice_ids);
 if (!empty($invoice_ids_array)) {
     $ids = [];
     foreach ($invoice_ids as $invoice_id) {
