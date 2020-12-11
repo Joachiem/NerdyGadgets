@@ -13,7 +13,7 @@
 
                 <?php foreach ($arg->orders as $order) { ?>
 
-                    <tr class="border-b-2 ">
+                    <tr class="border-t-2 ">
                         <td class="pb-4 md:table-cell">
                             <a href="/products/view?id=<?php print $order->OrderID
                                                         ?>"><?php print $order->OrderID ?>
