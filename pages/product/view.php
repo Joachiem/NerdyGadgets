@@ -76,8 +76,6 @@
 
             <?php } ?>
 
-
-
             <div class="flex flex-col mb-2">
                 <p class="text-grey-darker text-xl font-bold"><?php print($GLOBALS['t']['quantity-on-hand'] . ': ' . $arg->QuantityOnHand) ?></p>
             </div>
@@ -89,6 +87,14 @@
             <div class="flex flex-col mb-2">
                 <h2 class="text-2xl font-bold"><?php print $GLOBALS['t']['productpage-product-information'] ?></h2>
             </div>
+
+            <?php if (isset($arg->temp)) { ?>
+
+                <div>
+                    <p><?php print('Temp: ' . $arg->temp) ?></p>
+                </div>
+
+            <?php } ?>
 
             <div class="flex flex-col mb-6">
                 <p><?php print $arg->SearchDetails; ?></p>
