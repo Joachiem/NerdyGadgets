@@ -44,8 +44,10 @@ class Checkout
     }
 
     public static function pay()
-    {
-        Checkout::checkaddressInfo();
+    {   
+        self::noItemsInCart();
+        self::checkAccountInfo();
+        self::checkaddressInfo();
         View::show('checkout/pay');
     }
 
@@ -215,6 +217,8 @@ class Checkout
     public static function complete()
     {
         self::noItemsInCart();
+        self::checkAccountInfo();
+        self::checkaddressInfo();
         if (!isset($_SESSION['payment_id'])) return Route::redirect('/cart');
 
         $mollie = new \Mollie\Api\MollieApiClient();

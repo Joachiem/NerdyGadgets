@@ -7,6 +7,11 @@
             <div class="w-64 h-full flex flex-col justify-between">
                 <h1 class="mb-2"><?php print $GLOBALS['t']['continue-guest'] ?></h1>
                 <div class="inset-x-0 bottom-0">
+                <a href="/cart">
+                    <button class="mt-4 shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded block">
+                        <span class="mt-5px">terug</span>
+                    </button>
+                </a>
                     <a href="/checkout/account">
                         <button class="mt-4 shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded block">
                             <span class="mt-5px"><?php print $GLOBALS['t']['continue'] ?></span>
