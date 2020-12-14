@@ -310,7 +310,7 @@ class Checkout
             //send address information to peopleaddres table
             DB::execute($GLOBALS['q']['set-people-address'], [$id, $zipcode, $housenmr]);
         }
-        
+
         //get chiller items
         foreach ($_SESSION['cart']['products'] as $key => $value) {
             $productInfo = DB::execute($GLOBALS['q']['get-product-info'], [$key])[0];
@@ -319,7 +319,7 @@ class Checkout
                 $totalchilleritems += $value;
             }
         }
-        
+
         $totaldryitems = $totalitems - $totalchilleritems;
         $setOrderInfo = DB::execute($GLOBALS['q']['set-order-info'], [$orderIDMax, $id, $dateToday, $datetodayonly]);
         $setInvoiceDetails = DB::execute($GLOBALS['q']['set-invoice-details'], [$invoiceIDMax, $id, $id, $orderIDMax, $datetodayonly, $deliveryInstructions, $totaldryitems, $totalchilleritems, $dateToday]);
@@ -345,16 +345,16 @@ class Checkout
 
             //Total amount including tax
             $totalpriceincl = $totalpriceexcl + $taxamount;
-            
+
             //send order information to orderlines table
             DB::execute($GLOBALS['q']['set-product-info'], [$orderIDMax, $key, $description, $package, $value, $recommendedprice, $taxrate, $dateToday]);
 
             //send order information to invoicelines table
             $InvoiceLineIDMax = DB::execute('SELECT MAX(InvoiceLineID)+1 AS invoicelineid FROM invoicelines')[0]->invoicelineid; //Creer hoogste invoiceline ID
             DB::execute($GLOBALS['q']['set-invoicelines-details'], [$InvoiceLineIDMax, $invoiceIDMax, $key, $description, $package, $value, $recommendedprice, $taxrate, $taxamount, $totalpriceincl, $dateToday]);
-            
+
             //update product stock
-            DB:: execute($GLOBALS['q']['set-new-stock'], [$value, $key, $key]);
+            DB::execute($GLOBALS['q']['set-new-stock'], [$value, $key, $key]);
         }
     }
 }

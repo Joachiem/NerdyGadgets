@@ -12,9 +12,9 @@
                                 <?php print $GLOBALS['t']['home'] ?>
                             </a>
                         </div>
+                    </div>
                 </form>
             </div>
         </div>
     </div>
 </section>
-<?php
