@@ -281,8 +281,8 @@ class Checkout
         $totalitems = array_sum($_SESSION['cart']['products']);
         $totalchilleritems = 0;
 
-        $dateToday = date("d/m/Y") . " " . date("h:i:sa");
-        $datetodayonly = date("d/m/Y");
+        $dateToday = date("Y-m-d") . " " . date("h:i:sa");
+        $datetodayonly = date("Y-m-d");
         $deliveryInstructions = $form['postcode'] . " " . $form['housenmr'];
 
         //check new orderID
@@ -303,8 +303,11 @@ class Checkout
                 $id = $user->PersonID;
                 DB::execute($GLOBALS['q']['set-customer-info'], [$id, $fullname, $id, $id, $datetodayonly, $phonenumber, $deliveryInstructions, $zipcode, $deliveryInstructions, $zipcode, $dateToday]);
             } else {
+                $user = DB::execute('SELECT * FROM people WHERE EmailAddress = ?', [$email])[0];
                 if (empty($user->PhoneNumber)) {
-                    DB::execute('UPDATE people SET FullName = ?, PhoneNumber = ? WHERE EmailAddress = ?', [$fullname, $phonenumber, $email])[0];
+                    DB::execute('UPDATE people SET FullName = ?, PhoneNumber = ? WHERE EmailAddress = ?', [$fullname, $phonenumber, $email]);
+                    print ($user);
+                    $id = $user->PersonID;
                 } else {
                     $id = $user->PersonID;
                 }
@@ -328,8 +331,8 @@ class Checkout
         }
 
         $totaldryitems = $totalitems - $totalchilleritems;
-        $setOrderInfo = DB::execute($GLOBALS['q']['set-order-info'], [$orderIDMax, $id, $dateToday, $datetodayonly]);
-        $setInvoiceDetails = DB::execute($GLOBALS['q']['set-invoice-details'], [$invoiceIDMax, $id, $id, $orderIDMax, $datetodayonly, $deliveryInstructions, $totaldryitems, $totalchilleritems, $dateToday]);
+        DB::execute($GLOBALS['q']['set-order-info'], [$orderIDMax, $id, $dateToday, $datetodayonly]);
+        DB::execute($GLOBALS['q']['set-invoice-details'], [$invoiceIDMax, $id, $id, $orderIDMax, $datetodayonly, $deliveryInstructions, $totaldryitems, $totalchilleritems, $dateToday]);
 
         //get info and send info of each product in cart
         foreach ($_SESSION['cart']['products'] as $key => $value) {
