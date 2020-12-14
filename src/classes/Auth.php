@@ -48,7 +48,7 @@ class Auth
         //check if email and password are correct
         if (empty($result)) {
             $_SESSION['login']['error_messages']['password'] = 'emailorpasswordwrong';
-            if (stripos($_SERVER['REQUEST_URI'], 'checkout/login')){
+            if (stripos($_SERVER['REQUEST_URI'], 'checkout/login')) {
                 return Route::redirect('/checkout/login');
             } else {
                 return Route::redirect('/login');
@@ -59,12 +59,11 @@ class Auth
 
         $_SESSION['user'] = $result[0];
 
-        if (stripos($_SERVER['REQUEST_URI'], 'checkout/login')){
+        if (stripos($_SERVER['REQUEST_URI'], 'checkout/login')) {
             return Route::redirect('/checkout/account');
         } else {
             return Route::redirect('/account');
         }
-        
     }
 
 
@@ -177,5 +176,31 @@ class Auth
     public static function isLogin()
     {
         if (empty($_SESSION['user']->PersonID)) return Route::redirect('/login');
+    }
+
+    /**
+     * delete the account and logout
+     */
+    public static function delete()
+    {
+        $invoice_ids = DB::execute('SELECT InvoiceID FROM invoices where CustomerID = ?', [$_SESSION['user']->PersonID]);
+
+        $invoice_ids_array = array_filter((array)$invoice_ids);
+        if (!empty($invoice_ids_array)) {
+            $ids = [];
+            foreach ($invoice_ids as $invoice_id) {
+                $ids[] = $invoice_id->InvoiceID;
+            }
+            $ids = implode(', ', array_values($ids));
+
+            DB::execute('DELETE from invoicelines where InvoiceID IN ($1)', [], [$ids]);
+            DB::execute('DELETE from invoices where CustomerID = ?', [$_SESSION['user']->PersonID]);
+        }
+
+        DB::execute('DELETE from customers where CustomerID = ?', [$_SESSION['user']->PersonID]);
+        DB::execute('DELETE from people where PersonID = ?', [$_SESSION['user']->PersonID]);
+
+        unset($_SESSION['user']);
+        Route::redirect('/user/delete-succes');
     }
 }
