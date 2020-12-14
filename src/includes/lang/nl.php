@@ -158,12 +158,12 @@ $GLOBALS['t'] = [
 
     //Profile
     'welcome' => 'Welkom',
-    'youremailis' => 'Jouw E-mail is',
+    'youre-mail-is' => 'Jouw E-mail is',
     'history' => 'Geschiedenis',
     'logout' => 'Uitloggen',
-    'deleteaccount'=> 'Verwijderen account',
-    'areyousure' => 'Weet u zeker dat u uw account wilt verwijderen?',
+    'delete-account' => 'Verwijderen account',
+    'are-you-sure' => 'Weet u zeker dat u uw account wilt verwijderen?',
     'home' => 'Startpagina',
-    'goback' => 'Ga terug',
-    'accountdeletedsuccessfull' => 'Uw account is succesvol verwijderd',
+    'go-back' => 'Ga terug',
+    'account-deleted-successfull' => 'Uw account is succesvol verwijderd',
 ];

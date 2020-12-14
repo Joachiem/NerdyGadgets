@@ -28,7 +28,7 @@ Route::post('/login', function () {
     Auth::login();
 });
 Route::get('/account', function () {
-    View::show('user/account');
+    User::account();
 });
 Route::post('/register', function () {
     Auth::register();
@@ -36,14 +36,14 @@ Route::post('/register', function () {
 Route::post('/logout', function () {
     Auth::logout();
 });
-Route::post('/delete_account', function () {
-    View::show('user/delete_account');
+Route::get('/user/delete', function () {
+    View::show('user/delete');
 });
-Route::get('/deleted', function () {
-    View::show('user/deleted');
+Route::post('/user/delete', function () {
+    Auth::delete();
 });
-Route::get('/account_deleted_succesfully', function () {
-    View::show('user/account_deleted_succesfully');
+Route::get('/user/delete-succes', function () {
+    View::show('user/delete-succes');
 });
 
 //user

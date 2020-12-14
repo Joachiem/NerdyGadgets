@@ -20,4 +20,13 @@ class User
 
         View::show('user/history', $arg);
     }
+
+    /**
+     * show account
+     */
+    public static function account()
+    {
+        Auth::isLogin();
+        View::show('user/account');
+    }
 }
