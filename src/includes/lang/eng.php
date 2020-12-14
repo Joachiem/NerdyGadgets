@@ -160,4 +160,15 @@ $GLOBALS['t'] = [
     'forgotpassword' => 'Forgot password?',
     'signin' => 'Sign in',
     'toggle-visibility' => 'Toggle password visibility',
+
+    //Profile
+    'welcome' => 'Welcome',
+    'youre-mail-is' => 'Your E-mail is',
+    'history' => 'History',
+    'logout' => 'Logout',
+    'delete-account' => 'Delete account',
+    'are-you-sure' => 'Are you sure that you want to delete your account?',
+    'home' => 'Home page',
+    'go-back' => 'Go back',
+    'account-deleted-successfull' => 'Your account has been deleted succesfully',
 ];

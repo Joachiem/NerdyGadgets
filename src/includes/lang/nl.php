@@ -155,4 +155,15 @@ $GLOBALS['t'] = [
     'forgotpassword' => 'Wachtwoord vergeten?',
     'signin' => 'Inloggen',
     'toggle-visibility' => 'Wachtwoord verbergen/tonen',
+
+    //Profile
+    'welcome' => 'Welkom',
+    'youre-mail-is' => 'Jouw E-mail is',
+    'history' => 'Geschiedenis',
+    'logout' => 'Uitloggen',
+    'delete-account' => 'Verwijderen account',
+    'are-you-sure' => 'Weet u zeker dat u uw account wilt verwijderen?',
+    'home' => 'Startpagina',
+    'go-back' => 'Ga terug',
+    'account-deleted-successfull' => 'Uw account is succesvol verwijderd',
 ];

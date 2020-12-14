@@ -45,27 +45,21 @@ class Pay
             if ($payment->isPaid() && !$payment->hasRefunds() && !$payment->hasChargebacks()) {
 
                 return 'PAID';
-
             } elseif ($payment->isOpen()) {
 
                 return 'OPEN';
-
             } elseif ($payment->isPending()) {
 
                 return 'PENDING';
-
             } elseif ($payment->isFailed()) {
 
                 return 'FAILED';
-
             } elseif ($payment->isExpired()) {
 
                 return 'EXPIRED';
-
             } elseif ($payment->isCanceled()) {
 
                 return 'CANCELED';
-
             } elseif ($payment->hasRefunds()) {
                 /*
                  * The payment has been (partially) refunded.

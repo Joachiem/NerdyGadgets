@@ -28,13 +28,22 @@ Route::post('/login', function () {
     Auth::login();
 });
 Route::get('/account', function () {
-    View::show('user/account');
+    User::account();
 });
 Route::post('/register', function () {
     Auth::register();
 });
 Route::post('/logout', function () {
     Auth::logout();
+});
+Route::get('/user/delete', function () {
+    View::show('user/delete');
+});
+Route::post('/user/delete', function () {
+    Auth::delete();
+});
+Route::get('/user/delete-succes', function () {
+    View::show('user/delete-succes');
 });
 
 //user
