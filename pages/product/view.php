@@ -90,10 +90,10 @@
                     <h2 class="text-2xl font-bold"><?php print $GLOBALS['t']['productpage-product-information'] ?></h2>
                 </div>
 
-                <?php if (isset($arg->temp)) { ?>
+                <?php if (isset($arg->temp) && $arg->IsChillerStock) { ?>
 
                     <div>
-                        <p><?php print('Temp: ' . $arg->temp) ?></p>
+                        <p><?php print($GLOBALS['t']['temperature'] . ': ' . $arg->temp) ?></p>
                     </div>
 
                 <?php } ?>

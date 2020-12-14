@@ -9,6 +9,7 @@ $GLOBALS['t'] = [
     'incl-vat' => ' incl BTW',
     'in-stock' => 'In Voorraad: ',
     'add' => 'Toevoegen',
+    'temperature' => 'Temperatuur',
 
     // alerts
     'cookie-alert-title' => 'Wij gebruiken functionele cookies',
