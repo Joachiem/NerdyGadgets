@@ -164,14 +164,21 @@
                         <input type="radio" id="star4" name="rating" value="4" /><label class="full" for="star4" title="4 stars"></label>
                         <input type="radio" id="star5" name="rating" value="5" /><label class="full" for="star5" title="5 stars"></label>
                     </fieldset>
-                    <input type="text" placeholder="title" class="leading-tight p-1 md:p-4 bg-blue flex" name="Review title">
-                    <input type="text" placeholder="title" class="leading-tight p-1 md:p-4 bg-blue flex" name="Review title">
+
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="title">
+                        <?php //print $GLOBALS['t']['title'] 
+                        ?>
+                        title
+                    </label>
+                    <input class="mb-1 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="title" id="title" type="text" value="<?php isset($_SESSION['review']['form']['title']) ? print($_SESSION['review']['form']['title']) : '' ?>">
+
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="review">
+                        <?php //print $GLOBALS['t']['review'] 
+                        ?>
+                        review
+                    </label>
+                    <textarea class="mb-1 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="review" id="review" type="text"><?php isset($_SESSION['review']['form']['review']) ? print($_SESSION['review']['form']['review']) : '' ?></textarea>
                     <input class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit" value="Submit Review">
-
-
-                    <input class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded " type="hidden" name="product_type" value="actual_product_type" id="product_type">
-                    <input class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded " type="hidden" name="product_id" value="actual_product_id" id="product_id">
-
                 </form>
 
                 <?php foreach ($arg->reviews as $review) { ?>

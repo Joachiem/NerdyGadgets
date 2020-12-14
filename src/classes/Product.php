@@ -112,7 +112,8 @@ class Product
         $product = DB::execute($GLOBALS['q']['product'], [$id])[0];
 
         $images = DB::execute($GLOBALS['q']['product-images'], [$id]);
-        $temp = DB::execute('select Temperature from coldroomtemperatures where ColdRoomSensorNumber = 5');
+        $temp = DB::execute('SELECT Temperature from coldroomtemperatures where ColdRoomSensorNumber = 5');
+        $product->reviews = DB::execute('SELECT * from reviews r join people p using(PersonID) where StockItemID = ?', [$id]);
 
         if ($images) $product->images = $images;
         if ($temp) $product->temp = $temp[0]->Temperature;
