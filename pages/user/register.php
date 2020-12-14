@@ -9,7 +9,7 @@
                         <label class="block text-gray-700 text-sm font-bold mb-2" for="username">
                             <?php print $GLOBALS['t']['username'] ?>
                         </label>
-                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="username" id="username" type="username" placeholder="<?php print $GLOBALS['t']['username'] ?>" value="<?php isset($_SESSION['register']['form']['username']) ? print($_SESSION['register']['form']['username']) : '' ?>">
+                        <input class="mb-1 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="username" id="username" type="username" placeholder="<?php print $GLOBALS['t']['username'] ?>" value="<?php isset($_SESSION['register']['form']['username']) ? print($_SESSION['register']['form']['username']) : '' ?>">
 
                         <?php if (isset($error_messages->username)) { ?>
 
@@ -22,7 +22,7 @@
                         <label class="block text-gray-700 text-sm font-bold mb-2" for="email">
                             <?php print $GLOBALS['t']['email'] ?>
                         </label>
-                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="email" id="email" type="text" placeholder="E-mail" value="<?php isset($_SESSION['register']['form']['email']) ? print($_SESSION['register']['form']['email']) : '' ?>">
+                        <input class="mb-1 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="email" id="email" type="text" placeholder="E-mail" value="<?php isset($_SESSION['register']['form']['email']) ? print($_SESSION['register']['form']['email']) : '' ?>">
 
                         <?php if (isset($error_messages->email)) { ?>
 
@@ -35,7 +35,7 @@
                         <label class="block text-gray-700 text-sm font-bold mb-2" for="password">
                             <?php print $GLOBALS['t']['password'] ?>
                         </label>
-                        <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="password" id="password" type="password" placeholder="******************" value="<?php isset($_SESSION['register']['form']['password']) ? print($_SESSION['register']['form']['password']) : '' ?>">
+                        <input class="mb-1 shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" name="password" id="password" type="password" placeholder="******************" value="<?php isset($_SESSION['register']['form']['password']) ? print($_SESSION['register']['form']['password']) : '' ?>">
 
                         <?php if (isset($error_messages->password)) { ?>
 
