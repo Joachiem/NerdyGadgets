@@ -32,3 +32,15 @@ INSERT INTO `discount_codes` (`discount_code`, `discount`, `expire`) VALUES ('50
 
 ALTER TABLE customers DROP CONSTRAINT FK_Sales_Customers_BillToCustomerID_Sales_Customers
 ALTER TABLE orders DROP CONSTRAINT FK_Sales_Orders_CustomerID_Sales_Customers
+
+CREATE TABLE nerdygadgets.reviews
+(
+    ReviewID INT(11) NOT NULL AUTO_INCREMENT,
+    StockItemID INT(11) NOT NULL,
+    PersonID INT(11) NOT NULL,
+    ReviewTitle VARCHAR(64) NOT NULL,
+    Rating INT(1) NOT NULL,
+    Review MEDIUMTEXT NULL,
+    Date DATE NOT NULL,
+    PRIMARY KEY (reviewID)
+);
