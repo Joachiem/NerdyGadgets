@@ -114,7 +114,7 @@ $GLOBALS['t'] = [
     //Checkout page
     'shipping' => 'Shipping',
     'information' => 'Information',
-    'payment' => 'Payment',
+    'payment' => 'Go to checkout',
     'overview' => 'Overview',
     'email' => 'E-mail address',
     'phonenumber' => 'Phone number',
@@ -162,7 +162,6 @@ $GLOBALS['t'] = [
     'email-taken' => 'This email is taken',
 
     'register' => 'Register',
-    'forgotpassword' => 'Forgot password?',
     'signin' => 'Sign in',
     'toggle-visibility' => 'Toggle password visibility',
 

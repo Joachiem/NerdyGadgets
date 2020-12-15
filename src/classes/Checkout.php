@@ -223,10 +223,7 @@ class Checkout
         $arg = [];
         $images = '';
 
-        if (isset($_SESSION['cart']['products'])) {
             $products = $_SESSION['cart']['products'];
-
-            $arg = [];
 
             foreach ($products as $id => $qty) {
 
@@ -241,7 +238,6 @@ class Checkout
                 ];
             }
             unset($_SESSION['cart']);
-        }
 
         View::show('checkout/complete', $arg);
     }

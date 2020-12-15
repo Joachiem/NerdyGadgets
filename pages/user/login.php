@@ -35,10 +35,6 @@
                     <div class="flex grid grid-cols-3 gap-2 text-right">
                         <input class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded" type="submit" value="<?php print $GLOBALS['t']['signin'] ?>">
                         <div class="text-right col-span-2">
-                            <a class="w-full inline-block text-right inset-y-0 right-0 font-bold text-sm text-blue-500 hover:text-blue-800" href="forgot">
-                                <?php print $GLOBALS['t']['forgotpassword'] ?>
-                            </a>
-
                             <a class="w-full text-right inline-block inset-y-0 right-0 font-bold text-sm text-blue-500 hover:text-blue-800" href="register">
                                 <p> <?php print $GLOBALS['t']['register'] ?></p>
                             </a>
