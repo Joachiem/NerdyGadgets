@@ -6,7 +6,7 @@
                     <label class="block text-gray-700 text-sm font-bold mb-2" tekst="delete_account">
                         <?php print $GLOBALS['t']['account-deleted-successfull'] ?>
                     </label>
-                    <div class="flex grid grid-cols-4 gap-2 text-right">
+                    <div class="flex text-right">
                         <a class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-6 rounded" href="/">
                             <?php print $GLOBALS['t']['home'] ?>
                         </a>

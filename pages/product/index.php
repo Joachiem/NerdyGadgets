@@ -1,6 +1,6 @@
-<div>
+<div class="mt-4">
     <form class="flex flex-col items-center">
-        <div class="shadow-lg max-w-sm rounded material-card bg-white mb-12">
+        <div class="shadow-lg max-w-sm rounded material-card bg-white mb-8">
             <div class="h-full grid grid-cols-2">
                 <div class="px-2 py-2 inset-x-0 bottom-0">
                     <label class="block uppercase tracking-wide text-center text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
@@ -39,7 +39,7 @@
         <input type="hidden" name="category_id" value="<?php print (isset($_GET['category_id'])) ? $_GET['category_id'] : ""; ?>">
 
         <?php if ($arg->ammount > 1) { ?>
-            <div class="flex flex-col items-center mb-12">
+            <div class="flex flex-col items-center mb-8">
                 <div class="flex text-gray-700">
                     <div class="flex h-12 font-medium rounded-full bg-gray-300">
                         <?php for ($i = 1; $i <= $arg->ammount; $i++) { ?>
@@ -77,7 +77,7 @@
         <input type="hidden" name="category_id" value="<?php print (isset($_GET['category_id'])) ? $_GET['category_id'] : ""; ?>">
 
         <?php if ($arg->ammount > 1) { ?>
-            <div class="flex flex-col items-center my-12 mt-8">
+            <div class="flex flex-col items-center my-8">
                 <div class="flex text-gray-700">
                     <div class="flex h-12 font-medium rounded-full bg-gray-300">
                         <?php for ($i = 1; $i <= $arg->ammount; $i++) { ?>

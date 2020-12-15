@@ -1,8 +1,7 @@
 <?php if ($arg) { ?>
+
     <div>
-
-
-        <div class="grid auto-cols-min grid-flow-col grid-cols-2 gap-8 mb-8">
+        <div class="grid auto-cols-min grid-flow-col grid-cols-2 gap-8 mb-8 mt-4">
             <div>
                 <div class="overflow-hidden rounded-lg shadow-lg object-cover bg-white" style="height: 30rem;">
 
