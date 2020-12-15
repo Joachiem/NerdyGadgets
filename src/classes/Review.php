@@ -3,6 +3,62 @@
 class Review
 {
     /**
+     * show
+     */
+    public static function show()
+    {
+        $reviews = DB::execute('SELECT * from reviews r join people p using(PersonID) where StockItemID is null');
+
+        View::show('review', $reviews);
+    }
+    /**
+     * show
+     */
+    public static function addToSite()
+    {
+        Auth::isLogin();
+
+        $error_messages = [];
+        unset($_SESSION['review']['error_messages']);
+
+        $form_fields = [
+            'rating' => [
+                'fill-rating' => function ($f) {
+                    return empty($f);
+                },
+            ],
+            'title' => [
+                'fill-title' => function ($f) {
+                    return empty($f);
+                },
+            ],
+            'review' => [
+                'fill-review' => function ($f) {
+                    return empty($f);
+                },
+            ],
+        ];
+
+        foreach ($form_fields as $form_field => $validators) {
+            foreach ($validators as $error => $validator) {
+                if ($validator($_POST[$form_field])) {
+                    $error_messages[$form_field] = $error;
+                }
+            }
+        }
+
+        $_SESSION['review']['form'] = $_POST;
+
+        if ($error_messages) {
+            $_SESSION['review']['error_messages'] = $error_messages;
+            return Route::back();
+        }
+
+        DB::execute('INSERT INTO `reviews`(`PersonID`, `ReviewTitle`, `Rating`, `Review`, `Date`) VALUES (?,?,?,?,?)', [$_SESSION['user']->PersonID, $_POST['title'], $_POST['rating'], $_POST['review'], date('Y-m-d')]);
+
+        return Route::back();
+    }
+    /**
      * switch the language to nl
      */
     public static function add()

@@ -38,7 +38,7 @@ DROP TABLE IF EXISTS reviews;
 CREATE TABLE reviews
 (
     ReviewID INT(11) NOT NULL AUTO_INCREMENT,
-    StockItemID INT(11) NOT NULL,
+    StockItemID INT(11) NULL,
     PersonID INT(11) NOT NULL,
     ReviewTitle VARCHAR(64) NOT NULL,
     Rating INT(1) NOT NULL,

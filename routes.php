@@ -72,6 +72,12 @@ Route::post('/products/view', function () {
     Review::add();
 });
 
+Route::get('/reviews', function () {
+    Review::show();
+});
+Route::post('/reviews', function () {
+    Review::addToSite();
+});
 
 // categories
 Route::get('/categories', function () {
