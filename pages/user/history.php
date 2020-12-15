@@ -15,23 +15,20 @@
 
                     <tr class="border-t-2 ">
                         <td class="pb-4 md:table-cell">
-                            <a href="/products/view?id=<?php print $order->OrderID
-                                                        ?>"><?php print $order->OrderID ?>
-
-                            </a>
+                            <?php print $order->OrderID ?>
                         </td>
                         <td class="pb-4 pt-1">
                             <ul>
 
                                 <?php foreach ($order->lines as $lines) { ?>
 
-                                    <li> <a href="/products/view?id=<?php print $lines->StockItemID ?> " target="_blank">
-                                            <?php print_r($lines->Description); ?>
+                                    <li> <a href="/products/view?id=<?php print $lines->StockItemID ?>">
+                                            <?php print $lines->Description; ?>
                                         </a>
                                     </li>
 
                                 <?php } ?>
-                                
+
                             </ul>
                         </td>
                         <td class="pb-4 md:table-cell m-4 text-right ">
@@ -39,7 +36,7 @@
 
                                 <?php foreach ($order->lines as $lines) { ?>
 
-                                    <li><?php print_r($lines->Quantity); ?></li>
+                                    <li><?php print $lines->Quantity; ?></li>
 
                                 <?php } ?>
 
@@ -50,7 +47,7 @@
 
                                 <?php foreach ($order->lines as $lines) { ?>
 
-                                    <li> <?php print_r($lines->UnitPrice); ?></li>
+                                    <li> <?php print $lines->UnitPrice; ?></li>
 
                                 <?php } ?>
 

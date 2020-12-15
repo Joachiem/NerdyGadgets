@@ -16,7 +16,7 @@
     </div>
 
     <div class="flex justify-center py-2 h-16">
-        <img src="https://www.ideal.nl/img/logo/ideal-logo.svg"/>
+        <img src="https://www.ideal.nl/img/logo/ideal-logo.svg" />
     </div>
 
     <div class="text-center py-1">
@@ -24,7 +24,8 @@
             <a href="/contact">Contact</a> |
             <a href="/tos"><?php print $GLOBALS['t']['footer-terms-and-conditions'] ?></a> |
             <a href="/privacy">Privacy</a> |
-            <a href="/<?php print $GLOBALS['t']['footer-language'] ?>"><?php print $GLOBALS['t']['footer-language-title'] ?></a>
+            <a href="/<?php print $GLOBALS['t']['footer-language'] ?>"><?php print $GLOBALS['t']['footer-language-title'] ?></a> |
+            <a href="/reviews">Reviews</a>
         </p>
     </div>
 

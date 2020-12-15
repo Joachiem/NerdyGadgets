@@ -31,7 +31,7 @@ class Checkout
             $_SESSION['form']['email'] = $user->EmailAddress;
             $name = explode(' ', $user->FullName, 2);
             $_SESSION['form']['firstname'] = $name[0];
-            $_SESSION['form']['lastname'] = isset($name[1]);
+            $_SESSION['form']['lastname'] = isset($name[1]) ? $name[1] : $_SESSION['form']['lastname'];
         }
         View::show('checkout/account');
     }
@@ -44,29 +44,20 @@ class Checkout
     }
 
     public static function pay()
-    {   
+    {
         self::noItemsInCart();
         self::checkAccountInfo();
-        self::checkaddressInfo();
+        self::checkAddressInfo();
         View::show('checkout/pay');
     }
 
     public static function storeUserInfo()
     {
-        //check if submit button has been pressed
-        if (!isset($_POST["submit"])) return;
-
         //save old data and merge new data
-        $data = $_POST;
-        unset($data['submit']);
-        if (empty($_SESSION['form'])) {
-            $_SESSION['form'] = $data;
-        } else {
-            $_SESSION['form'] = array_merge($_SESSION['form'], $data);
-        }
+        $_SESSION['form'] = $_POST;
 
         //generate error messages
-        unset($_SESSION['form']['error_messages']);
+        unset($_SESSION['error_messages']);
         $error_messages = [];
         $form_fields = [
             'firstname' => [
@@ -107,30 +98,27 @@ class Checkout
             }
         }
 
-        if (empty($_POST["firstname"]) || empty($_POST["lastname"]) || empty($_POST["email"]) || empty($_POST["phonenumber"])) {
-            $_SESSION['form']['error_messages'] = $error_messages;
-            Route::redirect('/checkout/account', '/checkout/account');
+        if (!empty($error_messages)) {
+            $_SESSION['error_messages'] = $error_messages;
+            Route::redirect('/checkout/account');
         }
 
         //delete old error messages
-        unset($_SESSION['form']['error_messages']);
+        unset($_SESSION['error_messages']);
 
-        Route::redirect('/checkout/account', '/checkout/address');
+        Route::redirect('/checkout/address');
     }
 
 
     public static function storeShippingInfo()
     {
-        //check if submit button has been pressed
-        if (!isset($_POST["submit"])) return;
-
         //save old data and merge new data
         $data = $_POST;
         unset($data['submit']);
         $_SESSION['form'] = array_merge($_SESSION['form'], $data);
 
         //generate error messages
-        unset($_SESSION['form']['error_messages']);
+        unset($_SESSION['error_messages']);
         $error_messages = [];
         $form_fields = [
             'postcode' => [
@@ -164,16 +152,14 @@ class Checkout
         }
 
         if (empty($_POST["postcode"]) || empty($_POST["housenmr"]) || empty($_POST["shipping"]) || empty($_POST["delivery"])) {
-            $_SESSION['form']['error_messages'] = $error_messages;
-            Route::redirect('/checkout/address', '/checkout/address');
-        } else {
-            print_r($_SESSION['form']);
+            $_SESSION['error_messages'] = $error_messages;
+            Route::redirect('/checkout/address');
         }
 
         //delete old error messages
-        unset($_SESSION['form']['error_messages']);
+        unset($_SESSION['error_messages']);
 
-        Route::redirect('/checkout/address', '/checkout/pay');
+        Route::redirect('/checkout/pay');
     }
 
 
@@ -181,27 +167,22 @@ class Checkout
     {
         //check if info is not empty
         $form = $_SESSION['form'];
-        if (isset($form)) {
-
-            if (empty($form["firstname"]) || empty($form["lastname"]) || empty($form["email"]) || empty($form["phonenumber"])) {
-                Route::redirect('/checkout/address', '/checkout/account');
-            }
-        } else {
-            Route::redirect('/checkout/address', '/checkout/account');
+        if (empty($form)) return;
+        if (empty($form['firstname']) || empty($form['lastname']) || empty($form['email']) || empty($form['phonenumber'])) {
+            return Route::redirect('/checkout/account');
         }
     }
 
-    public static function checkaddressInfo()
+    public static function checkAddressInfo()
     {
         //check if info is not empty
         $form = $_SESSION['form'];
         if (isset($form)) {
-
             if (empty($form["firstname"]) || empty($form["lastname"]) || empty($form["email"]) || empty($form["phonenumber"]) || empty($form["postcode"]) || empty($form["housenmr"]) || empty($form["shipping"])) {
-                Route::redirect('/checkout/pay', '/checkout/address');
+                Route::redirect('/checkout/address');
             }
         } else {
-            Route::redirect('/checkout/pay', '/checkout/address');
+            Route::redirect('/checkout/account');
         }
     }
 
@@ -218,7 +199,7 @@ class Checkout
     {
         self::noItemsInCart();
         self::checkAccountInfo();
-        self::checkaddressInfo();
+        self::checkAddressInfo();
         if (!isset($_SESSION['payment_id'])) return Route::redirect('/cart');
 
         $mollie = new \Mollie\Api\MollieApiClient();
@@ -306,7 +287,7 @@ class Checkout
                 $user = DB::execute('SELECT * FROM people WHERE EmailAddress = ?', [$email])[0];
                 if (empty($user->PhoneNumber)) {
                     DB::execute('UPDATE people SET FullName = ?, PhoneNumber = ? WHERE EmailAddress = ?', [$fullname, $phonenumber, $email]);
-                    print ($user);
+                    print($user);
                     $id = $user->PersonID;
                 } else {
                     $id = $user->PersonID;

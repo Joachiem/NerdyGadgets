@@ -68,7 +68,16 @@ Route::get('/products', function () {
 Route::get('/products/view', function () {
     Product::view(isset($_GET['id']) ? $_GET['id'] : null);
 });
+Route::post('/products/view', function () {
+    Review::add();
+});
 
+Route::get('/reviews', function () {
+    Review::show();
+});
+Route::post('/reviews', function () {
+    Review::addToSite();
+});
 
 // categories
 Route::get('/categories', function () {

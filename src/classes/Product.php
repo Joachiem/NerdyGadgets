@@ -112,7 +112,18 @@ class Product
         $product = DB::execute($GLOBALS['q']['product'], [$id])[0];
 
         $images = DB::execute($GLOBALS['q']['product-images'], [$id]);
-        $temp = DB::execute('select Temperature from coldroomtemperatures where ColdRoomSensorNumber = 5');
+        $temp = DB::execute('SELECT Temperature from coldroomtemperatures where ColdRoomSensorNumber = 5');
+        $product->reviews = DB::execute('SELECT * from reviews r join people p using(PersonID) where StockItemID = ? order by Date desc', [$id]);
+        $product->review = false;
+        $product->verified_buyer = true;
+
+        if (isset($_SESSION['user']->PersonID)) {
+            $old_review = DB::execute('SELECT * from reviews where PersonID = ? and StockItemID = ?', [$_SESSION['user']->PersonID, $id]);
+            $bought_product = DB::execute('SELECT OrderID, OrderDate, CustomerPurchaseOrderNumber FROM orders o join orderlines ol using(OrderID)
+        WHERE o.CustomerID = ? and ol.StockItemID = ?', [$_SESSION['user']->PersonID, $id]);
+
+            if (!empty($bought_product) && empty($old_review)) $product->review = true;
+        }
 
         if ($images) $product->images = $images;
         if ($temp) $product->temp = $temp[0]->Temperature;
