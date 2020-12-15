@@ -63,7 +63,11 @@
                             <td class="hidden text-right md:table-cell">
                                 <span class="text-sm lg:text-base font-medium"> €
                                     <span id="price-<?php print $product->StockItemID ?>">
-                                        <?php if (isset($product->DiscountPrice)) {print sprintf("%.2f", $product->DiscountPrice);} else {print sprintf("%.2f", $product->SellPrice);} ?>
+                                        <?php if (isset($product->DiscountPrice)) {
+                                            print sprintf("%.2f", $product->DiscountPrice);
+                                        } else {
+                                            print sprintf("%.2f", $product->SellPrice);
+                                        } ?>
                                     </span>
                                 </span>
                             </td>
@@ -217,7 +221,6 @@
             calculatePrice()
         })
     }
-
 
     calculatePrice()
 

@@ -27,7 +27,7 @@ CREATE TABLE discount_codes (
     expire date NOT NULL,
     primary key (discount_code)
 )
-ENGINE = InnoDB; 
+ENGINE = InnoDB;
 
 INSERT INTO `discount_codes` (`discount_code`, `discount`, `expire`) VALUES ('50off', '50', '2022-12-31');
 

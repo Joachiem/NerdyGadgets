@@ -4,7 +4,7 @@ class Pay
 {
     public static function getCartDiscount()
     {
-        if (empty($_SESSION['cart']['discount'])) return 1;
+        if (empty($_SESSION['cart']['discount'])) return 0;
 
         $discount = $_SESSION['cart']['discount'];
         $discount = $discount->discount;
