@@ -1,4 +1,4 @@
-<?php $error_messages = isset($_SESSION['form']['error_messages']) ? (object)$_SESSION['form']['error_messages'] : [] ?>
+<?php $error_messages = isset($_SESSION['error_messages']) ? (object)$_SESSION['error_messages'] : [] ?>
 
 <div class="w-full py-6">
     <div class="flex">
@@ -81,7 +81,7 @@
                         <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
                             <?php print $GLOBALS['t']['firstname'] ?>
                         </label>
-                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white <?php print isset($error_messages->firstname) ? 'border-red-500' : 'border-gray-200' ?>" name="firstname" id="grid-first-name" type="text" value="<?php isset($_SESSION['form']["firstname"]) ? print($_SESSION['form']["firstname"]) : '' ?>">
+                        <input class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white <?php print isset($error_messages->firstname) ? 'border-red-500' : 'border-gray-200' ?>" name="firstname" id="grid-first-name" type="text" value="<?php print isset($_SESSION['form']["firstname"]) ? $_SESSION['form']["firstname"] : '' ?>">
 
                         <?php if (isset($error_messages->firstname)) { ?>
 
