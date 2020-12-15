@@ -55,6 +55,7 @@ class Review
         }
 
         DB::execute('INSERT INTO `reviews`(`PersonID`, `ReviewTitle`, `Rating`, `Review`, `Date`) VALUES (?,?,?,?,?)', [$_SESSION['user']->PersonID, $_POST['title'], $_POST['rating'], $_POST['review'], date('Y-m-d')]);
+        unset($_SESSION['review']);
 
         return Route::back();
     }
@@ -111,6 +112,7 @@ class Review
         }
 
         DB::execute('INSERT INTO `reviews`(`StockItemID`, `PersonID`, `ReviewTitle`, `Rating`, `Review`, `Date`) VALUES (?,?,?,?,?,?)', [$id, $_SESSION['user']->PersonID, $_POST['title'], $_POST['rating'], $_POST['review'], date('Y-m-d')]);
+        unset($_SESSION['review']);
 
         return Route::back();
     }
