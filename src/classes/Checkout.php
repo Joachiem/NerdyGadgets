@@ -31,7 +31,7 @@ class Checkout
             $_SESSION['form']['email'] = $user->EmailAddress;
             $name = explode(' ', $user->FullName, 2);
             $_SESSION['form']['firstname'] = $name[0];
-            $_SESSION['form']['lastname'] = isset($name[1]);
+            $_SESSION['form']['lastname'] = isset($name[1]) ? $name[1] : $_SESSION['form']['lastname'];
         }
         View::show('checkout/account');
     }
@@ -47,20 +47,14 @@ class Checkout
     {
         self::noItemsInCart();
         self::checkAccountInfo();
-        self::checkaddressInfo();
+        self::checkAddressInfo();
         View::show('checkout/pay');
     }
 
     public static function storeUserInfo()
     {
         //save old data and merge new data
-        $data = $_POST;
-        unset($data['submit']);
-        if (empty($_SESSION['form'])) {
-            $_SESSION['form'] = $data;
-        } else {
-            $_SESSION['form'] = array_merge($data, $_SESSION['form']);
-        }
+        $_SESSION['form'] = $_POST;
 
         //generate error messages
         unset($_SESSION['error_messages']);
@@ -104,7 +98,7 @@ class Checkout
             }
         }
 
-        if (empty($_POST['firstname']) || empty($_POST['lastname']) || empty($_POST['email']) || empty($_POST['phonenumber'])) {
+        if (!empty($error_messages)) {
             $_SESSION['error_messages'] = $error_messages;
             Route::redirect('/checkout/account');
         }
@@ -179,7 +173,7 @@ class Checkout
         }
     }
 
-    public static function checkaddressInfo()
+    public static function checkAddressInfo()
     {
         //check if info is not empty
         $form = $_SESSION['form'];
@@ -188,7 +182,7 @@ class Checkout
                 Route::redirect('/checkout/address');
             }
         } else {
-            Route::redirect('/checkout/address');
+            Route::redirect('/checkout/account');
         }
     }
 
@@ -205,7 +199,7 @@ class Checkout
     {
         self::noItemsInCart();
         self::checkAccountInfo();
-        self::checkaddressInfo();
+        self::checkAddressInfo();
         if (!isset($_SESSION['payment_id'])) return Route::redirect('/cart');
 
         $mollie = new \Mollie\Api\MollieApiClient();
