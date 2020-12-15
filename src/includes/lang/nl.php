@@ -170,4 +170,11 @@ $GLOBALS['t'] = [
     'home' => 'Startpagina',
     'go-back' => 'Ga terug',
     'account-deleted-successfull' => 'Uw account is succesvol verwijderd',
+
+    //Review
+    'ammount_stars' => 'Hoeveelheid sterren:',
+    'title' => 'Titel',
+    'submit_review' => 'Plaatsen Review',
+
+
 ];

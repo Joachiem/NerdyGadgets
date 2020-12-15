@@ -175,4 +175,11 @@ $GLOBALS['t'] = [
     'home' => 'Home page',
     'go-back' => 'Go back',
     'account-deleted-successfull' => 'Your account has been deleted succesfully',
+
+    //Review
+    'ammount_stars' => 'Ammount stars:',
+    'title' => 'Title',
+    'submit_review' => 'Submit Review',
+
+
 ];
