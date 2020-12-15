@@ -45,7 +45,7 @@ class Cart
             }
             $amount = sprintf("%.2f", $amount);
         }
-        $amount = $amount * Pay::getCartDiscount();
+        $amount = $amount - $amount * Pay::getCartDiscount();
         if ($amount < 50) {
             $amount = $amount + 6.75;
         }

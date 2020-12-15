@@ -2,7 +2,13 @@
     <div>
         <div class="flex items-baseline">
             <span class="text-gray-600 font-bold"><?php print($review->FullName); ?></span>
-            <span class="ml-2 text-green-600 text-xs">Verified Buyer</span>
+
+            <?php if (isset($arg->verified_buyer)) { ?>
+
+                <span class="ml-2 text-green-600 text-xs">Verified Buyer</span>
+
+            <?php } ?>
+
         </div>
         <div class="flex items-center">
 
