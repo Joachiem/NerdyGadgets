@@ -1,12 +1,13 @@
 use nerdygadgets;
 
+ALTER TABLE stockitems DROP COLUMN IF EXISTS ClickedON;
 ALTER TABLE stockitems
-ADD COLUMN IF NOT EXISTS ClickedON INT(14)
+ADD ClickedON INT(14)
 NOT NULL
 DEFAULT (0);
 
+UPDATE `specialdeals` SET `StockItemID` = '74' WHERE `specialdeals`.`SpecialDealID` = 1;
 UPDATE `specialdeals` SET `StockItemID` = '46' WHERE `specialdeals`.`SpecialDealID` = 2;
-UPDATE `specialdeals` SET `StockItemID` = '2' WHERE `specialdeals`.`SpecialDealID` = 1;
 
 DROP TABLE IF EXISTS peopleaddress;
 CREATE TABLE peopleaddress
