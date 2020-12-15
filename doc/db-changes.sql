@@ -43,7 +43,7 @@ CREATE TABLE reviews
     ReviewTitle VARCHAR(64) NOT NULL,
     Rating INT(1) NOT NULL,
     Review MEDIUMTEXT NULL,
-    Date DATE NOT NULL,
+    Date DATETIME NOT NULL,
     PRIMARY KEY (reviewID)
 )
 ENGINE = InnoDB;

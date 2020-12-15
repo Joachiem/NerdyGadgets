@@ -7,7 +7,7 @@ class Review
      */
     public static function show()
     {
-        $reviews = DB::execute('SELECT * from reviews r join people p using(PersonID) where StockItemID is null ');
+        $reviews = DB::execute('SELECT * from reviews r join people p using(PersonID) where StockItemID is null order by Date desc');
 
         View::show('review', $reviews);
     }
@@ -54,7 +54,7 @@ class Review
             return Route::back();
         }
 
-        DB::execute('INSERT INTO `reviews`(`PersonID`, `ReviewTitle`, `Rating`, `Review`, `Date`) VALUES (?,?,?,?,?)', [$_SESSION['user']->PersonID, $_POST['title'], $_POST['rating'], $_POST['review'], date('Y-m-d')]);
+        DB::execute('INSERT INTO `reviews`(`PersonID`, `ReviewTitle`, `Rating`, `Review`, `Date`) VALUES (?,?,?,?,?)', [$_SESSION['user']->PersonID, $_POST['title'], $_POST['rating'], $_POST['review'], date('Y-m-d h:i:sa')]);
         unset($_SESSION['review']);
 
         return Route::back();
@@ -111,7 +111,7 @@ class Review
             return Route::back();
         }
 
-        DB::execute('INSERT INTO `reviews`(`StockItemID`, `PersonID`, `ReviewTitle`, `Rating`, `Review`, `Date`) VALUES (?,?,?,?,?,?)', [$id, $_SESSION['user']->PersonID, $_POST['title'], $_POST['rating'], $_POST['review'], date('Y-m-d')]);
+        DB::execute('INSERT INTO `reviews`(`StockItemID`, `PersonID`, `ReviewTitle`, `Rating`, `Review`, `Date`) VALUES (?,?,?,?,?,?)', [$id, $_SESSION['user']->PersonID, $_POST['title'], $_POST['rating'], $_POST['review'], date('Y-m-d  h:i:sa')]);
         unset($_SESSION['review']);
 
         return Route::back();
