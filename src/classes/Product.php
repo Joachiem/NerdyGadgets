@@ -115,6 +115,7 @@ class Product
         $temp = DB::execute('SELECT Temperature from coldroomtemperatures where ColdRoomSensorNumber = 5');
         $product->reviews = DB::execute('SELECT * from reviews r join people p using(PersonID) where StockItemID = ? order by Date desc', [$id]);
         $product->review = false;
+        $product->verified_buyer = true;
 
         if (isset($_SESSION['user']->PersonID)) {
             $old_review = DB::execute('SELECT * from reviews where PersonID = ? and StockItemID = ?', [$_SESSION['user']->PersonID, $id]);
