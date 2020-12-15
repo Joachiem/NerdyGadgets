@@ -10,6 +10,7 @@ $GLOBALS['t'] = [
     'in-stock' => 'In Voorraad: ',
     'add' => 'Toevoegen',
     'temperature' => 'Temperatuur',
+    '[deleted user]' => '[verwijderde gebruiker]',
 
     // alerts
     'cookie-alert-title' => 'Wij gebruiken functionele cookies',

@@ -10,6 +10,7 @@ $GLOBALS['t'] = [
     'in-stock' => 'In Stock: ',
     'add' => 'Add',
     'temperature' => 'Temperature',
+    '[deleted user]' => '[deleted user]',
 
     // alerts
     'cookie-alert-title' => 'We use functional cookies',

@@ -1,7 +1,7 @@
 <div class="flex items-start my-2">
     <div>
         <div class="flex items-baseline">
-            <span class="text-gray-600 font-bold"><?php print($review->FullName); ?></span>
+            <span class="text-gray-600 font-bold"><?php print isset($review->FullName) ? $review->FullName : $GLOBALS['t']['[deleted user]']; ?></span>
 
             <?php if (isset($arg->verified_buyer)) { ?>
 
