@@ -112,7 +112,7 @@ $GLOBALS['t'] = [
     //Checkout page
     'shipping' => 'Shipping',
     'information' => 'Information',
-    'payment' => 'Payment',
+    'payment' => 'Go to checkout',
     'overview' => 'Overview',
     'email' => 'E-mail address',
     'phonenumber' => 'Phone number',
