@@ -104,15 +104,15 @@ class Checkout
             }
         }
 
-        if (empty($_POST["firstname"]) || empty($_POST["lastname"]) || empty($_POST["email"]) || empty($_POST["phonenumber"])) {
+        if (empty($_POST['firstname']) || empty($_POST['lastname']) || empty($_POST['email']) || empty($_POST['phonenumber'])) {
             $_SESSION['error_messages'] = $error_messages;
-            Route::redirect('/checkout/account', '/checkout/account');
+            Route::redirect('/checkout/account');
         }
 
         //delete old error messages
         unset($_SESSION['error_messages']);
 
-        Route::redirect('/checkout/account', '/checkout/address');
+        Route::redirect('/checkout/address');
     }
 
 
@@ -159,15 +159,13 @@ class Checkout
 
         if (empty($_POST["postcode"]) || empty($_POST["housenmr"]) || empty($_POST["shipping"]) || empty($_POST["delivery"])) {
             $_SESSION['error_messages'] = $error_messages;
-            Route::redirect('/checkout/address', '/checkout/address');
-        } else {
-            print_r($_SESSION['form']);
+            Route::redirect('/checkout/address');
         }
 
         //delete old error messages
         unset($_SESSION['error_messages']);
 
-        Route::redirect('/checkout/address', '/checkout/pay');
+        Route::redirect('/checkout/pay');
     }
 
 
@@ -175,13 +173,9 @@ class Checkout
     {
         //check if info is not empty
         $form = $_SESSION['form'];
-        if (isset($form)) {
-
-            if (empty($form["firstname"]) || empty($form["lastname"]) || empty($form["email"]) || empty($form["phonenumber"])) {
-                Route::redirect('/checkout/address', '/checkout/account');
-            }
-        } else {
-            Route::redirect('/checkout/address', '/checkout/account');
+        if (empty($form)) return;
+        if (empty($form['firstname']) || empty($form['lastname']) || empty($form['email']) || empty($form['phonenumber'])) {
+            return Route::redirect('/checkout/account');
         }
     }
 
@@ -190,12 +184,11 @@ class Checkout
         //check if info is not empty
         $form = $_SESSION['form'];
         if (isset($form)) {
-
             if (empty($form["firstname"]) || empty($form["lastname"]) || empty($form["email"]) || empty($form["phonenumber"]) || empty($form["postcode"]) || empty($form["housenmr"]) || empty($form["shipping"])) {
-                Route::redirect('/checkout/pay', '/checkout/address');
+                Route::redirect('/checkout/address');
             }
         } else {
-            Route::redirect('/checkout/pay', '/checkout/address');
+            Route::redirect('/checkout/address');
         }
     }
 
