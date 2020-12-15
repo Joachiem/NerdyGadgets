@@ -8,7 +8,11 @@
     <div class="flex items-center justify-between leading-tight p-2 md:p-4">
         <h1 class="text-lg">
             <a class="no-underline hover:underline text-black" href="/products?category_id=<?php print $StockGroup->StockGroupID ?>">
-                <?php print $GLOBALS['t'][$StockGroup->StockGroupName] ?>
+                <?php if (isset($GLOBALS['t'][$StockGroup->StockGroupName])) { ?>
+                <?php print $GLOBALS['t'][$StockGroup->StockGroupName]; ?>
+                <?php } else { ?>
+                <?php print $StockGroup->StockGroupName; ?>
+                <?php } ?>
             </a>
         </h1>
     </div>
