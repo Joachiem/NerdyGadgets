@@ -1,9 +1,9 @@
 use nerdygadgets;
 
 ALTER TABLE stockitems
-ADD ClickedON INT(14)
+ADD COLUMN IF NOT EXISTS ClickedON INT(14)
 NOT NULL
-DEFAULT (0)
+DEFAULT (0);
 
 UPDATE `specialdeals` SET `StockItemID` = '46' WHERE `specialdeals`.`SpecialDealID` = 2;
 UPDATE `specialdeals` SET `StockItemID` = '2' WHERE `specialdeals`.`SpecialDealID` = 1;
@@ -31,8 +31,8 @@ ENGINE = InnoDB;
 
 INSERT INTO `discount_codes` (`discount_code`, `discount`, `expire`) VALUES ('50off', '50', '2022-12-31');
 
-ALTER TABLE customers DROP CONSTRAINT FK_Sales_Customers_BillToCustomerID_Sales_Customers;
-ALTER TABLE orders DROP CONSTRAINT FK_Sales_Orders_CustomerID_Sales_Customers;
+ALTER TABLE customers DROP CONSTRAINT IF EXISTS FK_Sales_Customers_BillToCustomerID_Sales_Customers;
+ALTER TABLE orders DROP CONSTRAINT IF EXISTS FK_Sales_Orders_CustomerID_Sales_Customers;
 
 DROP TABLE IF EXISTS reviews;
 CREATE TABLE reviews
