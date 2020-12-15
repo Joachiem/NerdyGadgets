@@ -1,4 +1,4 @@
-<div class="container my-12 mx-auto px-4 md:px-12">
+<div class="container my-4 mb-8 mx-auto px-4 md:px-12">
     <div class="flex flex-wrap -mx-1 lg:-mx-4 grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-8">
 
         <?php foreach ($arg as $StockGroup) { ?>
