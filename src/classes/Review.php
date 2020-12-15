@@ -7,7 +7,7 @@ class Review
      */
     public static function show()
     {
-        $reviews = DB::execute('SELECT * from reviews r join people p using(PersonID) where StockItemID is null');
+        $reviews = DB::execute('SELECT * from reviews r join people p using(PersonID) where StockItemID is null ');
 
         View::show('review', $reviews);
     }
