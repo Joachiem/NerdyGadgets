@@ -157,7 +157,6 @@ $GLOBALS['t'] = [
     'email-taken' => 'This email is taken',
 
     'register' => 'Register',
-    'forgotpassword' => 'Forgot password?',
     'signin' => 'Sign in',
     'toggle-visibility' => 'Toggle password visibility',
 

@@ -152,7 +152,6 @@ $GLOBALS['t'] = [
     'email-taken' => 'Deze email is bezet',
 
     'register' => 'Registreren',
-    'forgotpassword' => 'Wachtwoord vergeten?',
     'signin' => 'Inloggen',
     'toggle-visibility' => 'Wachtwoord verbergen/tonen',
 
