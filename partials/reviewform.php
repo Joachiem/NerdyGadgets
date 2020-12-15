@@ -2,13 +2,17 @@
 
 <form method="POST" class="w-full">
     <div class="w-full flex flex-col">
-        <fieldset name="rating" class="rating flex">
-            <input type="radio" class="starbtn" id="star1" name="rating" value="1" checked /> <label class="full" for="star1" title="1 star"></label>
-            <input type="radio" class="starbtn" id="star2" name="rating" value="2" <?php isset($_SESSION['review']['form']['rating']) ? print $_SESSION['review']['form']['rating'] === '2' ? 'checked' : '' : '' ?> /> <label class="full" for="star2" title="2 stars"></label>
-            <input type="radio" class="starbtn" id="star3" name="rating" value="3" <?php isset($_SESSION['review']['form']['rating']) ? print $_SESSION['review']['form']['rating'] === '3' ? 'checked' : '' : '' ?> /> <label class="full" for="star3" title="3 stars"></label>
-            <input type="radio" class="starbtn" id="star4" name="rating" value="4" <?php isset($_SESSION['review']['form']['rating']) ? print $_SESSION['review']['form']['rating'] === '4' ? 'checked' : '' : '' ?> /> <label class="full" for="star4" title="4 stars"></label>
-            <input type="radio" class="starbtn" id="star5" name="rating" value="5" <?php isset($_SESSION['review']['form']['rating']) ? print $_SESSION['review']['form']['rating'] === '5' ? 'checked' : '' : '' ?> /> <label class="full" for="star5" title="5 stars"></label>
-        </fieldset>
+        <div class="flex justify-start">
+            <fieldset name="rating" class="rating flex flex-row-reverse ">
+                <input type="radio" class="starbtn" id="star5" name="rating" value="5" <?php isset($_SESSION['review']['form']['rating']) ? print $_SESSION['review']['form']['rating'] === '5' ? 'checked' : '' : '' ?> /> <label class="full" for="star5" title="5 stars"></label>
+                <input type="radio" class="starbtn" id="star4" name="rating" value="4" <?php isset($_SESSION['review']['form']['rating']) ? print $_SESSION['review']['form']['rating'] === '4' ? 'checked' : '' : '' ?> /> <label class="full" for="star4" title="4 stars"></label>
+                <input type="radio" class="starbtn" id="star3" name="rating" value="3" <?php isset($_SESSION['review']['form']['rating']) ? print $_SESSION['review']['form']['rating'] === '3' ? 'checked' : '' : '' ?> /> <label class="full" for="star3" title="3 stars"></label>
+                <input type="radio" class="starbtn" id="star2" name="rating" value="2" <?php isset($_SESSION['review']['form']['rating']) ? print $_SESSION['review']['form']['rating'] === '2' ? 'checked' : '' : '' ?> /> <label class="full" for="star2" title="2 stars"></label>
+                <input type="radio" class="starbtn" id="star1" name="rating" value="1" checked /> <label class="full" for="star1" title="1 star"></label>
+
+            </fieldset>
+        </div>
+
 
         <label class="block text-gray-700 text-sm font-bold mb-2" for="title">
             <?php print $GLOBALS['t']['title'] ?>
@@ -52,7 +56,6 @@
 
     .rating {
         border: none;
-        float: left;
     }
 
     .rating>input {
@@ -74,7 +77,6 @@
 
     .rating>label {
         color: #ddd;
-        float: right;
     }
 
     /***** CSS Magic to Highlight Stars on Hover *****/
@@ -84,17 +86,16 @@
     .rating:not(:checked)>label:hover,
     /* hover current star */
     .rating:not(:checked)>label:hover~label {
-        color: #FFD700;
+        color: #ECC94B;
     }
 
-    /* hover previous stars in list */
 
+    /* hover previous stars in list */
     .rating>input:checked+label:hover,
     /* hover current star when changing rating */
     .rating>input:checked~label:hover,
-    .rating>label:hover~input:checked~label,
     /* lighten current selection */
     .rating>input:checked~label:hover~label {
-        color: #FFED85;
+        color: #d3b441;
     }
 </style>
