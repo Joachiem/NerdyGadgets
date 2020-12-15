@@ -15,7 +15,7 @@
                     <h1 class="text-lg">
                         <a class="no-underline hover:underline text-black"
                            href="/products?category_id=<?php print $StockGroup->StockGroupID ?>">
-                            <?php print $StockGroup->StockGroupName ?>
+                            <?php print $GLOBALS['t'][$StockGroup->StockGroupName] ?>
                         </a>
                     </h1>
                 </div>
