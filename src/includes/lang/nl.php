@@ -149,6 +149,7 @@ $GLOBALS['t'] = [
     'format-email' => 'Niet gedige email',
     'password-length' => 'Het wachtwoord moet minimaal 8 karakters lang zijn',
     'username-length' => 'De gebruikersnaam moet minimaal 8 karakters lang zijn',
+    'phonenumber-length' => 'het telefoonnummer moet minimaal 8 karakters lang zijn',
     'emailorpasswordwrong' => 'E-mail en/of wachtwoord zijn onjuist!',
     'email-taken' => 'Deze email is bezet',
 
