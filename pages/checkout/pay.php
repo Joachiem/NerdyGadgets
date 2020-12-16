@@ -77,10 +77,10 @@
 
         <div class="leading-tight p-2 md:p-4 bg-white">
             <form class="w-full max-w-lg">
-                <div class="flex flex-wrap -mx-3 mb-6">
+                <div class="flex text-center flex-wrap -mx-3 mb-6">
                     <div class="w-full px-3 mb-6 md:mb-0"><?php print $GLOBALS['t']['mollie'] ?></div>
                 </div>
-                <div class="flex md:items-center justify-around">
+                <div class="flex md:items-center justify-between">
                     <a href="/checkout/address"
                        class="shadow bg-teal-400 hover:bg-teal-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded"
                        type="button"><?php print $GLOBALS['t']['back'] ?></a>
