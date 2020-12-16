@@ -1,8 +1,19 @@
 <?php if (!$product) return ?>
 
 <article class="shadow-lg max-w-sm rounded material-card bg-white">
+
     <div class="h-full flex flex-col justify-between">
+
+        <?php if (isset($product->DiscountPrice)) { ?>
+
+            <div class="w-full bg-red-600 text-center rounded">
+                <h5 class="text-white font-bold">Christmas Sale</h5>
+            </div>
+
+        <?php } ?>
+
         <div class="h-full flex items-center">
+
             <a href="/products/view?id=<?php print $product->StockItemID ?>">
 
                 <?php if (isset($product->ImagePath) and !empty($product->ImagePath)) { ?>
@@ -32,13 +43,7 @@
 
         <div class=" py-2 inset-x-0 bottom-0">
 
-            <?php if (isset($product->DiscountPrice)) { ?>
 
-                <div class="w-full bg-red-600 text-center">
-                    <h5 class="text-white font-bold">Christmas Sale</h5>
-                </div>
-
-            <?php } ?>
 
             <a href="/products/view?id=<?php print $product->StockItemID ?>">
                 <div class="px-2 no-underline hover:underline font-bold text-sm tracking-wide text-left"><?php print $product->StockItemName ?></div>
@@ -46,7 +51,7 @@
 
             <div class="flex justify-between gap-0 px-2">
                 <div class="col-span-2 text-gray-700 text-sm">
-                    
+
                     <?php if (isset($product->DiscountPrice)) { ?>
 
                         <p class="inline line-through">€ <?php print round($product->SellPrice, 2) ?></p>
