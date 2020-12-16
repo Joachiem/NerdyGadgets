@@ -41,9 +41,9 @@
             $stock = $GLOBALS['t']['no-stock'];
         } ?>
 
+        <?php ?>
+
         <div class=" py-2 inset-x-0 bottom-0">
-
-
 
             <a href="/products/view?id=<?php print $product->StockItemID ?>">
                 <div class="px-2 no-underline hover:underline font-bold text-sm tracking-wide text-left"><?php print $product->StockItemName ?></div>
@@ -54,9 +54,9 @@
 
                     <?php if (isset($product->DiscountPrice)) { ?>
 
-                        <p class="inline line-through">€ <?php print round($product->SellPrice, 2) ?></p>
-                        <p class="text-lg inline text-green-600 font-bold font-bold">€ <?php printf("%.2f", $product->DiscountPrice, 2) ?></p>
-                        <p class="text-gray-500 text-xs ">€ <?php printf("%.2f", $product->DiscountPriceNoVat, 2);
+                        <p class="line-through">€ <?php print round($product->SellPrice, 2) ?></p>
+                        <p class="text-lg text-green-600 font-bold">€ <?php printf("%.2f", $product->DiscountPrice, 2) ?></p>
+                        <p class="text-gray-500 text-xs">€ <?php printf("%.2f", $product->DiscountPriceNoVat, 2);
                                                             print($GLOBALS['t']['excl-vat']) ?></p>
 
                     <?php } else { ?>
