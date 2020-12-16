@@ -31,7 +31,7 @@ class Checkout
             $_SESSION['form']['email'] = $user->EmailAddress;
             $name = explode(' ', $user->FullName, 2);
             $_SESSION['form']['firstname'] = $name[0];
-            $_SESSION['form']['lastname'] = isset($name[1]) ? $name[1] : $_SESSION['form']['lastname'];
+            if (isset($name[1])) $_SESSION['form']['lastname'] = $name[1];
         }
         View::show('checkout/account');
     }
@@ -223,21 +223,21 @@ class Checkout
         $arg = [];
         $images = '';
 
-            $products = $_SESSION['cart']['products'];
+        $products = $_SESSION['cart']['products'];
 
-            foreach ($products as $id => $qty) {
+        foreach ($products as $id => $qty) {
 
-                $product = DB::execute($GLOBALS['q']['product'], [$id]);
+            $product = DB::execute($GLOBALS['q']['product'], [$id]);
 
-                $images = DB::execute($GLOBALS['q']['product-images'], [$id]);
+            $images = DB::execute($GLOBALS['q']['product-images'], [$id]);
 
-                $arg[$id] = [
-                    'qty' => $qty,
-                    'product' => $product,
-                    'images' => $images
-                ];
-            }
-            unset($_SESSION['cart']);
+            $arg[$id] = [
+                'qty' => $qty,
+                'product' => $product,
+                'images' => $images
+            ];
+        }
+        unset($_SESSION['cart']);
 
         View::show('checkout/complete', $arg);
     }
