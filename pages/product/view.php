@@ -58,7 +58,7 @@
 
                     <div>
                         <p class="text-gray-700 text-xl font-bold line-through"><?php printf("€ %.2f", $arg->SellPrice) ?> </p>
-                        <p class="text-grey-darker text-2xl font-bold"><?php printf("€ %.2f", $arg->DiscountPrice) ?> </p>
+                        <p class="text-2xl text-green-600 font-bold"><?php printf("€ %.2f", $arg->DiscountPrice) ?> </p>
                     </div>
 
                     <div class="mb-4">
