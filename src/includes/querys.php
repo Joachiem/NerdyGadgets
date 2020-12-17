@@ -463,9 +463,11 @@ $GLOBALS['q'] = [
     OrderDate, 
     ExpectedDeliveryDate, 
     IsUndersupplyBackordered, 
+    DeliveryInstructions,
+    InternalComments,
     LastEditedBy, 
     LastEditedWhen)
-    VALUES (?, ?, 5, 5, ?, '9999-12-31', 0, 5, ?)",
+    VALUES (?, ?, 5, 5, ?, '9999-12-31', 0, ?, ?, 5, ?)",
 
     'set-invoice-details' => "INSERT INTO Invoices
     (InvoiceID, 

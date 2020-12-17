@@ -308,7 +308,7 @@ class Checkout
         }
 
         $totaldryitems = $totalitems - $totalchilleritems;
-        DB::execute($GLOBALS['q']['set-order-info'], [$orderIDMax, $id, $dateToday, $datetodayonly]);
+        DB::execute($GLOBALS['q']['set-order-info'], [$orderIDMax, $id, $dateToday, $deliveryInstructions, $delivery, $datetodayonly]);
         DB::execute($GLOBALS['q']['set-invoice-details'], [$invoiceIDMax, $id, $id, $orderIDMax, $datetodayonly, $deliveryInstructions, $totaldryitems, $totalchilleritems, $dateToday]);
 
         //get info and send info of each product in cart
